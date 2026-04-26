@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e3fit.me — Jack Wallner</title>
+    <meta name="description" content="Production fitness coaching platform: Next.js, Supabase, Clerk, plus a React Native companion app.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="topbar">
+        <div class="container topbar-inner">
+            <div class="left">
+                <span>No. 05</span>
+                <span class="pipe">·</span>
+                <span>e3fit.me</span>
+            </div>
+            <div class="right">
+                <a href="../">← Back to portfolio</a>
+            </div>
+        </div>
+    </div>
+
+    <article class="container">
+        <header class="case-head">
+            <div class="case-eyebrow">
+                <span>Case Study · No. 05</span>
+                <span class="sep">/</span>
+                <span>Web &amp; iOS</span>
+                <span class="sep">/</span>
+                <span>Live in production</span>
+            </div>
+            <h1>e3fit<em>.me</em></h1>
+            <p class="deck">A production fitness-coaching platform for a small studio: client onboarding, manual booking workflow, programme delivery, and an offline-first companion app.</p>
+            <div class="links">
+                <a href="https://e3fit.me" target="_blank" rel="noopener">Visit the live site ↗</a>
+            </div>
+        </header>
+
+        <figure class="case-figure">
+            <img src="../assets/e3fit/main.jpg" alt="E3 Fitness studio">
+            <figcaption>The studio the platform runs.</figcaption>
+        </figure>
+
+        <section class="case-body">
+            <h2>§ The pitch</h2>
+            <div class="section-content">
+                <p>A small fitness studio needed something between Mindbody (overkill, $300/mo) and a Google Sheet (already failing). They wanted a public site, a way to manually book sessions for new clients, an admin dashboard the owner could actually run alone, and — eventually — an app for clients to log their workouts on the floor.</p>
+                <p>I built it end-to-end. Then I gave it back.</p>
+            </div>
+
+            <h2>§ Specs</h2>
+            <div class="section-content">
+                <table class="spec-table">
+                    <tr><th>Frontend</th><td>Next.js (App Router), TypeScript, Tailwind</td></tr>
+                    <tr><th>Backend</th><td>Supabase Postgres with RLS, Supabase Edge Functions</td></tr>
+                    <tr><th>Auth</th><td>Clerk (with Supabase user-row mirroring)</td></tr>
+                    <tr><th>Hosting</th><td>Vercel · production + preview deploys per PR</td></tr>
+                    <tr><th>Mobile</th><td>React Native, offline-first workout logging</td></tr>
+                    <tr><th>Migrations</th><td>50+ checked-in SQL migrations, applied via Supabase CLI</td></tr>
+                </table>
+            </div>
+
+            <h2>§ The pieces that mattered</h2>
+            <div class="section-content">
+                <p><strong>Manual bookings, not embedded Cal.com.</strong> The first version embedded a Cal.com booking widget. It worked, but the owner couldn't see what was happening at a glance and the embed didn't fit her actual workflow (most of her bookings come from texts, not strangers on a website). I ripped it out and built an admin-only manual booking surface backed by a real <code>bookings</code> table — the public site now points new clients to the contact section instead. Behind a feature flag, with a written rollback plan, just in case.</p>
+                <p><strong>RLS as the access model.</strong> Clients can read their own programmes; admins can read everything. There's no application-layer permission code worth speaking of — the database is the source of truth, and policies are tested with a CLI fixture before they ship.</p>
+                <p><strong>Offline-first mobile.</strong> The mobile app logs workouts on the gym floor where the wifi is bad. Writes go to a local queue and sync when reachable; reads are served from a local cache. The exercise library (200+ items) ships baked into the app bundle so a fresh install is usable immediately.</p>
+                <p><strong>A test-user seeder for QA.</strong> One npm script provisions a Clerk user and a matching Supabase row in dev so the owner can poke at her own staging environment without contaminating production. Boring, but the kind of thing that makes a small platform feel grown-up.</p>
+                <p class="pull-quote">It's tempting to over-build for a small business. The discipline is in not doing that.</p>
+            </div>
+
+            <div class="case-foot">
+                <a href="../kalshi/">← Kalshi BTC Bot</a>
+                <a href="../nearby-trains/">Next: Nearby Trains →</a>
+            </div>
+        </section>
+    </article>
+
+    <footer>
+        <div class="container colophon">
+            <div class="colophon-right" style="text-align:left;">
+                <a href="mailto:jackwallner@gmail.com">Email</a> ·
+                <a href="https://github.com/jackwallner" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
