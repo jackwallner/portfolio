@@ -1,13 +1,12 @@
 :root {
-    --bg: #f7f6f3;
-    --bg-warm: #f0eee9;
-    --text: #1c1c1a;
-    --text-secondary: #6b6560;
-    --text-muted: #9a9590;
-    --border: #e0ddd6;
-    --border-strong: #d5d1ca;
-    --accent: #b8471f;
-    --accent-soft: rgba(184, 71, 31, 0.08);
+    --bg: #ffffff;
+    --bg-warm: #f9f9f7;
+    --text: #0a0a0a;
+    --text-secondary: #737373;
+    --text-muted: #a3a3a3;
+    --border: #e5e5e5;
+    --border-strong: #d4d4d4;
+    --accent: #000000;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -15,20 +14,19 @@
 html { scroll-behavior: smooth; }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
     background: var(--bg);
     color: var(--text);
-    font-size: 17px;
-    line-height: 1.55;
+    font-size: 16px;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
 }
 
-::selection { background: var(--accent-soft); color: var(--text); }
+::selection { background: #000; color: #fff; }
 
-a { color: var(--text); text-decoration: none; transition: opacity 0.2s; }
-a:hover { opacity: 0.6; }
+a { color: var(--text); text-decoration: none; }
+a:hover { color: var(--text-secondary); }
 
 .mono {
     font-family: 'IBM Plex Mono', ui-monospace, monospace;
@@ -37,22 +35,23 @@ a:hover { opacity: 0.6; }
 }
 
 .container {
-    max-width: 980px;
+    max-width: 780px;
     margin: 0 auto;
     padding: 0 2rem;
 }
-
 @media (max-width: 640px) { .container { padding: 0 1.25rem; } }
 
 /* ---- Top bar ---- */
 .topbar {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
-    background: rgba(247, 246, 243, 0.85);
-    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
-    padding: 0.9rem 0;
+    padding: 1rem 0;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.72rem;
     letter-spacing: 0.04em;
@@ -67,8 +66,8 @@ a:hover { opacity: 0.6; }
 .topbar .left { display: flex; align-items: center; gap: 0.5rem; }
 .topbar .left span { color: var(--text-secondary); }
 .topbar .pipe { color: var(--text-muted); }
-.topbar a { color: var(--text-secondary); border-bottom: none; opacity: 1; }
-.topbar a:hover { color: var(--accent); opacity: 1; }
+.topbar a { color: var(--text-secondary); border-bottom: none; }
+.topbar a:hover { color: var(--text); }
 
 @media (max-width: 640px) {
     .topbar .hide-sm { display: none; }
@@ -76,90 +75,88 @@ a:hover { opacity: 0.6; }
 
 /* ---- Masthead ---- */
 .masthead {
-    padding: 5rem 0 3.5rem;
+    padding: 10rem 0 5rem;
 }
 .masthead-eyebrow {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--text-muted);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
     display: flex;
     justify-content: space-between;
     gap: 1rem;
     flex-wrap: wrap;
 }
 .masthead h1 {
-    font-family: 'EB Garamond', Georgia, serif;
-    font-weight: 500;
-    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    font-weight: 600;
+    font-size: clamp(2.4rem, 5.5vw, 4rem);
     line-height: 1.05;
-    letter-spacing: -0.03em;
-    margin-bottom: 1.75rem;
+    letter-spacing: -0.035em;
+    margin-bottom: 2.5rem;
     color: var(--text);
 }
 .masthead h1 em {
-    font-style: italic;
+    font-style: normal;
     font-weight: 400;
     color: var(--text-secondary);
 }
 .lede {
-    font-size: 1.25rem;
-    line-height: 1.5;
-    max-width: 34em;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    max-width: 32em;
     color: var(--text-secondary);
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 .lede em {
-    color: var(--accent);
-    font-style: italic;
+    color: var(--text);
+    font-style: normal;
     font-weight: 500;
 }
 .masthead-meta {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.78rem;
-    color: var(--text-secondary);
+    font-size: 0.75rem;
+    color: var(--text-muted);
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
     flex-wrap: wrap;
 }
 .masthead-meta a {
     color: var(--text-secondary);
-    border-bottom: 1px solid var(--border-strong);
-    padding-bottom: 1px;
-    opacity: 1;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+    transition: color 0.15s, border-color 0.15s;
 }
 .masthead-meta a:hover {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
-    opacity: 1;
+    color: var(--text);
+    border-bottom-color: var(--text);
 }
 
 /* ---- Section heads ---- */
 .section {
-    padding: 3rem 0 1rem;
+    padding: 5rem 0 2rem;
 }
 .section-head {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     padding-bottom: 0.75rem;
     border-bottom: 1px solid var(--border);
     gap: 1rem;
 }
 .section-head h2 {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 500;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--text-muted);
 }
 .section-head .count {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     color: var(--text-muted);
     letter-spacing: 0.04em;
 }
@@ -167,27 +164,26 @@ a:hover { opacity: 0.6; }
 /* ---- Project entries ---- */
 .entry {
     display: grid;
-    grid-template-columns: 3.5rem 1fr;
+    grid-template-columns: 2.5rem 1fr;
     gap: 1.5rem;
-    padding: 2rem 0;
+    padding: 2.5rem 0;
     border-bottom: 1px solid var(--border);
-    transition: background 0.2s;
+    transition: padding-left 0.2s;
     margin: 0 -1.5rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-    border-radius: 6px;
 }
 .entry:hover {
-    background: var(--bg-warm);
+    padding-left: 2rem;
 }
 .entry:last-child { border-bottom: none; }
 
 .entry-num {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     color: var(--text-muted);
-    letter-spacing: 0.08em;
-    padding-top: 0.3rem;
+    letter-spacing: 0.06em;
+    padding-top: 0.25rem;
     text-align: right;
 }
 
@@ -199,53 +195,52 @@ a:hover { opacity: 0.6; }
     justify-content: space-between;
     gap: 1rem;
     flex-wrap: wrap;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.5rem;
 }
 .entry-title {
-    font-family: 'EB Garamond', Georgia, serif;
     font-weight: 600;
-    font-size: 1.65rem;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
 }
 .entry-title a {
-    opacity: 1;
     display: inline-flex;
     align-items: baseline;
-    gap: 0.6rem;
+    gap: 0.5rem;
+    transition: color 0.15s;
 }
-.entry-title a:hover { opacity: 1; color: var(--accent); }
+.entry-title a:hover { color: var(--text-secondary); }
 .stamp {
     display: inline-block;
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.1em;
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
     font-weight: 500;
     text-transform: uppercase;
-    color: var(--accent);
-    background: var(--accent-soft);
-    padding: 0.2rem 0.5rem;
-    vertical-align: 0.15em;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    padding: 0.18rem 0.5rem;
     border-radius: 2px;
+    vertical-align: 0.15em;
 }
-.stamp.live { color: #1f5a3a; background: rgba(31, 90, 58, 0.08); }
-.stamp.wip { color: #6b5a1f; background: rgba(107, 90, 31, 0.08); }
+.stamp.live { color: #166534; border-color: #bbf7d0; background: #f0fdf4; }
+.stamp.wip { color: #713f12; border-color: #fde68a; background: #fefce8; }
 
 .entry-meta {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.7rem;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--text-muted);
     white-space: nowrap;
 }
 
 .entry-lede {
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 0.95rem;
+    line-height: 1.65;
     color: var(--text-secondary);
-    max-width: 36em;
-    margin-bottom: 0.9rem;
+    max-width: 38em;
+    margin-bottom: 0.75rem;
 }
 
 .entry-stack {
@@ -253,7 +248,7 @@ a:hover { opacity: 0.6; }
     font-size: 0.72rem;
     color: var(--text-muted);
     letter-spacing: 0.02em;
-    margin-bottom: 0.9rem;
+    margin-bottom: 0.75rem;
     line-height: 1.7;
 }
 .entry-stack .dot { color: var(--border-strong); margin: 0 0.35em; }
@@ -263,18 +258,17 @@ a:hover { opacity: 0.6; }
     gap: 1.5rem;
     flex-wrap: wrap;
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.75rem;
+    font-size: 0.74rem;
 }
 .entry-links a {
     color: var(--text-secondary);
-    border-bottom: 1px solid var(--border-strong);
+    border-bottom: 1px solid var(--border);
     padding-bottom: 1px;
-    opacity: 1;
+    transition: color 0.15s, border-color 0.15s;
 }
 .entry-links a:hover {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
-    opacity: 1;
+    color: var(--text);
+    border-bottom-color: var(--text);
 }
 .entry-links span.disabled {
     color: var(--text-muted);
@@ -283,9 +277,10 @@ a:hover { opacity: 0.6; }
 }
 
 @media (max-width: 640px) {
-    .entry { grid-template-columns: 1fr; gap: 0.4rem; padding: 1.75rem 1.25rem; margin: 0 -1.25rem; }
+    .entry { grid-template-columns: 1fr; gap: 0.35rem; padding: 2rem 1.25rem; margin: 0 -1.25rem; }
+    .entry:hover { padding-left: 1.25rem; }
     .entry-num { text-align: left; padding-top: 0; }
-    .entry-title { font-size: 1.4rem; }
+    .entry-title { font-size: 1.1rem; }
     .entry-meta { font-size: 0.65rem; }
 }
 
@@ -303,17 +298,17 @@ a:hover { opacity: 0.6; }
     border-bottom: 1px solid var(--border);
     text-decoration: none;
     color: inherit;
-    transition: background 0.15s;
+    transition: padding-left 0.15s;
     margin: 0 -0.75rem;
     padding-left: 0.75rem;
     padding-right: 0.75rem;
     border-radius: 4px;
 }
 .repo-row:hover {
-    background: var(--bg-warm);
+    padding-left: 1.25rem;
 }
 .repo-row:last-child { border-bottom: none; }
-.repo-row:hover .repo-name { color: var(--accent); opacity: 1; }
+.repo-row:hover .repo-name { color: var(--text); }
 .repo-name {
     color: var(--text);
     font-weight: 500;
@@ -352,13 +347,13 @@ a:hover { opacity: 0.6; }
     color: var(--text-muted);
     padding: 1.5rem 0;
 }
-.error { color: var(--accent); }
+.error { color: #c23e1a; }
 
 /* ---- Footer ---- */
 footer {
-    margin-top: 5rem;
+    margin-top: 8rem;
     border-top: 1px solid var(--border);
-    padding: 2.5rem 0 4rem;
+    padding: 3rem 0 5rem;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.72rem;
     letter-spacing: 0.04em;
@@ -373,14 +368,13 @@ footer {
 }
 .colophon a {
     color: var(--text-secondary);
-    border-bottom: 1px solid var(--border-strong);
+    border-bottom: 1px solid var(--border);
     padding-bottom: 1px;
-    opacity: 1;
+    transition: color 0.15s, border-color 0.15s;
 }
 .colophon a:hover {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
-    opacity: 1;
+    color: var(--text);
+    border-bottom-color: var(--text);
 }
 .colophon p {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
@@ -398,23 +392,20 @@ footer {
 /* ---- Ornament ---- */
 .ornament {
     text-align: center;
-    font-family: 'EB Garamond', serif;
-    font-size: 1rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
     color: var(--text-muted);
-    letter-spacing: 0.8em;
-    margin: 3rem 0 1rem;
+    letter-spacing: 0.5em;
+    margin: 4rem 0 1rem;
 }
 
 /* ---- Reveal animation ---- */
 .reveal {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(16px);
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .reveal.visible {
     opacity: 1;
     transform: translateY(0);
 }
-
-/* ---- Case study styles (shared with subpages via style.css, but kept here for consistency if needed) ---- */
-/* These match the subpage expectations — subpages still load ../style.css */
