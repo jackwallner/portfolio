@@ -82,18 +82,18 @@ a:hover { color: var(--text-secondary); }
 
 /* ---- Projects grid ---- */
 .projects {
-    padding: 1.25rem 0;
+    padding: 2.5rem 0;
 }
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1px;
     background: var(--border);
     border: 1px solid var(--border);
 }
 .project-card {
     background: var(--bg);
-    padding: 1.1rem;
+    padding: 1.75rem;
     transition: background 0.15s;
 }
 .project-card:hover {
@@ -110,7 +110,7 @@ a:hover { color: var(--text-secondary); }
 }
 .project-title {
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     letter-spacing: -0.01em;
 }
 .project-title a:hover { color: var(--text-secondary); }
@@ -130,30 +130,30 @@ a:hover { color: var(--text-secondary); }
 .project-stamp.wip { color: #713f12; border-color: #fde68a; background: #fefce8; }
 
 .project-desc {
-    font-size: 0.82rem;
-    line-height: 1.5;
+    font-size: 0.88rem;
+    line-height: 1.55;
     color: var(--text-secondary);
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.75rem;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
 .project-meta {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.62rem;
+    font-size: 0.68rem;
     color: var(--text-muted);
     letter-spacing: 0.02em;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
 }
 
 .project-links {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
+    font-size: 0.72rem;
     display: flex;
-    gap: 0.875rem;
+    gap: 1.25rem;
     flex-wrap: wrap;
 }
 .project-links a {
@@ -170,26 +170,41 @@ a:hover { color: var(--text-secondary); }
     border-bottom: 1px dashed var(--border);
 }
 
-@media (max-width: 800px) {
-    .projects-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 540px) {
+@media (max-width: 640px) {
     .projects-grid { grid-template-columns: 1fr; }
+    .project-card { padding: 1.25rem; }
 }
 
-/* ---- Repos ---- */
+/* ---- More link ---- */
+.more-section {
+    padding: 1.5rem 0 2rem;
+    text-align: center;
+}
+.more-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1px;
+    transition: color 0.15s, border-color 0.15s;
+}
+.more-link:hover {
+    color: var(--text);
+    border-bottom-color: var(--text);
+}
+
+/* ---- Repos page ---- */
 .repos-section {
-    padding: 1.25rem 0 2.5rem;
-    border-top: 1px solid var(--border);
+    padding: 2rem 0;
 }
 .repos-section h2 {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
+    font-size: 0.72rem;
     font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--text-muted);
-    margin-bottom: 0.875rem;
+    margin-bottom: 1.25rem;
 }
 
 .repo-list {
