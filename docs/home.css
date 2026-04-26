@@ -189,6 +189,20 @@ a:hover { color: var(--text-secondary); }
     .project-card { padding: 1.25rem; }
 }
 
+/* ---- GitHub chart ---- */
+.github-chart-section {
+    padding: 1.5rem 0;
+    text-align: center;
+}
+.github-chart {
+    max-width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+}
+@media (max-width: 640px) {
+    .github-chart { width: 100%; }
+}
+
 /* ---- More link ---- */
 .more-section {
     padding: 1.5rem 0 2rem;
