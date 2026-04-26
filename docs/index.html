@@ -3,807 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jack Wallner — Software Engineer</title>
-    <meta name="description" content="Jack Wallner — software engineer building native iOS/watchOS apps, trading systems, and full-stack web. Selected work and open source.">
-    <meta property="og:title" content="Jack Wallner — Software Engineer">
-    <meta property="og:description" content="Native iOS/watchOS apps, trading systems, and full-stack web. Selected work and open source.">
+    <title>Jack Wallner</title>
+    <meta name="description" content="Jack Wallner — software engineer. Native iOS &amp; watchOS, Python systems, full-stack web. Selected work.">
+    <meta property="og:title" content="Jack Wallner">
+    <meta property="og:description" content="Native iOS &amp; watchOS, Python systems, full-stack web. Selected work.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jackwallner.github.io/portfolio/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #0a0a0f;
-            --bg-2: #11121a;
-            --surface: #14151f;
-            --surface-2: #1c1d2a;
-            --border: rgba(255, 255, 255, 0.08);
-            --border-strong: rgba(255, 255, 255, 0.16);
-            --text: #e6e7ee;
-            --text-dim: #9ca0b3;
-            --text-muted: #6b6f82;
-            --accent: #7c8cff;
-            --accent-2: #a78bfa;
-            --accent-glow: rgba(124, 140, 255, 0.35);
-            --green: #4ade80;
-            --orange: #fb923c;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.55;
-            -webkit-font-smoothing: antialiased;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background:
-                radial-gradient(60vw 60vw at 80% -10%, rgba(124, 140, 255, 0.18), transparent 60%),
-                radial-gradient(50vw 50vw at -10% 30%, rgba(167, 139, 250, 0.14), transparent 60%),
-                radial-gradient(40vw 40vw at 50% 110%, rgba(74, 222, 128, 0.06), transparent 60%);
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .container {
-            max-width: 1080px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        /* Nav */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            background: rgba(10, 10, 15, 0.72);
-            border-bottom: 1px solid var(--border);
-        }
-        .nav-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem 0;
-        }
-        .nav-brand {
-            font-weight: 700;
-            font-size: 1rem;
-            letter-spacing: -0.01em;
-        }
-        .nav-brand span { color: var(--accent); }
-        .nav-links {
-            display: flex;
-            gap: 1.75rem;
-            font-size: 0.9rem;
-        }
-        .nav-links a {
-            color: var(--text-dim);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .nav-links a:hover { color: var(--text); }
-
-        @media (max-width: 640px) {
-            .nav-links { display: none; }
-        }
-
-        /* Hero */
-        .hero {
-            padding: 6rem 0 4rem;
-        }
-        .hero-eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.4rem 0.9rem;
-            background: rgba(124, 140, 255, 0.08);
-            border: 1px solid rgba(124, 140, 255, 0.25);
-            border-radius: 9999px;
-            font-size: 0.8rem;
-            color: var(--accent);
-            margin-bottom: 1.75rem;
-        }
-        .hero-eyebrow::before {
-            content: '';
-            width: 6px; height: 6px;
-            background: var(--green);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--green);
-        }
-        .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 800;
-            letter-spacing: -0.035em;
-            line-height: 1.05;
-            margin-bottom: 1.5rem;
-        }
-        .hero h1 .gradient {
-            background: linear-gradient(120deg, #c4cbff 0%, #a78bfa 50%, #7c8cff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .hero p.lede {
-            font-size: 1.2rem;
-            color: var(--text-dim);
-            max-width: 640px;
-            margin-bottom: 2.25rem;
-        }
-        .hero p.lede strong { color: var(--text); font-weight: 500; }
-
-        .cta-row {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-        .cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.25rem;
-            border-radius: 0.6rem;
-            font-size: 0.92rem;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.2s;
-            border: 1px solid transparent;
-        }
-        .cta-primary {
-            background: var(--accent);
-            color: #0a0a0f;
-        }
-        .cta-primary:hover {
-            background: #94a2ff;
-            box-shadow: 0 8px 24px var(--accent-glow);
-            transform: translateY(-1px);
-        }
-        .cta-ghost {
-            background: var(--surface);
-            color: var(--text);
-            border-color: var(--border-strong);
-        }
-        .cta-ghost:hover {
-            background: var(--surface-2);
-            border-color: var(--accent);
-        }
-        .cta svg { width: 16px; height: 16px; }
-
-        /* Sections */
-        section.block { padding: 4rem 0; }
-        .section-head {
-            display: flex;
-            align-items: baseline;
-            justify-content: space-between;
-            margin-bottom: 2.5rem;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        .section-head h2 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-        .section-head .label {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-        .section-sub {
-            color: var(--text-dim);
-            font-size: 0.95rem;
-            max-width: 580px;
-        }
-
-        /* Featured grid */
-        .featured-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.25rem;
-        }
-        @media (max-width: 760px) {
-            .featured-grid { grid-template-columns: 1fr; }
-        }
-
-        .feature-card {
-            position: relative;
-            background: linear-gradient(180deg, var(--surface) 0%, var(--bg-2) 100%);
-            border: 1px solid var(--border);
-            border-radius: 1rem;
-            padding: 1.75rem;
-            transition: all 0.25s;
-            display: flex;
-            flex-direction: column;
-            min-height: 280px;
-            overflow: hidden;
-        }
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent-glow), transparent);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        .feature-card:hover {
-            border-color: var(--border-strong);
-            transform: translateY(-3px);
-            box-shadow: 0 16px 40px -12px rgba(0,0,0,0.6);
-        }
-        .feature-card:hover::before { opacity: 1; }
-
-        .feat-head {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 0.6rem;
-        }
-        .feat-title {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
-        .feat-icon {
-            width: 38px;
-            height: 38px;
-            border-radius: 0.55rem;
-            background: linear-gradient(135deg, rgba(124,140,255,0.2), rgba(167,139,250,0.15));
-            border: 1px solid rgba(124,140,255,0.25);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-        }
-        .feat-card h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            letter-spacing: -0.01em;
-        }
-        .feature-card h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            letter-spacing: -0.01em;
-        }
-        .badge {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-            padding: 0.2rem 0.55rem;
-            border-radius: 9999px;
-            border: 1px solid var(--border-strong);
-            color: var(--text-dim);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .badge-live {
-            background: rgba(74, 222, 128, 0.1);
-            color: var(--green);
-            border-color: rgba(74, 222, 128, 0.3);
-        }
-        .badge-private {
-            background: rgba(167, 139, 250, 0.1);
-            color: var(--accent-2);
-            border-color: rgba(167, 139, 250, 0.3);
-        }
-
-        .feature-card p.desc {
-            color: var(--text-dim);
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-        }
-        .stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-            margin-bottom: 1.25rem;
-        }
-        .tag {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.72rem;
-            padding: 0.25rem 0.6rem;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid var(--border);
-            border-radius: 0.4rem;
-            color: var(--text-dim);
-        }
-        .feat-links {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-top: auto;
-        }
-        .link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.5rem 0.9rem;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid var(--border);
-            border-radius: 0.5rem;
-            color: var(--text);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: all 0.2s;
-        }
-        .link:hover {
-            background: rgba(124,140,255,0.1);
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-        .link svg { width: 14px; height: 14px; }
-
-        /* All projects grid */
-        .repo-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.9rem;
-        }
-        @media (max-width: 860px) { .repo-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 540px) { .repo-grid { grid-template-columns: 1fr; } }
-
-        .repo-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 0.7rem;
-            padding: 1.1rem;
-            transition: all 0.2s;
-            display: flex;
-            flex-direction: column;
-            text-decoration: none;
-            color: inherit;
-            min-height: 130px;
-        }
-        .repo-card:hover {
-            border-color: var(--accent);
-            background: var(--surface-2);
-            transform: translateY(-2px);
-        }
-        .repo-name {
-            font-weight: 600;
-            font-size: 0.95rem;
-            margin-bottom: 0.4rem;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-        .repo-name svg { width: 14px; height: 14px; color: var(--text-muted); }
-        .repo-desc {
-            color: var(--text-dim);
-            font-size: 0.85rem;
-            margin-bottom: 0.9rem;
-            flex-grow: 1;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-        .repo-meta {
-            display: flex;
-            align-items: center;
-            gap: 0.9rem;
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            font-family: 'JetBrains Mono', monospace;
-        }
-        .repo-meta .dot {
-            width: 8px; height: 8px;
-            border-radius: 50%;
-            background: var(--text-muted);
-            display: inline-block;
-            margin-right: 0.35rem;
-            vertical-align: middle;
-        }
-        .repo-meta span { display: inline-flex; align-items: center; }
-
-        /* Stack section */
-        .stack-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1rem;
-        }
-        .stack-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 0.7rem;
-            padding: 1.25rem;
-        }
-        .stack-card h4 {
-            font-size: 0.78rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--accent);
-            margin-bottom: 0.75rem;
-            font-family: 'JetBrains Mono', monospace;
-        }
-        .stack-card .pills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-        }
-
-        .loading {
-            text-align: center;
-            color: var(--text-muted);
-            padding: 2rem;
-            font-size: 0.9rem;
-            font-family: 'JetBrains Mono', monospace;
-        }
-        .error {
-            background: rgba(251, 146, 60, 0.08);
-            border: 1px solid rgba(251, 146, 60, 0.3);
-            color: var(--orange);
-            padding: 1rem;
-            border-radius: 0.6rem;
-            font-size: 0.9rem;
-        }
-
-        footer {
-            padding: 4rem 0 3rem;
-            border-top: 1px solid var(--border);
-            margin-top: 3rem;
-        }
-        .footer-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-        .footer-meta {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            font-family: 'JetBrains Mono', monospace;
-        }
-        .footer-links { display: flex; gap: 1.25rem; }
-        .footer-links a {
-            color: var(--text-dim);
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-        .footer-links a:hover { color: var(--accent); }
-
-        /* Reveal animation */
-        @keyframes rise {
-            from { opacity: 0; transform: translateY(14px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-        .rise { animation: rise 0.6s ease-out backwards; }
-        .rise:nth-child(2) { animation-delay: 0.05s; }
-        .rise:nth-child(3) { animation-delay: 0.1s; }
-        .rise:nth-child(4) { animation-delay: 0.15s; }
-        .rise:nth-child(5) { animation-delay: 0.2s; }
-        .rise:nth-child(6) { animation-delay: 0.25s; }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <div class="container nav-inner">
-            <div class="nav-brand">jack<span>wallner</span></div>
-            <div class="nav-links">
-                <a href="#work">Work</a>
-                <a href="#open-source">Open Source</a>
-                <a href="#stack">Stack</a>
-                <a href="https://github.com/jackwallner" target="_blank" rel="noopener">GitHub ↗</a>
+    <div class="topbar">
+        <div class="container topbar-inner">
+            <div class="left">
+                <span>Vol. I</span>
+                <span class="pipe">·</span>
+                <span>No. 04</span>
+                <span class="pipe">·</span>
+                <span class="hide-sm">MMXXVI</span>
+            </div>
+            <div class="right">
+                <span class="hide-sm">Last revised </span><span id="updated">Apr 2026</span>
             </div>
         </div>
-    </nav>
+    </div>
 
-    <header class="hero container">
-        <div class="hero-eyebrow">Available for new opportunities</div>
-        <h1>Jack Wallner —<br><span class="gradient">software that ships.</span></h1>
+    <header class="masthead container">
+        <div class="masthead-eyebrow">
+            <span>The Wallner Portfolio · Established 2014</span>
+            <span>Pacific Northwest, USA</span>
+        </div>
+        <h1>Jack Wallner<br><em>software, &amp;c.</em></h1>
         <p class="lede">
-            I build <strong>native iOS &amp; watchOS apps</strong>, automated <strong>trading systems</strong>, and the full-stack web that surrounds them. I like small, fast, well-crafted things that solve real problems for real people.
+            I write software for a living and on weekends. Native <em>iOS &amp; watchOS</em> apps in Swift 6, Python services and trading systems, and the full-stack web that has to live alongside them. The pages that follow are six things I've built recently, written up so you can decide if any of it is useful to you.
         </p>
-        <div class="cta-row">
-            <a class="cta cta-primary" href="mailto:jackwallner@gmail.com">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                Get in touch
-            </a>
-            <a class="cta cta-ghost" href="https://github.com/jackwallner" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
-                @jackwallner
-            </a>
+        <div class="masthead-meta">
+            <a href="mailto:jackwallner@gmail.com">jackwallner@gmail.com</a>
+            <a href="https://github.com/jackwallner" target="_blank" rel="noopener">github.com/jackwallner</a>
+            <a href="https://www.linkedin.com/in/jackwallner/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
     </header>
 
-    <section id="work" class="block container">
-        <div class="section-head">
-            <div>
-                <h2>Selected Work</h2>
-                <p class="section-sub">A few projects I've built recently — from Apple Health-powered iOS apps to algorithmic trading bots.</p>
+    <main class="container">
+        <section class="section" id="work">
+            <div class="section-head">
+                <h2>§ Selected Work</h2>
+                <span class="count">six entries · 2024 — 2026</span>
             </div>
-            <span class="label">// 2025–2026</span>
-        </div>
 
-        <div class="featured-grid">
-            <div class="feature-card rise">
-                <div class="feat-head">
-                    <div class="feat-title">
-                        <div class="feat-icon">📊</div>
-                        <h3>Vitals</h3>
+            <article class="entry" id="vitals">
+                <div class="entry-num">No. 01</div>
+                <div class="entry-body">
+                    <div class="entry-title-row">
+                        <h3 class="entry-title"><a href="vitals/">Vitals<span class="stamp live">App Store</span></a></h3>
+                        <div class="entry-meta">2026 · iOS, watchOS</div>
                     </div>
-                    <span class="badge badge-live">Open Source</span>
-                </div>
-                <p class="desc">Free calorie &amp; step tracker for iPhone and Apple Watch. Privacy-first, no accounts, powered entirely by Apple Health. Includes Watch app, complications, and Home Screen widgets.</p>
-                <div class="stack">
-                    <span class="tag">Swift 6</span>
-                    <span class="tag">SwiftUI</span>
-                    <span class="tag">HealthKit</span>
-                    <span class="tag">WidgetKit</span>
-                    <span class="tag">watchOS</span>
-                </div>
-                <div class="feat-links">
-                    <a class="link" href="https://github.com/jackwallner/vitals" target="_blank" rel="noopener">Source ↗</a>
-                </div>
-            </div>
-
-            <div class="feature-card rise">
-                <div class="feat-head">
-                    <div class="feat-title">
-                        <div class="feat-icon">🔥</div>
-                        <h3>Fitness Streaks</h3>
+                    <p class="entry-lede">
+                        A free calorie and step tracker for iPhone and Apple Watch, currently shipping on the App Store as <em>Total Calories</em>. Reads daily totals, active and resting burn, and ring data straight from HealthKit — no accounts, no servers, no analytics. Three watch complications, three home-screen widget sizes, and a Lock Screen widget that updates without the app ever needing to open.
+                    </p>
+                    <p class="entry-stack mono">
+                        Swift 6 <span class="dot">·</span> SwiftUI <span class="dot">·</span> HealthKit <span class="dot">·</span> WidgetKit <span class="dot">·</span> watchOS 10 <span class="dot">·</span> XcodeGen
+                    </p>
+                    <div class="entry-links">
+                        <a href="vitals/">Read case study →</a>
+                        <a href="https://apps.apple.com/us/app/total-calories-daily-tracker/id6761743504" target="_blank" rel="noopener">App Store ↗</a>
+                        <a href="https://github.com/jackwallner/vitals" target="_blank" rel="noopener">Source ↗</a>
                     </div>
-                    <span class="badge badge-private">In Progress</span>
                 </div>
-                <p class="desc">iOS + watchOS app that surfaces the Apple Health fitness streaks you didn't know you had — and helps you keep them alive with smart, non-annoying nudges.</p>
-                <div class="stack">
-                    <span class="tag">Swift 6</span>
-                    <span class="tag">HealthKit</span>
-                    <span class="tag">watchOS</span>
-                    <span class="tag">SwiftData</span>
-                </div>
-                <div class="feat-links">
-                    <a class="link" href="https://github.com/jackwallner/fitness-streaks" target="_blank" rel="noopener">Repo ↗</a>
-                </div>
-            </div>
+            </article>
 
-            <div class="feature-card rise">
-                <div class="feat-head">
-                    <div class="feat-title">
-                        <div class="feat-icon">📈</div>
-                        <h3>Kalshi Trading Bot</h3>
+            <article class="entry" id="headaches">
+                <div class="entry-num">No. 02</div>
+                <div class="entry-body">
+                    <div class="entry-title-row">
+                        <h3 class="entry-title"><a href="headaches/">Headache Logger<span class="stamp live">App Store</span></a></h3>
+                        <div class="entry-meta">2025 · iOS, watchOS</div>
                     </div>
-                    <span class="badge badge-private">Private</span>
-                </div>
-                <p class="desc">Automated trading system for Kalshi event-contract markets. Signal processing, position sizing, and risk management — runs unattended against live markets.</p>
-                <div class="stack">
-                    <span class="tag">Python</span>
-                    <span class="tag">asyncio</span>
-                    <span class="tag">REST + WebSocket</span>
-                    <span class="tag">Pandas</span>
-                </div>
-                <div class="feat-links">
-                    <span class="link" style="opacity:0.6; cursor: default;">Private — happy to discuss</span>
-                </div>
-            </div>
-
-            <div class="feature-card rise">
-                <div class="feat-head">
-                    <div class="feat-title">
-                        <div class="feat-icon">🤕</div>
-                        <h3>Headaches</h3>
+                    <p class="entry-lede">
+                        One-tap headache and migraine logger. The novel part isn't the tap — it's what happens after: every entry is silently joined against fifty-plus signals from HealthKit, Open-Meteo weather, air quality, and pollen feeds, then exported as a sixty-column CSV your neurologist can actually read. Built for people who don't want to wrestle with a form mid-migraine.
+                    </p>
+                    <p class="entry-stack mono">
+                        SwiftUI <span class="dot">·</span> SwiftData <span class="dot">·</span> HealthKit <span class="dot">·</span> WidgetKit + App Intents <span class="dot">·</span> WatchConnectivity <span class="dot">·</span> Open-Meteo
+                    </p>
+                    <div class="entry-links">
+                        <a href="headaches/">Read case study →</a>
+                        <a href="https://apps.apple.com/us/app/headache-migraine-logger/id6762074561" target="_blank" rel="noopener">App Store ↗</a>
+                        <a href="https://github.com/jackwallner/headaches" target="_blank" rel="noopener">Source ↗</a>
                     </div>
-                    <span class="badge badge-live">Open Source</span>
                 </div>
-                <p class="desc">One-tap iPhone and Apple Watch headache logger. Built for sufferers who don't want to fight a form mid-migraine — log in two seconds, review patterns later.</p>
-                <div class="stack">
-                    <span class="tag">Swift 6</span>
-                    <span class="tag">SwiftUI</span>
-                    <span class="tag">watchOS</span>
-                    <span class="tag">SwiftData</span>
-                </div>
-                <div class="feat-links">
-                    <a class="link" href="https://github.com/jackwallner/headaches" target="_blank" rel="noopener">Source ↗</a>
-                </div>
-            </div>
+            </article>
 
-            <div class="feature-card rise">
-                <div class="feat-head">
-                    <div class="feat-title">
-                        <div class="feat-icon">💪</div>
-                        <h3>e3fit.me</h3>
+            <article class="entry" id="fitness-streaks">
+                <div class="entry-num">No. 03</div>
+                <div class="entry-body">
+                    <div class="entry-title-row">
+                        <h3 class="entry-title"><a href="fitness-streaks/">Streak Finder<span class="stamp wip">In TestFlight</span></a></h3>
+                        <div class="entry-meta">2026 · iOS, watchOS</div>
                     </div>
-                    <span class="badge badge-live">Live</span>
-                </div>
-                <p class="desc">Production fitness coaching platform with member onboarding, scheduling, and content delivery. Built end-to-end on Next.js + Supabase, deployed on Vercel.</p>
-                <div class="stack">
-                    <span class="tag">Next.js</span>
-                    <span class="tag">TypeScript</span>
-                    <span class="tag">Supabase</span>
-                    <span class="tag">Tailwind</span>
-                    <span class="tag">Vercel</span>
-                </div>
-                <div class="feat-links">
-                    <a class="link" href="https://e3fit.me" target="_blank" rel="noopener">Visit site ↗</a>
-                </div>
-            </div>
-
-            <div class="feature-card rise">
-                <div class="feat-head">
-                    <div class="feat-title">
-                        <div class="feat-icon">🚂</div>
-                        <h3>Nearby Trains</h3>
+                    <p class="entry-lede">
+                        Mines four-hundred days of your Apple Health history to surface the streaks you didn't realize you had — across nine metrics, every threshold tier, daily and weekly. Picks the highest-tier streak per metric, ranks them by an interestingness score, and protects the hero one with a 7&nbsp;PM at-risk nudge. A weekly streak holds the line when the daily one breaks.
+                    </p>
+                    <p class="entry-stack mono">
+                        Swift 6 (strict concurrency) <span class="dot">·</span> SwiftUI <span class="dot">·</span> SwiftData <span class="dot">·</span> HealthKit <span class="dot">·</span> WidgetKit (iOS + watchOS) <span class="dot">·</span> App Group
+                    </p>
+                    <div class="entry-links">
+                        <a href="fitness-streaks/">Read case study →</a>
+                        <a href="https://github.com/jackwallner/fitness-streaks" target="_blank" rel="noopener">Source ↗</a>
                     </div>
-                    <span class="badge badge-live">Open Source</span>
                 </div>
-                <p class="desc">Real-time tracker for Amtrak, VIA Rail, and Brightline trains near any location. Pulls live GTFS / API feeds and surfaces what's actually approaching you right now.</p>
-                <div class="stack">
-                    <span class="tag">Python</span>
-                    <span class="tag">GTFS</span>
-                    <span class="tag">Geo APIs</span>
-                </div>
-                <div class="feat-links">
-                    <a class="link" href="https://github.com/jackwallner/nearby-trains" target="_blank" rel="noopener">Source ↗</a>
-                </div>
-            </div>
-        </div>
-    </section>
+            </article>
 
-    <section id="open-source" class="block container">
-        <div class="section-head">
-            <div>
-                <h2>Open Source</h2>
-                <p class="section-sub">Public repositories, automatically synced from GitHub. Mostly small useful tools — flight trackers, hardware integrations, plugins.</p>
-            </div>
-            <span class="label">// live from gh api</span>
-        </div>
-        <div id="repos">
-            <div class="loading">Loading repositories…</div>
-        </div>
-    </section>
+            <article class="entry" id="kalshi">
+                <div class="entry-num">No. 04</div>
+                <div class="entry-body">
+                    <div class="entry-title-row">
+                        <h3 class="entry-title"><a href="kalshi/">Kalshi BTC Bot<span class="stamp">Private</span></a></h3>
+                        <div class="entry-meta">2026 · Python, GH&nbsp;Actions</div>
+                    </div>
+                    <p class="entry-lede">
+                        An unattended trading bot for Kalshi's hourly Bitcoin "price-above" markets. Authenticates with an RSA-signed API request, pulls the active hour's market, takes a sentiment read off the Fear &amp; Greed Index, and either buys YES, buys NO, or sits out — capped at one dollar of risk per fifteen-minute run. Runs on a GitHub Actions cron and writes every decision to a structured trade log.
+                    </p>
+                    <p class="entry-stack mono">
+                        Python <span class="dot">·</span> RSA-PSS auth <span class="dot">·</span> REST <span class="dot">·</span> GitHub Actions cron <span class="dot">·</span> structured logs
+                    </p>
+                    <div class="entry-links">
+                        <a href="kalshi/">Read case study →</a>
+                        <span class="disabled">Source private — happy to walk through</span>
+                    </div>
+                </div>
+            </article>
 
-    <section id="stack" class="block container">
-        <div class="section-head">
-            <div>
-                <h2>Stack</h2>
-                <p class="section-sub">What I reach for. Comfortable across the stack, deepest in Swift and Python.</p>
-            </div>
-            <span class="label">// tools of the trade</span>
-        </div>
-        <div class="stack-grid">
-            <div class="stack-card">
-                <h4>Apple Platforms</h4>
-                <div class="pills">
-                    <span class="tag">Swift 6</span>
-                    <span class="tag">SwiftUI</span>
-                    <span class="tag">SwiftData</span>
-                    <span class="tag">HealthKit</span>
-                    <span class="tag">WidgetKit</span>
-                    <span class="tag">watchOS</span>
-                    <span class="tag">XcodeGen</span>
+            <article class="entry" id="e3fit">
+                <div class="entry-num">No. 05</div>
+                <div class="entry-body">
+                    <div class="entry-title-row">
+                        <h3 class="entry-title"><a href="e3fit/">e3fit.me<span class="stamp live">Live</span></a></h3>
+                        <div class="entry-meta">2025 · Web, iOS companion</div>
+                    </div>
+                    <p class="entry-lede">
+                        A production fitness-coaching platform for a small studio: client onboarding, manual booking workflow, programme delivery, and an offline-first React Native companion app for workout logging. Built end-to-end on Next.js, Supabase, and Clerk with a small admin surface I can hand off without holding the operator's hand.
+                    </p>
+                    <p class="entry-stack mono">
+                        Next.js (App Router) <span class="dot">·</span> TypeScript <span class="dot">·</span> Supabase (Postgres + RLS) <span class="dot">·</span> Clerk <span class="dot">·</span> Tailwind <span class="dot">·</span> Vercel
+                    </p>
+                    <div class="entry-links">
+                        <a href="e3fit/">Read case study →</a>
+                        <a href="https://e3fit.me" target="_blank" rel="noopener">Visit site ↗</a>
+                    </div>
                 </div>
-            </div>
-            <div class="stack-card">
-                <h4>Backend &amp; Data</h4>
-                <div class="pills">
-                    <span class="tag">Python</span>
-                    <span class="tag">asyncio</span>
-                    <span class="tag">FastAPI</span>
-                    <span class="tag">Pandas</span>
-                    <span class="tag">PostgreSQL</span>
-                    <span class="tag">Supabase</span>
+            </article>
+
+            <article class="entry" id="nearby-trains">
+                <div class="entry-num">No. 06</div>
+                <div class="entry-body">
+                    <div class="entry-title-row">
+                        <h3 class="entry-title"><a href="nearby-trains/">Nearby Trains<span class="stamp live">Live demo</span></a></h3>
+                        <div class="entry-meta">2026 · Web, no-build</div>
+                    </div>
+                    <p class="entry-lede">
+                        Real-time tracker for Amtrak, VIA Rail, and Brightline trains near any location. No build step, no framework — just vanilla ES modules, Leaflet, and the free Amtraker v3 API. Polls every sixty seconds, computes proximity and closest-approach, and keeps a persistent spotting log in localStorage. Built in memory of my grandfather, who loved trains.
+                    </p>
+                    <p class="entry-stack mono">
+                        Vanilla JS (ES2022) <span class="dot">·</span> Leaflet <span class="dot">·</span> Amtraker v3 <span class="dot">·</span> Nominatim <span class="dot">·</span> localStorage <span class="dot">·</span> GitHub Pages
+                    </p>
+                    <div class="entry-links">
+                        <a href="nearby-trains/">Read case study →</a>
+                        <a href="https://jackwallner.github.io/nearby-trains/" target="_blank" rel="noopener">Live demo ↗</a>
+                        <a href="https://github.com/jackwallner/nearby-trains" target="_blank" rel="noopener">Source ↗</a>
+                    </div>
                 </div>
+            </article>
+        </section>
+
+        <div class="ornament">✦ ✦ ✦</div>
+
+        <section class="section" id="open-source">
+            <div class="section-head">
+                <h2>§ Other public repositories</h2>
+                <span class="count">live · github api</span>
             </div>
-            <div class="stack-card">
-                <h4>Web &amp; Frontend</h4>
-                <div class="pills">
-                    <span class="tag">TypeScript</span>
-                    <span class="tag">Next.js</span>
-                    <span class="tag">React</span>
-                    <span class="tag">Tailwind</span>
-                    <span class="tag">Vercel</span>
-                </div>
+            <div id="repos">
+                <div class="loading">Fetching from github.com/jackwallner …</div>
             </div>
-            <div class="stack-card">
-                <h4>Tools &amp; Infra</h4>
-                <div class="pills">
-                    <span class="tag">Git</span>
-                    <span class="tag">GitHub Actions</span>
-                    <span class="tag">Docker</span>
-                    <span class="tag">Bash / Zsh</span>
-                    <span class="tag">Claude Code</span>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
-        <div class="container footer-inner">
-            <div class="footer-meta">
-                © <span id="year">2026</span> Jack Wallner — built with care, deployed on GitHub Pages.
+        <div class="container colophon">
+            <div>
+                <p>
+                    Set in <a href="https://fonts.google.com/specimen/EB+Garamond" target="_blank" rel="noopener">EB Garamond</a> and <a href="https://www.ibm.com/plex/" target="_blank" rel="noopener">IBM Plex Mono</a>. Hand-rolled HTML; no framework, no build step. Hosted on GitHub Pages and rendered on a single thread.
+                </p>
             </div>
-            <div class="footer-links">
-                <a href="https://github.com/jackwallner" target="_blank" rel="noopener">GitHub</a>
-                <a href="mailto:jackwallner@gmail.com">Email</a>
+            <div class="colophon-right">
+                <div>© <span id="year">2026</span> Jack Wallner</div>
+                <div style="margin-top: 0.5rem;">
+                    <a href="mailto:jackwallner@gmail.com">Email</a> ·
+                    <a href="https://github.com/jackwallner" target="_blank" rel="noopener">GitHub</a> ·
+                    <a href="https://github.com/jackwallner/portfolio" target="_blank" rel="noopener">Source</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script>
-        const FEATURED = new Set([
-            'vitals', 'headaches', 'nearby-trains', 'fitness-streaks',
-            'kalshi-trading-bot', 'elsa-fitness-website', 'portfolio',
-            'jackwallner', 'qa-bot', 'spotify-daily-trading-bot'
-        ].map(s => s.toLowerCase()));
-
-        const LANG_COLORS = {
-            Swift: '#F05138', Python: '#3572A5', JavaScript: '#f1e05a',
-            TypeScript: '#3178c6', HTML: '#e34c26', CSS: '#563d7c',
-            Shell: '#89e051', Java: '#b07219', C: '#555555', 'C++': '#f34b7d',
-            Go: '#00ADD8', Rust: '#dea584', Ruby: '#701516'
-        };
-
-        async function loadRepos() {
-            const el = document.getElementById('repos');
-            try {
-                const res = await fetch('https://api.github.com/users/jackwallner/repos?type=public&sort=updated&per_page=100');
-                if (!res.ok) throw new Error('GitHub API ' + res.status);
-                const repos = await res.json();
-
-                const filtered = repos
-                    .filter(r => !r.fork && !r.archived && !FEATURED.has(r.name.toLowerCase()))
-                    .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
-
-                if (!filtered.length) {
-                    el.innerHTML = '<div class="loading">No additional public repos.</div>';
-                    return;
-                }
-
-                const grid = document.createElement('div');
-                grid.className = 'repo-grid';
-
-                filtered.forEach((r, i) => {
-                    const card = document.createElement('a');
-                    card.className = 'repo-card rise';
-                    card.style.animationDelay = (i * 0.04) + 's';
-                    card.href = r.html_url;
-                    card.target = '_blank';
-                    card.rel = 'noopener';
-
-                    const lang = r.language || '—';
-                    const color = LANG_COLORS[lang] || '#888';
-                    const desc = r.description || '<em style="color: var(--text-muted)">No description</em>';
-                    const updated = new Date(r.pushed_at).toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-
-                    card.innerHTML = `
-                        <div class="repo-name">
-                            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 0 1 1-1h8zM5 12.25v3.25a.25.25 0 0 0 .4.2l1.45-1.087a.25.25 0 0 1 .3 0L8.6 15.7a.25.25 0 0 0 .4-.2v-3.25a.25.25 0 0 0-.25-.25h-3.5a.25.25 0 0 0-.25.25z"/></svg>
-                            ${r.name}
-                        </div>
-                        <div class="repo-desc">${desc}</div>
-                        <div class="repo-meta">
-                            <span><span class="dot" style="background:${color}"></span>${lang}</span>
-                            <span>${updated}</span>
-                            ${r.stargazers_count ? `<span>★ ${r.stargazers_count}</span>` : ''}
-                        </div>
-                    `;
-                    grid.appendChild(card);
-                });
-
-                el.innerHTML = '';
-                el.appendChild(grid);
-            } catch (err) {
-                console.error(err);
-                el.innerHTML = `<div class="error">Couldn't load live repo data (${err.message}). Visit <a href="https://github.com/jackwallner" style="color: var(--accent);">github.com/jackwallner</a> directly.</div>`;
-            }
-        }
-
-        document.getElementById('year').textContent = new Date().getFullYear();
-        loadRepos();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
