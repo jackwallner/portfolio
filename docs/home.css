@@ -202,6 +202,20 @@ a:hover { color: var(--text-secondary); }
 @media (max-width: 640px) {
     .github-chart { width: 100%; }
 }
+.github-chart-note {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+}
+.github-chart-note a {
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border);
+}
+.github-chart-note a:hover {
+    color: var(--text);
+    border-bottom-color: var(--text);
+}
 
 /* ---- More link ---- */
 .more-section {
