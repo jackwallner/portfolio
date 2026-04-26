@@ -41,78 +41,34 @@ a:hover { color: var(--text-secondary); }
 }
 @media (max-width: 640px) { .container { padding: 0 1.25rem; } }
 
-/* ---- Top bar ---- */
-.topbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    padding: 1rem 0;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.04em;
-    color: var(--text-muted);
-}
-.topbar-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-}
-.topbar .left { display: flex; align-items: center; gap: 0.5rem; }
-.topbar .left span { color: var(--text-secondary); }
-.topbar .pipe { color: var(--text-muted); }
-.topbar a { color: var(--text-secondary); border-bottom: none; }
-.topbar a:hover { color: var(--text); }
-
-@media (max-width: 640px) {
-    .topbar .hide-sm { display: none; }
-}
-
 /* ---- Masthead ---- */
 .masthead {
-    padding: 10rem 0 5rem;
-}
-.masthead-eyebrow {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 2.5rem;
+    padding: 6rem 0 4rem;
     display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+.masthead-profile {
+    margin-bottom: 0.5rem;
+}
+.profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--border);
 }
 .masthead h1 {
     font-weight: 600;
-    font-size: clamp(2.4rem, 5.5vw, 4rem);
-    line-height: 1.05;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.1;
     letter-spacing: -0.035em;
-    margin-bottom: 2.5rem;
     color: var(--text);
 }
-.masthead h1 em {
-    font-style: normal;
+.masthead h1 .subtitle {
     font-weight: 400;
     color: var(--text-secondary);
-}
-.lede {
-    font-size: 1.15rem;
-    line-height: 1.6;
-    max-width: 32em;
-    color: var(--text-secondary);
-    margin-bottom: 3rem;
-}
-.lede em {
-    color: var(--text);
-    font-style: normal;
-    font-weight: 500;
 }
 .masthead-meta {
     font-family: 'IBM Plex Mono', monospace;
