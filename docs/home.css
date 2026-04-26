@@ -212,14 +212,17 @@ a:hover { color: var(--text-secondary); }
 .github-chart-section {
     padding: 1.5rem 0;
     text-align: center;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 .github-chart {
     max-width: 100%;
     height: auto;
     image-rendering: pixelated;
+    min-width: 640px;
 }
 @media (max-width: 640px) {
-    .github-chart { width: 100%; }
+    .github-chart-section { padding: 1rem 0; }
 }
 .github-chart-note {
     font-family: 'IBM Plex Mono', monospace;
