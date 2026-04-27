@@ -1,6 +1,6 @@
 const FEATURED = new Set([
     'vitals', 'headaches', 'fitness-streaks', 'baseball',
-    'elsa-fitness-website', 'nearby-trains', 'portfolio', 'jackwallner',
+    'elsa-fitness-website', 'flight-tracker', 'my-flights', 'portfolio', 'jackwallner',
     'qa-bot', 'spotify-daily-trading-bot'
 ].map(s => s.toLowerCase()));
 
