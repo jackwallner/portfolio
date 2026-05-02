@@ -44,6 +44,17 @@ a:hover { color: var(--text-secondary); }
     gap: 0.875rem;
     flex-wrap: wrap;
 }
+.nav-back {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1px;
+}
+.nav-back:hover {
+    color: var(--text);
+    border-bottom-color: var(--text);
+}
 .profile-img {
     width: 40px;
     height: 40px;

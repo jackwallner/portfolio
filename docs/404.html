@@ -6,73 +6,58 @@
     <title>Not found — Jack Wallner</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/portfolio/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
     <style>
-        .stop-press {
-            min-height: calc(100vh - 4rem);
+        .not-found {
+            min-height: calc(100vh - 200px);
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: flex-start;
             padding: 4rem 0;
         }
-        .stop-press .stamp-big {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--paper);
-            background: var(--mark);
-            padding: 0.4rem 0.8rem;
-            display: inline-block;
-            margin-bottom: 1.5rem;
-        }
-        .stop-press h1 {
-            font-family: 'EB Garamond', serif;
-            font-size: clamp(3rem, 9vw, 6rem);
-            line-height: 0.95;
-            letter-spacing: -0.025em;
-            font-weight: 500;
+        .not-found h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
             margin-bottom: 1rem;
         }
-        .stop-press h1 em { font-style: italic; color: var(--ink-2); font-weight: 400; }
-        .stop-press p {
-            font-size: 1.2rem;
-            max-width: 32em;
+        .not-found p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            max-width: 480px;
             margin-bottom: 1.5rem;
+            line-height: 1.6;
         }
-        .stop-press .links {
+        .not-found .links {
             font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.85rem;
+            font-size: 0.78rem;
             display: flex;
-            gap: 1.5rem;
+            gap: 1.25rem;
             flex-wrap: wrap;
         }
-        .stop-press .links a {
-            text-decoration: none;
-            border-bottom: 1px solid var(--ink);
+        .not-found .links a {
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border);
             padding-bottom: 1px;
+        }
+        .not-found .links a:hover {
+            color: var(--text);
+            border-bottom-color: var(--text);
         }
     </style>
 </head>
 <body>
-    <div class="topbar">
-        <div class="container topbar-inner">
-            <div class="left"><span>404</span> <span class="pipe">·</span> <span>Page not found</span></div>
-            <div class="right"><a href="/portfolio/">← Back to portfolio</a></div>
-        </div>
-    </div>
-    <main class="container">
-        <div class="stop-press">
-            <span class="stamp-big">Stop the presses</span>
-            <h1>404 <em>— that page isn't here.</em></h1>
-            <p>Either it was never published, or it's been moved. The selected work lives <a href="/portfolio/">on the front page</a>.</p>
-            <div class="links">
-                <a href="/portfolio/">Front page</a>
-                <a href="/portfolio/#work">Selected work</a>
-                <a href="https://github.com/jackwallner" target="_blank" rel="noopener">GitHub ↗</a>
-            </div>
+    <header class="site-header container">
+        <a href="/portfolio/" class="nav-back">← Back to portfolio</a>
+    </header>
+    <main class="container not-found">
+        <h1>404</h1>
+        <p>That page isn't here. Either it was never published, or it's been moved. The selected work lives <a href="/portfolio/">on the front page</a>.</p>
+        <div class="links">
+            <a href="/portfolio/">Front page</a>
+            <a href="/portfolio/repos.html">All repositories</a>
+            <a href="https://github.com/jackwallner" target="_blank" rel="noopener">GitHub ↗</a>
         </div>
     </main>
 </body>
