@@ -21,9 +21,26 @@ function stripEmoji(s) {
     return s.replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{1F1E6}-\u{1F1FF}]/gu, '').trim();
 }
 
+function createSkeleton() {
+    return `
+        <div class="skeleton-list">
+            <div class="skeleton-row"><div class="skeleton-name"></div><div class="skeleton-tail"></div></div>
+            <div class="skeleton-row"><div class="skeleton-name"></div><div class="skeleton-tail"></div></div>
+            <div class="skeleton-row"><div class="skeleton-name"></div><div class="skeleton-tail"></div></div>
+            <div class="skeleton-row"><div class="skeleton-name"></div><div class="skeleton-tail"></div></div>
+            <div class="skeleton-row"><div class="skeleton-name"></div><div class="skeleton-tail"></div></div>
+            <div class="skeleton-row"><div class="skeleton-name"></div><div class="skeleton-tail"></div></div>
+        </div>
+    `;
+}
+
 async function loadRepos() {
     const el = document.getElementById('repos');
     if (!el) return;
+    
+    // Show skeleton while loading
+    el.innerHTML = createSkeleton();
+    
     try {
         const res = await fetch('https://api.github.com/users/jackwallner/repos?type=public&sort=updated&per_page=100');
         if (!res.ok) throw new Error('GitHub API ' + res.status);
@@ -65,7 +82,14 @@ async function loadRepos() {
         el.innerHTML = '';
         el.appendChild(list);
     } catch (err) {
-        el.innerHTML = `<div class="error">Couldn't load live repo data (${err.message}). See <a href="https://github.com/jackwallner" style="color:inherit">github.com/jackwallner</a>.</div>`;
+        el.innerHTML = `
+            <div class="error">
+                Couldn't load live repo data (${err.message}). 
+                <a href="https://github.com/jackwallner" style="color:inherit">View on GitHub →</a>
+                <br>
+                <button class="retry-btn" onclick="loadRepos()">Try again</button>
+            </div>
+        `;
     }
 }
 
