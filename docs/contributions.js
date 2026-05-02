@@ -5,31 +5,57 @@ async function renderContributions() {
 
     try {
         const res = await fetch('https://github-contributions.vercel.app/api/v1/jackwallner?year=2026');
-        if (!res.ok) throw new Error('API error');
+        if (!res.ok) throw new Error('API error: ' + res.status);
         const data = await res.json();
         
         const yearData = data.years.find(y => y.year === '2026');
         const total = yearData ? yearData.total : 0;
-        const contributions = data.contributions.filter(c => c.date.startsWith('2026'));
         
-        // Group by week for display
+        // Get only 2026 dates, in chronological order
+        const contributions = data.contributions
+            .filter(c => c.date.startsWith('2026'))
+            .sort((a, b) => new Date(a.date) - new Date(b.date));
+        
+        // Build simple week grid
+        // Find the first Sunday to start
+        const firstDate = new Date(contributions[0].date);
+        const firstDayOfWeek = firstDate.getDay(); // 0 = Sunday
+        
+        // Pad with empty days at start to align weeks
+        const grid = [];
+        for (let i = 0; i < firstDayOfWeek; i++) {
+            grid.push(null);
+        }
+        
+        // Add all days
+        contributions.forEach(day => {
+            grid.push(day);
+        });
+        
+        // Build HTML
         const weeks = [];
         let currentWeek = [];
-        contributions.forEach((day, index) => {
-            const date = new Date(day.date);
-            const dayOfWeek = date.getDay();
-            if (dayOfWeek === 0 && currentWeek.length > 0) {
+        
+        grid.forEach(day => {
+            currentWeek.push(day);
+            if (currentWeek.length === 7) {
                 weeks.push(currentWeek);
                 currentWeek = [];
             }
-            currentWeek.push(day);
         });
-        if (currentWeek.length > 0) weeks.push(currentWeek);
         
-        // Limit to reasonable width (~26 weeks visible)
-        const displayWeeks = weeks.slice(0, 26);
+        // Don't add partial last week if too small
+        if (currentWeek.length > 0 && currentWeek.length < 3) {
+            // pad with nulls
+            while (currentWeek.length < 7) currentWeek.push(null);
+            weeks.push(currentWeek);
+        } else if (currentWeek.length > 0) {
+            weeks.push(currentWeek);
+        }
         
-        // Build HTML
+        // Limit to ~28 weeks for display width
+        const displayWeeks = weeks.slice(0, 28);
+        
         let html = `
             <div class="contributions-header">
                 <span class="contributions-total">${total.toLocaleString()} contributions in 2026</span>
@@ -38,36 +64,33 @@ async function renderContributions() {
             <div class="contributions-grid">
         `;
         
-        // Day labels
-        const days = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+        // Day labels on left
+        const dayLabels = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
         html += '<div class="contributions-column day-labels">';
-        days.forEach(d => {
-            html += `<div class="day-label">${d}</div>`;
-        });
+        for (let i = 0; i < 7; i++) {
+            html += `<div class="day-label">${dayLabels[i]}</div>`;
+        }
         html += '</div>';
         
-        // Contribution squares
+        // Render weeks
         displayWeeks.forEach(week => {
             html += '<div class="contributions-column">';
-            week.forEach(day => {
-                const intensity = parseInt(day.intensity);
-                let level = 0;
-                if (intensity === 4) level = 4;
-                else if (intensity === 3) level = 3;
-                else if (intensity === 2) level = 2;
-                else if (intensity === 1) level = 1;
-                
-                html += `<div class="contribution-square level-${level}" title="${day.date}: ${day.count} contributions"></div>`;
-            });
-            // Fill empty days at end
-            while (week.length < 7) {
-                html += '<div class="contribution-square empty"></div>';
-                week.push(null);
+            for (let i = 0; i < 7; i++) {
+                const day = week[i];
+                if (!day) {
+                    html += '<div class="contribution-square empty"></div>';
+                } else {
+                    const level = parseInt(day.intensity) || 0;
+                    const tooltip = `${day.date}: ${day.count} contributions`;
+                    html += `<div class="contribution-square level-${level}" title="${tooltip}"></div>`;
+                }
             }
             html += '</div>';
         });
         
         html += '</div>';
+        
+        // Legend
         html += `
             <div class="contributions-legend">
                 <span>Less</span>
@@ -83,6 +106,7 @@ async function renderContributions() {
         container.innerHTML = html;
         
     } catch (err) {
+        console.error('Contributions error:', err);
         container.innerHTML = `
             <div class="contributions-error">
                 <a href="https://github.com/jackwallner" target="_blank" rel="noopener">
@@ -93,4 +117,9 @@ async function renderContributions() {
     }
 }
 
-renderContributions();
+// Run when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderContributions);
+} else {
+    renderContributions();
+}
