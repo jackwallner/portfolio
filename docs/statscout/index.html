@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StatScout — Jack Wallner</title>
+    <title>StatScout - Jack Wallner</title>
     <meta name="description" content="Statcast-style player cards, leaderboards, and search for iOS. Mobile-friendly Baseball Savant percentile bars.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,9 +73,9 @@
 
                 <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">Mobile-first percentile bars.</strong> Savant's bars are designed for desktop width. I redid the component for portrait: stacked when needed, compact labels, touch-friendly targets. Same data density, different geometry.</p>
 
-                <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">Fuzzy search.</strong> Type "judge" and get Aaron Judge. Type "shohei" and get Ohtani. Handles nicknames, misspellings, and partial matches. Search is local after initial sync — works offline at the stadium.</p>
+                <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">Fuzzy search.</strong> Type "judge" and get Aaron Judge. Type "shohei" and get Ohtani. Handles nicknames, misspellings, and partial matches. Search is local after initial sync. Works offline at the stadium.</p>
 
-                <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">Nightly data refresh.</strong> A Python script runs every night via GitHub Actions, pulls fresh data from pybaseball, calculates percentiles, and upserts to Supabase. The iOS app pulls incrementally — no full refresh unless the schema changes.</p>
+                <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">Nightly data refresh.</strong> A Python script runs every night via GitHub Actions, pulls fresh data from pybaseball, calculates percentiles, and upserts to Supabase. The iOS app pulls incrementally. No full refresh unless the schema changes.</p>
 
                 <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">Leaderboard performance.</strong> Lists are virtualized with SwiftUI's LazyVStack. 500+ players in a list scrolls at 60fps. Images are lazy-loaded with a tiny LRU cache. First paint is under 2 seconds on cellular.</p>
 

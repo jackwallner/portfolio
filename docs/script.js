@@ -63,13 +63,13 @@ async function loadRepos() {
             row.target = '_blank';
             row.rel = 'noopener';
 
-            const lang = r.language || '—';
+            const lang = r.language || '-';
             const dotColor = LANG_DOTS[lang] || '#7a766c';
             const desc = stripEmoji(r.description);
 
             row.innerHTML = `
                 <div>
-                    <span class="repo-name">${r.name}</span>${desc ? `<span class="repo-desc">— ${desc}</span>` : ''}
+                    <span class="repo-name">${r.name}</span>${desc ? `<span class="repo-desc">- ${desc}</span>` : ''}
                 </div>
                 <div class="repo-tail">
                     <span class="lang-dot" style="background:${dotColor}"></span>${lang}
