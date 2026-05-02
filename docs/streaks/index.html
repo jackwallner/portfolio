@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streak Finder — Jack Wallner</title>
+    <meta name="description" content="Mines 400 days of Apple Health to surface streaks across 9 metrics. Ranks by interestingness.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../home.css">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <header class="site-header container">
+        <a href="../" class="nav-back">← Back to portfolio</a>
+    </header>
+
+    <main class="container">
+        <section class="project-detail" style="padding: 1rem 0 3rem;">
+            <div class="project-icon-row" style="margin-bottom: 1.5rem;">
+                <img src="../assets/streaks-icon.png" alt="Streak Finder icon" class="project-icon" style="width: 48px; height: 48px;">
+                <div>
+                    <h1 style="font-size: 1.5rem; font-weight: 600; letter-spacing: -0.01em;">Streak Finder</h1>
+                    <span class="project-stamp live" style="margin-top: 0.25rem; display: inline-block;">App Store</span>
+                </div>
+            </div>
+
+            <p class="project-desc" style="font-size: 1rem; max-width: 600px; margin-bottom: 2rem;">Mines 400 days of Apple Health to surface streaks across 9 metrics. Ranks by interestingness, nudges at 7 PM when the hero streak is at risk.</p>
+
+            <div class="project-links" style="margin-bottom: 3rem;">
+                <a href="https://apps.apple.com/us/app/streak-finder-fitness-habits/APP_STORE_ID" target="_blank" rel="noopener">App Store ↗</a>
+            </div>
+
+            <figure style="margin: 0 0 2.5rem;">
+                <img src="../assets/streaks/hero-dashboard.png" alt="Streak Finder hero streak dashboard" style="width: 100%; max-width: 720px; border-radius: 8px; border: 1px solid var(--border);">
+            </figure>
+
+            <div style="max-width: 600px;">
+                <h2 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem;">The pitch</h2>
+                <p class="project-desc" style="margin-bottom: 1.5rem;">You already have streaks — you just don't know it. That 47-day walk streak, the 12-week sleep average above 7 hours, the 3-month daily stand goal. They're buried in HealthKit, invisible.</p>
+                <p class="project-desc">Streak Finder surfaces them automatically, ranks them by how impressive they actually are, and warns you before you break the good ones.</p>
+
+                <h2 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin: 2.5rem 0 1rem;">Specs</h2>
+                <table style="width: 100%; font-size: 0.88rem; border-collapse: collapse;">
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Platform</td>
+                        <td style="padding: 0.5rem 0;">iOS 17+, watchOS 10+</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Language</td>
+                        <td style="padding: 0.5rem 0;">Swift 6 with strict concurrency checking</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Data</td>
+                        <td style="padding: 0.5rem 0;">SwiftData cache, App Group shared with widgets</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Metrics</td>
+                        <td style="padding: 0.5rem 0;">Steps, exercise, stand, energy, distance, flights, workouts, sleep, mindfulness</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Analysis</td>
+                        <td style="padding: 0.5rem 0;">400 days of history, daily + weekly cadences, threshold tiers</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Notifications</td>
+                        <td style="padding: 0.5rem 0;">7 PM at-risk nudge for hero streak</td>
+                    </tr>
+                </table>
+
+                <h2 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin: 2.5rem 0 1rem;">What mattered</h2>
+
+                <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">The discovery engine.</strong> Every metric has 6 threshold tiers (e.g., 3k, 5k, 7.5k, 10k, 12.5k, 15k steps). The engine evaluates every `(metric, cadence, threshold)` combo across 400 days, finds contiguous streaks, and filters for minimum viability (3+ days daily, 2+ weeks weekly). Then it ranks by a weighted score: streak length × threshold difficulty.</p>
+
+                <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">Hero streak + badges.</strong> One streak gets featured — your best current run. Everything else appears as tappable badges. The hero rotates automatically as streaks break and new ones form. No manual curation, no decision fatigue.</p>
+
+                <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">Calendar heatmaps.</strong> Each streak has a year-view heatmap showing every hit and miss. Green intensity maps to how far above threshold. It's visceral — you can see your life patterns: the sick week, the vacation, the consistent stretches.</p>
+
+                <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">The 7 PM nudge.</strong> If your hero streak isn't "locked in" for the day (current day has no data yet), you get a gentle notification at 7 PM. Not nagging — context. You decide if you care enough to save it.</p>
+
+                <p class="project-desc" style="margin-bottom: 2rem;"><strong style="color: var(--text);">Widget reliability.</strong> All widgets read from a snapshot JSON in App Group UserDefaults — never HealthKit directly. The main app refreshes this on every foreground and background task. Widgets are instant, not laggy.</p>
+
+                <p class="project-desc" style="color: var(--text-muted); font-style: italic; padding: 1rem; background: #fafafa; border-radius: 4px; border-left: 2px solid var(--border);">You don't build streaks. You discover you already had them.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container" style="text-align: center; padding: 2rem 0; border-top: 1px solid var(--border);">
+            <a href="mailto:jackwallner@gmail.com" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: var(--text-secondary);">Email</a>
+            <span style="color: var(--border); margin: 0 0.5rem;">·</span>
+            <a href="https://github.com/jackwallner" target="_blank" rel="noopener" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: var(--text-secondary);">GitHub</a>
+        </div>
+    </footer>
+</body>
+</html>

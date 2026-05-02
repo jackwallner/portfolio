@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StatScout — Jack Wallner</title>
+    <meta name="description" content="Statcast-style player cards, leaderboards, and search for iOS. Mobile-friendly Baseball Savant percentile bars.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../home.css">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <header class="site-header container">
+        <a href="../" class="nav-back">← Back to portfolio</a>
+    </header>
+
+    <main class="container">
+        <section class="project-detail" style="padding: 1rem 0 3rem;">
+            <div class="project-icon-row" style="margin-bottom: 1.5rem;">
+                <img src="../assets/statscout-icon.png" alt="StatScout icon" class="project-icon" style="width: 48px; height: 48px;">
+                <div>
+                    <h1 style="font-size: 1.5rem; font-weight: 600; letter-spacing: -0.01em;">StatScout</h1>
+                    <span class="project-stamp wip" style="margin-top: 0.25rem; display: inline-block;">TestFlight</span>
+                </div>
+            </div>
+
+            <p class="project-desc" style="font-size: 1rem; max-width: 600px; margin-bottom: 2rem;">Statcast-style player cards, leaderboards, and search for iOS. Mobile-friendly Baseball Savant percentile bars with nightly Python ingestion from pybaseball.</p>
+
+            <div class="project-links" style="margin-bottom: 3rem;">
+                <a href="https://github.com/jackwallner/baseball" target="_blank" rel="noopener">Source ↗</a>
+            </div>
+
+            <figure style="margin: 0 0 2.5rem;">
+                <img src="../assets/statscout/player-card.png" alt="StatScout player card with percentile bars" style="width: 100%; max-width: 720px; border-radius: 8px; border: 1px solid var(--border);">
+            </figure>
+
+            <div style="max-width: 600px;">
+                <h2 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem;">The pitch</h2>
+                <p class="project-desc" style="margin-bottom: 1.5rem;">Baseball Savant is incredible on desktop, but unusable on mobile. The percentile bars don't fit, the tables require horizontal scrolling, and search is buried under menus.</p>
+                <p class="project-desc">StatScout brings the Savant experience to iPhone: player search in two taps, percentile bars optimized for portrait, leaderboards that actually scroll smoothly. Built for checking stats at the ballpark.</p>
+
+                <h2 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin: 2.5rem 0 1rem;">Specs</h2>
+                <table style="width: 100%; font-size: 0.88rem; border-collapse: collapse;">
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Platform</td>
+                        <td style="padding: 0.5rem 0;">iOS 17+</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Language</td>
+                        <td style="padding: 0.5rem 0;">Swift</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Data Pipeline</td>
+                        <td style="padding: 0.5rem 0;">Python + pybaseball → Supabase, nightly GitHub Actions</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Backend</td>
+                        <td style="padding: 0.5rem 0;">Supabase Postgres with search indexes</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Data Coverage</td>
+                        <td style="padding: 0.5rem 0;">All MLB players, 2020-2025 seasons, 50+ stat categories</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Percentiles</td>
+                        <td style="padding: 0.5rem 0;">Calculated against positional averages (min 100 PA/IP)</td>
+                    </tr>
+                </table>
+
+                <h2 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin: 2.5rem 0 1rem;">What mattered</h2>
+
+                <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">Mobile-first percentile bars.</strong> Savant's bars are designed for desktop width. I redid the component for portrait: stacked when needed, compact labels, touch-friendly targets. Same data density, different geometry.</p>
+
+                <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">Fuzzy search.</strong> Type "judge" and get Aaron Judge. Type "shohei" and get Ohtani. Handles nicknames, misspellings, and partial matches. Search is local after initial sync — works offline at the stadium.</p>
+
+                <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">Nightly data refresh.</strong> A Python script runs every night via GitHub Actions, pulls fresh data from pybaseball, calculates percentiles, and upserts to Supabase. The iOS app pulls incrementally — no full refresh unless the schema changes.</p>
+
+                <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">Leaderboard performance.</strong> Lists are virtualized with SwiftUI's LazyVStack. 500+ players in a list scrolls at 60fps. Images are lazy-loaded with a tiny LRU cache. First paint is under 2 seconds on cellular.</p>
+
+                <p class="project-desc" style="margin-bottom: 2rem;"><strong style="color: var(--text);">Positional context.</strong> A shortstop's 90th percentile OPS is different from a first baseman's. All percentiles are calculated within position groups, not league-wide. The app knows you're looking at a defender vs. a slugger.</p>
+
+                <p class="project-desc" style="color: var(--text-muted); font-style: italic; padding: 1rem; background: #fafafa; border-radius: 4px; border-left: 2px solid var(--border);">The best baseball stats app is one that doesn't make you wait for the website to load.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container" style="text-align: center; padding: 2rem 0; border-top: 1px solid var(--border);">
+            <a href="mailto:jackwallner@gmail.com" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: var(--text-secondary);">Email</a>
+            <span style="color: var(--border); margin: 0 0.5rem;">·</span>
+            <a href="https://github.com/jackwallner" target="_blank" rel="noopener" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: var(--text-secondary);">GitHub</a>
+        </div>
+    </footer>
+</body>
+</html>

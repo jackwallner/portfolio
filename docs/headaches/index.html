@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Headache Logger — Jack Wallner</title>
+    <meta name="description" content="One-tap headache logger. Joins against 50+ signals from HealthKit, weather, air quality, and pollen.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../home.css">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <header class="site-header container">
+        <a href="../" class="nav-back">← Back to portfolio</a>
+    </header>
+
+    <main class="container">
+        <section class="project-detail" style="padding: 1rem 0 3rem;">
+            <div class="project-icon-row" style="margin-bottom: 1.5rem;">
+                <img src="../assets/headaches-icon.png" alt="Headache Logger icon" class="project-icon" style="width: 48px; height: 48px;">
+                <div>
+                    <h1 style="font-size: 1.5rem; font-weight: 600; letter-spacing: -0.01em;">Headache Logger</h1>
+                    <span class="project-stamp live" style="margin-top: 0.25rem; display: inline-block;">App Store</span>
+                </div>
+            </div>
+
+            <p class="project-desc" style="font-size: 1rem; max-width: 600px; margin-bottom: 2rem;">One-tap headache logger. Every entry joins against 50+ signals from HealthKit, weather, air quality, and pollen, then exports as a 60-column CSV.</p>
+
+            <div class="project-links" style="margin-bottom: 3rem;">
+                <a href="https://apps.apple.com/us/app/headache-migraine-logger/id6762074561" target="_blank" rel="noopener">App Store ↗</a>
+            </div>
+
+            <figure style="margin: 0 0 2.5rem;">
+                <img src="../assets/headaches/iphone-log.jpg" alt="Headache Logger one-tap log screen" style="width: 100%; max-width: 720px; border-radius: 8px; border: 1px solid var(--border);">
+            </figure>
+
+            <div style="max-width: 600px;">
+                <h2 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem;">The pitch</h2>
+                <p class="project-desc" style="margin-bottom: 1.5rem;">When you have a headache, you don't want to fill out a form. You want to press one button and move on. But later, when you're trying to find patterns, you wish you had more context.</p>
+                <p class="project-desc">Headache Logger solves both: one tap to log, rich context attached automatically. Your future self gets a spreadsheet with everything that might have triggered it.</p>
+
+                <h2 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin: 2.5rem 0 1rem;">Specs</h2>
+                <table style="width: 100%; font-size: 0.88rem; border-collapse: collapse;">
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Platform</td>
+                        <td style="padding: 0.5rem 0;">iOS 17+, watchOS 10+</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Storage</td>
+                        <td style="padding: 0.5rem 0;">SwiftData with CloudKit sync</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Health Data</td>
+                        <td style="padding: 0.5rem 0;">Sleep, HRV, activity, mindful minutes, heart rate, etc.</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Weather</td>
+                        <td style="padding: 0.5rem 0;">Open-Meteo API (pressure, temp, humidity, pollen)</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Air Quality</td>
+                        <td style="padding: 0.5rem 0;">OpenAQ integration for local AQI at time of entry</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Export</td>
+                        <td style="padding: 0.5rem 0;">60-column CSV with all signals joined by timestamp</td>
+                    </tr>
+                </table>
+
+                <h2 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin: 2.5rem 0 1rem;">What mattered</h2>
+
+                <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">One-tap logging.</strong> The default flow: open app, tap severity, done. Optional notes if you want. The app captures the timestamp and starts fetching context immediately in the background. No loading spinner blocking the UI.</p>
+
+                <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">Context without clutter.</strong> Every headache entry stores 50+ variables you didn't have to input: weather pressure changes, air quality index, sleep duration from last night, HRV trend from the past week. It's there when you need it, invisible when you don't.</p>
+
+                <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">CSV export for doctors.</strong> The export isn't a pretty PDF — it's a raw CSV with every column labeled. Doctors and researchers can import it directly. Users have emailed it to neurologists who appreciated the granularity.</p>
+
+                <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">Watch app for discrete logging.</strong> In a meeting when a headache starts? Log it from your wrist. No phone pull-out, no obvious app usage. The complication shows today's count at a glance.</p>
+
+                <p class="project-desc" style="color: var(--text-muted); font-style: italic; padding: 1rem; background: #fafafa; border-radius: 4px; border-left: 2px solid var(--border);">The best medical logging app is one you actually use when you feel terrible.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container" style="text-align: center; padding: 2rem 0; border-top: 1px solid var(--border);">
+            <a href="mailto:jackwallner@gmail.com" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: var(--text-secondary);">Email</a>
+            <span style="color: var(--border); margin: 0 0.5rem;">·</span>
+            <a href="https://github.com/jackwallner" target="_blank" rel="noopener" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: var(--text-secondary);">GitHub</a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitals — Jack Wallner</title>
+    <meta name="description" content="Free calorie and step tracker for iPhone and Apple Watch. Reads from HealthKit.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../home.css">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <header class="site-header container">
+        <a href="../" class="nav-back">← Back to portfolio</a>
+    </header>
+
+    <main class="container">
+        <section class="project-detail" style="padding: 1rem 0 3rem;">
+            <div class="project-icon-row" style="margin-bottom: 1.5rem;">
+                <img src="../assets/vitals-icon.png" alt="Vitals icon" class="project-icon" style="width: 48px; height: 48px;">
+                <div>
+                    <h1 style="font-size: 1.5rem; font-weight: 600; letter-spacing: -0.01em;">Vitals</h1>
+                    <span class="project-stamp live" style="margin-top: 0.25rem; display: inline-block;">App Store</span>
+                </div>
+            </div>
+
+            <p class="project-desc" style="font-size: 1rem; max-width: 600px; margin-bottom: 2rem;">Free calorie and step tracker for iPhone and Apple Watch. Reads from HealthKit — no accounts, no servers, no analytics.</p>
+
+            <div class="project-links" style="margin-bottom: 3rem;">
+                <a href="https://apps.apple.com/us/app/total-calories-daily-tracker/id6761743504" target="_blank" rel="noopener">App Store ↗</a>
+            </div>
+
+            <figure style="margin: 0 0 2.5rem;">
+                <img src="../assets/vitals/iphone-dashboard.png" alt="Vitals iPhone dashboard" style="width: 100%; max-width: 720px; border-radius: 8px; border: 1px solid var(--border);">
+            </figure>
+
+            <div style="max-width: 600px;">
+                <h2 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem;">The pitch</h2>
+                <p class="project-desc" style="margin-bottom: 1.5rem;">Most calorie trackers make you log every meal manually and create an account. I wanted something that just shows what Apple Health already knows — passive tracking, zero friction.</p>
+                <p class="project-desc">Vitals reads your active energy and steps from HealthKit, calculates a simple total, and displays it on your wrist. No signup, no cloud, no tracking.</p>
+
+                <h2 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin: 2.5rem 0 1rem;">Specs</h2>
+                <table style="width: 100%; font-size: 0.88rem; border-collapse: collapse;">
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Platform</td>
+                        <td style="padding: 0.5rem 0;">iOS 17+, watchOS 10+</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Language</td>
+                        <td style="padding: 0.5rem 0;">Swift 6 with strict concurrency</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Framework</td>
+                        <td style="padding: 0.5rem 0;">SwiftUI · HealthKit · WidgetKit</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Data</td>
+                        <td style="padding: 0.5rem 0;">Read-only HealthKit access, local only</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Widgets</td>
+                        <td style="padding: 0.5rem 0;">Home Screen, Lock Screen, StandBy, watchOS complications</td>
+                    </tr>
+                </table>
+
+                <h2 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin: 2.5rem 0 1rem;">What mattered</h2>
+
+                <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">Zero-config setup.</strong> Open the app, grant HealthKit permission, done. No onboarding flow, no tutorial, no account creation. The first screen shows yesterday's data immediately.</p>
+
+                <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">Watch-first design.</strong> The Apple Watch app isn't an afterthought — it's the primary interface. The iPhone app exists for detailed history and settings. Both share a SwiftData cache via App Group.</p>
+
+                <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">Widget reliability.</strong> Widgets refresh on a timeline, not on open. Background tasks keep the cache warm. The complication updates within 15 minutes of HealthKit changes.</p>
+
+                <p class="project-desc" style="margin-bottom: 2rem;"><strong style="color: var(--text);">Privacy as a feature.</strong> No analytics, no crash reporting, no accounts. The app doesn't know who you are. Reviewers have flagged this positively — it's a selling point, not a limitation.</p>
+
+                <p class="project-desc" style="color: var(--text-muted); font-style: italic; padding: 1rem; background: #fafafa; border-radius: 4px; border-left: 2px solid var(--border);">The best HealthKit app is one you never have to manually log into.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container" style="text-align: center; padding: 2rem 0; border-top: 1px solid var(--border);">
+            <a href="mailto:jackwallner@gmail.com" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: var(--text-secondary);">Email</a>
+            <span style="color: var(--border); margin: 0 0.5rem;">·</span>
+            <a href="https://github.com/jackwallner" target="_blank" rel="noopener" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: var(--text-secondary);">GitHub</a>
+        </div>
+    </footer>
+</body>
+</html>

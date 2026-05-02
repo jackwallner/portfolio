@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Tracker — Jack Wallner</title>
+    <meta name="description" content="macOS background service that monitors flights within 2 nautical miles and rotates them on an AWTRIX smart pixel clock.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../home.css">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+</head>
+<body>
+    <header class="site-header container">
+        <a href="../" class="nav-back">← Back to portfolio</a>
+    </header>
+
+    <main class="container">
+        <section class="project-detail" style="padding: 1rem 0 3rem;">
+            <div class="project-icon-row" style="margin-bottom: 1.5rem;">
+                <img src="../assets/flight-tracker-icon.png" alt="Flight Tracker icon" class="project-icon" style="width: 48px; height: 48px;">
+                <div>
+                    <h1 style="font-size: 1.5rem; font-weight: 600; letter-spacing: -0.01em;">Flight Tracker</h1>
+                    <span class="project-stamp live" style="margin-top: 0.25rem; display: inline-block;">Live</span>
+                </div>
+            </div>
+
+            <p class="project-desc" style="font-size: 1rem; max-width: 600px; margin-bottom: 2rem;">macOS background service that monitors flights within 2 nautical miles of Vancouver, WA, rotating them on an AWTRIX smart pixel clock and archiving to GitHub Pages.</p>
+
+            <div class="project-links" style="margin-bottom: 3rem;">
+                <a href="https://jackwallner.github.io/my-flights/" target="_blank" rel="noopener">History ↗</a>
+                <a href="https://github.com/jackwallner/flight-tracker" target="_blank" rel="noopener">Source ↗</a>
+            </div>
+
+            <figure style="margin: 0 0 2.5rem;">
+                <img src="../assets/flight-tracker/awtrix-display.jpg" alt="AWTRIX pixel clock displaying flight" style="width: 100%; max-width: 720px; border-radius: 8px; border: 1px solid var(--border);">
+            </figure>
+
+            <div style="max-width: 600px;">
+                <h2 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem;">The pitch</h2>
+                <p class="project-desc" style="margin-bottom: 1.5rem;">I live under the flight path into PDX. Every few minutes, a plane passes overhead. I wanted to know: what is it? Where's it going? How high?</p>
+                <p class="project-desc">Flight Tracker is a macOS service that runs 24/7 on a home server, watches the local airspace, and displays current flights on a physical pixel clock. It also archives everything to a web history.</p>
+
+                <h2 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin: 2.5rem 0 1rem;">Specs</h2>
+                <table style="width: 100%; font-size: 0.88rem; border-collapse: collapse;">
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Runtime</td>
+                        <td style="padding: 0.5rem 0;">Node.js background service, macOS LaunchAgent</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Data Source</td>
+                        <td style="padding: 0.5rem 0;">dump1090 SDR receiver (RTL-SDR) over local network</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Enrichment</td>
+                        <td style="padding: 0.5rem 0;">OpenSky Network API for flight numbers, routes, aircraft type</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Display</td>
+                        <td style="padding: 0.5rem 0;">AWTRIX 3 32x8 pixel clock via local MQTT</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Archive</td>
+                        <td style="padding: 0.5rem 0;">GitHub Pages with Actions deployment every 5 minutes</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Range</td>
+                        <td style="padding: 0.5rem 0;">2 nautical miles from Vancouver, WA (configurable)</td>
+                    </tr>
+                </table>
+
+                <h2 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin: 2.5rem 0 1rem;">What mattered</h2>
+
+                <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">The SDR receiver.</strong> A cheap RTL-SDR dongle ($30) plugged into a Raspberry Pi runs dump1090, decoding ADS-B signals from aircraft. It exposes a local JSON API. No internet required for detection, only for enrichment.</p>
+
+                <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">The AWTRIX display.</strong> A 32x8 pixel matrix mounted on the wall cycles through nearby flights: callsign → altitude → speed. Custom icons for different aircraft types. Visible across the room, glanceable like a clock.</p>
+
+                <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">Rotating display logic.</strong> If multiple flights are in range, it rotates every 10 seconds. If nothing's close, it shows the time. Prioritizes by proximity, not just signal strength. A flight directly overhead gets featured even if it's farther away laterally.</p>
+
+                <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">GitHub Pages as a database.</strong> Every detected flight gets logged to a JSON file, committed by a GitHub Action, and deployed to Pages. The history is a static site. No server costs, no database, git history as audit trail.</p>
+
+                <p class="project-desc" style="margin-bottom: 2rem;"><strong style="color: var(--text);">macOS LaunchAgent reliability.</strong> The service restarts on crash, on boot, and after sleep. Logs to local files with rotation. Has been running for months without manual intervention. The only failure mode is power outage (and it auto-recovers).</p>
+
+                <p class="project-desc" style="color: var(--text-muted); font-style: italic; padding: 1rem; background: #fafafa; border-radius: 4px; border-left: 2px solid var(--border);">The best home automation is ambient and requires zero interaction.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container" style="text-align: center; padding: 2rem 0; border-top: 1px solid var(--border);">
+            <a href="mailto:jackwallner@gmail.com" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: var(--text-secondary);">Email</a>
+            <span style="color: var(--border); margin: 0 0.5rem;">·</span>
+            <a href="https://github.com/jackwallner" target="_blank" rel="noopener" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: var(--text-secondary);">GitHub</a>
+        </div>
+    </footer>
+</body>
+</html>
