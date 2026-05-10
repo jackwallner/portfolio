@@ -246,30 +246,6 @@ a:hover { color: var(--text-secondary); }
     .project-icon-row { gap: 0.5rem; }
 }
 
-/* ---- GitHub chart ---- */
-.github-chart-section {
-    padding: 1.5rem 0;
-    text-align: center;
-    width: 100%;
-}
-.github-chart-iframe {
-    width: 100%;
-    height: 400px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    background: #fff;
-}
-@media (max-width: 640px) {
-    .github-chart-section { padding: 1rem 0; }
-    .github-chart-iframe { height: 300px; }
-}
-.github-chart-note {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.6rem;
-    color: var(--text-muted);
-    margin-top: 0.35rem;
-}
-
 /* ---- More link ---- */
 .more-section {
     padding: 1.5rem 0 2rem;
@@ -423,6 +399,12 @@ a:hover { color: var(--text-secondary); }
     height: auto;
     image-rendering: pixelated;
     min-width: 640px;
+}
+.github-chart-note {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    margin-top: 0.35rem;
 }
 @media (max-width: 640px) {
     .github-chart-section { padding: 1rem 0; overflow-x: auto; }
