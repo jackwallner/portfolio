@@ -217,6 +217,12 @@ a:hover { color: var(--text-secondary); }
     border-bottom: 1px solid var(--border);
     padding-bottom: 1px;
 }
+.project-links a.project-primary-link {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text);
+    border-bottom-width: 2px;
+}
 .project-links a:hover {
     color: var(--text);
     border-bottom-color: var(--text);
