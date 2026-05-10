@@ -170,6 +170,7 @@ a:hover { color: var(--text-secondary); }
 }
 .project-stamp.live { color: #1e40af; border-color: #bfdbfe; background: #eff6ff; }
 .project-stamp.wip { color: #713f12; border-color: #fde68a; background: #fefce8; }
+.project-stamp.unsuccessful { color: #991b1b; border-color: #fecaca; background: #fef2f2; }
 
 .project-desc {
     font-size: 0.88rem;

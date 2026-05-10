@@ -1,7 +1,7 @@
 const FEATURED = new Set([
     'vitals', 'headaches', 'fitness-streaks', 'baseball',
     'elsa-fitness-website', 'flight-tracker', 'my-flights', 'portfolio', 'jackwallner',
-    'qa-bot', 'spotify-daily-trading-bot'
+    'qa-bot', 'spotify-daily-trading-bot', 'songhero', 'any-song-clone-hero'
 ].map(s => s.toLowerCase()));
 
 const LANG_DOTS = {
