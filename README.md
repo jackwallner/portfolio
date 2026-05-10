@@ -1,10 +1,10 @@
 # portfolio
 
-This repository is published via **GitHub Pages** from the `main` branch’s `/docs` folder.
+This repository is published via **GitHub Pages** from the `main` branch’s `/docs` folder with a custom domain.
 
 ## GitHub Pages
 
-- **URL (project pages)**: `https://jackwallner.github.io/portfolio/`
+- **URL**: `https://jackwallner.com`
 - **Source**: `main` / `/docs`
 
 ### One-time setup in GitHub
