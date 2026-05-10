@@ -86,6 +86,17 @@ a:hover { color: var(--text-secondary); }
     gap: 1.25rem;
     color: var(--text-muted);
 }
+.header-chart {
+    height: 32px;
+    width: auto;
+    image-rendering: pixelated;
+    opacity: 0.7;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+@media (max-width: 800px) {
+    .header-chart { display: none; }
+}
 .header-links a {
     color: var(--text-secondary);
     border-bottom: 1px solid var(--border);

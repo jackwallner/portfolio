@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Any Song Clone Hero - Jack Wallner</title>
-    <meta name="description" content="Generate Clone Hero charts from any Spotify link. AI-powered note generation, 4 difficulty levels, automatic packaging.">
+    <meta name="description" content="Generate Clone Hero charts from any Spotify link. Gemini-enhanced note generation, 4 difficulty levels, automatic packaging.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -34,7 +34,7 @@
 
             <div style="max-width: 600px;">
                 <h2 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem;">The pitch</h2>
-                <p class="project-desc" style="margin-bottom: 1.5rem;">Clone Hero has thousands of community charts, but only for popular songs. If you want to play a song that doesn't have a chart, you're out of luck — or you're spending 2+ hours manually placing notes in Moonscraper. This tool generates a playable chart for any song on Spotify in under 2 minutes.</p>
+                <p class="project-desc" style="margin-bottom: 1.5rem;">Clone Hero has thousands of community charts, but only for popular songs. If you want to play a song that doesn't have a chart, you're out of luck. Your alternative is spending 2+ hours manually placing notes in Moonscraper. This tool generates a playable chart for any song on Spotify in under 2 minutes.</p>
                 <p class="project-desc" style="margin-bottom: 1.5rem;">Paste any Spotify link. The CLI resolves the metadata, downloads the audio from YouTube, runs it through librosa for beat/onset detection and pitch analysis, optionally enhances with Gemini AI, then outputs a .chart file with Easy, Medium, Hard, and Expert difficulties. Drag the folder into Clone Hero and play.</p>
 
                 <h2 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin: 2.5rem 0 1rem;">How it works</h2>
@@ -49,7 +49,7 @@
                     </tr>
                     <tr style="border-bottom: 1px solid var(--border);">
                         <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Analyze</td>
-                        <td style="padding: 0.5rem 0;">AI-powered audio analysis: librosa for beat/onset detection &amp; pitch-to-fret mapping</td>
+                        <td style="padding: 0.5rem 0;">Audio analysis: librosa for beat/onset detection &amp; pitch-to-fret mapping, plus Gemini for note generation</td>
                     </tr>
                     <tr style="border-bottom: 1px solid var(--border);">
                         <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Generate</td>
@@ -130,7 +130,7 @@ Options:
   --output &lt;dir&gt;    Output directory (default: ~/Desktop/Clone Hero)
   --keep-temp       Keep temporary files</pre>
 
-                <p class="project-desc" style="color: var(--text-muted); font-style: italic; padding: 1rem; background: #fafafa; border-radius: 4px; border-left: 2px solid var(--border);">The goal wasn't to replace hand-crafted charts. It was to make any song playable in Clone Hero within 2 minutes — and not sound terrible.</p>
+                <p class="project-desc" style="color: var(--text-muted); font-style: italic; padding: 1rem; background: #fafafa; border-radius: 4px; border-left: 2px solid var(--border);">The goal wasn't to replace hand-crafted charts. It was to make any song playable in Clone Hero within 2 minutes. And not sound terrible.</p>
             </div>
         </section>
     </main>
