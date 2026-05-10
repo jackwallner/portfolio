@@ -700,7 +700,7 @@
         </div>
         <div class="install-terminal" id="tab-curl">
           <button class="copy-btn" onclick="copyInstall('curl')">COPY</button>
-          <span class="dollar">$</span> <span style="color:#d4a853">curl</span> <span style="color:#e8e4db">-sSL</span> <span style="color:#5dade2">https://jackwallner.com/songhero/install.sh</span> <span style="color:#e8e4db">|</span> <span style="color:#d4a853">bash</span>
+          <span class="dollar">$</span> <span style="color:#d4a853">curl</span> <span style="color:#e8e4db">-sSL</span> <span style="color:#5dade2">https://raw.githubusercontent.com/jackwallner/portfolio/main/docs/songhero/install.sh</span> <span style="color:#e8e4db">|</span> <span style="color:#d4a853">bash</span>
         </div>
         <div class="install-terminal" id="tab-git" style="display:none">
           <button class="copy-btn" onclick="copyInstall('git')">COPY</button>
@@ -767,7 +767,7 @@
 
     function copyInstall(tab) {
       const lines = {
-        curl: 'curl -sSL https://jackwallner.com/songhero/install.sh | bash',
+        curl: 'curl -sSL https://raw.githubusercontent.com/jackwallner/portfolio/main/docs/songhero/install.sh | bash',
         git: 'git clone https://github.com/jackwallner/any-song-clone-hero-cli.git && cd any-song-clone-hero-cli && chmod +x index.js'
       };
       navigator.clipboard.writeText(lines[tab]).then(() => {
