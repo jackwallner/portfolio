@@ -1,148 +1,783 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Any Song Clone Hero - Jack Wallner</title>
-    <meta name="description" content="Generate Clone Hero charts from any Spotify link. Gemini-enhanced note generation, 4 difficulty levels, automatic packaging.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../home.css">
-    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SongHero — AI Clone Hero Charts From Any Song</title>
+  <meta name="description" content="Paste a Spotify link, get a fully playable Clone Hero chart. AI-powered note generation, 4 difficulties, music video support.">
+  <meta property="og:title" content="SongHero — AI Clone Hero Charts From Any Song">
+  <meta property="og:description" content="Paste a Spotify link, get a Clone Hero chart instantly.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🎸</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #080708;
+      --bg2:     #121012;
+      --bg3:     #1c1a1c;
+      --fg:      #f2efe9;
+      --fg2:     #8c8880;
+      --fg3:     #b8b3a8;
+      --gold:    #d4a853;
+      --gold-bright: #f0c060;
+      --gold-dim:    #9a7b3e;
+      --red:     #c0392b;
+      --red-bright: #e74c3c;
+      --amber:   #e67e22;
+      --wood:    #6b4e2e;
+      --border:  #282428;
+      --radius:  6px;
+      --radius-lg: 10px;
+      --shadow:  0 20px 48px rgba(0,0,0,0.6);
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background:
+        radial-gradient(ellipse 70% 50% at 50% -10%, rgba(212,168,83,0.06), transparent),
+        radial-gradient(ellipse 40% 30% at 85% 60%, rgba(192,57,43,0.04), transparent),
+        var(--bg);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Fret inlay diamond pattern (subtle background) ── */
+    .fret-bg {
+      position: fixed; inset: 0; pointer-events: none; z-index: -1;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(212,168,83,0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(192,57,43,0.03) 0%, transparent 50%);
+      mask-image: linear-gradient(to bottom, transparent 10%, #000 30%, #000 70%, transparent 90%);
+    }
+
+    /* ── Horizontal string accent lines ── */
+    .string-line {
+      position: fixed; left: 0; right: 0; height: 1px;
+      pointer-events: none; z-index: -1;
+      background: linear-gradient(90deg, transparent, rgba(212,168,83,0.06) 20%, rgba(212,168,83,0.06) 80%, transparent);
+    }
+    .string-line:nth-child(1) { top: 15%; }
+    .string-line:nth-child(2) { top: 40%; }
+    .string-line:nth-child(3) { top: 65%; }
+    .string-line:nth-child(4) { top: 85%; }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed; top:0; left:0; right:0; z-index:100;
+      background: rgba(8,7,8,0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: 1100px; margin:0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 56px;
+    }
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px; letter-spacing: 1px;
+      display: flex; align-items: center; gap: 8px;
+      color: var(--fg); text-decoration: none;
+    }
+    .nav-logo .logo-guitar {
+      display: inline-block;
+      width: 24px; height: 24px;
+      background: linear-gradient(135deg, var(--gold), var(--amber));
+      clip-path: polygon(50% 0%, 80% 20%, 80% 60%, 65% 100%, 35% 100%, 20% 60%, 20% 20%);
+      flex-shrink: 0;
+    }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a {
+      color: var(--fg2); text-decoration: none; font-size: 14px;
+      font-weight: 500; transition: color .15s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold); color: #0a0908;
+      padding: 7px 16px; border-radius: var(--radius);
+      font-size: 13px; font-weight: 700; text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: background .15s, transform .15s;
+    }
+    .nav-cta:hover { background: var(--gold-bright); transform: translateY(-1px); }
+
+    /* ── Sections ── */
+    section { padding: 100px 24px; position: relative; }
+    .container { max-width: 1100px; margin:0 auto; }
+
+    /* ── Hero ── */
+    .hero { padding-top: 160px; padding-bottom: 80px; text-align: center; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(212,168,83,0.08); border: 1px solid rgba(212,168,83,0.15);
+      color: var(--gold); padding: 6px 16px; border-radius: 100px;
+      font-size: 13px; font-weight: 600; margin-bottom: 28px;
+      backdrop-filter: blur(4px);
+    }
+    .hero-badge .dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--red-bright); animation: amp-glow 1.5s ease-in-out infinite;
+    }
+    @keyframes amp-glow { 0%,100%{box-shadow:0 0 4px var(--red-bright);opacity:1} 50%{box-shadow:0 0 8px var(--red-bright);opacity:.6} }
+
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(44px, 8vw, 80px);
+      font-weight: 400; letter-spacing: 0px;
+      line-height: 0.95; margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    .hero h1 .gold { color: var(--gold); }
+    .hero h1 .red { color: var(--red); }
+    .hero h1 .outline {
+      -webkit-text-stroke: 1.5px var(--fg);
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+
+    .hero p.sub {
+      font-size: 18px; color: var(--fg2); max-width: 540px;
+      margin: 0 auto 40px; line-height: 1.6;
+    }
+
+    /* ── Terminal Block ── */
+    .terminal {
+      max-width: 660px; margin: 0 auto 28px;
+      background: #0c0b0d; border: 1px solid var(--border);
+      border-radius: var(--radius-lg); overflow: hidden;
+      text-align: left; box-shadow: var(--shadow);
+    }
+    .terminal-bar {
+      background: #141215; padding: 10px 14px;
+      display: flex; align-items: center; gap: 8px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .terminal-bar::after {
+      content: '';
+      position: absolute; bottom: -1px; left: 20%; right: 20%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    }
+    .terminal-bar .t-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .terminal-bar .t-dot.r { background: #e74c3c; }
+    .terminal-bar .t-dot.y { background: #f0c060; }
+    .terminal-bar .t-dot.g { background: #27ae60; }
+    .terminal-bar .title {
+      flex: 1; text-align: center;
+      font-family: 'JetBrains Mono', monospace; font-size: 11px;
+      color: var(--fg2); margin-right: 28px;
+    }
+    .terminal-body {
+      padding: 20px 20px 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px; line-height: 1.7;
+      overflow-x: auto; white-space: nowrap;
+    }
+    .prompt { color: var(--gold); }
+    .cmd { color: var(--fg); }
+    .flag { color: var(--red-bright); }
+    .url-clr { color: #5dade2; }
+    .out { color: var(--fg2); font-size: 12px; margin-top: 6px; }
+
+    .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 8px; }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 30px; border-radius: var(--radius);
+      font-size: 15px; font-weight: 700;
+      text-decoration: none; transition: all .2s;
+      cursor: pointer; border: none;
+      letter-spacing: 0.5px;
+      position: relative; overflow: hidden;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), #c8963e);
+      color: #0a0908;
+      box-shadow: 0 0 30px rgba(212,168,83,0.15);
+    }
+    .btn-primary::after {
+      content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+      transition: left .4s;
+    }
+    .btn-primary:hover::after { left: 100%; }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 40px rgba(212,168,83,0.3);
+    }
+    .btn-secondary {
+      background: transparent; color: var(--fg);
+      border: 1.5px solid var(--border);
+    }
+    .btn-secondary:hover { border-color: var(--gold-dim); color: var(--gold); }
+
+    /* ── Fret divider ── */
+    .fret-divider {
+      display: flex; align-items: center; gap: 16px; max-width: 300px;
+      margin: 0 auto; padding: 40px 0 20px;
+    }
+    .fret-divider .fret-line { flex: 1; height: 1px; background: var(--border); }
+    .fret-marker {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--gold-dim);
+      box-shadow: 0 0 8px rgba(212,168,83,0.3);
+    }
+
+    /* ── Section labels ── */
+    .section-label {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 17px; letter-spacing: 3px;
+      color: var(--gold); margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    .section-label::before, .section-label::after {
+      content: '◆'; font-size: 6px; opacity: 0.5;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 400; letter-spacing: 0.5px;
+      margin-bottom: 14px; text-transform: uppercase;
+      line-height: 1.05;
+    }
+    .section-desc {
+      color: var(--fg2); font-size: 16px; line-height: 1.6;
+      max-width: 580px; margin-bottom: 48px;
+    }
+
+    /* ── Feature Cards ── */
+    .feature-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .feature-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 32px 28px;
+      position: relative; overflow: hidden;
+      transition: border-color .25s, transform .25s;
+    }
+    .feature-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+      opacity: 0; transition: opacity .25s;
+    }
+    .feature-card:hover::before { opacity: 1; }
+    .feature-card:hover {
+      border-color: rgba(212,168,83,0.25);
+      transform: translateY(-3px);
+    }
+    .feature-icon {
+      font-size: 32px; margin-bottom: 16px;
+      display: inline-block;
+      background: rgba(212,168,83,0.06);
+      width: 52px; height: 52px; border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .feature-card h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px; font-weight: 400;
+      letter-spacing: 0.5px; margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    .feature-card p { color: var(--fg2); font-size: 14px; line-height: 1.6; }
+
+    /* ── How It Works ── */
+    .steps {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;
+      position: relative;
+    }
+    .step {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 32px 28px 28px;
+      position: relative;
+      transition: border-color .25s, transform .25s;
+    }
+    .step:hover { border-color: rgba(212,168,83,0.2); transform: translateY(-2px); }
+
+    .step-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 64px; color: var(--border);
+      position: absolute; top: 10px; right: 18px;
+      line-height: 1; pointer-events: none;
+      transition: color .25s;
+    }
+    .step:hover .step-num { color: rgba(212,168,83,0.1); }
+
+    .step h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px; font-weight: 400; letter-spacing: 0.5px;
+      margin-bottom: 6px; text-transform: uppercase;
+    }
+    .step p { color: var(--fg2); font-size: 14px; line-height: 1.5; position: relative; z-index: 1; }
+
+    /* ── Difficulty Table ── */
+    .diff-table-wrap {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .diff-table {
+      width: 100%; border-collapse: collapse;
+    }
+    .diff-table th {
+      text-align: left; padding: 14px 20px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 14px; letter-spacing: 1px;
+      color: var(--gold-dim); font-weight: 400;
+      background: rgba(212,168,83,0.04); border-bottom: 1px solid var(--border);
+      text-transform: uppercase;
+    }
+    .diff-table td {
+      padding: 14px 20px; font-size: 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--fg3);
+    }
+    .diff-table tr:last-child td { border-bottom: none; }
+    .diff-table tr:hover td { background: rgba(212,168,83,0.03); }
+    .diff-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px; letter-spacing: 0.5px; color: var(--fg) !important;
+    }
+    .check { color: #27ae60; }
+    .cross { color: rgba(231,76,60,0.6); }
+
+    /* ── Install Section ── */
+    .install-section { padding-top: 40px; }
+    .install-block { max-width: 700px; margin: 0 auto; }
+
+    .install-tabs {
+      display: flex; gap: 0; margin-bottom: -1px;
+    }
+    .install-tab {
+      padding: 10px 24px; font-size: 13px; font-weight: 700;
+      background: transparent; border: 1px solid transparent;
+      color: var(--fg2); cursor: pointer; border-radius: var(--radius) var(--radius) 0 0;
+      transition: all .15s;
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 0.5px;
+    }
+    .install-tab.active {
+      background: #0c0b0d; color: var(--gold);
+      border-color: var(--border); border-bottom-color: #0c0b0d;
+    }
+    .install-tab:hover:not(.active) { color: var(--fg); }
+
+    .install-terminal {
+      background: #0c0b0d; border: 1px solid var(--border);
+      border-radius: 0 var(--radius-lg) var(--radius-lg) var(--radius-lg);
+      padding: 24px; font-family: 'JetBrains Mono', monospace;
+      font-size: 13px; line-height: 1.8; position: relative;
+      overflow-x: auto;
+    }
+    .install-terminal .dollar { color: var(--gold); user-select: none; }
+    .copy-btn {
+      position: absolute; top: 10px; right: 10px;
+      background: var(--bg3); border: 1px solid var(--border);
+      color: var(--fg2); padding: 5px 14px; border-radius: 4px;
+      font-size: 11px; font-weight: 700; cursor: pointer;
+      transition: all .15s; font-family: 'Inter', sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .copy-btn:hover { background: var(--gold); color: #0a0908; border-color: var(--gold); }
+    .copy-btn.copied { background: #27ae60; color: #fff; border-color: #27ae60; }
+
+    .prereq-note {
+      color: var(--fg2); font-size: 13px; margin-top: 14px;
+      text-align: center; line-height: 1.6;
+    }
+    .prereq-note code {
+      background: var(--bg3); padding: 2px 7px; border-radius: 3px;
+      font-family: 'JetBrains Mono', monospace; font-size: 12px;
+      color: var(--fg3);
+    }
+
+    /* ── Output Tree ── */
+    .output-tree {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 28px;
+      font-family: 'JetBrains Mono', monospace; font-size: 13px;
+      line-height: 1.9; color: var(--fg2);
+      box-shadow: var(--shadow);
+    }
+    .output-tree .dir { color: var(--gold); }
+    .output-tree .file { color: var(--fg3); }
+    .output-tree .comment { color: #4a4448; }
+
+    /* ── Amp Grille Section (between features) ── */
+    .grille {
+      height: 40px; margin: 0 24px;
+      background-image: radial-gradient(circle at center, var(--border) 1px, transparent 1px);
+      background-size: 12px 12px;
+      opacity: 0.5;
+      border-radius: 4px;
+    }
+
+    /* ── CTA Bottom ── */
+    .cta-section {
+      text-align: center; padding: 100px 24px 120px; position: relative;
+    }
+    .cta-section::before {
+      content: ''; position: absolute; top: 30px; left: 50%;
+      transform: translateX(-50%);
+      width: 100px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    }
+    .cta-section h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 400; letter-spacing: 1px;
+      margin-bottom: 12px; text-transform: uppercase;
+    }
+    .cta-section p { color: var(--fg2); font-size: 17px; margin-bottom: 36px; }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px 40px; text-align: center;
+      font-size: 13px; color: var(--fg2);
+    }
+    footer a { color: var(--gold-dim); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+
+    /* ── Knob decoration for headings ── */
+    .knob-row {
+      display: flex; gap: 16px; align-items: center; margin-bottom: 16px;
+      opacity: 0.35;
+    }
+    .knob {
+      width: 10px; height: 10px; border-radius: 50%;
+      border: 1.5px solid var(--gold-dim);
+      position: relative;
+    }
+    .knob::after {
+      content: ''; position: absolute; top: 1.5px; left: 50%;
+      width: 1px; height: 3px; background: var(--gold-dim);
+      transform-origin: bottom center;
+      transform: rotate(-30deg);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .nav-links .hide-mobile { display: none; }
+      .hero { padding-top: 120px; }
+      .terminal { max-width: 100%; }
+      .terminal-body { font-size: 11px; }
+      .install-terminal { font-size: 11px; padding: 16px; }
+      .output-tree { font-size: 11px; padding: 16px; }
+      .feature-card { padding: 24px 20px; }
+    }
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 36px; }
+      .btn { padding: 12px 22px; font-size: 14px; }
+      .diff-table th, .diff-table td { padding: 10px 12px; font-size: 12px; }
+    }
+  </style>
 </head>
 <body>
-    <header class="site-header container">
-        <a href="../" class="nav-back">← Back to portfolio</a>
-    </header>
+  <div class="fret-bg"></div>
+  <div class="string-line"></div>
+  <div class="string-line"></div>
+  <div class="string-line"></div>
+  <div class="string-line"></div>
 
-    <main class="container">
-        <section class="project-detail" style="padding: 1rem 0 3rem;">
-            <div class="project-icon-row" style="margin-bottom: 1.5rem;">
-                <img src="../assets/songhero-icon.png" alt="Song Hero icon" class="project-icon" style="width: 48px; height: 48px;">
-                <div>
-                    <h1 style="font-size: 1.5rem; font-weight: 600; letter-spacing: -0.01em;">Any Song Clone Hero</h1>
-                    <span class="project-stamp live" style="margin-top: 0.25rem; display: inline-block;">Live</span>
-                </div>
-            </div>
+  <!-- ═══════════ NAV ═══════════ -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-guitar"></span>
+        SONGHERO
+      </a>
+      <div class="nav-links">
+        <a href="#how" class="hide-mobile">How It Works</a>
+        <a href="#install">Install</a>
+        <a href="https://github.com/jackwallner/any-song-clone-hero-cli" target="_blank" class="hide-mobile">GitHub</a>
+        <a href="#install" class="nav-cta">GET STARTED</a>
+      </div>
+    </div>
+  </nav>
 
-            <p class="project-desc" style="font-size: 1rem; max-width: 600px; margin-bottom: 2rem;">Generate custom Clone Hero charts from any Spotify link. Downloads audio, analyzes with AI, and produces 4-difficulty chart files &mdash; all from a single command.</p>
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">
+        <span class="dot"></span> AI-POWERED CHART GENERATION
+      </div>
+      <h1>
+        PASTE A <span class="gold">SPOTIFY LINK</span>.<br>
+        GET A <span class="red">CLONE HERO</span> CHART.
+      </h1>
+      <p class="sub">
+        SongHero downloads the track, analyzes every beat with AI, and builds a full chart with 4 difficulty levels — in one command. No charting experience needed.
+      </p>
 
-            <div class="project-links" style="margin-bottom: 3rem;">
-                <a href="https://github.com/jackwallner/Songhero" target="_blank" rel="noopener">GitHub ↗</a>
-            </div>
-
-            <div style="max-width: 600px;">
-                <h2 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem;">The pitch</h2>
-                <p class="project-desc" style="margin-bottom: 1.5rem;">Clone Hero has thousands of community charts, but only for popular songs. If you want to play a song that doesn't have a chart, you're out of luck. Your alternative is spending 2+ hours manually placing notes in Moonscraper. This tool generates a playable chart for any song on Spotify in under 2 minutes.</p>
-                <p class="project-desc" style="margin-bottom: 1.5rem;">Paste any Spotify link. The CLI resolves the metadata, downloads the audio from YouTube, runs it through librosa for beat/onset detection and pitch analysis, optionally enhances with Gemini AI, then outputs a .chart file with Easy, Medium, Hard, and Expert difficulties. Drag the folder into Clone Hero and play.</p>
-
-                <h2 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin: 2.5rem 0 1rem;">How it works</h2>
-                <table style="width: 100%; font-size: 0.88rem; border-collapse: collapse;">
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Resolve</td>
-                        <td style="padding: 0.5rem 0;">Extracts song metadata from Spotify (no API key needed)</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Download</td>
-                        <td style="padding: 0.5rem 0;">Fetches audio + music video from YouTube via yt-dlp</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Analyze</td>
-                        <td style="padding: 0.5rem 0;">Audio analysis: librosa for beat/onset detection &amp; pitch-to-fret mapping, plus Gemini for note generation</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Generate</td>
-                        <td style="padding: 0.5rem 0;">Creates .chart files with 4 difficulty levels (Easy → Expert)</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Package</td>
-                        <td style="padding: 0.5rem 0;">Outputs a complete Clone Hero song folder, ready to play</td>
-                    </tr>
-                </table>
-
-                <h2 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin: 2.5rem 0 1rem;">Difficulty levels</h2>
-                <table style="width: 100%; font-size: 0.88rem; border-collapse: collapse;">
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Easy</td>
-                        <td style="padding: 0.5rem 0;">25% note density, no orange fret, no chords &mdash; simple patterns on strong beats</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Medium</td>
-                        <td style="padding: 0.5rem 0;">50% note density, no orange fret &mdash; faster rhythms</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Hard</td>
-                        <td style="padding: 0.5rem 0;">70% note density, orange fret, some chords</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Expert</td>
-                        <td style="padding: 0.5rem 0;">90% note density, orange fret, chords &mdash; dense, all notes, complex patterns</td>
-                    </tr>
-                </table>
-
-                <h2 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin: 2.5rem 0 1rem;">Specs</h2>
-                <table style="width: 100%; font-size: 0.88rem; border-collapse: collapse;">
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">CLI</td>
-                        <td style="padding: 0.5rem 0;">Node.js, single command entry point</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Audio</td>
-                        <td style="padding: 0.5rem 0;">Python: librosa, numpy, scipy for beat/onset/pitch detection</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">AI</td>
-                        <td style="padding: 0.5rem 0;">Google Gemini 2.0 Flash (optional, for smarter note generation)</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Downloads</td>
-                        <td style="padding: 0.5rem 0;">yt-dlp + ffmpeg for audio &amp; video from YouTube</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 0.5rem 0; color: var(--text-secondary); font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;">Format</td>
-                        <td style="padding: 0.5rem 0;">Clone Hero .chart format (MIDI-compatible)</td>
-                    </tr>
-                </table>
-
-                <h2 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin: 2.5rem 0 1rem;">What mattered</h2>
-
-                <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">No API key required for basic use.</strong> Spotify metadata is scraped client-side. YouTube downloads work out of the box with yt-dlp. The only optional dependency is a Gemini key for AI-enhanced note generation.</p>
-
-                <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">4 difficulty levels from one analysis pass.</strong> The audio is analyzed once, then 4 chart variants are generated by scaling note density and enabling/disabling orange fret and chords. Easy removes 75% of notes, Expert keeps 90%.</p>
-
-                <p class="project-desc" style="margin-bottom: 2rem;"><strong style="color: var(--text);">Complete output, no assembly required.</strong> The output folder contains everything Clone Hero needs: notes.chart, song.ini, album art, audio, and optional video. Drag and drop to play immediately.</p>
-
-                <h2 style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin: 2.5rem 0 1rem;">Usage</h2>
-                <pre style="background: #f5f5f5; border: 1px solid var(--border); border-radius: 6px; padding: 1.25rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; line-height: 1.6; overflow-x: auto; margin-bottom: 1.5rem;"># Basic usage
-./index.js &lt;spotify_url&gt;
-
-# With AI enhancement + music video
-./index.js &lt;spotify_url&gt; --gemini --video
-
-# Full options
-./index.js &lt;spotify_url&gt; [options]
-
-Options:
-  --gemini          Use Gemini AI for enhanced note generation
-  --video           Force download music video
-  --no-video        Skip music video download
-  --output &lt;dir&gt;    Output directory (default: ~/Desktop/Clone Hero)
-  --keep-temp       Keep temporary files</pre>
-
-                <p class="project-desc" style="color: var(--text-muted); font-style: italic; padding: 1rem; background: #fafafa; border-radius: 4px; border-left: 2px solid var(--border);">The goal wasn't to replace hand-crafted charts. It was to make any song playable in Clone Hero within 2 minutes. And not sound terrible.</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container" style="text-align: center; padding: 2rem 0; border-top: 1px solid var(--border);">
-            <a href="#" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: var(--text-secondary);">↑ Top</a>
-            <span style="color: var(--border); margin: 0 0.5rem;">·</span>
-            <a href="mailto:jackwallner@gmail.com" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: var(--text-secondary);">Email</a>
-            <span style="color: var(--border); margin: 0 0.5rem;">·</span>
-            <a href="https://github.com/jackwallner" target="_blank" rel="noopener" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: var(--text-secondary);">GitHub</a>
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span class="t-dot r"></span><span class="t-dot y"></span><span class="t-dot g"></span>
+          <span class="title">amplifier — songhero</span>
         </div>
-    </footer>
+        <div class="terminal-body">
+          <span class="prompt">~ $ </span><span class="cmd">songhero</span> <span class="url-clr">https://open.spotify.com/track/0VjIjW4GlUZAMYd2vXMi3b</span> <span class="flag">--gemini</span> <span class="flag">--video</span><br>
+          <div class="out">
+            ⬇ Downloading Bohemian Rhapsody...<br>
+            🎛️ Analyzing beats, pitch & song structure...<br>
+            🤖 Gemini enhancing note patterns...<br>
+            ✅ Saved to ~/Desktop/Clone Hero/Queen - Bohemian Rhapsody (SongHero AI)/
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#install" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          INSTALL SONGHERO
+        </a>
+        <a href="https://github.com/jackwallner/any-song-clone-hero-cli" target="_blank" class="btn btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          STAR ON GITHUB
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FEATURES ═══════════ -->
+  <section>
+    <div class="container">
+      <div class="knob-row">
+        <div class="knob"></div><div class="knob"></div><div class="knob"></div>
+      </div>
+      <div class="section-label">Features</div>
+      <h2 class="section-title">Everything you need for the perfect chart</h2>
+      <p class="section-desc">No MIDI knowledge. No manual charting. Just a Spotify link and one command.</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🎧</div>
+          <h3>Spotify → Chart</h3>
+          <p>Paste any Spotify track URL and SongHero finds the audio, downloads it, and generates a full chart. No API keys, no setup — just the link.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h3>Gemini AI Engine</h3>
+          <p>Google Gemini 2.0 Flash maps song sections — verses, choruses, bridges — and builds note patterns that feel like a human charted every phrase.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎚️</div>
+          <h3>4 Difficulty Levels</h3>
+          <p>Easy, Medium, Hard, and Expert — each with independent note grids. Progressive orange fret and chord usage tuned to the song's actual intensity.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📺</div>
+          <h3>Music Video Included</h3>
+          <p>Automatically downloads the official music video and packages it as a video background — just like Clone Hero expects. Drop in and play.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🥁</div>
+          <h3>Beat-Accurate Timing</h3>
+          <p>librosa audio analysis extracts precise onsets, tempo maps, and pitch curves. Every note lands on an actual beat — no random placement.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📦</div>
+          <h3>Ready-to-Play Output</h3>
+          <p>Outputs a complete Clone Hero song folder with notes.chart, song.ini, album art, and audio. Move it to your Songs folder and you're done.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ HOW IT WORKS ═══════════ -->
+  <section id="how">
+    <div class="container">
+      <div class="knob-row">
+        <div class="knob"></div><div class="knob"></div><div class="knob"></div><div class="knob"></div>
+      </div>
+      <div class="section-label">Pipeline</div>
+      <h2 class="section-title">Four steps. Zero effort.</h2>
+      <p class="section-desc">From a Spotify URL to a playable chart folder in under a minute.</p>
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">01</span>
+          <h3>Resolve</h3>
+          <p>Extracts song title, artist, album art, and metadata from the Spotify URL using public info — no auth required.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">02</span>
+          <h3>Download</h3>
+          <p>Fetches the highest-quality audio and optional music video from YouTube via yt-dlp and ffmpeg.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <h3>Analyze</h3>
+          <p>librosa detects beats, onsets, and pitch. Gemini maps song sections and suggests note patterns per difficulty.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">04</span>
+          <h3>Generate</h3>
+          <p>Builds a .chart file with all 4 difficulties, writes metadata, and packages everything into a ready-to-play folder.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ DIFFICULTY TABLE ═══════════ -->
+  <section>
+    <div class="container">
+      <div class="section-label">Difficulties</div>
+      <h2 class="section-title">From Easy to Expert</h2>
+      <p class="section-desc">Every chart ships with all four difficulty levels. Pick your pace and play.</p>
+      <div class="diff-table-wrap" style="overflow-x:auto;">
+        <table class="diff-table">
+          <thead>
+            <tr>
+              <th>Difficulty</th>
+              <th>Note Density</th>
+              <th>Orange Fret</th>
+              <th>Chords</th>
+              <th>Style</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="diff-name">🥉 EASY</td>
+              <td>25%</td>
+              <td><span class="cross">—</span></td>
+              <td><span class="cross">—</span></td>
+              <td>Simple single notes on strong beats</td>
+            </tr>
+            <tr>
+              <td class="diff-name">🥈 MEDIUM</td>
+              <td>50%</td>
+              <td><span class="cross">—</span></td>
+              <td><span class="cross">—</span></td>
+              <td>Faster single notes, varied patterns</td>
+            </tr>
+            <tr>
+              <td class="diff-name">🥇 HARD</td>
+              <td>70%</td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+              <td>Orange notes, some chords, faster sections</td>
+            </tr>
+            <tr>
+              <td class="diff-name">🎸 EXPERT</td>
+              <td>90%</td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+              <td>Dense patterns, full chords, all notes mapped</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <div class="grille"></div>
+
+  <!-- ═══════════ INSTALL ═══════════ -->
+  <section id="install" class="install-section">
+    <div class="container">
+      <div class="section-label">Install</div>
+      <h2 class="section-title">One command. That's it.</h2>
+      <p class="section-desc">Works on macOS and Linux. Windows via WSL.</p>
+      <div class="install-block">
+        <div class="install-tabs">
+          <button class="install-tab active" onclick="switchTab('curl')">curl</button>
+          <button class="install-tab" onclick="switchTab('git')">git</button>
+        </div>
+        <div class="install-terminal" id="tab-curl">
+          <button class="copy-btn" onclick="copyInstall('curl')">COPY</button>
+          <span class="dollar">$</span> <span style="color:#d4a853">curl</span> <span style="color:#e8e4db">-sSL</span> <span style="color:#5dade2">https://jackwallner.com/songhero/install.sh</span> <span style="color:#e8e4db">|</span> <span style="color:#d4a853">bash</span>
+        </div>
+        <div class="install-terminal" id="tab-git" style="display:none">
+          <button class="copy-btn" onclick="copyInstall('git')">COPY</button>
+          <span class="dollar">$</span> <span style="color:#d4a853">git</span> <span style="color:#e8e4db">clone</span> <span style="color:#5dade2">https://github.com/jackwallner/any-song-clone-hero-cli.git</span><br>
+          <span class="dollar">$</span> <span style="color:#d4a853">cd</span> <span style="color:#e8e4db">any-song-clone-hero-cli &&</span> <span style="color:#d4a853">chmod</span> <span style="color:#e8e4db">+x index.js</span>
+        </div>
+        <div class="prereq-note">
+          Prerequisites: <code>brew install yt-dlp ffmpeg</code> · <code>pip3 install librosa soundfile numpy scipy</code>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ OUTPUT ═══════════ -->
+  <section>
+    <div class="container">
+      <div class="knob-row">
+        <div class="knob"></div><div class="knob"></div><div class="knob"></div>
+      </div>
+      <div class="section-label">Output</div>
+      <h2 class="section-title">Ready to play, instantly</h2>
+      <p class="section-desc">Every chart lands in a complete Clone Hero song folder. Drop it in your Songs directory and play.</p>
+      <div class="output-tree">
+        <span class="dir">~/Desktop/Clone Hero/</span><br>
+        <span class="dir">└── Queen - Bohemian Rhapsody (SongHero AI)/</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="file">├── notes.chart</span> &nbsp;<span class="comment">All 4 difficulties</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="file">├── song.ini</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">Metadata (artist, album, length)</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="file">├── song.opus</span> &nbsp;&nbsp;&nbsp;<span class="comment">High-quality audio</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="file">├── album.jpg</span> &nbsp;&nbsp;&nbsp;<span class="comment">Album cover art</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="file">└── video.mp4</span> &nbsp;&nbsp;&nbsp;<span class="comment">Music video background</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CTA ═══════════ -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Stop charting by hand.</h2>
+      <p>Paste a link. Get a chart. Play the song.</p>
+      <div class="hero-actions">
+        <a href="#install" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          INSTALL NOW
+        </a>
+        <a href="https://github.com/jackwallner/any-song-clone-hero-cli" target="_blank" class="btn btn-secondary">STAR ON GITHUB ⭐</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer>
+    <div class="container">
+      <p>Built by <a href="https://jackwallner.com">Jack Wallner</a> · <a href="https://github.com/jackwallner/any-song-clone-hero-cli">GitHub</a> · MIT License</p>
+    </div>
+  </footer>
+
+  <script>
+    function switchTab(tab) {
+      document.querySelectorAll('.install-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.install-terminal').forEach(t => t.style.display = 'none');
+      document.querySelector(`[onclick="switchTab('${tab}')"]`).classList.add('active');
+      document.getElementById('tab-' + tab).style.display = 'block';
+    }
+
+    function copyInstall(tab) {
+      const lines = {
+        curl: 'curl -sSL https://jackwallner.com/songhero/install.sh | bash',
+        git: 'git clone https://github.com/jackwallner/any-song-clone-hero-cli.git && cd any-song-clone-hero-cli && chmod +x index.js'
+      };
+      navigator.clipboard.writeText(lines[tab]).then(() => {
+        const btn = document.querySelector(`#tab-${tab} .copy-btn`);
+        const orig = btn.textContent;
+        btn.textContent = 'COPIED!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+      });
+    }
+  </script>
 </body>
 </html>
