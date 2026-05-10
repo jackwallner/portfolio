@@ -2,7 +2,7 @@
 set -e
 
 # ── SongHero Installer ──
-# curl -sSL https://songhero.jackwallner.com/install.sh | bash
+# curl -sSL https://jackwallner.com/songhero/install.sh | bash
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -20,7 +20,7 @@ GEMINI_KEY="${GEMINI_API_KEY:-}"
 banner() {
   echo ""
   echo -e "${PURPLE}${BOLD}   🎸  SongHero — AI Clone Hero Charts  🎸${NC}"
-  echo -e "   ${CYAN}https://songhero.jackwallner.com${NC}"
+  echo -e "   ${CYAN}https://jackwallner.com/songhero${NC}"
   echo ""
 }
 
