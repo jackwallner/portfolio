@@ -1,0 +1,8 @@
+{
+  "applinks": {
+    "details": [{
+      "appIDs": ["YXG4MP6W39.com.jackwallner.bond"],
+      "components": [{ "/": "/pair/*" }]
+    }]
+  }
+}
