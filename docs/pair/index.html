@@ -3,50 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Not found - Jack Wallner</title>
+    <title>Pair on Bond</title>
+    <meta name="description" content="You've been invited to pair on Bond — love-language reminders, shared milestones, and a daily check-in for couples.">
+    <meta name="robots" content="noindex">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/home.css">
     <style>
-        .not-found {
+        .pair {
             min-height: calc(100vh - 200px);
             display: flex;
             flex-direction: column;
             justify-content: center;
             padding: 4rem 0;
         }
-        .not-found h1 {
-            font-size: clamp(2.5rem, 8vw, 4rem);
+        .pair h1 {
+            font-size: clamp(2.2rem, 7vw, 3.4rem);
             font-weight: 600;
             letter-spacing: -0.02em;
             margin-bottom: 1rem;
         }
-        .not-found p {
+        .pair p {
             font-size: 1rem;
             color: var(--text-secondary);
-            max-width: 480px;
+            max-width: 520px;
             margin-bottom: 1.5rem;
             line-height: 1.6;
         }
-        .not-found .links {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.78rem;
-            display: flex;
-            gap: 1.25rem;
-            flex-wrap: wrap;
-        }
-        .not-found .links a {
-            color: var(--text-secondary);
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 1px;
-        }
-        .not-found .links a:hover {
-            color: var(--text);
-            border-bottom-color: var(--text);
-        }
-        /* Pairing invite (shown when the path is /pair/<code> and the app
-           isn't installed, so the universal link falls through to this 404). */
         .pair-code {
             font-family: 'IBM Plex Mono', monospace;
             font-size: clamp(1.6rem, 6vw, 2.2rem);
@@ -67,62 +51,47 @@
             color: var(--bg, #fff);
             margin-bottom: 1rem;
         }
-        .pair-steps {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            max-width: 520px;
-            line-height: 1.6;
-        }
+        .pair-steps { font-size: 0.95rem; color: var(--text-secondary); max-width: 520px; line-height: 1.6; }
+        .links { font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; display: flex; gap: 1.25rem; flex-wrap: wrap; margin-top: 1.25rem; }
+        .links a { color: var(--text-secondary); border-bottom: 1px solid var(--border); padding-bottom: 1px; }
+        .links a:hover { color: var(--text); border-bottom-color: var(--text); }
     </style>
 </head>
 <body>
     <header class="site-header container">
-        <a href="/" class="nav-back">← Back to portfolio</a>
+        <a href="/bond/" class="nav-back">← About Bond</a>
     </header>
-
-    <!-- Default 404 (hidden if this is a /pair/ invite link) -->
-    <main class="container not-found" id="notFound">
-        <h1>404</h1>
-        <p>That page isn't here. Either it was never published, or it's been moved. The selected work lives <a href="/">on the front page</a>.</p>
-        <div class="links">
-            <a href="/">Front page</a>
-            <a href="/repos.html">All repositories</a>
-            <a href="https://github.com/jackwallner" target="_blank" rel="noopener">GitHub ↗</a>
-        </div>
-    </main>
-
-    <!-- Pairing invite (revealed by JS for /pair/<code> paths) -->
-    <main class="container not-found" id="pairInvite" hidden>
+    <main class="container pair">
         <h1>Pair on Bond 💛</h1>
         <p>Your partner invited you to pair on Bond — love-language reminders, shared milestones, and a daily check-in for the two of you.</p>
         <div id="pairCodeWrap" hidden>
             <div class="pair-code" id="pairCode"></div>
         </div>
-        <a class="pair-cta" id="pairAppStore" href="https://apps.apple.com/app/id6768514177">Download Bond on the App Store</a>
+        <a class="pair-cta" href="https://apps.apple.com/app/id6768514177">Download Bond on the App Store</a>
         <p class="pair-steps">
-            Already have Bond? Open the link again from your phone to pair instantly.<br>
+            Already have Bond? Open the invite link again from your phone to pair instantly.<br>
             New here? Install Bond, then go to <strong>Settings → Connect a partner → Receive</strong> and enter the code above.
         </p>
         <div class="links">
             <a href="/bond/">About Bond</a>
             <a href="/bond/support/">Support</a>
+            <a href="/bond/privacy/">Privacy</a>
         </div>
     </main>
-
     <script>
         (function () {
-            var path = window.location.pathname || "";
-            var m = path.match(/^\/pair\/?([A-Za-z0-9-]+)?/);
-            if (!m) return; // not a pairing link — keep the normal 404
-            document.getElementById("notFound").hidden = true;
-            var invite = document.getElementById("pairInvite");
-            invite.hidden = false;
-            var code = (m[1] || "").toUpperCase();
+            // Accept a code from ?code=XXXX, #XXXX, or a /pair/<code> path.
+            var params = new URLSearchParams(window.location.search);
+            var code = params.get("code") || window.location.hash.replace(/^#/, "");
+            if (!code) {
+                var m = (window.location.pathname || "").match(/^\/pair\/([A-Za-z0-9-]+)/);
+                if (m) code = m[1];
+            }
+            code = (code || "").toUpperCase();
             if (code) {
                 document.getElementById("pairCode").textContent = code;
                 document.getElementById("pairCodeWrap").hidden = false;
             }
-            document.title = "Pair on Bond";
         })();
     </script>
 </body>
