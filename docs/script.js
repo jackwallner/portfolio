@@ -1,9 +1,3 @@
-const FEATURED = new Set([
-    'vitals', 'headaches', 'fitness-streaks', 'baseball',
-    'elsa-fitness-website', 'flight-tracker', 'my-flights', 'portfolio', 'jackwallner',
-    'qa-bot', 'spotify-daily-trading-bot', 'songhero', 'any-song-clone-hero'
-].map(s => s.toLowerCase()));
-
 const LANG_DOTS = {
     Swift: '#F05138', Python: '#3572A5', JavaScript: '#f1e05a',
     TypeScript: '#3178c6', HTML: '#e34c26', CSS: '#563d7c',
@@ -46,11 +40,11 @@ async function loadRepos() {
         if (!res.ok) throw new Error('GitHub API ' + res.status);
         const repos = await res.json();
         const filtered = repos
-            .filter(r => !r.fork && !r.archived && !FEATURED.has(r.name.toLowerCase()))
+            .filter(r => !r.fork && !r.archived)
             .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
 
         if (!filtered.length) {
-            el.innerHTML = '<div class="loading">No additional public repositories.</div>';
+            el.innerHTML = '<div class="loading">No public repositories.</div>';
             return;
         }
 

@@ -113,6 +113,29 @@ a:hover { color: var(--text-secondary); }
     .header-links a { padding: 0.35rem 0; display: inline-block; }
 }
 
+/* ---- Tabs ---- */
+.site-tabs {
+    display: flex;
+    gap: 1.75rem;
+    padding-top: 0.9rem;
+    border-bottom: 1px solid var(--border);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+}
+.site-tabs .tab {
+    color: var(--text-muted);
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: color 0.15s, border-color 0.15s;
+}
+.site-tabs .tab:hover { color: var(--text); }
+.site-tabs .tab.active {
+    color: var(--text);
+    border-bottom-color: var(--text);
+    font-weight: 500;
+}
+
 /* ---- Projects grid ---- */
 .projects {
     padding: 2.5rem 0;
@@ -182,6 +205,7 @@ a:hover { color: var(--text-secondary); }
 .project-stamp.live { color: #1e40af; border-color: #bfdbfe; background: #eff6ff; }
 .project-stamp.wip { color: #713f12; border-color: #fde68a; background: #fefce8; }
 .project-stamp.unsuccessful { color: #991b1b; border-color: #fecaca; background: #fef2f2; }
+.project-stamp.soon { color: #3730a3; border-color: #c7d2fe; background: #eef2ff; }
 
 .project-desc {
     font-size: 0.88rem;
