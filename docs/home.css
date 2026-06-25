@@ -321,7 +321,7 @@ a:hover { color: var(--text-secondary); }
     padding: 0.6rem 1rem;
     border-bottom: 1px solid var(--border);
 }
-.proj-table th.col-date { text-align: right; white-space: nowrap; }
+.proj-table th.col-started, .proj-table th.col-updated { text-align: right; white-space: nowrap; }
 
 .proj-tr {
     border-bottom: 1px solid var(--border);
@@ -374,31 +374,17 @@ a:hover { color: var(--text-secondary); }
     color: var(--text-secondary);
 }
 
-.col-status { white-space: nowrap; width: 1%; }
-.col-date {
-    text-align: right;
-    white-space: nowrap;
-    width: 1%;
+.col-type, .col-status, .col-started, .col-updated { white-space: nowrap; width: 1%; }
+.col-started, .col-updated { text-align: right; }
+.proj-type {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--text-secondary);
 }
 .proj-when {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.7rem;
     color: var(--text-muted);
-}
-.proj-lang {
-    display: block;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.62rem;
-    color: var(--text-muted);
-    margin-top: 0.15rem;
-}
-.proj-lang .lang-dot {
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    margin-right: 0.25rem;
-    vertical-align: middle;
 }
 
 .project-stamp.code { color: #44403c; border-color: #e7e5e4; background: #f5f5f4; }
@@ -450,9 +436,15 @@ a:hover { color: var(--text-secondary); }
 }
 .all-foot a:hover { color: var(--text); border-bottom-color: var(--text); }
 
+@media (max-width: 820px) {
+    .proj-table th.col-updated, .proj-table td.col-updated { display: none; }
+}
+@media (max-width: 680px) {
+    .proj-table th.col-started, .proj-table td.col-started { display: none; }
+}
 @media (max-width: 560px) {
     .proj-table td, .proj-table thead th { padding: 0.65rem 0.7rem; }
-    .proj-table th.col-date, .proj-table td.col-date { display: none; }
+    .proj-table th.col-type, .proj-table td.col-type { display: none; }
     .proj-icon { width: 30px; height: 30px; }
     .proj-name { font-size: 0.88rem; }
     .proj-desc { font-size: 0.78rem; }

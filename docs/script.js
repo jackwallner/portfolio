@@ -1,34 +1,29 @@
-const LANG_DOTS = {
-    Swift: '#F05138', Python: '#3572A5', JavaScript: '#f1e05a',
-    TypeScript: '#3178c6', HTML: '#e34c26', CSS: '#563d7c',
-    Shell: '#89e051', Java: '#b07219', Go: '#00ADD8', Ruby: '#701516',
-    'C++': '#f34b7d', C: '#555555', Rust: '#dea584', Processing: '#0096D8'
-};
-
 // Curated metadata, keyed by GitHub repo name. `repo: null` = no public repo.
-// `fallback` dates are only used if the GitHub API is unreachable.
+// `start`/`updated` are fallback dates, used only if the GitHub API is unreachable;
+// real created_at / pushed_at dates override them when the fetch succeeds.
 const CURATED = [
-    { repo: 'vitals', name: 'Total Calories', icon: 'vitals-icon.png', status: 'App Store', cls: 'live', link: 'https://jackwallner.github.io/vitals/', ext: true, fallback: '2026-06-15', desc: 'Private calorie and step tracking, straight from Apple Health.' },
-    { repo: 'headaches', name: 'One Tap Headache Tracker', icon: 'headaches-icon.png', status: 'App Store', cls: 'live', link: 'https://jackwallner.github.io/headaches/', ext: true, fallback: '2026-06-10', desc: 'Log a headache in one tap, with health and weather context.' },
-    { repo: 'fitness-streaks', name: 'Streak Finder', icon: 'streaks-icon.png', status: 'App Store', cls: 'live', link: 'https://jackwallner.github.io/fitness-streaks/', ext: true, fallback: '2026-06-08', desc: 'Finds your fitness streaks automatically from Apple Health.' },
-    { repo: 'sober', name: 'Sober', icon: 'sober-icon.png', status: 'App Store', cls: 'live', link: 'https://jackwallner.github.io/sober/', ext: true, fallback: '2026-06-12', desc: 'A day counter with a virtual garden that grows as sober days add up.' },
-    { repo: 'simpleglp', name: 'Simple GLP', icon: 'simpleglp-icon.png', status: 'App Store', cls: 'live', link: 'https://jackwallner.github.io/simpleglp/', ext: true, fallback: '2026-06-11', desc: 'One-tap GLP-1 shot logging on a simple weekly schedule.' },
-    { repo: 'sports', name: 'Gist', icon: 'sports-icon.png', status: 'App Store', cls: 'live', link: 'https://jackwallner.github.io/sports/', ext: true, fallback: '2026-06-14', desc: 'Plain-English sports talking points so non-fans can ask one good question.' },
-    { repo: 'baseball', name: 'Baseball Savvy StatScout', icon: 'statscout-icon.png', status: 'App Store', cls: 'live', link: 'statscout/', ext: false, fallback: '2026-05-20', desc: 'Mobile-first Statcast player cards and leaderboards.' },
-    { repo: 'bond', name: 'Bond', icon: 'bond-icon.png', status: 'App Store', cls: 'live', link: 'https://jackwallner.github.io/bond/', ext: true, fallback: '2026-05-25', desc: 'Love-language reminders, shared milestones, and a daily check-in for couples.' },
-    { repo: 'posture', name: 'Posture', icon: 'posture-icon.png', status: 'Coming soon', cls: 'soon', link: 'https://jackwallner.github.io/posture/', ext: true, fallback: '2026-06-09', desc: 'Reads your alignment from AirPods head-motion sensors and nudges you upright.' },
-    { repo: 'nearby-trains', name: 'Nearby Trains', icon: 'trains-icon.png', status: 'Live', cls: 'live', link: 'https://jackwallner.github.io/nearby-trains/', ext: true, fallback: '2026-04-15', desc: 'Track Amtrak, VIA Rail, and Brightline trains near any location.' },
-    { repo: 'flight-tracker', name: 'Flight Tracker', icon: 'flight-tracker-icon.png', status: 'Live', cls: 'live', link: 'flight-tracker/', ext: false, fallback: '2026-04-20', desc: 'Local flight tracking on an AWTRIX smart pixel clock.' },
-    { repo: 'any-song-clone-hero-cli', name: 'Any Song Clone Hero', icon: 'songhero-icon.png', status: 'Live', cls: 'live', link: 'songhero/', ext: false, fallback: '2026-03-10', desc: 'Generates custom Clone Hero charts from any Spotify link.' },
-    { repo: null, name: 'e3fit.me', icon: 'e3fit-icon.png', status: 'Live', cls: 'live', link: 'e3fit/', ext: false, fallback: '2026-05-01', desc: 'A production platform for coaching, booking, and workout delivery.' },
-    { repo: 'spotify-daily-trading-bot', name: 'Spotify Daily Trading Bot', icon: 'spotify-bot-icon.png', status: 'Retired', cls: 'unsuccessful', link: 'spotify-bot/', ext: false, fallback: '2026-02-15', desc: "A Kalshi bot for predicting Spotify's daily #1 song. It didn't beat the market." },
+    { repo: 'vitals', name: 'Total Calories', icon: 'vitals-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'https://jackwallner.github.io/vitals/', ext: true, start: '2026-05-01', updated: '2026-06-15', desc: 'Private calorie and step tracking, straight from Apple Health.' },
+    { repo: 'headaches', name: 'One Tap Headache Tracker', icon: 'headaches-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'https://jackwallner.github.io/headaches/', ext: true, start: '2026-05-20', updated: '2026-06-10', desc: 'Log a headache in one tap, with health and weather context.' },
+    { repo: 'fitness-streaks', name: 'Streak Finder', icon: 'streaks-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'https://jackwallner.github.io/fitness-streaks/', ext: true, start: '2026-05-22', updated: '2026-06-08', desc: 'Finds your fitness streaks automatically from Apple Health.' },
+    { repo: 'sober', name: 'Sober', icon: 'sober-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'https://jackwallner.github.io/sober/', ext: true, start: '2026-05-15', updated: '2026-06-12', desc: 'A day counter with a virtual garden that grows as sober days add up.' },
+    { repo: 'simpleglp', name: 'Simple GLP', icon: 'simpleglp-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'https://jackwallner.github.io/simpleglp/', ext: true, start: '2026-05-28', updated: '2026-06-11', desc: 'One-tap GLP-1 shot logging on a simple weekly schedule.' },
+    { repo: 'sports', name: 'Gist', icon: 'sports-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'https://jackwallner.github.io/sports/', ext: true, start: '2026-05-30', updated: '2026-06-14', desc: 'Plain-English sports talking points so non-fans can ask one good question.' },
+    { repo: 'baseball', name: 'Baseball Savvy StatScout', icon: 'statscout-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'statscout/', ext: false, start: '2026-04-10', updated: '2026-05-20', desc: 'Mobile-first Statcast player cards and leaderboards.' },
+    { repo: 'bond', name: 'Bond', icon: 'bond-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'https://jackwallner.github.io/bond/', ext: true, start: '2026-04-20', updated: '2026-05-25', desc: 'Love-language reminders, shared milestones, and a daily check-in for couples.' },
+    { repo: 'posture', name: 'Posture', icon: 'posture-icon.png', type: 'iOS App', status: 'Coming soon', cls: 'soon', link: 'https://jackwallner.github.io/posture/', ext: true, start: '2026-06-01', updated: '2026-06-09', desc: 'Reads your alignment from AirPods head-motion sensors and nudges you upright.' },
+    { repo: 'nearby-trains', name: 'Nearby Trains', icon: 'trains-icon.png', type: 'Web app', status: 'Live', cls: 'live', link: 'https://jackwallner.github.io/nearby-trains/', ext: true, start: '2026-04-01', updated: '2026-04-15', desc: 'Track Amtrak, VIA Rail, and Brightline trains near any location.' },
+    { repo: 'flight-tracker', name: 'Flight Tracker', icon: 'flight-tracker-icon.png', type: 'Hardware', status: 'Live', cls: 'live', link: 'flight-tracker/', ext: false, start: '2026-03-15', updated: '2026-04-20', desc: 'Local flight tracking on an AWTRIX smart pixel clock.' },
+    { repo: 'any-song-clone-hero-cli', name: 'Any Song Clone Hero', icon: 'songhero-icon.png', type: 'Tool', status: 'Live', cls: 'live', link: 'songhero/', ext: false, start: '2026-02-20', updated: '2026-03-10', desc: 'Generates custom Clone Hero charts from any Spotify link.' },
+    { repo: null, name: 'e3fit.me', icon: 'e3fit-icon.png', type: 'Web app', status: 'Live', cls: 'live', link: 'e3fit/', ext: false, start: '2026-03-01', updated: '2026-05-01', desc: 'A production platform for coaching, booking, and workout delivery.' },
+    { repo: 'spotify-daily-trading-bot', name: 'Spotify Daily Trading Bot', icon: 'spotify-bot-icon.png', type: 'Bot', status: 'Retired', cls: 'unsuccessful', link: 'spotify-bot/', ext: false, start: '2026-01-20', updated: '2026-02-15', desc: "A Kalshi bot for predicting Spotify's daily #1 song. It didn't beat the market." },
 ];
 
 // Repos folded into a curated entry above — don't list them again in the tail.
-// value = repo name of the curated entry whose date should track this repo too.
+// value = repo name of the curated entry whose dates should also track this repo.
 const FOLDED = { 'statscout': 'baseball', 'flight-tracker-service': 'flight-tracker' };
 
 function fmtDate(iso) {
+    if (!iso) return '';
     const d = new Date(iso);
     return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
 }
@@ -52,9 +47,6 @@ function projectRow(e) {
     const iconHtml = e.icon
         ? `<img src="assets/${e.icon}" alt="" class="proj-icon">`
         : `<span class="proj-icon ph">${escapeHtml((e.name[0] || '#').toUpperCase())}</span>`;
-    const langHtml = e.lang
-        ? `<span class="lang-dot" style="background:${LANG_DOTS[e.lang] || '#7a766c'}"></span>${escapeHtml(e.lang)}`
-        : '';
 
     tr.innerHTML = `
         <td class="col-proj">
@@ -66,13 +58,10 @@ function projectRow(e) {
                 </div>
             </div>
         </td>
-        <td class="col-status">
-            <span class="project-stamp ${e.cls}">${escapeHtml(e.status)}</span>
-        </td>
-        <td class="col-date">
-            <span class="proj-when">${e.date ? fmtDate(e.date) : ''}</span>
-            ${langHtml ? `<span class="proj-lang">${langHtml}</span>` : ''}
-        </td>
+        <td class="col-type"><span class="proj-type">${escapeHtml(e.type || '')}</span></td>
+        <td class="col-status"><span class="project-stamp ${e.cls}">${escapeHtml(e.status)}</span></td>
+        <td class="col-started"><span class="proj-when">${fmtDate(e.start)}</span></td>
+        <td class="col-updated"><span class="proj-when">${fmtDate(e.updated)}</span></td>
     `;
     return tr;
 }
@@ -80,7 +69,7 @@ function projectRow(e) {
 function renderTable(entries) {
     const body = document.getElementById('proj-rows');
     if (!body) return;
-    const sorted = entries.slice().sort((a, b) => new Date(b.date || b.fallback) - new Date(a.date || a.fallback));
+    const sorted = entries.slice().sort((a, b) => new Date(b.start || 0) - new Date(a.start || 0));
     body.innerHTML = '';
     sorted.forEach(e => body.appendChild(projectRow(e)));
 
@@ -95,6 +84,9 @@ function renderTable(entries) {
     });
 }
 
+function olderOf(a, b) { return new Date(a) < new Date(b) ? a : b; }
+function newerOf(a, b) { return new Date(a) > new Date(b) ? a : b; }
+
 async function loadProjects() {
     const body = document.getElementById('proj-rows');
     if (!body) return;
@@ -107,9 +99,6 @@ async function loadProjects() {
         if (!res.ok) throw new Error('GitHub API ' + res.status);
         const repos = await res.json();
 
-        const byRepo = {};
-        CURATED.forEach(e => { if (e.repo) byRepo[e.repo] = e; });
-
         const entries = CURATED.map(e => ({ ...e }));
         const entryByRepo = {};
         entries.forEach(e => { if (e.repo) entryByRepo[e.repo] = e; });
@@ -117,13 +106,13 @@ async function loadProjects() {
         repos.filter(r => !r.fork && !r.archived).forEach(r => {
             const key = r.name.toLowerCase();
             if (FOLDED[key]) {
-                const target = entryByRepo[FOLDED[key]];
-                if (target && new Date(r.pushed_at) > new Date(target.date || 0)) target.date = r.pushed_at;
+                const t = entryByRepo[FOLDED[key]];
+                if (t) { t.start = olderOf(t.start, r.created_at); t.updated = newerOf(t.updated, r.pushed_at); }
                 return;
             }
             if (entryByRepo[key]) {
-                entryByRepo[key].date = r.pushed_at;
-                if (!entryByRepo[key].lang) entryByRepo[key].lang = r.language || '';
+                entryByRepo[key].start = r.created_at;
+                entryByRepo[key].updated = r.pushed_at;
                 return;
             }
             // Long tail: real repo with no curated entry.
@@ -131,12 +120,13 @@ async function loadProjects() {
                 name: r.name,
                 desc: stripEmoji(r.description),
                 icon: null,
+                type: 'Repo',
                 status: 'Code',
                 cls: 'code',
                 link: r.html_url,
                 ext: true,
-                date: r.pushed_at,
-                lang: r.language || ''
+                start: r.created_at,
+                updated: r.pushed_at
             });
         });
 
