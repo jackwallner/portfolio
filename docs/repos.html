@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="home.css?v=2">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
@@ -32,149 +32,29 @@
 
     <main class="container">
         <section class="all-projects">
-            <p class="all-intro">Everything I've shipped or tinkered with this year, grouped by where it stands today.</p>
+            <p class="all-intro">Everything I've shipped or tinkered with this year, newest first.</p>
 
-            <div class="proj-group">
-                <div class="proj-group-head">
-                    <h2>On the App Store</h2>
-                    <span class="proj-count">8</span>
-                </div>
-                <div class="proj-list">
-                    <a class="proj-row" href="https://jackwallner.github.io/vitals/" target="_blank" rel="noopener">
-                        <img src="assets/vitals-icon.png" alt="" class="proj-icon">
-                        <div class="proj-body">
-                            <span class="proj-name">Total Calories</span>
-                            <span class="proj-desc">Private calorie and step tracking, straight from Apple Health.</span>
-                        </div>
-                        <span class="proj-go">↗</span>
-                    </a>
-                    <a class="proj-row" href="https://jackwallner.github.io/headaches/" target="_blank" rel="noopener">
-                        <img src="assets/headaches-icon.png" alt="" class="proj-icon">
-                        <div class="proj-body">
-                            <span class="proj-name">One Tap Headache Tracker</span>
-                            <span class="proj-desc">Log a headache in one tap, with health and weather context.</span>
-                        </div>
-                        <span class="proj-go">↗</span>
-                    </a>
-                    <a class="proj-row" href="https://jackwallner.github.io/fitness-streaks/" target="_blank" rel="noopener">
-                        <img src="assets/streaks-icon.png" alt="" class="proj-icon">
-                        <div class="proj-body">
-                            <span class="proj-name">Streak Finder</span>
-                            <span class="proj-desc">Finds your fitness streaks automatically from Apple Health.</span>
-                        </div>
-                        <span class="proj-go">↗</span>
-                    </a>
-                    <a class="proj-row" href="https://jackwallner.github.io/sober/" target="_blank" rel="noopener">
-                        <img src="assets/sober-icon.png" alt="" class="proj-icon">
-                        <div class="proj-body">
-                            <span class="proj-name">Sober</span>
-                            <span class="proj-desc">A day counter with a virtual garden that grows as sober days add up.</span>
-                        </div>
-                        <span class="proj-go">↗</span>
-                    </a>
-                    <a class="proj-row" href="https://jackwallner.github.io/simpleglp/" target="_blank" rel="noopener">
-                        <img src="assets/simpleglp-icon.png" alt="" class="proj-icon">
-                        <div class="proj-body">
-                            <span class="proj-name">Simple GLP</span>
-                            <span class="proj-desc">One-tap GLP-1 shot logging on a simple weekly schedule.</span>
-                        </div>
-                        <span class="proj-go">↗</span>
-                    </a>
-                    <a class="proj-row" href="https://jackwallner.github.io/sports/" target="_blank" rel="noopener">
-                        <img src="assets/sports-icon.png" alt="" class="proj-icon">
-                        <div class="proj-body">
-                            <span class="proj-name">Gist</span>
-                            <span class="proj-desc">Plain-English sports talking points so non-fans can ask one good question.</span>
-                        </div>
-                        <span class="proj-go">↗</span>
-                    </a>
-                    <a class="proj-row" href="statscout/">
-                        <img src="assets/statscout-icon.png" alt="" class="proj-icon">
-                        <div class="proj-body">
-                            <span class="proj-name">Baseball Savvy StatScout</span>
-                            <span class="proj-desc">Mobile-first Statcast player cards and leaderboards.</span>
-                        </div>
-                        <span class="proj-go">→</span>
-                    </a>
-                    <a class="proj-row" href="https://jackwallner.github.io/bond/" target="_blank" rel="noopener">
-                        <img src="assets/bond-icon.png" alt="" class="proj-icon">
-                        <div class="proj-body">
-                            <span class="proj-name">Bond</span>
-                            <span class="proj-desc">Love-language reminders, shared milestones, and a daily check-in for couples.</span>
-                        </div>
-                        <span class="proj-go">↗</span>
-                    </a>
-                </div>
+            <div class="proj-table-wrap">
+                <table class="proj-table">
+                    <thead>
+                        <tr>
+                            <th class="col-proj">Project</th>
+                            <th class="col-status">Status</th>
+                            <th class="col-date">Updated</th>
+                        </tr>
+                    </thead>
+                    <tbody id="proj-rows">
+                        <tr class="proj-skel"><td colspan="3"></td></tr>
+                        <tr class="proj-skel"><td colspan="3"></td></tr>
+                        <tr class="proj-skel"><td colspan="3"></td></tr>
+                        <tr class="proj-skel"><td colspan="3"></td></tr>
+                        <tr class="proj-skel"><td colspan="3"></td></tr>
+                        <tr class="proj-skel"><td colspan="3"></td></tr>
+                    </tbody>
+                </table>
             </div>
 
-            <div class="proj-group">
-                <div class="proj-group-head">
-                    <h2>Live on the web</h2>
-                    <span class="proj-count">3</span>
-                </div>
-                <div class="proj-list">
-                    <a class="proj-row" href="e3fit/">
-                        <img src="assets/e3fit-icon.png" alt="" class="proj-icon">
-                        <div class="proj-body">
-                            <span class="proj-name">e3fit.me</span>
-                            <span class="proj-desc">A production platform for coaching, booking, and workout delivery.</span>
-                        </div>
-                        <span class="proj-go">→</span>
-                    </a>
-                    <a class="proj-row" href="flight-tracker/">
-                        <img src="assets/flight-tracker-icon.png" alt="" class="proj-icon">
-                        <div class="proj-body">
-                            <span class="proj-name">Flight Tracker</span>
-                            <span class="proj-desc">Local flight tracking on an AWTRIX smart pixel clock.</span>
-                        </div>
-                        <span class="proj-go">→</span>
-                    </a>
-                    <a class="proj-row" href="songhero/">
-                        <img src="assets/songhero-icon.png" alt="" class="proj-icon">
-                        <div class="proj-body">
-                            <span class="proj-name">Any Song Clone Hero</span>
-                            <span class="proj-desc">Generates custom Clone Hero charts from any Spotify link.</span>
-                        </div>
-                        <span class="proj-go">→</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="proj-group">
-                <div class="proj-group-head">
-                    <h2>In the works</h2>
-                    <span class="proj-count">1</span>
-                </div>
-                <div class="proj-list">
-                    <a class="proj-row" href="https://jackwallner.github.io/posture/" target="_blank" rel="noopener">
-                        <img src="assets/posture-icon.png" alt="" class="proj-icon">
-                        <div class="proj-body">
-                            <span class="proj-name">Posture</span>
-                            <span class="proj-desc">Reads your alignment from AirPods head-motion sensors and nudges you upright.</span>
-                        </div>
-                        <span class="proj-go">↗</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="proj-group">
-                <div class="proj-group-head">
-                    <h2>Didn't pan out</h2>
-                    <span class="proj-count">1</span>
-                </div>
-                <div class="proj-list">
-                    <a class="proj-row" href="spotify-bot/">
-                        <img src="assets/spotify-bot-icon.png" alt="" class="proj-icon">
-                        <div class="proj-body">
-                            <span class="proj-name">Spotify Daily Trading Bot</span>
-                            <span class="proj-desc">A Kalshi bot for predicting Spotify's daily #1 song. It didn't beat the market.</span>
-                        </div>
-                        <span class="proj-go">→</span>
-                    </a>
-                </div>
-            </div>
-
-            <p class="all-foot">Want the raw source? <a href="https://github.com/jackwallner" target="_blank" rel="noopener">Browse everything on GitHub →</a></p>
+            <p class="all-foot"><a href="https://github.com/jackwallner?tab=repositories" target="_blank" rel="noopener">See my full GitHub profile →</a></p>
         </section>
     </main>
 
@@ -189,5 +69,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="script.js?v=2"></script>
 </body>
 </html>
