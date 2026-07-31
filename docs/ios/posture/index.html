@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="256x256" href="icon_256.png">
+    <link rel="apple-touch-icon" href="icon_256.png">
+    <title>Posture Coach: Sit Straight for iPhone, AirPods &amp; Apple Watch</title>
+    <meta name="description" content="Your AirPods become an always-on posture coach. Posture watches your head position all day and gives you a gentle buzz when you slouch. Daily reports, streaks, Apple Watch companion. On-device and private.">
+    <link rel="canonical" href="https://jackwallner.com/ios/posture/">
+    <meta name="apple-itunes-app" content="app-id=6768514450">
+    <meta name="keywords" content="posture coach, posture correction, AirPods posture, neck posture, slouch detector, iPhone, Apple Watch, AirPods, free, no ads, private">
+    <meta property="og:title" content="Posture Coach: Sit Straight for iPhone &amp; Apple Watch">
+    <meta property="og:description" content="Your AirPods become an always-on posture coach. A gentle buzz when you slouch, a daily report of how you actually sat. Calibrate once and wear them like you already do.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jackwallner.com/ios/posture/">
+    <meta property="og:image" content="https://jackwallner.github.io/posture/icon_256.png">
+    <meta property="og:site_name" content="Posture">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Posture Coach: Sit Straight">
+    <meta name="twitter:description" content="Your AirPods become an always-on posture coach. A gentle buzz when you slouch, a daily report of how you actually sat.">
+    <meta name="twitter:image" content="https://jackwallner.github.io/posture/icon_256.png">
+    <script type="application/ld+json">
+{
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Posture Coach: Sit Straight",
+        "operatingSystem": "iOS",
+        "applicationCategory": "HealthApplication",
+        "offers": [
+            {
+                "@type": "Offer",
+                "price": "4.99",
+                "priceCurrency": "USD",
+                "description": "Posture+ Monthly, all-day AirPods background monitoring, daily reports, Apple Watch coaching, and streaks. Free trial available."
+            },
+            {
+                "@type": "Offer",
+                "price": "29.99",
+                "priceCurrency": "USD",
+                "description": "Posture+ Yearly, same features, billed annually"
+            },
+            {
+                "@type": "Offer",
+                "price": "79.99",
+                "priceCurrency": "USD",
+                "description": "Posture+ Lifetime, all features forever"
+            }
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "ratingCount": "1"
+        },
+        "description": "AI posture coach for AirPods, iPhone, and Apple Watch. Uses your AirPods' head-motion sensor to detect head angle, with iPhone reminders and Apple Watch background nudges. Duolingo-style streaks. Free with optional Posture+ upgrade.",
+        "url": "https://jackwallner.com/ios/posture/",
+        "downloadUrl": "https://apps.apple.com/us/app/id6768514450",
+        "screenshot": "https://jackwallner.github.io/posture/icon_256.png",
+        "softwareVersion": "1.0.2",
+        "author": {
+            "@type": "Person",
+            "name": "Jack Wallner"
+        }
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+            color: #1d1d1f;
+            background: #fafafa;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Nav */
+        nav {
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            background: rgba(250,250,250,0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #1d1d1f;
+        }
+
+        .nav-brand img {
+            width: 32px;
+            height: 32px;
+            border-radius: 7px;
+        }
+
+        .nav-brand span {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .nav-link {
+            font-size: 14px;
+            text-decoration: none;
+            background: #1d1d1f;
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 980px;
+            font-weight: 500;
+            transition: opacity 0.15s;
+        }
+
+        .nav-link:hover { opacity: 0.85; }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 100px 24px 64px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            line-height: 1.08;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #0071e3, #5e9eff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .tagline {
+            font-size: 19px;
+            color: #6e6e73;
+            line-height: 1.5;
+            max-width: 440px;
+            margin: 0 auto 12px;
+        }
+
+        .hero .platforms {
+            font-size: 13px;
+            color: #86868b;
+            letter-spacing: 0.3px;
+            margin-bottom: 36px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: #1d1d1f;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 14px 36px;
+            border-radius: 980px;
+            text-decoration: none;
+            transition: opacity 0.15s;
+        }
+
+        .download-btn:hover { opacity: 0.85; }
+
+        /* Screenshot showcase */
+        .showcase {
+            padding: 0 0 80px;
+        }
+
+        .showcase-scroll {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding: 0 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+            scrollbar-width: none;
+        }
+
+        .showcase-scroll::-webkit-scrollbar { display: none; }
+
+        .showcase-card {
+            flex-shrink: 0;
+            scroll-snap-align: center;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 16px 48px rgba(0,0,0,0.08);
+        }
+
+        .showcase-card img {
+            height: 540px;
+            display: block;
+        }
+
+        /* Features */
+        .features {
+            padding: 80px 0;
+            background: #fff;
+            border-top: 1px solid rgba(0,0,0,0.06);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .features-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .features-header h2 {
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .features-header p {
+            font-size: 17px;
+            color: #6e6e73;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: rgba(0,0,0,0.06);
+            border-top: 1px solid rgba(0,0,0,0.06);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 36px 32px;
+        }
+
+        .feature-card .label {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #86868b;
+            margin-bottom: 10px;
+        }
+
+        .feature-card .label.pro {
+            color: #0071e3;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: #6e6e73;
+            line-height: 1.55;
+        }
+
+        /* Privacy */
+        .privacy {
+            padding: 80px 0;
+        }
+
+        .privacy .container {
+            max-width: 640px;
+            text-align: center;
+        }
+
+        .privacy .lockup {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: #f5f5f7;
+            margin-bottom: 20px;
+        }
+
+        .privacy .lockup svg {
+            width: 22px;
+            height: 22px;
+            fill: none;
+            stroke: #1d1d1f;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .privacy h2 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+        }
+
+        .privacy p {
+            font-size: 17px;
+            color: #6e6e73;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .privacy a {
+            font-size: 15px;
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .privacy a:hover { text-decoration: underline; }
+
+        /* More Info */
+        .more-info {
+            padding: 64px 24px;
+            background: #fff;
+            border-top: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .more-info-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .more-info-header h2 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .more-info-header p {
+            font-size: 17px;
+            color: #6e6e73;
+        }
+
+        .more-info-content {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .more-info-section {
+            margin-bottom: 40px;
+        }
+
+        .more-info-section h3 {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #86868b;
+            margin-bottom: 12px;
+        }
+
+        .more-info-section p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #1d1d1f;
+            margin-bottom: 12px;
+        }
+
+        .more-info-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .more-info-section strong {
+            font-weight: 600;
+        }
+
+        .specs-table {
+            width: 100%;
+            font-size: 14px;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+
+        .specs-table td {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .specs-table td:first-child {
+            color: #86868b;
+            width: 140px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 64px 24px 80px;
+            background: #fff;
+            border-top: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .cta h2 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+        }
+
+        .cta p {
+            font-size: 15px;
+            color: #86868b;
+            margin-bottom: 28px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px 24px;
+            font-size: 12px;
+            color: #86868b;
+        }
+
+        footer a {
+            color: #86868b;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover { color: #1d1d1f; }
+
+        footer .divider { margin: 4px 0; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero { padding: 72px 20px 48px; }
+            .hero h1 { font-size: 36px; letter-spacing: -1px; }
+            .hero .tagline { font-size: 17px; }
+
+            .showcase-card img { height: 400px; }
+
+            .features-grid { grid-template-columns: 1fr; }
+
+            .features-header h2 { font-size: 28px; }
+            .privacy h2, .cta h2 { font-size: 26px; }
+        }
+
+        @media (max-width: 480px) {
+            .showcase-card img { height: 360px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <a class="nav-brand" href="./">
+                <img src="icon_256.png" alt="Posture Coach">
+                <span>Posture Coach</span>
+            </a>
+            <a class="nav-link" href="#features">Learn more</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Sit up <span>straight</span></h1>
+        <p class="tagline">Your AirPods become an always-on posture coach. Posture watches your head position all day and gives you a gentle buzz when you slouch &mdash; no camera, no check-ins, all on-device and fully private.</p>
+        <p class="platforms">AirPods &middot; iPhone &middot; Apple Watch</p>
+        <a class="download-btn" href="https://apps.apple.com/us/app/id6768514450">Coming soon on the App Store</a>
+    </section>
+
+    <section class="showcase">
+        <div class="showcase-scroll">
+            <div class="showcase-card">
+                <img src="sim76-screenshots/devices/iphone-17-pro-max-today.png" alt="Live posture status. — Real-time alignment reading from your AirPods, right on the Today screen">
+            </div>
+            <div class="showcase-card">
+                <img src="sim76-screenshots/final/checkin-choice.png" alt="Quick check-in. — Log how you're sitting in one tap">
+            </div>
+            <div class="showcase-card">
+                <img src="sim76-screenshots/devices/iphone-17-pro-max-progress.png" alt="Daily posture report. — Percent aligned, hour-by-hour rhythm, and slouches caught">
+            </div>
+            <div class="showcase-card">
+                <img src="sim76-screenshots/final/streak-detail.png" alt="Build your streak. — Duolingo-style streaks with freeze protection">
+            </div>
+            <div class="showcase-card">
+                <img src="sim76-screenshots/devices/iphone-17-pro-max-history.png" alt="Track your progress. — Review past sessions and watch your average score improve">
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="features-header">
+                <h2>Built to fix your slouch</h2>
+                <p>No bloat, no sign-up. Calibrate once, wear your AirPods, and let Posture coach you all day.</p>
+            </div>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="label">AirPods</span>
+                <h3>Always-on monitoring</h3>
+                <p>Your AirPods read head position about 25 times a second in the background. Slouch for a while and you get a soft buzz. Straighten up and it goes quiet.</p>
+            </div>
+            <div class="feature-card">
+                <span class="label">Streaks</span>
+                <h3>Duolingo-style streaks</h3>
+                <p>Build a daily posture streak. Freeze protection for off days. Watch your flame grow and stay motivated.</p>
+            </div>
+            <div class="feature-card">
+                <span class="label">Calibration</span>
+                <h3>Personal baseline</h3>
+                <p>Stand tall, sit tall, then slouch on purpose. Posture learns your personal range in under a minute and scores every monitored minute against it.</p>
+            </div>
+            <div class="feature-card">
+                <span class="label">Reports</span>
+                <h3>Daily posture report</h3>
+                <p>Every monitored minute becomes your daily report: % of the day aligned, hour-by-hour rhythm, best stretches, and slouches caught.</p>
+            </div>
+            <div class="feature-card">
+                <span class="label">Apple Watch</span>
+                <h3>Companion app</h3>
+                <p>Apple Watch adds background wrist-motion coaching and complications so posture help stays on your wrist.</p>
+            </div>
+            <div class="feature-card">
+                <span class="label">Live</span>
+                <h3>Real-time status</h3>
+                <p>See whether you're aligned, drifting, or slouching in real time. No need to open the app for a spot check.</p>
+            </div>
+            <div class="feature-card">
+                <span class="label">Scoring</span>
+                <h3>Live posture quality</h3>
+                <p>See your posture score update in real time. Rings fill as you hold good posture, helping you build muscle memory.</p>
+            </div>
+            <div class="feature-card">
+                <span class="label">History</span>
+                <h3>Track your progress</h3>
+                <p>Review past sessions, see your posture trends, and watch your average score improve over time.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="privacy">
+        <div class="container">
+            <div class="lockup">
+                <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <h2>Private by design</h2>
+            <p>Posture processes everything on-device. Your AirPods' head-motion data stays on your phone and is never recorded or transmitted. No accounts, no ads, and no posture analytics. Subscription status is validated through Apple StoreKit and RevenueCat (purchase receipts only). Your posture data is yours alone.</p>
+            <a href="privacy-policy.html">Privacy Policy &rarr;</a>
+        </div>
+    </section>
+
+    <section class="more-info">
+        <div class="container">
+            <div class="more-info-header">
+                <h2>More info</h2>
+                <p>How it's built and why it matters.</p>
+            </div>
+            <div class="more-info-content">
+                <div class="more-info-section">
+                    <h3>The Pitch</h3>
+                    <p>Most posture tools are one-time gadgets you forget about. I wanted something that lives on the devices you already carry &mdash; your iPhone, AirPods, and Apple Watch &mdash; and gently coaches you throughout the day without being annoying.</p>
+                    <p>Posture turns the AirPods you already own into an always-on posture coach. Pop them in and Posture quietly watches your head position all day, giving you a gentle nudge the moment you settle into a real slouch. Your phone builds a daily report from how you actually sat, not spot checks.</p>
+                </div>
+
+                <div class="more-info-section">
+                    <h3>Posture+</h3>
+                    <p>Posture+ is a subscription with monthly and yearly plans plus a one-time lifetime unlock. A free trial is available on the subscription plans. $4.99/month, $29.99/year, or $79.99 lifetime.</p>
+                    <p><strong>AirPods Monitoring.</strong> All-day background head-motion monitoring via CMHeadphoneMotionManager. Get gentle nudges when your head angle drops below your calibrated baseline.</p>
+                    <p><strong>Apple Watch Integration.</strong> Background coaching on your wrist via the companion watch app.</p>
+                    <p><strong>Daily Reports &amp; Streaks.</strong> Minute-by-minute posture aggregates, weekly trends, and Duolingo-style streaks with freeze protection.</p>
+                    <p>Manage or cancel any time in Settings &gt; Apple ID &gt; Subscriptions.</p>
+                </div>
+
+                <div class="more-info-section">
+                    <h3>Specs</h3>
+                    <table class="specs-table">
+                        <tr><td>Platform</td><td>iOS 17+, watchOS 10+</td></tr>
+                        <tr><td>Language</td><td>Swift 6 with strict concurrency</td></tr>
+                        <tr><td>Framework</td><td>SwiftUI &middot; CoreMotion &middot; AVFoundation &middot; HealthKit</td></tr>
+                        <tr><td>Data</td><td>On-device only, SwiftData with App Group</td></tr>
+                        <tr><td>Storage</td><td>SwiftData cache shared via App Group</td></tr>
+                        <tr><td>Privacy</td><td>No accounts, no analytics, no network requests</td></tr>
+                    </table>
+                </div>
+
+                <div class="more-info-section">
+                    <h3>What Mattered</h3>
+                    <p><strong>Zero-config setup.</strong> Open the app, do a quick calibration sitting up straight, and you're ready to start. No account, no onboarding flow, no tutorial.</p>
+                    <p><strong>Multi-device coaching.</strong> AirPods for the core read, iPhone for reports and history, Apple Watch for wrist coaching. Each device plays a role that fits how you use it.</p>
+                    <p><strong>Streaks that stick.</strong> Duolingo-style streaks with freeze protection keep you motivated without punishing off days. The flame grows as your streak builds.</p>
+                    <p><strong>Privacy as a feature.</strong> No analytics, no accounts, no data leaving your device. Your AirPods' head-motion data is processed on-device and never recorded or transmitted.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Fix your posture today</h2>
+        <p>Free trial available. No account required.</p>
+        <a class="download-btn" href="https://apps.apple.com/us/app/id6768514450">Download on the App Store</a>
+    </section>
+
+    <footer>
+        <div class="divider">&copy; 2026 Jack Wallner</div>
+        <div>
+            <a href="support.html">Support</a>
+            <a href="privacy-policy.html">Privacy</a>
+        </div>
+    </footer>
+
+</body>
+</html>
