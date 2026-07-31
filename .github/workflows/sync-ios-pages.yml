@@ -14,7 +14,6 @@ on:
 
 permissions:
   contents: write
-  pages: write
 
 concurrency:
   group: sync-ios-pages
@@ -43,11 +42,8 @@ jobs:
           git commit -m "chore: sync iOS landing pages
 
           $(git diff --cached --name-only | cut -d/ -f3 | sort -u | tr '\n' ' ')"
+          # The push itself triggers pages-build-deployment, even from
+          # GITHUB_TOKEN. Requesting a build explicitly on top of that just
+          # races the automatic one and leaves a spurious failed build.
           git push
           echo "changed=true" >> "$GITHUB_OUTPUT"
-
-      - name: Request a Pages build
-        if: steps.commit.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh api -X POST "repos/${{ github.repository }}/pages/builds"
