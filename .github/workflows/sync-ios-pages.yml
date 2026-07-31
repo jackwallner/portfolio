@@ -4,10 +4,11 @@ name: Sync iOS landing pages
 # they are served from https://jackwallner.com/ios/<slug>/ as real pages.
 # GitHub Pages cannot proxy, so the files have to live here.
 
+# Not scheduled. Each app repo pushes its own page here on change (see its
+# .github/workflows/sync-landing-page.yml), so polling would only ever find
+# work that has already been done. This is the whole-fleet resync: use it
+# after adding an app to the APPS dict, or to repair drift.
 on:
-  schedule:
-    # Hourly, off the top of the hour to dodge the cron rush.
-    - cron: "17 * * * *"
   workflow_dispatch:
   repository_dispatch:
     types: [app-page-updated]
