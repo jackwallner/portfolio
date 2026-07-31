@@ -2,7 +2,7 @@
 // `start`/`updated` are fallback dates, used only if the GitHub API is unreachable;
 // real created_at / pushed_at dates override them when the fetch succeeds.
 const CURATED = [
-    { repo: 'vitals', name: 'Total Calories - Daily Tracker', icon: 'vitals-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'ios/vitals/', ext: false, start: '2026-05-01', updated: '2026-07-09', desc: 'Private calorie and step tracking from HealthKit — TDEE burn on Watch & widgets.' },
+    { repo: 'vitals', name: 'Total Calories - Daily Tracker', icon: 'vitals-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'ios/vitals/', ext: false, start: '2026-05-01', updated: '2026-07-09', desc: 'Private calorie and step tracking from HealthKit: TDEE burn on Watch & widgets.' },
     { repo: 'headaches', name: 'Migraine Headache Tracker Log', icon: 'headaches-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'ios/headaches/', ext: false, start: '2026-05-20', updated: '2026-07-09', desc: 'One-tap headache logging with health and weather context.' },
     { repo: 'fitness-streaks', name: 'Streak Counter: Steps & Rings', icon: 'streaks-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'ios/fitness-streaks/', ext: false, start: '2026-05-22', updated: '2026-07-09', desc: 'Automatic fitness streak discovery from Apple Health.' },
     { repo: 'sober', name: 'Sober: Sobriety Day Counter', icon: 'sober-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'ios/sober/', ext: false, start: '2026-05-15', updated: '2026-07-26', desc: 'Day counter with a virtual garden that grows as sober days add up.' },
@@ -26,7 +26,7 @@ const CURATED = [
     { repo: 'spotify-daily-trading-bot', name: 'Spotify Daily Trading Bot', icon: 'spotify-bot-icon.png', type: 'Bot', status: 'Retired', cls: 'unsuccessful', link: 'spotify-bot/', ext: false, start: '2026-01-20', updated: '2026-02-15', desc: "A Kalshi bot for predicting Spotify's daily #1 song. It didn't beat the market." },
 ];
 
-// Repos folded into a curated entry above — don't list them again in the tail.
+// Repos folded into a curated entry above, don't list them again in the tail.
 // value = repo name of the curated entry whose dates should also track this repo.
 const FOLDED = { 'statscout': 'baseball', 'flight-tracker-service': 'flight-tracker', 'dreamcart': 'dreamcart-ios' };
 
