@@ -36,6 +36,7 @@ APPS = {
     "posture": ("posture", "docs"),
     "bridge": ("bridge", "docs"),
     "mahj": ("mahj", "docs"),
+    "cribbage": ("cribbage", "docs"),
     "vo2max": ("vo2max", "docs"),
     "dreamcart": ("dreamcart", "docs"),
     "football": ("football", "docs"),
