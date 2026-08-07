@@ -40,6 +40,10 @@ APPS = {
     "vo2max": ("vo2max", "docs"),
     "dreamcart": ("dreamcart", "docs"),
     "football": ("football", "docs"),
+    # Elderhub's code lives in ~/aging, which has no remote of its own; the page
+    # is published from the medlist repo, kept under its old name so the URLs
+    # already shipped inside the app keep resolving. The slug is the app name.
+    "elderhub": ("medlist", "docs"),
     # queasy publishes from its repo root, not /docs
     "queasy": ("queasy", "."),
 }
