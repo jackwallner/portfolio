@@ -28,12 +28,12 @@ python3 scripts/build_site.py
 
 That regenerates two pages, both fully static:
 
-- `docs/index.html` - selected work plus the full project table
+- `docs/index.html` - the full project table
 - `docs/ios/index.html` - the App Store catalogue, grouped by category
 
-Set `"featured": 1..6` on a project to put it in Selected work (the number is
-its position); `0` leaves it in the table only. The `build-site` workflow
-rebuilds and commits automatically if `projects.json` is pushed without it.
+The homepage lists every project in reverse chronological order. The
+`build-site` workflow rebuilds and commits automatically if `projects.json` is
+pushed without the generated pages.
 
 ## Per-app landing pages
 

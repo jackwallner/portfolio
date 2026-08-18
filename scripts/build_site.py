@@ -108,32 +108,6 @@ def site_footer(prefix="", back=False):
 """
 
 
-def card(p):
-    """A featured project card: icon, name, status, description, tech, links."""
-    ext = ' target="_blank" rel="noopener"' if p.get("ext") else ""
-    links = [f'<a href="{e(p["page"])}" class="project-primary-link"{ext}>Project page &rarr;</a>']
-    if p.get("appStore"):
-        links.append(f'<a href="{e(p["appStore"])}" target="_blank" rel="noopener">App Store &#8599;</a>')
-    if p.get("github"):
-        links.append(f'<a href="{e(p["github"])}" target="_blank" rel="noopener">Source &#8599;</a>')
-    icon = (f'<img src="assets/{e(p["icon"])}" alt="" class="project-icon">'
-            if p.get("icon") else "")
-    return f"""                <article class="project-card">
-                    <div class="project-icon-row">
-                        {icon}
-                        <div class="project-header">
-                            <h3 class="project-title"><a href="{e(p['page'])}"{ext}>{e(p["name"])}</a></h3>
-                            <span class="project-stamp {e(p['cls'])}">{e(p['status'])}</span>
-                        </div>
-                    </div>
-                    <p class="project-desc">{e(p['desc'])}</p>
-                    <p class="project-meta mono">{e(p['tech'])}</p>
-                    <div class="project-links">
-                        {chr(10).join('                        ' + l for l in links).strip()}
-                    </div>
-                </article>"""
-
-
 def table_row(p):
     ext = ' target="_blank" rel="noopener"' if p.get("ext") else ""
     icon = (f'<img src="assets/{e(p["icon"])}" alt="" class="proj-icon">'
@@ -156,7 +130,6 @@ def table_row(p):
 
 
 def build_home(projects):
-    featured = sorted((p for p in projects if p.get("featured")), key=lambda p: p["featured"])
     by_date = sorted(projects, key=lambda p: p.get("start") or "", reverse=True)
 
     counts = {"all": len(projects)}
@@ -171,7 +144,7 @@ def build_home(projects):
     )
 
     return "".join([
-        head("Jack Wallner - Selected Work",
+        head("Jack Wallner - Work",
              "A collection of apps, websites, tools, and experiments by Jack Wallner.",
              canonical="https://jackwallner.com/"),
         site_header("Vancouver, Washington"),
@@ -183,13 +156,6 @@ def build_home(projects):
             <div class="intro-stats mono">
                 <span><strong>{shipped}</strong> on the App Store</span>
                 <span><strong>{len(projects)}</strong> projects</span>
-            </div>
-        </section>
-
-        <section class="featured">
-            <h2 class="section-title">Selected work</h2>
-            <div class="projects-grid">
-{chr(10).join(card(p) for p in featured)}
             </div>
         </section>
 
