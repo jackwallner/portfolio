@@ -171,19 +171,18 @@ def build_home(projects):
     )
 
     return "".join([
-        head("Jack Wallner - iOS Developer",
-             "Jack Wallner builds small, focused iOS and watchOS apps. "
-             f"{shipped} on the App Store, plus web tools and experiments.",
+        head("Jack Wallner - Selected Work",
+             "A collection of apps, websites, tools, and experiments by Jack Wallner.",
              canonical="https://jackwallner.com/"),
-        site_header("Software engineer · Vancouver, Washington"),
+        site_header("Vancouver, Washington"),
         f"""
     <main class="container">
         <section class="intro">
-            <h1 class="intro-title">I build small, focused iOS apps.</h1>
-            <p class="intro-text">Native Swift and SwiftUI, mostly in health and habit tracking, each one shipped end to end: design, App Store listing, pricing, and the backend behind it. Some also run on Apple Watch, some are web tools, one is a pixel clock on my wall.</p>
+            <h1 class="intro-title">Things I've made.</h1>
+            <p class="intro-text">A collection of apps, websites, tools, and experiments.</p>
             <div class="intro-stats mono">
-                <span><strong>{shipped}</strong> apps on the App Store</span>
-                <span><strong>{len(projects)}</strong> projects shipped in 2026</span>
+                <span><strong>{shipped}</strong> on the App Store</span>
+                <span><strong>{len(projects)}</strong> projects</span>
             </div>
         </section>
 
