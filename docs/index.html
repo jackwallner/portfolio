@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jack Wallner</title>
-    <meta name="description" content="Jack Wallner. Software engineer. Native iOS & watchOS, Python systems, full-stack web.">
+    <title>Jack Wallner - iOS Developer</title>
+    <meta name="description" content="Jack Wallner builds small, focused iOS and watchOS apps. 19 on the App Store, plus web tools and experiments.">
+    <link rel="canonical" href="https://jackwallner.com/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="home.css?v=3">
+    <link rel="stylesheet" href="home.css?v=5">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
@@ -16,7 +17,7 @@
         <img src="assets/profile.png" alt="Jack Wallner" class="profile-img">
         <div class="site-title-wrap">
             <div class="site-title">Jack Wallner</div>
-            <div class="site-subtitle">Side projects I've built so far in 2026</div>
+            <div class="site-subtitle">Software engineer · Vancouver, Washington</div>
         </div>
         <nav class="header-links">
             <a href="mailto:jackwallner@gmail.com">Email</a>
@@ -25,383 +26,524 @@
         </nav>
     </header>
 
-    <nav class="site-tabs container">
-        <a href="./" class="tab active">Featured</a>
-        <a href="repos.html" class="tab">All projects</a>
-        <a href="ios/" class="tab">iOS apps</a>
-    </nav>
-
     <main class="container">
-        <section class="projects">
+        <section class="intro">
+            <h1 class="intro-title">I build small, focused iOS apps.</h1>
+            <p class="intro-text">Native Swift and SwiftUI, mostly in health and habit tracking, each one shipped end to end: design, App Store listing, pricing, and the backend behind it. Some also run on Apple Watch, some are web tools, one is a pixel clock on my wall.</p>
+            <div class="intro-stats mono">
+                <span><strong>19</strong> apps on the App Store</span>
+                <span><strong>27</strong> projects shipped in 2026</span>
+            </div>
+        </section>
+
+        <section class="featured">
+            <h2 class="section-title">Selected work</h2>
             <div class="projects-grid">
                 <article class="project-card">
                     <div class="project-icon-row">
-                        <img src="assets/vitals-icon.png" alt="Total Calories icon" class="project-icon">
+                        <img src="assets/vitals-icon.png" alt="" class="project-icon">
                         <div class="project-header">
                             <h3 class="project-title"><a href="ios/vitals/">Total Calories - Daily Tracker</a></h3>
-                            <span class="project-stamp live">iOS App Store</span>
+                            <span class="project-stamp live">App Store</span>
                         </div>
                     </div>
-                    <p class="project-desc">Private calorie and step tracking from HealthKit, on iPhone, Watch, and widgets.</p>
+                    <p class="project-desc">Private calorie and step tracking from HealthKit, with TDEE burn on Watch and widgets.</p>
                     <p class="project-meta mono">Swift 6 · SwiftUI · HealthKit · WidgetKit · watchOS 10</p>
                     <div class="project-links">
-                        <a href="ios/vitals/" class="project-primary-link">Project page →</a>
-                        <a href="https://apps.apple.com/us/app/total-calories-daily-tracker/id6761743504" target="_blank" rel="noopener">App Store ↗</a>
-                        <a href="https://github.com/jackwallner/vitals" target="_blank" rel="noopener">Source ↗</a>
+                        <a href="ios/vitals/" class="project-primary-link">Project page &rarr;</a>
+                        <a href="https://apps.apple.com/us/app/total-calories-daily-tracker/id6761743504" target="_blank" rel="noopener">App Store &#8599;</a>
+                        <a href="https://github.com/jackwallner/vitals" target="_blank" rel="noopener">Source &#8599;</a>
                     </div>
                 </article>
-
                 <article class="project-card">
                     <div class="project-icon-row">
-                        <img src="assets/headaches-icon.png" alt="Migraine Headache Tracker Log icon" class="project-icon">
-                        <div class="project-header">
-                            <h3 class="project-title"><a href="ios/headaches/">Migraine Headache Tracker Log</a></h3>
-                            <span class="project-stamp live">iOS App Store</span>
-                        </div>
-                    </div>
-                    <p class="project-desc">One-tap headache logging with health and weather context.</p>
-                    <p class="project-meta mono">SwiftUI · SwiftData · HealthKit · WatchConnectivity · Open-Meteo</p>
-                    <div class="project-links">
-                        <a href="ios/headaches/" class="project-primary-link">Project page →</a>
-                        <a href="https://apps.apple.com/us/app/migraine-headache-tracker-log/id6762074561" target="_blank" rel="noopener">App Store ↗</a>
-                        <a href="https://github.com/jackwallner/headaches" target="_blank" rel="noopener">Source ↗</a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-icon-row">
-                        <img src="assets/streaks-icon.png" alt="Streak Counter icon" class="project-icon">
-                        <div class="project-header">
-                            <h3 class="project-title"><a href="ios/fitness-streaks/">Streak Counter: Steps & Rings</a></h3>
-                            <span class="project-stamp live">iOS App Store</span>
-                        </div>
-                    </div>
-                    <p class="project-desc">Automatic fitness streak discovery from Apple Health.</p>
-                    <p class="project-meta mono">Swift 6 · SwiftUI · SwiftData · HealthKit · WidgetKit</p>
-                    <div class="project-links">
-                        <a href="ios/fitness-streaks/" class="project-primary-link">Project page →</a>
-                        <a href="https://apps.apple.com/us/app/streak-counter-steps-rings/id6762699692" target="_blank" rel="noopener">App Store ↗</a>
-                        <a href="https://github.com/jackwallner/fitness-streaks" target="_blank" rel="noopener">Source ↗</a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-icon-row">
-                        <img src="assets/sober-icon.png" alt="Sober Tracker icon" class="project-icon">
-                        <div class="project-header">
-                            <h3 class="project-title"><a href="ios/sober/">Sober: Sobriety Day Counter</a></h3>
-                            <span class="project-stamp live">iOS App Store</span>
-                        </div>
-                    </div>
-                    <p class="project-desc">Day counter with a virtual garden that grows as sober days add up.</p>
-                    <p class="project-meta mono">Swift 6 · SwiftUI · SwiftData · StoreKit · watchOS</p>
-                    <div class="project-links">
-                        <a href="ios/sober/" class="project-primary-link">Project page →</a>
-                        <a href="https://apps.apple.com/us/app/sober-sobriety-day-counter/id6768869215" target="_blank" rel="noopener">App Store ↗</a>
-                        <a href="https://github.com/jackwallner/sober" target="_blank" rel="noopener">Source ↗</a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-icon-row">
-                        <img src="assets/quitzyn-icon.png" alt="Quit Zyn icon" class="project-icon">
-                        <div class="project-header">
-                            <h3 class="project-title"><a href="ios/quitzyn/">Quit Zyn: Pouch & Snus Tracker</a></h3>
-                            <span class="project-stamp live">iOS App Store</span>
-                        </div>
-                    </div>
-                    <p class="project-desc">Nicotine-free day counter, check-ins, and a garden that grows with every day off pouches.</p>
-                    <p class="project-meta mono">Swift 6 · SwiftUI · SwiftData · StoreKit · watchOS</p>
-                    <div class="project-links">
-                        <a href="ios/quitzyn/" class="project-primary-link">Project page →</a>
-                        <a href="https://apps.apple.com/us/app/quit-zyn-pouch-snus-tracker/id6784788496" target="_blank" rel="noopener">App Store ↗</a>
-                        <a href="https://github.com/jackwallner/quitzyn" target="_blank" rel="noopener">Source ↗</a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-icon-row">
-                        <img src="assets/simpleglp-icon.png" alt="Simple GLP icon" class="project-icon">
-                        <div class="project-header">
-                            <h3 class="project-title"><a href="ios/simpleglp/">Simple GLP: GLP-1 Shot Tracker</a></h3>
-                            <span class="project-stamp live">iOS App Store</span>
-                        </div>
-                    </div>
-                    <p class="project-desc">One-tap GLP-1 shot logging with a weekly schedule and optional Health context.</p>
-                    <p class="project-meta mono">Swift 6 · SwiftUI · SwiftData · HealthKit · WidgetKit · watchOS</p>
-                    <div class="project-links">
-                        <a href="ios/simpleglp/" class="project-primary-link">Project page →</a>
-                        <a href="https://apps.apple.com/us/app/simple-glp-glp-1-shot-tracker/id6770137909" target="_blank" rel="noopener">App Store ↗</a>
-                        <a href="https://github.com/jackwallner/simpleglp" target="_blank" rel="noopener">Source ↗</a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-icon-row">
-                        <img src="assets/sports-icon.png" alt="Gist icon" class="project-icon">
-                        <div class="project-header">
-                            <h3 class="project-title"><a href="ios/sports/">Gist: Sports Made Simple</a></h3>
-                            <span class="project-stamp live">iOS App Store</span>
-                        </div>
-                    </div>
-                    <p class="project-desc">Plain-English sports catch-up so casual fans can follow along in five minutes a day.</p>
-                    <p class="project-meta mono">Swift 6 · SwiftUI · Gemini · on-device</p>
-                    <div class="project-links">
-                        <a href="ios/sports/" class="project-primary-link">Project page →</a>
-                        <a href="https://apps.apple.com/us/app/gist-sports-made-simple/id6770138156" target="_blank" rel="noopener">App Store ↗</a>
-                        <a href="https://github.com/jackwallner/sports" target="_blank" rel="noopener">Source ↗</a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-icon-row">
-                        <img src="assets/bond-icon.png" alt="Bond icon" class="project-icon">
-                        <div class="project-header">
-                            <h3 class="project-title"><a href="ios/bond/">Bond: Love Language Reminders</a></h3>
-                            <span class="project-stamp live">iOS App Store</span>
-                        </div>
-                    </div>
-                    <p class="project-desc">Love-language reminders, shared milestones, and a daily check-in for couples.</p>
-                    <p class="project-meta mono">Swift 6 · SwiftUI · CloudKit · WidgetKit · watchOS</p>
-                    <div class="project-links">
-                        <a href="ios/bond/" class="project-primary-link">Project page →</a>
-                        <a href="https://apps.apple.com/us/app/bond-love-language-reminders/id6768514177" target="_blank" rel="noopener">App Store ↗</a>
-                        <a href="https://github.com/jackwallner/bond" target="_blank" rel="noopener">Source ↗</a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-icon-row">
-                        <img src="assets/statscout-icon.png" alt="Baseball Savvy StatScout icon" class="project-icon">
-                        <div class="project-header">
-                            <h3 class="project-title"><a href="ios/baseball/">Baseball Savvy StatScout</a></h3>
-                            <span class="project-stamp live">iOS App Store</span>
-                        </div>
-                    </div>
-                    <p class="project-desc">Mobile-first Statcast player cards and leaderboards.</p>
-                    <p class="project-meta mono">Swift 6 · SwiftUI · Supabase · pybaseball · GitHub Actions</p>
-                    <div class="project-links">
-                        <a href="ios/baseball/" class="project-primary-link">Project page →</a>
-                        <a href="https://apps.apple.com/us/app/baseball-savvy-statscout/id6763945657" target="_blank" rel="noopener">App Store ↗</a>
-                        <a href="https://github.com/jackwallner/baseball" target="_blank" rel="noopener">Source ↗</a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-icon-row">
-                        <img src="assets/posture-icon.png" alt="Posture Coach icon" class="project-icon">
+                        <img src="assets/posture-icon.png" alt="" class="project-icon">
                         <div class="project-header">
                             <h3 class="project-title"><a href="ios/posture/">Posture Coach: Sit Straight</a></h3>
-                            <span class="project-stamp live">iOS App Store</span>
+                            <span class="project-stamp live">App Store</span>
                         </div>
                     </div>
                     <p class="project-desc">Reads your alignment from AirPods head-motion sensors and nudges you upright.</p>
                     <p class="project-meta mono">Swift 6 · SwiftUI · CoreMotion · HealthKit · watchOS</p>
                     <div class="project-links">
-                        <a href="ios/posture/" class="project-primary-link">Project page →</a>
-                        <a href="https://apps.apple.com/us/app/posture-coach-sit-straight/id6768514450" target="_blank" rel="noopener">App Store ↗</a>
-                        <a href="https://github.com/jackwallner/posture" target="_blank" rel="noopener">Source ↗</a>
+                        <a href="ios/posture/" class="project-primary-link">Project page &rarr;</a>
+                        <a href="https://apps.apple.com/us/app/id6768514450" target="_blank" rel="noopener">App Store &#8599;</a>
+                        <a href="https://github.com/jackwallner/posture" target="_blank" rel="noopener">Source &#8599;</a>
                     </div>
                 </article>
-
                 <article class="project-card">
                     <div class="project-icon-row">
-                        <img src="assets/bridge-icon.png" alt="Bridge Trainer icon" class="project-icon">
+                        <img src="assets/statscout-icon.png" alt="" class="project-icon">
                         <div class="project-header">
-                            <h3 class="project-title"><a href="ios/bridge/">Bridge Trainer: Learn &amp; Bid</a></h3>
-                            <span class="project-stamp live">iOS App Store</span>
+                            <h3 class="project-title"><a href="ios/baseball/">Baseball Savvy StatScout</a></h3>
+                            <span class="project-stamp live">App Store</span>
                         </div>
                     </div>
-                    <p class="project-desc">Five-minute contract bridge practice for card basics, opening bids, declarer play, and defense.</p>
-                    <p class="project-meta mono">Swift 6 · SwiftUI · StoreKit · RevenueCat</p>
+                    <p class="project-desc">Mobile-first Statcast player cards and leaderboards, refreshed nightly by a scraper pipeline.</p>
+                    <p class="project-meta mono">Swift 6 · SwiftUI · Supabase · pybaseball · GitHub Actions</p>
                     <div class="project-links">
-                        <a href="ios/bridge/" class="project-primary-link">Project page →</a>
-                        <a href="https://apps.apple.com/us/app/bridge-trainer-learn-bid/id6791026407" target="_blank" rel="noopener">App Store ↗</a>
-                        <a href="https://github.com/jackwallner/bridge" target="_blank" rel="noopener">Source ↗</a>
+                        <a href="ios/baseball/" class="project-primary-link">Project page &rarr;</a>
+                        <a href="https://apps.apple.com/us/app/baseball-savvy-statscout/id6763945657" target="_blank" rel="noopener">App Store &#8599;</a>
+                        <a href="https://github.com/jackwallner/baseball" target="_blank" rel="noopener">Source &#8599;</a>
                     </div>
                 </article>
-
                 <article class="project-card">
                     <div class="project-icon-row">
-                        <img src="assets/vo2max-icon.png" alt="VO2 Max &amp; Cardio Fitness icon" class="project-icon">
+                        <img src="assets/sports-icon.png" alt="" class="project-icon">
                         <div class="project-header">
-                            <h3 class="project-title"><a href="ios/vo2max/">VO2 Max &amp; Cardio Fitness</a></h3>
-                            <span class="project-stamp live">iOS App Store</span>
+                            <h3 class="project-title"><a href="ios/sports/">Gist: Sports Made Simple</a></h3>
+                            <span class="project-stamp live">App Store</span>
                         </div>
                     </div>
-                    <p class="project-desc">A focused view of Apple Health cardio fitness estimates, fitness age, trends, and targets.</p>
-                    <p class="project-meta mono">Swift 6 · SwiftUI · HealthKit · SwiftData · WidgetKit · watchOS</p>
+                    <p class="project-desc">Plain-English sports catch-up so casual fans can follow along in five minutes a day.</p>
+                    <p class="project-meta mono">Swift 6 · SwiftUI · Gemini · on-device</p>
                     <div class="project-links">
-                        <a href="ios/vo2max/" class="project-primary-link">Project page →</a>
-                        <a href="https://apps.apple.com/us/app/vo2-max-cardio-fitness/id6791235742" target="_blank" rel="noopener">App Store ↗</a>
-                        <a href="https://github.com/jackwallner/vo2max" target="_blank" rel="noopener">Source ↗</a>
+                        <a href="ios/sports/" class="project-primary-link">Project page &rarr;</a>
+                        <a href="https://apps.apple.com/us/app/gist-sports-made-simple/id6770138156" target="_blank" rel="noopener">App Store &#8599;</a>
+                        <a href="https://github.com/jackwallner/sports" target="_blank" rel="noopener">Source &#8599;</a>
                     </div>
                 </article>
-
                 <article class="project-card">
                     <div class="project-icon-row">
-                        <img src="assets/mahj-icon.png" alt="Mahj Trainer icon" class="project-icon">
+                        <img src="assets/headaches-icon.png" alt="" class="project-icon">
                         <div class="project-header">
-                            <h3 class="project-title"><a href="ios/mahj/">Mahj Trainer: Mahjong Practice</a></h3>
-                            <span class="project-stamp live">iOS App Store</span>
+                            <h3 class="project-title"><a href="ios/headaches/">Migraine Headache Tracker Log</a></h3>
+                            <span class="project-stamp live">App Store</span>
                         </div>
                     </div>
-                    <p class="project-desc">Short practice rooms for American Mah Jongg tiles, card reading, Charleston choices, and table judgment.</p>
-                    <p class="project-meta mono">Swift 6 · SwiftUI · SwiftData · StoreKit · RevenueCat</p>
+                    <p class="project-desc">One-tap headache logging that pairs each entry with health and barometric weather context.</p>
+                    <p class="project-meta mono">SwiftUI · SwiftData · HealthKit · WatchConnectivity · Open-Meteo</p>
                     <div class="project-links">
-                        <a href="ios/mahj/" class="project-primary-link">Project page →</a>
-                        <a href="https://apps.apple.com/us/app/mahj-trainer-mahjong-practice/id6790052126" target="_blank" rel="noopener">App Store ↗</a>
-                        <a href="https://github.com/jackwallner/mahj" target="_blank" rel="noopener">Source ↗</a>
+                        <a href="ios/headaches/" class="project-primary-link">Project page &rarr;</a>
+                        <a href="https://apps.apple.com/us/app/migraine-headache-tracker-log/id6762074561" target="_blank" rel="noopener">App Store &#8599;</a>
+                        <a href="https://github.com/jackwallner/headaches" target="_blank" rel="noopener">Source &#8599;</a>
                     </div>
                 </article>
-
                 <article class="project-card">
                     <div class="project-icon-row">
-                        <img src="assets/dreamcart-icon.png" alt="DreamCart icon" class="project-icon">
-                        <div class="project-header">
-                            <h3 class="project-title"><a href="dreamcart/" target="_blank" rel="noopener">DreamCart: Dopamine Shopping</a></h3>
-                            <span class="project-stamp live">iOS App Store</span>
-                        </div>
-                    </div>
-                    <p class="project-desc">A virtual fashion shopping game with daily coins, cart checkout, and a dream closet.</p>
-                    <p class="project-meta mono">Swift 6 · SwiftUI · Supabase · RevenueCat · Pollinations</p>
-                    <div class="project-links">
-                        <a href="dreamcart/" class="project-primary-link" target="_blank" rel="noopener">Project page →</a>
-                        <a href="https://apps.apple.com/us/app/dreamcart-dopamine-shopping/id6787820106" target="_blank" rel="noopener">App Store ↗</a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-icon-row">
-                        <img src="assets/queasy-icon.png" alt="Queasy icon" class="project-icon">
-                        <div class="project-header">
-                            <h3 class="project-title"><a href="ios/queasy/">Queasy: Wrist Comfort Aid</a></h3>
-                            <span class="project-stamp soon">In review</span>
-                        </div>
-                    </div>
-                    <p class="project-desc">Drug-free wrist comfort haptics on Apple Watch, inspired by P6 acupressure bands.</p>
-                    <p class="project-meta mono">Swift 6 · SwiftUI · WatchKit · CoreHaptics · RevenueCat</p>
-                    <div class="project-links">
-                        <a href="ios/queasy/" class="project-primary-link">Project page →</a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-icon-row">
-                        <img src="assets/football-icon.png" alt="Football Next: StatScout icon" class="project-icon">
-                        <div class="project-header">
-                            <h3 class="project-title"><a href="ios/football/">Football Next: StatScout</a></h3>
-                            <span class="project-stamp soon">Pre-release</span>
-                        </div>
-                    </div>
-                    <p class="project-desc">Every NFL player ranked by percentile, with advanced stats in plain visual form.</p>
-                    <p class="project-meta mono">Swift 6 · SwiftUI · Supabase · nflreadpy · GitHub Actions</p>
-                    <div class="project-links">
-                        <a href="ios/football/" class="project-primary-link">Project page →</a>
-                        <a href="https://github.com/jackwallner/football" target="_blank" rel="noopener">Source ↗</a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-icon-row">
-                        <img src="assets/elderhub-icon.png" alt="Elderhub icon" class="project-icon">
-                        <div class="project-header">
-                            <h3 class="project-title"><a href="ios/elderhub/">Elderhub: Family Care Log</a></h3>
-                            <span class="project-stamp soon">Pre-release</span>
-                        </div>
-                    </div>
-                    <p class="project-desc">One shared medication and medical record for the parent or partner your family looks after.</p>
-                    <p class="project-meta mono">Swift 6 · SwiftUI · SwiftData · Supabase · RevenueCat</p>
-                    <div class="project-links">
-                        <a href="ios/elderhub/" class="project-primary-link">Project page →</a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-icon-row">
-                        <img src="assets/babydocs-icon.png" alt="Baby Docs icon" class="project-icon">
-                        <div class="project-header">
-                            <h3 class="project-title"><a href="ios/babydocs/">Baby Docs: Newborn Paperwork</a></h3>
-                            <span class="project-stamp soon">Pre-release</span>
-                        </div>
-                    </div>
-                    <p class="project-desc">A newborn paperwork concierge: which tasks apply to your household, when each window closes, and where to go.</p>
-                    <p class="project-meta mono">Swift 6 · SwiftUI · SwiftData · Supabase · RevenueCat</p>
-                    <div class="project-links">
-                        <a href="ios/babydocs/" class="project-primary-link">Project page →</a>
-                        <a href="https://github.com/jackwallner/babydocs" target="_blank" rel="noopener">Source ↗</a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-icon-row">
-                        <img src="assets/e3fit-icon.png" alt="e3fit icon" class="project-icon">
+                        <img src="assets/e3fit-icon.png" alt="" class="project-icon">
                         <div class="project-header">
                             <h3 class="project-title"><a href="e3fit/">e3fit.me</a></h3>
                             <span class="project-stamp live">Live</span>
                         </div>
                     </div>
-                    <p class="project-desc">Production platform for coaching, booking, and workout delivery.</p>
+                    <p class="project-desc">A production platform for coaching, booking, and workout delivery.</p>
                     <p class="project-meta mono">Next.js · TypeScript · Supabase · Clerk · Tailwind · Vercel</p>
                     <div class="project-links">
-                        <a href="e3fit/" class="project-primary-link">Project page →</a>
-                        <a href="https://e3fit.me" target="_blank" rel="noopener">Site ↗</a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-icon-row">
-                        <img src="assets/flight-tracker-icon.png" alt="Flight Tracker icon" class="project-icon">
-                        <div class="project-header">
-                            <h3 class="project-title"><a href="flight-tracker/">Flight Tracker</a></h3>
-                            <span class="project-stamp live">Live</span>
-                        </div>
-                    </div>
-                    <p class="project-desc">Local flight tracking for an AWTRIX smart pixel clock.</p>
-                    <p class="project-meta mono">JavaScript · Node.js · AWTRIX · macOS LaunchAgent · GitHub Pages</p>
-                    <div class="project-links">
-                        <a href="flight-tracker/" class="project-primary-link">Project page →</a>
-                        <a href="https://github.com/jackwallner/flight-tracker" target="_blank" rel="noopener">Source ↗</a>
-                        <a href="https://jackwallner.github.io/my-flights/" target="_blank" rel="noopener">History ↗</a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-icon-row">
-                        <img src="assets/songhero-icon.png" alt="Any Song Clone Hero icon" class="project-icon">
-                        <div class="project-header">
-                            <h3 class="project-title"><a href="songhero/">Any Song Clone Hero</a></h3>
-                            <span class="project-stamp live">Live</span>
-                        </div>
-                    </div>
-                    <p class="project-desc">Custom Clone Hero charts from any Spotify link.</p>
-                    <p class="project-meta mono">Node.js · Python · librosa · Gemini 2.0 · yt-dlp · Clone Hero</p>
-                    <div class="project-links">
-                        <a href="songhero/" class="project-primary-link">Project page →</a>
-                        <a href="https://github.com/jackwallner/any-song-clone-hero-cli" target="_blank" rel="noopener">Source ↗</a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-icon-row">
-                        <img src="assets/spotify-bot-icon.png" alt="Spotify Daily Trading Bot icon" class="project-icon">
-                        <div class="project-header">
-                            <h3 class="project-title"><a href="spotify-bot/">Spotify Daily Trading Bot</a></h3>
-                            <span class="project-stamp unsuccessful">Unsuccessful</span>
-                        </div>
-                    </div>
-                    <p class="project-desc">Kalshi bot for predicting Spotify daily #1 songs.</p>
-                    <p class="project-meta mono">Python · Kworb · Kalshi API · GitHub Actions · Chart.js</p>
-                    <div class="project-links">
-                        <a href="spotify-bot/" class="project-primary-link">Project page →</a>
-                        <a href="https://github.com/jackwallner/spotify-daily-trading-bot" target="_blank" rel="noopener">Source ↗</a>
+                        <a href="e3fit/" class="project-primary-link">Project page &rarr;</a>
                     </div>
                 </article>
             </div>
         </section>
 
-        <section class="more-section">
-            <a href="repos.html" class="more-link">Browse all projects →</a>
+        <section class="all-projects" id="all">
+            <div class="section-head">
+                <h2 class="section-title">All projects</h2>
+                <div class="filters" role="group" aria-label="Filter projects by type">
+                    <button class="chip active" data-filter="all">All <span class="chip-n">27</span></button>
+                    <button class="chip" data-filter="ios">iOS apps <span class="chip-n">21</span></button>
+                    <button class="chip" data-filter="web">Web <span class="chip-n">2</span></button>
+                    <button class="chip" data-filter="tools">Tools <span class="chip-n">4</span></button>
+                </div>
+            </div>
+
+            <div class="proj-table-wrap">
+                <table class="proj-table">
+                    <thead>
+                        <tr>
+                            <th class="col-proj">Project</th>
+                            <th class="col-type">Type</th>
+                            <th class="col-status">Status</th>
+                            <th class="col-updated">Updated</th>
+                        </tr>
+                    </thead>
+                    <tbody id="proj-rows">
+                        <tr class="proj-tr" data-group="ios">
+                            <td class="col-proj">
+                                <div class="proj-cell">
+                                    <img src="assets/babydocs-icon.png" alt="" class="proj-icon">
+                                    <div class="proj-body">
+                                        <a class="proj-name" href="ios/babydocs/">Baby Docs: Newborn Paperwork</a>
+                                        <span class="proj-desc">A newborn paperwork concierge: which tasks apply to your household, when each window closes, and where to go.</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-type"><span class="proj-type">iOS App</span></td>
+                            <td class="col-status"><span class="project-stamp soon">Pre-release</span></td>
+                            <td class="col-updated"><span class="proj-when">Aug 2026</span></td>
+                        </tr>
+                        <tr class="proj-tr" data-group="ios">
+                            <td class="col-proj">
+                                <div class="proj-cell">
+                                    <img src="assets/elderhub-icon.png" alt="" class="proj-icon">
+                                    <div class="proj-body">
+                                        <a class="proj-name" href="ios/elderhub/">Elderhub: Family Care Log</a>
+                                        <span class="proj-desc">One shared medication and medical record for the parent or partner your family looks after.</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-type"><span class="proj-type">iOS App</span></td>
+                            <td class="col-status"><span class="project-stamp soon">Pre-release</span></td>
+                            <td class="col-updated"><span class="proj-when">Aug 2026</span></td>
+                        </tr>
+                        <tr class="proj-tr" data-group="ios">
+                            <td class="col-proj">
+                                <div class="proj-cell">
+                                    <img src="assets/football-icon.png" alt="" class="proj-icon">
+                                    <div class="proj-body">
+                                        <a class="proj-name" href="ios/football/">Football Next: StatScout</a>
+                                        <span class="proj-desc">Every NFL player ranked by percentile, with advanced stats in plain visual form.</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-type"><span class="proj-type">iOS App</span></td>
+                            <td class="col-status"><span class="project-stamp live">App Store</span></td>
+                            <td class="col-updated"><span class="proj-when">Jul 2026</span></td>
+                        </tr>
+                        <tr class="proj-tr" data-group="ios">
+                            <td class="col-proj">
+                                <div class="proj-cell">
+                                    <img src="assets/vo2max-icon.png" alt="" class="proj-icon">
+                                    <div class="proj-body">
+                                        <a class="proj-name" href="ios/vo2max/">VO2 Max &amp; Cardio Fitness</a>
+                                        <span class="proj-desc">A focused view of Apple Health cardio fitness estimates, fitness age, trends, and targets.</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-type"><span class="proj-type">iOS App</span></td>
+                            <td class="col-status"><span class="project-stamp live">App Store</span></td>
+                            <td class="col-updated"><span class="proj-when">Jul 2026</span></td>
+                        </tr>
+                        <tr class="proj-tr" data-group="ios">
+                            <td class="col-proj">
+                                <div class="proj-cell">
+                                    <img src="assets/bridge-icon.png" alt="" class="proj-icon">
+                                    <div class="proj-body">
+                                        <a class="proj-name" href="ios/bridge/">Bridge Trainer: Learn &amp; Bid</a>
+                                        <span class="proj-desc">Five-minute contract bridge practice for card basics, bidding, declarer play, and defense.</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-type"><span class="proj-type">iOS App</span></td>
+                            <td class="col-status"><span class="project-stamp live">App Store</span></td>
+                            <td class="col-updated"><span class="proj-when">Jul 2026</span></td>
+                        </tr>
+                        <tr class="proj-tr" data-group="ios">
+                            <td class="col-proj">
+                                <div class="proj-cell">
+                                    <img src="assets/cribbage-icon.png" alt="" class="proj-icon">
+                                    <div class="proj-body">
+                                        <a class="proj-name" href="ios/cribbage/">Cribbage Trainer: Count &amp; Peg</a>
+                                        <span class="proj-desc">Five-minute cribbage drills for counting, discarding, pegging, and table judgment.</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-type"><span class="proj-type">iOS App</span></td>
+                            <td class="col-status"><span class="project-stamp live">App Store</span></td>
+                            <td class="col-updated"><span class="proj-when">Aug 2026</span></td>
+                        </tr>
+                        <tr class="proj-tr" data-group="ios">
+                            <td class="col-proj">
+                                <div class="proj-cell">
+                                    <img src="assets/sheepshead-icon.png" alt="" class="proj-icon">
+                                    <div class="proj-body">
+                                        <a class="proj-name" href="ios/sheepshead/">Sheepshead Trainer: Trump Play</a>
+                                        <span class="proj-desc">Five-minute sheepshead drills for trump, picking, partner play, and bury decisions.</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-type"><span class="proj-type">iOS App</span></td>
+                            <td class="col-status"><span class="project-stamp live">App Store</span></td>
+                            <td class="col-updated"><span class="proj-when">Aug 2026</span></td>
+                        </tr>
+                        <tr class="proj-tr" data-group="ios">
+                            <td class="col-proj">
+                                <div class="proj-cell">
+                                    <img src="assets/skat-icon.png" alt="" class="proj-icon">
+                                    <div class="proj-body">
+                                        <a class="proj-name" href="ios/skat/">Skat Trainer: Learn Skat</a>
+                                        <span class="proj-desc">Short Skat practice for cards, bidding, discarding, and trick decisions.</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-type"><span class="proj-type">iOS App</span></td>
+                            <td class="col-status"><span class="project-stamp live">App Store</span></td>
+                            <td class="col-updated"><span class="proj-when">Aug 2026</span></td>
+                        </tr>
+                        <tr class="proj-tr" data-group="ios">
+                            <td class="col-proj">
+                                <div class="proj-cell">
+                                    <img src="assets/mahj-icon.png" alt="" class="proj-icon">
+                                    <div class="proj-body">
+                                        <a class="proj-name" href="ios/mahj/">Mahj Trainer: Mahjong Practice</a>
+                                        <span class="proj-desc">Short practice rooms for American Mah Jongg tiles, card reading, Charleston, and table judgment.</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-type"><span class="proj-type">iOS App</span></td>
+                            <td class="col-status"><span class="project-stamp live">App Store</span></td>
+                            <td class="col-updated"><span class="proj-when">Jul 2026</span></td>
+                        </tr>
+                        <tr class="proj-tr" data-group="ios">
+                            <td class="col-proj">
+                                <div class="proj-cell">
+                                    <img src="assets/dreamcart-icon.png" alt="" class="proj-icon">
+                                    <div class="proj-body">
+                                        <a class="proj-name" href="ios/dreamcart/">DreamCart: Dopamine Shopping</a>
+                                        <span class="proj-desc">A virtual fashion shopping game with daily coins, cart checkout, and a dream closet.</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-type"><span class="proj-type">iOS App</span></td>
+                            <td class="col-status"><span class="project-stamp live">App Store</span></td>
+                            <td class="col-updated"><span class="proj-when">Jul 2026</span></td>
+                        </tr>
+                        <tr class="proj-tr" data-group="tools">
+                            <td class="col-proj">
+                                <div class="proj-cell">
+                                    <span class="proj-icon ph">R</span>
+                                    <div class="proj-body">
+                                        <a class="proj-name" href="https://github.com/jackwallner/rc-clean" target="_blank" rel="noopener">rc-clean</a>
+                                        <span class="proj-desc">CLI that deletes RevenueCat test and TestFlight customers from analytics, never a real paying user.</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-type"><span class="proj-type">Tool</span></td>
+                            <td class="col-status"><span class="project-stamp code">Open source</span></td>
+                            <td class="col-updated"><span class="proj-when">Jul 2026</span></td>
+                        </tr>
+                        <tr class="proj-tr" data-group="ios">
+                            <td class="col-proj">
+                                <div class="proj-cell">
+                                    <img src="assets/queasy-icon.png" alt="" class="proj-icon">
+                                    <div class="proj-body">
+                                        <a class="proj-name" href="ios/queasy/">Queasy: Wrist Comfort Aid</a>
+                                        <span class="proj-desc">Drug-free wrist comfort haptics on Apple Watch, inspired by P6 acupressure bands.</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-type"><span class="proj-type">iOS App</span></td>
+                            <td class="col-status"><span class="project-stamp live">App Store</span></td>
+                            <td class="col-updated"><span class="proj-when">Aug 2026</span></td>
+                        </tr>
+                        <tr class="proj-tr" data-group="ios">
+                            <td class="col-proj">
+                                <div class="proj-cell">
+                                    <img src="assets/quitzyn-icon.png" alt="" class="proj-icon">
+                                    <div class="proj-body">
+                                        <a class="proj-name" href="ios/quitzyn/">Quit Zyn: Pouch &amp; Snus Tracker</a>
+                                        <span class="proj-desc">Nicotine-free day counter, check-ins, and a garden that grows with every day off pouches.</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-type"><span class="proj-type">iOS App</span></td>
+                            <td class="col-status"><span class="project-stamp live">App Store</span></td>
+                            <td class="col-updated"><span class="proj-when">Jul 2026</span></td>
+                        </tr>
+                        <tr class="proj-tr" data-group="ios">
+                            <td class="col-proj">
+                                <div class="proj-cell">
+                                    <img src="assets/posture-icon.png" alt="" class="proj-icon">
+                                    <div class="proj-body">
+                                        <a class="proj-name" href="ios/posture/">Posture Coach: Sit Straight</a>
+                                        <span class="proj-desc">Reads your alignment from AirPods head-motion sensors and nudges you upright.</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-type"><span class="proj-type">iOS App</span></td>
+                            <td class="col-status"><span class="project-stamp live">App Store</span></td>
+                            <td class="col-updated"><span class="proj-when">Jul 2026</span></td>
+                        </tr>
+                        <tr class="proj-tr" data-group="ios">
+                            <td class="col-proj">
+                                <div class="proj-cell">
+                                    <img src="assets/sports-icon.png" alt="" class="proj-icon">
+                                    <div class="proj-body">
+                                        <a class="proj-name" href="ios/sports/">Gist: Sports Made Simple</a>
+                                        <span class="proj-desc">Plain-English sports catch-up so casual fans can follow along in five minutes a day.</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-type"><span class="proj-type">iOS App</span></td>
+                            <td class="col-status"><span class="project-stamp live">App Store</span></td>
+                            <td class="col-updated"><span class="proj-when">Jul 2026</span></td>
+                        </tr>
+                        <tr class="proj-tr" data-group="ios">
+                            <td class="col-proj">
+                                <div class="proj-cell">
+                                    <img src="assets/simpleglp-icon.png" alt="" class="proj-icon">
+                                    <div class="proj-body">
+                                        <a class="proj-name" href="ios/simpleglp/">Simple GLP: GLP-1 Shot Tracker</a>
+                                        <span class="proj-desc">One-tap GLP-1 shot logging with a weekly schedule and optional Health context.</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-type"><span class="proj-type">iOS App</span></td>
+                            <td class="col-status"><span class="project-stamp live">App Store</span></td>
+                            <td class="col-updated"><span class="proj-when">Jul 2026</span></td>
+                        </tr>
+                        <tr class="proj-tr" data-group="ios">
+                            <td class="col-proj">
+                                <div class="proj-cell">
+                                    <img src="assets/streaks-icon.png" alt="" class="proj-icon">
+                                    <div class="proj-body">
+                                        <a class="proj-name" href="ios/fitness-streaks/">Streak Finder: Health Habits</a>
+                                        <span class="proj-desc">Automatic fitness streak discovery from Apple Health.</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-type"><span class="proj-type">iOS App</span></td>
+                            <td class="col-status"><span class="project-stamp live">App Store</span></td>
+                            <td class="col-updated"><span class="proj-when">Aug 2026</span></td>
+                        </tr>
+                        <tr class="proj-tr" data-group="ios">
+                            <td class="col-proj">
+                                <div class="proj-cell">
+                                    <img src="assets/headaches-icon.png" alt="" class="proj-icon">
+                                    <div class="proj-body">
+                                        <a class="proj-name" href="ios/headaches/">Migraine Headache Tracker Log</a>
+                                        <span class="proj-desc">One-tap headache logging that pairs each entry with health and barometric weather context.</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-type"><span class="proj-type">iOS App</span></td>
+                            <td class="col-status"><span class="project-stamp live">App Store</span></td>
+                            <td class="col-updated"><span class="proj-when">Jul 2026</span></td>
+                        </tr>
+                        <tr class="proj-tr" data-group="ios">
+                            <td class="col-proj">
+                                <div class="proj-cell">
+                                    <img src="assets/sober-icon.png" alt="" class="proj-icon">
+                                    <div class="proj-body">
+                                        <a class="proj-name" href="ios/sober/">Sober: Sobriety Day Counter</a>
+                                        <span class="proj-desc">Day counter with a virtual garden that grows as sober days add up.</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-type"><span class="proj-type">iOS App</span></td>
+                            <td class="col-status"><span class="project-stamp live">App Store</span></td>
+                            <td class="col-updated"><span class="proj-when">Jul 2026</span></td>
+                        </tr>
+                        <tr class="proj-tr" data-group="ios">
+                            <td class="col-proj">
+                                <div class="proj-cell">
+                                    <img src="assets/vitals-icon.png" alt="" class="proj-icon">
+                                    <div class="proj-body">
+                                        <a class="proj-name" href="ios/vitals/">Total Calories - Daily Tracker</a>
+                                        <span class="proj-desc">Private calorie and step tracking from HealthKit, with TDEE burn on Watch and widgets.</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-type"><span class="proj-type">iOS App</span></td>
+                            <td class="col-status"><span class="project-stamp live">App Store</span></td>
+                            <td class="col-updated"><span class="proj-when">Jul 2026</span></td>
+                        </tr>
+                        <tr class="proj-tr" data-group="ios">
+                            <td class="col-proj">
+                                <div class="proj-cell">
+                                    <img src="assets/bond-icon.png" alt="" class="proj-icon">
+                                    <div class="proj-body">
+                                        <a class="proj-name" href="ios/bond/">Bond: Love Language Reminders</a>
+                                        <span class="proj-desc">Love-language reminders, shared milestones, and a daily check-in for couples.</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-type"><span class="proj-type">iOS App</span></td>
+                            <td class="col-status"><span class="project-stamp live">App Store</span></td>
+                            <td class="col-updated"><span class="proj-when">Jul 2026</span></td>
+                        </tr>
+                        <tr class="proj-tr" data-group="ios">
+                            <td class="col-proj">
+                                <div class="proj-cell">
+                                    <img src="assets/statscout-icon.png" alt="" class="proj-icon">
+                                    <div class="proj-body">
+                                        <a class="proj-name" href="ios/baseball/">Baseball Savvy StatScout</a>
+                                        <span class="proj-desc">Mobile-first Statcast player cards and leaderboards, refreshed nightly by a scraper pipeline.</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-type"><span class="proj-type">iOS App</span></td>
+                            <td class="col-status"><span class="project-stamp live">App Store</span></td>
+                            <td class="col-updated"><span class="proj-when">Jul 2026</span></td>
+                        </tr>
+                        <tr class="proj-tr" data-group="web">
+                            <td class="col-proj">
+                                <div class="proj-cell">
+                                    <img src="assets/trains-icon.png" alt="" class="proj-icon">
+                                    <div class="proj-body">
+                                        <a class="proj-name" href="https://jackwallner.github.io/nearby-trains/" target="_blank" rel="noopener">Nearby Trains</a>
+                                        <span class="proj-desc">Track Amtrak, VIA Rail, and Brightline trains near any location.</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-type"><span class="proj-type">Web app</span></td>
+                            <td class="col-status"><span class="project-stamp live">Live</span></td>
+                            <td class="col-updated"><span class="proj-when">Apr 2026</span></td>
+                        </tr>
+                        <tr class="proj-tr" data-group="tools">
+                            <td class="col-proj">
+                                <div class="proj-cell">
+                                    <img src="assets/flight-tracker-icon.png" alt="" class="proj-icon">
+                                    <div class="proj-body">
+                                        <a class="proj-name" href="flight-tracker/">Flight Tracker</a>
+                                        <span class="proj-desc">Local flight tracking on an AWTRIX smart pixel clock.</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-type"><span class="proj-type">Hardware</span></td>
+                            <td class="col-status"><span class="project-stamp live">Live</span></td>
+                            <td class="col-updated"><span class="proj-when">Apr 2026</span></td>
+                        </tr>
+                        <tr class="proj-tr" data-group="web">
+                            <td class="col-proj">
+                                <div class="proj-cell">
+                                    <img src="assets/e3fit-icon.png" alt="" class="proj-icon">
+                                    <div class="proj-body">
+                                        <a class="proj-name" href="e3fit/">e3fit.me</a>
+                                        <span class="proj-desc">A production platform for coaching, booking, and workout delivery.</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-type"><span class="proj-type">Web app</span></td>
+                            <td class="col-status"><span class="project-stamp live">Live</span></td>
+                            <td class="col-updated"><span class="proj-when">May 2026</span></td>
+                        </tr>
+                        <tr class="proj-tr" data-group="tools">
+                            <td class="col-proj">
+                                <div class="proj-cell">
+                                    <img src="assets/songhero-icon.png" alt="" class="proj-icon">
+                                    <div class="proj-body">
+                                        <a class="proj-name" href="songhero/">Any Song Clone Hero</a>
+                                        <span class="proj-desc">Generates custom Clone Hero charts from any Spotify link.</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-type"><span class="proj-type">Tool</span></td>
+                            <td class="col-status"><span class="project-stamp live">Live</span></td>
+                            <td class="col-updated"><span class="proj-when">Mar 2026</span></td>
+                        </tr>
+                        <tr class="proj-tr" data-group="tools">
+                            <td class="col-proj">
+                                <div class="proj-cell">
+                                    <img src="assets/spotify-bot-icon.png" alt="" class="proj-icon">
+                                    <div class="proj-body">
+                                        <a class="proj-name" href="spotify-bot/">Spotify Daily Trading Bot</a>
+                                        <span class="proj-desc">A Kalshi bot for predicting Spotify&#x27;s daily #1 song. It didn&#x27;t beat the market.</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-type"><span class="proj-type">Bot</span></td>
+                            <td class="col-status"><span class="project-stamp unsuccessful">Retired</span></td>
+                            <td class="col-updated"><span class="proj-when">Feb 2026</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="all-foot mono">
+                <a href="ios/">All 21 iOS apps &rarr;</a>
+                <a href="https://github.com/jackwallner?tab=repositories" target="_blank" rel="noopener">GitHub profile &#8599;</a>
+            </p>
         </section>
 
         <section class="github-chart-section">
@@ -420,7 +562,6 @@
             </div>
         </div>
     </footer>
-
-    <script src="script.js?v=4"></script>
+    <script src="script.js?v=5"></script>
 </body>
 </html>

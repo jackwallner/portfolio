@@ -1,174 +1,41 @@
-// Curated metadata, keyed by GitHub repo name. `repo: null` = no public repo.
-// `start`/`updated` are fallback dates, used only if the GitHub API is unreachable;
-// real created_at / pushed_at dates override them when the fetch succeeds.
-const CURATED = [
-    { repo: 'vitals', name: 'Total Calories - Daily Tracker', icon: 'vitals-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'ios/vitals/', ext: false, start: '2026-05-01', updated: '2026-07-09', desc: 'Private calorie and step tracking from HealthKit: TDEE burn on Watch & widgets.' },
-    { repo: 'headaches', name: 'Migraine Headache Tracker Log', icon: 'headaches-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'ios/headaches/', ext: false, start: '2026-05-20', updated: '2026-07-09', desc: 'One-tap headache logging with health and weather context.' },
-    { repo: 'fitness-streaks', name: 'Streak Finder: Health Habits', icon: 'streaks-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'ios/fitness-streaks/', ext: false, start: '2026-05-22', updated: '2026-08-11', desc: 'Automatic fitness streak discovery from Apple Health.' },
-    { repo: 'sober', name: 'Sober: Sobriety Day Counter', icon: 'sober-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'ios/sober/', ext: false, start: '2026-05-15', updated: '2026-07-26', desc: 'Day counter with a virtual garden that grows as sober days add up.' },
-    { repo: 'quitzyn', name: 'Quit Zyn: Pouch & Snus Tracker', icon: 'quitzyn-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'ios/quitzyn/', ext: false, start: '2026-06-26', updated: '2026-07-08', desc: 'Nicotine-free day counter with a garden that grows as your streak builds.' },
-    { repo: 'bond', name: 'Bond: Love Language Reminders', icon: 'bond-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'ios/bond/', ext: false, start: '2026-04-20', updated: '2026-07-09', desc: 'Love-language reminders, shared milestones, and a daily check-in for couples.' },
-    { repo: 'simpleglp', name: 'Simple GLP: GLP-1 Shot Tracker', icon: 'simpleglp-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'ios/simpleglp/', ext: false, start: '2026-05-28', updated: '2026-07-09', desc: 'One-tap GLP-1 shot logging on a simple weekly schedule.' },
-    { repo: 'sports', name: 'Gist: Sports Made Simple', icon: 'sports-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'ios/sports/', ext: false, start: '2026-05-30', updated: '2026-07-09', desc: 'The sports everyone is talking about, explained in five minutes a day.' },
-    { repo: 'baseball', name: 'Baseball Savvy StatScout', icon: 'statscout-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'ios/baseball/', ext: false, start: '2026-04-10', updated: '2026-07-09', desc: 'Mobile-first Statcast player cards and leaderboards.' },
-    { repo: 'posture', name: 'Posture Coach: Sit Straight', icon: 'posture-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'ios/posture/', ext: false, start: '2026-06-01', updated: '2026-07-18', desc: 'Reads your alignment from AirPods head-motion sensors and nudges you upright.' },
-    { repo: 'bridge', name: 'Bridge Trainer: Learn & Bid', icon: 'bridge-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'ios/bridge/', ext: false, start: '2026-07-11', updated: '2026-07-18', desc: 'Five-minute contract bridge practice for card basics, bidding, declarer play, and defense.' },
-    { repo: 'cribbage', name: 'Cribbage Trainer: Count & Peg', icon: 'cribbage-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'ios/cribbage/', ext: false, start: '2026-07-11', updated: '2026-08-11', desc: 'Five-minute cribbage drills for counting, discarding, pegging, and table judgment.' },
-    { repo: 'sheepshead', name: 'Sheepshead Trainer: Trump Play', icon: 'sheepshead-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'ios/sheepshead/', ext: false, start: '2026-07-11', updated: '2026-08-11', desc: 'Five-minute sheepshead drills for trump, picking, partner play, bury decisions, and trick judgment.' },
-    { repo: 'skat', name: 'Skat Trainer: Learn Skat', icon: 'skat-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'ios/skat/', ext: false, start: '2026-07-11', updated: '2026-08-11', desc: 'Short Skat practice for cards, bidding, discarding, and trick decisions.' },
-    { repo: 'mahj', name: 'Mahj Trainer: Mahjong Practice', icon: 'mahj-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'ios/mahj/', ext: false, start: '2026-07-11', updated: '2026-07-18', desc: 'Short practice rooms for American Mah Jongg tiles, card reading, Charleston, and table judgment.' },
-    { repo: 'vo2max', name: 'VO2 Max & Cardio Fitness', icon: 'vo2max-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'ios/vo2max/', ext: false, start: '2026-07-15', updated: '2026-07-18', desc: 'A focused view of Apple Health cardio fitness estimates, fitness age, trends, and targets.' },
-    { repo: 'dreamcart-ios', name: 'DreamCart: Dopamine Shopping', icon: 'dreamcart-icon.png', type: 'iOS App', status: 'App Store', cls: 'live', link: 'ios/dreamcart/', ext: false, start: '2026-07-06', updated: '2026-07-18', desc: 'A virtual fashion shopping game with daily coins, cart checkout, and a dream closet.' },
-    { repo: 'queasy', name: 'Queasy: Wrist Comfort Aid', icon: 'queasy-icon.png', type: 'iOS App', status: 'In review', cls: 'soon', link: 'ios/queasy/', ext: false, start: '2026-07-01', updated: '2026-07-14', desc: 'Drug-free wrist comfort haptics on Apple Watch, inspired by P6 acupressure bands.' },
-    { repo: 'football', name: 'Football Next: StatScout', icon: 'football-icon.png', type: 'iOS App', status: 'Pre-release', cls: 'soon', link: 'ios/football/', ext: false, start: '2026-07-20', updated: '2026-07-28', desc: 'Every NFL player ranked by percentile, with advanced stats in plain visual form.' },
-    { repo: null, name: 'Elderhub: Family Care Log', icon: 'elderhub-icon.png', type: 'iOS App', status: 'Pre-release', cls: 'soon', link: 'ios/elderhub/', ext: false, start: '2026-07-31', updated: '2026-08-07', desc: 'One shared medication and medical record for the parent or partner your family looks after.' },
-    { repo: 'babydocs', name: 'Baby Docs: Newborn Paperwork', icon: 'babydocs-icon.png', type: 'iOS App', status: 'Pre-release', cls: 'soon', link: 'ios/babydocs/', ext: false, start: '2026-08-09', updated: '2026-08-09', desc: 'A newborn paperwork concierge: which tasks apply to your household, when each window closes, and where to go.' },
-    { repo: 'nearby-trains', name: 'Nearby Trains', icon: 'trains-icon.png', type: 'Web app', status: 'Live', cls: 'live', link: 'https://jackwallner.github.io/nearby-trains/', ext: true, start: '2026-04-01', updated: '2026-04-15', desc: 'Track Amtrak, VIA Rail, and Brightline trains near any location.' },
-    { repo: 'flight-tracker', name: 'Flight Tracker', icon: 'flight-tracker-icon.png', type: 'Hardware', status: 'Live', cls: 'live', link: 'flight-tracker/', ext: false, start: '2026-03-15', updated: '2026-04-20', desc: 'Local flight tracking on an AWTRIX smart pixel clock.' },
-    { repo: 'any-song-clone-hero-cli', name: 'Any Song Clone Hero', icon: 'songhero-icon.png', type: 'Tool', status: 'Live', cls: 'live', link: 'songhero/', ext: false, start: '2026-02-20', updated: '2026-03-10', desc: 'Generates custom Clone Hero charts from any Spotify link.' },
-    { repo: 'rc-clean', name: 'rc-clean', icon: null, type: 'Tool', status: 'Open source', cls: 'code', link: 'https://github.com/jackwallner/rc-clean', ext: true, start: '2026-07-03', updated: '2026-07-03', desc: 'CLI that deletes RevenueCat test and TestFlight customers from analytics, never a real paying user.' },
-    { repo: null, name: 'e3fit.me', icon: 'e3fit-icon.png', type: 'Web app', status: 'Live', cls: 'live', link: 'e3fit/', ext: false, start: '2026-03-01', updated: '2026-05-01', desc: 'A production platform for coaching, booking, and workout delivery.' },
-    { repo: 'spotify-daily-trading-bot', name: 'Spotify Daily Trading Bot', icon: 'spotify-bot-icon.png', type: 'Bot', status: 'Retired', cls: 'unsuccessful', link: 'spotify-bot/', ext: false, start: '2026-01-20', updated: '2026-02-15', desc: "A Kalshi bot for predicting Spotify's daily #1 song. It didn't beat the market." },
-];
+// The project table and cards are generated at build time by
+// scripts/build_site.py from projects.json, so the page renders with no JS.
+// This file only adds the two bits of interactivity on top.
 
-// Repos folded into a curated entry above, don't list them again in the tail.
-// value = repo name of the curated entry whose dates should also track this repo.
-const FOLDED = { 'statscout': 'baseball', 'flight-tracker-service': 'flight-tracker', 'dreamcart': 'dreamcart-ios' };
+// ---- Filter chips over the project table ----
+(function () {
+    const chips = document.querySelectorAll('.chip');
+    const rows = document.querySelectorAll('.proj-tr');
+    if (!chips.length || !rows.length) return;
 
-function fmtDate(iso) {
-    if (!iso) return '';
-    const d = new Date(iso);
-    return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-}
-
-function stripEmoji(s) {
-    if (!s) return '';
-    return s.replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{1F1E6}-\u{1F1FF}]/gu, '').trim();
-}
-
-function escapeHtml(s) {
-    return (s || '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-}
-
-function projectRow(e) {
-    const tr = document.createElement('tr');
-    tr.className = 'proj-tr';
-    tr.tabIndex = 0;
-    tr.dataset.href = e.link;
-    if (e.ext) tr.dataset.ext = '1';
-
-    const iconHtml = e.icon
-        ? `<img src="assets/${e.icon}" alt="" class="proj-icon">`
-        : `<span class="proj-icon ph">${escapeHtml((e.name[0] || '#').toUpperCase())}</span>`;
-
-    tr.innerHTML = `
-        <td class="col-proj">
-            <div class="proj-cell">
-                ${iconHtml}
-                <div class="proj-body">
-                    <span class="proj-name">${escapeHtml(e.name)}</span>
-                    ${e.desc ? `<span class="proj-desc">${escapeHtml(e.desc)}</span>` : ''}
-                </div>
-            </div>
-        </td>
-        <td class="col-type"><span class="proj-type">${escapeHtml(e.type || '')}</span></td>
-        <td class="col-status"><span class="project-stamp ${e.cls}">${escapeHtml(e.status)}</span></td>
-        <td class="col-started"><span class="proj-when">${fmtDate(e.start)}</span></td>
-        <td class="col-updated"><span class="proj-when">${fmtDate(e.updated)}</span></td>
-    `;
-    return tr;
-}
-
-function renderTable(entries) {
-    const body = document.getElementById('proj-rows');
-    if (!body) return;
-    const sorted = entries.slice().sort((a, b) => new Date(b.start || 0) - new Date(a.start || 0));
-    body.innerHTML = '';
-    sorted.forEach(e => body.appendChild(projectRow(e)));
-
-    body.querySelectorAll('.proj-tr').forEach(row => {
-        const go = () => {
-            const href = row.dataset.href;
-            if (row.dataset.ext) window.open(href, '_blank', 'noopener');
-            else window.location.href = href;
-        };
-        row.addEventListener('click', go);
-        row.addEventListener('keydown', ev => { if (ev.key === 'Enter') go(); });
-    });
-}
-
-function olderOf(a, b) { return new Date(a) < new Date(b) ? a : b; }
-function newerOf(a, b) { return new Date(a) > new Date(b) ? a : b; }
-
-async function loadProjects() {
-    const body = document.getElementById('proj-rows');
-    if (!body) return;
-
-    // Static render first, so the page is useful even if GitHub is unreachable.
-    renderTable(CURATED);
-
-    try {
-        const res = await fetch('https://api.github.com/users/jackwallner/repos?type=public&sort=updated&per_page=100');
-        if (!res.ok) throw new Error('GitHub API ' + res.status);
-        const repos = await res.json();
-
-        const entries = CURATED.map(e => ({ ...e }));
-        const entryByRepo = {};
-        entries.forEach(e => { if (e.repo) entryByRepo[e.repo] = e; });
-
-        repos.filter(r => !r.fork && !r.archived).forEach(r => {
-            const key = r.name.toLowerCase();
-            if (FOLDED[key]) {
-                const t = entryByRepo[FOLDED[key]];
-                if (t) { t.start = olderOf(t.start, r.created_at); t.updated = newerOf(t.updated, r.pushed_at); }
-                return;
-            }
-            if (entryByRepo[key]) {
-                entryByRepo[key].start = r.created_at;
-                entryByRepo[key].updated = r.pushed_at;
-                return;
-            }
-            // Long tail: real repo with no curated entry.
-            entries.push({
-                name: r.name,
-                desc: stripEmoji(r.description),
-                icon: null,
-                type: 'Repo',
-                status: 'Code',
-                cls: 'code',
-                link: r.html_url,
-                ext: true,
-                start: r.created_at,
-                updated: r.pushed_at
+    chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+            const filter = chip.dataset.filter;
+            chips.forEach(c => c.classList.toggle('active', c === chip));
+            rows.forEach(row => {
+                row.classList.toggle('hidden', filter !== 'all' && row.dataset.group !== filter);
             });
+            history.replaceState(null, '', filter === 'all' ? '#all' : '#all-' + filter);
         });
+    });
 
-        renderTable(entries);
-    } catch (err) {
-        // Curated table already rendered; nothing more to do.
+    // Deep link: /#all-ios opens the table pre-filtered to iOS.
+    const fromHash = (location.hash.match(/^#all-(\w+)$/) || [])[1];
+    if (fromHash) {
+        const chip = document.querySelector(`.chip[data-filter="${fromHash}"]`);
+        if (chip) chip.click();
     }
-}
+})();
 
-loadProjects();
-
-const yearEl = document.getElementById('year');
-if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-/* ---- Scroll reveal ---- */
-function initReveal() {
-    const reveals = document.querySelectorAll('.reveal');
-    if (!reveals.length) return;
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
+// ---- Whole table rows are clickable, not just the project name ----
+(function () {
+    document.querySelectorAll('.proj-tr').forEach(row => {
+        const link = row.querySelector('.proj-name');
+        if (!link) return;
+        row.addEventListener('click', ev => {
+            // Let real clicks on the link (or any other link) behave normally.
+            if (ev.target.closest('a')) return;
+            link.click();
         });
-    }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
-
-    reveals.forEach(el => observer.observe(el));
-}
-
-initReveal();
+    });
+})();

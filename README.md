@@ -1,6 +1,6 @@
 # portfolio
 
-This repository is published via **GitHub Pages** from the `main` branch’s `/docs` folder with a custom domain.
+This repository is published via **GitHub Pages** from the `main` branch's `/docs` folder with a custom domain.
 
 ## GitHub Pages
 
@@ -15,3 +15,27 @@ In the repo settings:
   - **Source**: Deploy from a branch
   - **Branch**: `main`
   - **Folder**: `/docs`
+
+## Editing projects
+
+`docs/projects.json` is the single source of truth for every project: name,
+status, description, tech, and links. To add or change a project, edit that
+file and rebuild:
+
+```sh
+python3 scripts/build_site.py
+```
+
+That regenerates two pages, both fully static:
+
+- `docs/index.html` - selected work plus the full project table
+- `docs/ios/index.html` - the App Store catalogue, grouped by category
+
+Set `"featured": 1..6` on a project to put it in Selected work (the number is
+its position); `0` leaves it in the table only. The `build-site` workflow
+rebuilds and commits automatically if `projects.json` is pushed without it.
+
+## Per-app landing pages
+
+`docs/ios/<slug>/` is mirrored from each app's own repo by
+`scripts/sync_ios_pages.py`, not edited here. See the header of that file.

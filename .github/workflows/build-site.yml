@@ -1,0 +1,42 @@
+name: Build index pages
+
+# docs/index.html and docs/ios/index.html are generated from docs/projects.json
+# by scripts/build_site.py. Editing the data without running the build would
+# leave the published pages stale, which is exactly the drift this replaced, so
+# CI rebuilds and commits the output whenever the inputs change.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - docs/projects.json
+      - scripts/build_site.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-site
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate index pages
+        run: python3 scripts/build_site.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/index.html docs/ios/index.html
+          if git diff --cached --quiet; then
+            echo "Index pages already up to date."
+            exit 0
+          fi
+          git commit -m "chore: rebuild index pages from projects.json"
+          git push
