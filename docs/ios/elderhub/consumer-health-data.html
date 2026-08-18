@@ -18,7 +18,7 @@
     </nav>
 
     <h1>Consumer Health Data Privacy Policy</h1>
-    <p class="date">Last updated: August 8, 2026</p>
+    <p class="date">Last updated: August 17, 2026</p>
 
     <p>
       This policy is provided separately from the
@@ -30,9 +30,10 @@
     </p>
 
     <p>
-      Almost everything Elderhub holds is consumer health data, and much of it
-      is about someone other than the person who typed it. That is the point of
-      the app, and it is why this page exists.
+      Much of what Elderhub holds is consumer health data, and much of it is
+      about someone other than the person who typed it. The app also holds care
+      coordination and financial information that may be connected to that
+      health data. That is the point of the app, and it is why this page exists.
     </p>
 
     <h2>Categories of Consumer Health Data Collected</h2>
@@ -64,9 +65,15 @@
         daily check-in button.
       </li>
       <li>
+        <strong>Care coordination and family notes:</strong> tasks, assignees,
+        completion history, free-form notes, and bills recorded for a person's
+        care. Bills may also be financial information. Elderhub does not store
+        bank credentials or connect to a bank.
+      </li>
+      <li>
         <strong>Identifiers connected to the above:</strong> the name,
-        relationship and date of birth of each person tracked, and emergency
-        contact names and phone numbers.
+        relationship and date of birth of each person tracked, provider details,
+        and emergency contact names and phone numbers.
       </li>
     </ul>
 
@@ -89,8 +96,8 @@
     <h2>Purposes for Collecting and Using It</h2>
     <ul>
       <li>
-        To show you the medication list, emergency card, visit history and care
-        log you entered.
+        To show you the medication list, emergency card, visit history, care
+        events, tasks, notes, bills, and other records you entered.
       </li>
       <li>
         To sync that record between the phones of the people in your family
@@ -103,6 +110,11 @@
       <li>
         To keep the record available with no signal, which requires a full copy
         on the device.
+      </li>
+      <li>
+        To let you choose whether to share an emergency-card copy through the
+        iOS share sheet. That copy is sent to the app or person you choose, not
+        automatically to Elderhub.
       </li>
     </ul>
     <p>
@@ -120,30 +132,48 @@
       ever sought.
     </p>
 
-    <p>Health data is shared in exactly two ways:</p>
+    <p>
+      Elderhub shares health data as part of operating the service in two ways:
+    </p>
     <ul>
       <li>
         <strong>With the other members of your own care circle.</strong> This is
         the feature. Who can see what is set by each member's role, enforced by
         the database itself, and shown in full to a person before anything of
-        theirs syncs.
+        theirs syncs. Organizers and caregivers can see the shared care records;
+        a person in the being-supported role can see only permitted parts of
+        their own record. Family notes and bills are staff-only.
       </li>
       <li>
         <strong>With one processor, Supabase Inc.</strong>, which hosts the
         encrypted database and the sync service on our behalf, under contract,
-        and may not use the data for its own purposes. See
+        and may not use the data for its own purposes. The shared database uses
+        row-level access controls, but free-text notes and bill notes are not
+        client-side or end-to-end encrypted. See
         <a href="https://supabase.com/security">Supabase security</a>.
       </li>
     </ul>
 
     <p>
-      Two other services are used, and
-      <strong>neither receives consumer health data</strong>: Apple, for Sign in
-      with Apple, in-app purchases and push notification delivery (the text of a
-      missed check-in notification names no medication and no condition), and
-      RevenueCat, for verifying subscription status from Apple's purchase
-      receipts. No advertising network, data broker, analytics vendor or
-      affiliate receives any of it, because there are none.
+      Two other services are used for limited functions. Apple provides Sign in
+      with Apple, in-app purchases, and push notification delivery. A missed
+      check-in push contains the recipient's name and a factual no-check-in
+      message, not medication or diagnosis details. RevenueCat receives the
+      purchase receipt and linked app account identifier for subscription
+      checks, not the care record. No advertising network, data broker,
+      analytics vendor, or affiliate receives the care record, because there are
+      none.
+    </p>
+
+    <h2>Storage and Retention</h2>
+    <p>
+      A record can remain local to one phone without an account or care circle.
+      When you explicitly share it, the app keeps a local offline copy and syncs
+      a shared copy to Supabase. The local store uses iOS file protection with
+      <code>NSFileProtectionCompleteUntilFirstUserAuthentication</code>; it is
+      not end-to-end encrypted. Deleted synced rows may remain as server
+      tombstones while the care circle exists, and an audit log can retain old
+      and new snapshots for medications, doses, people, and membership changes.
     </p>
 
     <h2>Your Rights</h2>
@@ -165,16 +195,19 @@
       </li>
       <li>
         <strong>Withdraw your consent</strong> to its collection and sharing.
-        Leaving your care circle stops all sharing; deleting your account stops
-        all collection.
+        Leaving your care circle stops that account's access and removes the
+        shared copy from that phone. Deleting your account removes the account
+        from the service, but does not erase the shared record kept for the rest
+        of the family.
       </li>
       <li>
         <strong>Have it deleted.</strong> Delete individual entries in the app,
-        or your whole account under Settings &rarr; Delete my account. Note that
-        deleting your account deliberately does not erase the family's shared
-        medication record, which belongs to everyone looking after that person;
-        to have the shared record itself deleted, email the address below and it
-        will be actioned within 30 days.
+        or your whole account under Settings &rarr; Delete my account.
+        Individual deletion is hidden in the app and follows the sync and audit
+        retention rules above. Deleting your account deliberately does not erase
+        the family's shared care record, which belongs to everyone looking after
+        that person. To request deletion of the shared record, email the address
+        below and it will be actioned within 30 days.
       </li>
     </ul>
 
