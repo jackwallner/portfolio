@@ -269,6 +269,24 @@
     "category": "Play"
   },
   {
+    "slug": "ironman",
+    "repo": "ironman",
+    "name": "IM Iron Splits",
+    "icon": "ironman-icon.png",
+    "group": "ios",
+    "type": "iOS App",
+    "status": "App Store",
+    "cls": "live",
+    "page": "ios/ironman/",
+    "appStore": "https://apps.apple.com/us/app/id6803727074",
+    "github": "https://github.com/jackwallner/ironman",
+    "tech": "Swift 6 · SwiftUI · OData · RevenueCat · GitHub Actions",
+    "desc": "Published triathlon and running results ranked by split, with a private race locker and shareable resume.",
+    "start": "2026-08-20",
+    "updated": "2026-08-21",
+    "category": "Sports"
+  },
+  {
     "slug": "bridge",
     "repo": "bridge",
     "name": "Bridge Trainer: Learn & Bid",

@@ -42,6 +42,7 @@ APPS = {
     "vo2max": ("vo2max", "docs"),
     "dreamcart": ("dreamcart", "docs"),
     "football": ("football", "docs"),
+    "ironman": ("ironman", "docs"),
     "babydocs": ("babydocs", "docs"),
     # Elderhub's code lives in ~/aging, which has no remote of its own; the page
     # is published from the medlist repo, kept under its old name so the URLs
