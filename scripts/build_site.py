@@ -32,6 +32,48 @@ EMAIL = "jackwallner@gmail.com"
 GITHUB = "https://github.com/jackwallner"
 LINKEDIN = "https://www.linkedin.com/in/wallnerjack/"
 
+GITHUB_WIDGET_CSS = "https://unpkg.com/github-contrib-graph@3.1.1/dist/gh.css"
+GITHUB_WIDGET_JS = "https://unpkg.com/github-contrib-graph@3.1.1/dist/browser.global.js"
+GITHUB_WIDGET_CSS_SRI = "sha384-WyVFrmGkHBrRyntJ5QkqEBDkThzAOxItNA1Vc2X99LRICq2JeUbKLyFxMWdAgl8K"
+GITHUB_WIDGET_JS_SRI = "sha384-zKPi8hTReOxYQ/OF8okarN6uf5kuFYdFhapZ48cK6gQcEJfhhYKcovbNk2eLpxMM"
+
+GITHUB_WIDGET_BOOTSTRAP = """    <script>
+        (() => {
+            const widget = document.getElementById("gh");
+            const fallback = document.querySelector(".github-activity-fallback");
+            if (!widget || !fallback) return;
+
+            const sync = () => {
+                const card = widget.querySelector(".ghCalendarCard");
+                const failed = widget.textContent.includes("Failed to load contribution data");
+                if (card) {
+                    widget.hidden = false;
+                    fallback.hidden = true;
+                    const total = widget.querySelector(".ghCalendarHeader span");
+                    if (total) {
+                        total.textContent = total.textContent.replace(
+                            /^[\\d,]+/,
+                            value => Number(value.replace(/,/g, "")).toLocaleString()
+                        );
+                    }
+                } else if (failed) {
+                    widget.hidden = true;
+                    fallback.hidden = false;
+                }
+            };
+
+            new MutationObserver(sync).observe(widget, {childList: true, subtree: true});
+            window.setTimeout(() => {
+                if (!widget.querySelector(".ghCalendarCard")) {
+                    widget.hidden = true;
+                    fallback.hidden = false;
+                }
+            }, 8000);
+            sync();
+        })();
+    </script>
+"""
+
 # Filter chips on the home table: label -> group key in projects.json.
 FILTERS = [("All", "all"), ("iOS apps", "ios"), ("Web", "web"), ("Tools", "tools")]
 
@@ -99,8 +141,14 @@ def fmt_date(iso):
     return f"{months[int(m) - 1]} {y}"
 
 
-def head(title, desc, prefix="", canonical=None):
+def head(title, desc, prefix="", canonical=None, github_widget=False):
     canon = f'\n    <link rel="canonical" href="{canonical}">' if canonical else ""
+    widget_assets = ""
+    if github_widget:
+        widget_assets = (
+            f'    <link rel="stylesheet" href="{GITHUB_WIDGET_CSS}" '
+            f'integrity="{GITHUB_WIDGET_CSS_SRI}" crossorigin="anonymous">\n'
+        )
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -112,7 +160,7 @@ def head(title, desc, prefix="", canonical=None):
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{prefix}home.css?v=6">
-    <link rel="icon" type="image/x-icon" href="{prefix}favicon.ico">
+{widget_assets}    <link rel="icon" type="image/x-icon" href="{prefix}favicon.ico">
 </head>
 <body>"""
 
@@ -192,7 +240,8 @@ def build_home(projects):
     return "".join([
         head("Jack Wallner - Work",
              f"{shipped} apps on the App Store and {len(projects)} projects by Jack Wallner.",
-             canonical="https://jackwallner.com/"),
+             canonical="https://jackwallner.com/",
+             github_widget=True),
         site_header("Vancouver, Washington"),
         f"""
     <main class="container">
@@ -200,17 +249,22 @@ def build_home(projects):
             <div class="activity-head">
                 <div class="activity-title-wrap">
                     <h1 id="activity-title" class="section-title">Activity</h1>
-                    <p class="activity-summary">{e(contribution_summary)}</p>
                 </div>
                 <div class="activity-stats mono" aria-label="Portfolio stats">
                     <span><strong>{shipped}</strong> on the App Store</span>
                     <span><strong>{len(projects)}</strong> projects</span>
                 </div>
             </div>
-            <a class="activity-chart-link" href="{GITHUB}" target="_blank" rel="noopener" aria-label="View Jack Wallner's GitHub activity">
-                <img src="https://ghchart.rshah.org/39d353/jackwallner" alt="GitHub contribution graph" class="activity-chart">
-            </a>
-            <div class="activity-chart-note">Public contributions only</div>
+            <div id="gh" class="github-activity-widget" data-login="jackwallner"
+                 data-show-thumbnail="false" data-show-header="true" data-show-footer="true"
+                 aria-label="GitHub contributions" hidden></div>
+            <div class="github-activity-fallback">
+                <p class="activity-summary">{e(contribution_summary)}</p>
+                <a class="activity-chart-link" href="{GITHUB}" target="_blank" rel="noopener" aria-label="View Jack Wallner's GitHub activity">
+                    <img src="https://ghchart.rshah.org/39d353/jackwallner" alt="GitHub contribution graph" class="activity-chart">
+                </a>
+                <div class="activity-chart-note">Public contributions only</div>
+            </div>
         </section>
 
         <section class="all-projects" id="all">
@@ -246,7 +300,12 @@ def build_home(projects):
     </main>
 """,
         site_footer(),
-    ]).replace("</body>", '    <script src="script.js?v=5"></script>\n</body>')
+    ]).replace(
+        "</body>",
+        f'    <script src="{GITHUB_WIDGET_JS}" integrity="{GITHUB_WIDGET_JS_SRI}" crossorigin="anonymous" defer></script>\n'
+        + GITHUB_WIDGET_BOOTSTRAP
+        + '    <script src="script.js?v=5"></script>\n</body>'
+    )
 
 
 def build_ios(projects):

@@ -237,6 +237,47 @@ a:hover {
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.6rem;
 }
+.github-activity-widget {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  --gh-bg-color: #ffffff;
+  --gh-text-default-color: var(--text);
+  --gh-text-inactive-color: var(--text-muted);
+  --gh-cell-level0-color: #ebedf0;
+  --gh-cell-level1-color: #9be9a8;
+  --gh-cell-level2-color: #40c463;
+  --gh-cell-level3-color: #30a14e;
+  --gh-cell-level4-color: #216e39;
+  --gh-cell-info-bg-color: #1f2328;
+  --gh-tooltip-text-color: #ffffff;
+  --gh-cell-outline-color: transparent;
+  --gh-cell-border-color: rgba(0, 0, 0, 0.06);
+  --gh-border-card-color: var(--border);
+  --gh-font-default-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.github-activity-widget .ghCalendarHeader div {
+  display: none;
+}
+.github-activity-widget .ghCalendarHeader span {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+.github-activity-widget .ghCalendarCard {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.github-activity-widget .ghCalendarCanvas {
+  margin-inline: 0 !important;
+}
+.github-activity-widget .ghCalendarCardFooter {
+  color: var(--text-muted);
+}
+.github-activity-fallback .activity-summary {
+  margin: 0 0 0.8rem;
+}
 
 /* ---- Section headings ---- */
 .section-title {
@@ -763,6 +804,21 @@ a:hover {
   }
   .activity-chart {
     width: auto;
+  }
+  .github-activity-widget {
+    --gh-cell-size: 8px;
+    --gh-cell-gap: 2px;
+  }
+  .github-activity-widget .ghCalendarCard {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: auto;
+  }
+  .github-activity-widget .ghCalendarCanvas,
+  .github-activity-widget .ghCalendarTable {
+    width: max-content;
+    margin-inline: 0 !important;
   }
 }
 
