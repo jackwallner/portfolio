@@ -44,10 +44,8 @@ APPS = {
     "football": ("football", "docs"),
     "ironman": ("ironman", "docs"),
     "babydocs": ("babydocs", "docs"),
-    # Elderhub's code lives in ~/aging, which has no remote of its own; the page
-    # is published from the medlist repo, kept under its old name so the URLs
-    # already shipped inside the app keep resolving. The slug is the app name.
-    "elderhub": ("medlist", "docs"),
+    # Elderhub's marketing page lives in its renamed standalone repository.
+    "elderhub": ("elderhub", "docs"),
     # queasy publishes from its repo root, not /docs
     "queasy": ("queasy", "."),
 }
