@@ -51,10 +51,11 @@ GITHUB_WIDGET_BOOTSTRAP = """    <script>
                     fallback.hidden = true;
                     const total = widget.querySelector(".ghCalendarHeader span");
                     if (total) {
-                        total.textContent = total.textContent.replace(
+                        const formatted = total.textContent.replace(
                             /^[\\d,]+/,
                             value => Number(value.replace(/,/g, "")).toLocaleString()
                         );
+                        if (formatted !== total.textContent) total.textContent = formatted;
                     }
                 } else if (failed) {
                     widget.hidden = true;
