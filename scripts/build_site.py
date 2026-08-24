@@ -145,18 +145,23 @@ def build_home(projects):
 
     return "".join([
         head("Jack Wallner - Work",
-             "A collection of apps, websites, tools, and experiments by Jack Wallner.",
+             f"{shipped} apps on the App Store and {len(projects)} projects by Jack Wallner.",
              canonical="https://jackwallner.com/"),
         site_header("Vancouver, Washington"),
         f"""
     <main class="container">
-        <section class="intro">
-            <h1 class="intro-title">Things I've made.</h1>
-            <p class="intro-text">A collection of apps, websites, tools, and experiments.</p>
-            <div class="intro-stats mono">
-                <span><strong>{shipped}</strong> on the App Store</span>
-                <span><strong>{len(projects)}</strong> projects</span>
+        <section class="activity-section" aria-labelledby="activity-title">
+            <div class="activity-head">
+                <h1 id="activity-title" class="section-title">Activity</h1>
+                <div class="activity-stats mono" aria-label="Portfolio stats">
+                    <span><strong>{shipped}</strong> on the App Store</span>
+                    <span><strong>{len(projects)}</strong> projects</span>
+                </div>
             </div>
+            <a class="activity-chart-link" href="{GITHUB}" target="_blank" rel="noopener" aria-label="View Jack Wallner's GitHub activity">
+                <img src="https://ghchart.rshah.org/39d353/jackwallner" alt="GitHub contribution graph" class="activity-chart">
+            </a>
+            <div class="activity-chart-note">Public contributions only</div>
         </section>
 
         <section class="all-projects" id="all">
@@ -189,10 +194,6 @@ def build_home(projects):
             </p>
         </section>
 
-        <section class="github-chart-section">
-            <img src="https://ghchart.rshah.org/39d353/jackwallner" alt="GitHub contribution graph" class="github-chart">
-            <div class="github-chart-note">Public contributions only</div>
-        </section>
     </main>
 """,
         site_footer(),
