@@ -194,6 +194,14 @@ a:hover {
 .activity-head .section-title {
   margin-bottom: 0;
 }
+.activity-title-wrap {
+  display: grid;
+  gap: 0.3rem;
+}
+.activity-summary {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
 .activity-stats {
   display: flex;
   gap: 1.5rem;

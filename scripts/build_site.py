@@ -14,10 +14,15 @@ Generated files, both fully static so the pages need no JavaScript to render:
 Run with `python3 scripts/build_site.py`; CI runs the same file.
 """
 
+from __future__ import annotations
+
 import html
 import json
+import re
 from datetime import date
+from html.parser import HTMLParser
 from pathlib import Path
+from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
@@ -39,6 +44,46 @@ CATEGORY_ORDER = [
     "Family & life admin",
     "Play",
 ]
+
+
+class ContributionSummaryParser(HTMLParser):
+    """Extract the official contribution total from GitHub's profile fragment."""
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.in_summary = False
+        self.parts: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag == "h2" and dict(attrs).get("id") == "js-contribution-activity-description":
+            self.in_summary = True
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag == "h2" and self.in_summary:
+            self.in_summary = False
+
+    def handle_data(self, data: str) -> None:
+        if self.in_summary:
+            self.parts.append(data)
+
+
+def github_contribution_summary() -> str | None:
+    request = Request(
+        "https://github.com/users/jackwallner/contributions",
+        headers={"User-Agent": "jackwallner-portfolio-build"},
+    )
+    try:
+        with urlopen(request, timeout=10) as response:
+            parser = ContributionSummaryParser()
+            parser.feed(response.read().decode("utf-8"))
+    except (OSError, UnicodeDecodeError):
+        return None
+
+    summary = " ".join(" ".join(parser.parts).split())
+    match = re.search(r"([\d,]+) contributions in the last year", summary, re.IGNORECASE)
+    if not match:
+        return None
+    return f"{int(match.group(1).replace(',', '')):,} contributions in the last year"
 
 
 def e(s):
@@ -136,6 +181,7 @@ def build_home(projects):
     for _, key in FILTERS[1:]:
         counts[key] = sum(1 for p in projects if p["group"] == key)
     shipped = sum(1 for p in projects if p.get("appStore"))
+    contribution_summary = github_contribution_summary() or "GitHub activity"
 
     chips = "\n".join(
         f'                    <button class="chip{" active" if key == "all" else ""}" '
@@ -152,7 +198,10 @@ def build_home(projects):
     <main class="container">
         <section class="activity-section" aria-labelledby="activity-title">
             <div class="activity-head">
-                <h1 id="activity-title" class="section-title">Activity</h1>
+                <div class="activity-title-wrap">
+                    <h1 id="activity-title" class="section-title">Activity</h1>
+                    <p class="activity-summary">{e(contribution_summary)}</p>
+                </div>
                 <div class="activity-stats mono" aria-label="Portfolio stats">
                     <span><strong>{shipped}</strong> on the App Store</span>
                     <span><strong>{len(projects)}</strong> projects</span>
