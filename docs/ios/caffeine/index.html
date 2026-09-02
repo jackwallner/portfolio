@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Preview what another coffee may leave at bedtime before you log it. Log a drink on iPhone or Apple Watch and see the modeled estimate now and at your bedtime."
+    />
+    <title>Caffeine Tracker: Bedtime for iPhone and Apple Watch</title>
+    <link rel="icon" type="image/png" sizes="256x256" href="icon_256.png" />
+    <link rel="apple-touch-icon" href="icon_256.png" />
+    <link rel="canonical" href="https://jackwallner.com/ios/caffeine/" />
+    <meta name="apple-itunes-app" content="app-id=6805950103" />
+    <meta
+      name="keywords"
+      content="caffeine tracker, coffee log, caffeine calculator, caffeine half-life, bedtime, cutoff, energy drink, iPhone, Apple Watch, widget, Apple Health"
+    />
+    <meta property="og:title" content="Caffeine Tracker: Bedtime" />
+    <meta
+      property="og:description"
+      content="Preview what another coffee may leave at bedtime before you log it. Modeled estimates on iPhone, Apple Watch, and widgets."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jackwallner.com/ios/caffeine/" />
+    <meta
+      property="og:image"
+      content="https://jackwallner.github.io/caffeine/icon_256.png"
+    />
+    <meta property="og:site_name" content="Caffeine Tracker" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Caffeine Tracker: Bedtime" />
+    <meta
+      name="twitter:description"
+      content="Preview what another coffee may leave at bedtime before you log it."
+    />
+    <meta
+      name="twitter:image"
+      content="https://jackwallner.github.io/caffeine/icon_256.png"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Caffeine Tracker: Bedtime",
+        "operatingSystem": "iOS 17.0, watchOS 10.0",
+        "applicationCategory": "HealthApplication",
+        "url": "https://apps.apple.com/app/id6805950103",
+        "description": "Log caffeine on iPhone or Apple Watch and preview the modeled amount that may remain now and at bedtime before you log the next drink. Estimates use an exponential half-life model and are not measurements or medical advice.",
+        "author": {
+          "@type": "Person",
+          "name": "Jack Wallner"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <nav>
+        <a class="brand" href="index.html">Caffeine Tracker</a>
+        <div class="nav-links">
+          <a href="support.html">Support</a>
+          <a href="privacy-policy.html">Privacy</a>
+        </div>
+      </nav>
+
+      <main>
+        <section class="hero">
+          <div>
+            <div class="eyebrow">Caffeine with a bedtime forecast</div>
+            <h1>Preview the next drink before you log it</h1>
+            <p class="lead">
+              See what may remain now, what may remain at bedtime, and how
+              another coffee could change both estimates.
+            </p>
+            <a class="cta" href="#how-it-works">See how it works</a>
+          </div>
+          <div
+            class="icon-card"
+            aria-label="Crescent moon and caffeine clearance curve"
+          >
+            <svg viewBox="0 0 280 280" role="img" aria-hidden="true">
+              <defs>
+                <linearGradient id="curve" x1="0" x2="1">
+                  <stop offset="0" stop-color="#5be4ff" />
+                  <stop offset="1" stop-color="#9e7bff" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M182 38a88 88 0 1 0 55 154 100 100 0 0 1-55-154z"
+                fill="#d7e9ff"
+              />
+              <path
+                d="M32 93c43 0 64 15 77 43 16 34 29 78 139 78"
+                fill="none"
+                stroke="url(#curve)"
+                stroke-width="16"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+        </section>
+
+        <section id="how-it-works" class="grid">
+          <article class="card">
+            <div class="number">01</div>
+            <h3>Choose a dose</h3>
+            <p>
+              Start with a quick amount or enter the caffeine on the label.
+              Change the drink time if you are planning ahead.
+            </p>
+          </article>
+          <article class="card">
+            <div class="number">02</div>
+            <h3>Compare bedtime</h3>
+            <p>
+              See the existing forecast beside the forecast with the proposed
+              drink. A 4 to 6 hour range keeps the uncertainty visible.
+            </p>
+          </article>
+          <article class="card">
+            <div class="number">03</div>
+            <h3>Decide, then log</h3>
+            <p>
+              The preview is useful even when the answer is no. If you log it,
+              Apple Health keeps the intake timeline available across devices.
+            </p>
+          </article>
+        </section>
+
+        <section class="section">
+          <div class="section-copy">
+            <div class="eyebrow">A clear model</div>
+            <h2>Useful estimates without false precision</h2>
+            <p>
+              Each dose is modeled independently with exponential caffeine
+              clearance. The default half-life is 5 hours and can be adjusted.
+              The app shows estimates, not blood measurements or guarantees
+              about sleep.
+            </p>
+            <div class="formula">
+              remaining = dose × 0.5^(elapsed ÷ half-life)
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-copy">
+            <div class="eyebrow">Built into your routine</div>
+            <h2>Phone, wrist, widgets, and Apple Health</h2>
+            <p>
+              Log from iPhone or Apple Watch, check the current and bedtime
+              estimates in a widget or complication, and control which Apple
+              Health sources count toward the timeline.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <span>© 2026 Jack Wallner</span>
+        <span
+          ><a href="privacy-policy.html">Privacy</a> ·
+          <a href="terms.html">Terms</a> ·
+          <a href="support.html">Support</a></span
+        >
+      </footer>
+    </div>
+  </body>
+</html>
