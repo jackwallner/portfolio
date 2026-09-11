@@ -413,6 +413,24 @@
     "category": "Family & life admin"
   },
   {
+    "slug": "baby",
+    "repo": "baby",
+    "name": "Baby Tracker",
+    "icon": null,
+    "group": "ios",
+    "type": "iOS App",
+    "status": "Pre-release",
+    "cls": "soon",
+    "page": "ios/baby/",
+    "appStore": null,
+    "github": "https://github.com/jackwallner/baby",
+    "tech": "Swift 6 · SwiftUI · SwiftData · WidgetKit · watchOS · CloudKit · RevenueCat",
+    "desc": "One tap to log a feed, a diaper, or sleep from iPhone, Apple Watch, or the lock screen, with the first-week diaper count up front.",
+    "start": "2026-09-11",
+    "updated": "2026-09-11",
+    "category": "Family & life admin"
+  },
+  {
     "slug": "protein",
     "repo": "protein",
     "name": "Protein Tracker - Grams Today",

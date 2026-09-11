@@ -49,6 +49,7 @@ APPS = {
     "caffeine": ("caffeine", "docs"),
     "protein": ("protein", "docs"),
     "daylight": ("daylight", "docs"),
+    "baby": ("baby", "docs"),
     # Elderhub's marketing page lives in its renamed standalone repository.
     "elderhub": ("elderhub", "docs"),
     # queasy publishes from its repo root, not /docs

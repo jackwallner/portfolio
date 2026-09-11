@@ -322,9 +322,13 @@ def build_ios(projects):
             store = (f'<a href="{e(p["appStore"])}" target="_blank" rel="noopener">App Store &#8599;</a>'
                      if p.get("appStore") else
                      f'<span class="project-stamp {e(p["cls"])}">{e(p["status"])}</span>')
+            # A pre-release app can be listed before it has an icon.
+            icon = (f'<img src="../assets/{e(p["icon"])}" alt="" class="proj-icon">'
+                    if p.get("icon") else
+                    f'<span class="proj-icon ph">{e(p["name"][0].upper())}</span>')
             rows.append(f"""                    <li class="app-row">
                         <a class="app-link" href="{e(p['slug'])}/">
-                            <img src="../assets/{e(p['icon'])}" alt="" class="proj-icon">
+                            {icon}
                             <span class="app-body">
                                 <span class="app-name">{e(p["name"])}</span>
                                 <span class="app-desc">{e(p['desc'])}</span>
