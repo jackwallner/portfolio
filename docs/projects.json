@@ -415,7 +415,7 @@
   {
     "slug": "baby",
     "repo": "baby",
-    "name": "Baby Tracker",
+    "name": "Baby Tracker: Feeds & Diapers",
     "icon": null,
     "group": "ios",
     "type": "iOS App",
@@ -424,7 +424,7 @@
     "page": "ios/baby/",
     "appStore": null,
     "github": "https://github.com/jackwallner/baby",
-    "tech": "Swift 6 · SwiftUI · SwiftData · WidgetKit · watchOS · CloudKit · RevenueCat",
+    "tech": "Swift 6 · SwiftUI · WidgetKit · watchOS · CloudKit · RevenueCat",
     "desc": "One tap to log a feed, a diaper, or sleep from iPhone, Apple Watch, or the lock screen, with the first-week diaper count up front.",
     "start": "2026-09-11",
     "updated": "2026-09-11",
