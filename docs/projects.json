@@ -431,6 +431,24 @@
     "category": "Family & life admin"
   },
   {
+    "slug": "adhd",
+    "repo": "adhd",
+    "name": "Next Cue: ADHD Routine Coach",
+    "icon": "adhd-icon.png",
+    "group": "ios",
+    "type": "iOS App",
+    "status": "Pre-release",
+    "cls": "soon",
+    "page": "ios/adhd/",
+    "appStore": null,
+    "github": "https://github.com/jackwallner/adhd",
+    "tech": "Swift 6 · SwiftUI · RevenueCat",
+    "desc": "Daily routines shown one step at a time, with a saved place to pick up again after an interruption.",
+    "start": "2026-09-22",
+    "updated": "2026-09-22",
+    "category": "Family & life admin"
+  },
+  {
     "slug": "protein",
     "repo": "protein",
     "name": "Protein Tracker - Grams Today",
