@@ -503,6 +503,24 @@
     "category": "Health & body"
   },
   {
+    "slug": "time",
+    "repo": "time",
+    "name": "Shoes On: Time Blindness Coach",
+    "icon": "time-icon.png",
+    "group": "ios",
+    "type": "iOS App",
+    "status": "Pre-release",
+    "cls": "soon",
+    "page": "ios/time/",
+    "appStore": null,
+    "github": "https://github.com/jackwallner/time",
+    "tech": "Swift 6 · SwiftUI · ActivityKit · App Intents · watchOS · RevenueCat",
+    "desc": "A leave-on-time routine coach that learns how long each step really takes you and tells you when to start, with a live status on the Lock Screen and Apple Watch.",
+    "start": "2026-09-22",
+    "updated": "2026-09-22",
+    "category": "Habits & recovery"
+  },
+  {
     "slug": "electrician",
     "repo": "electrician",
     "name": "Electrician Exam Practice 2026",

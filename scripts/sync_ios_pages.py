@@ -49,6 +49,7 @@ APPS = {
     "caffeine": ("caffeine", "docs"),
     "protein": ("protein", "docs"),
     "daylight": ("daylight", "docs"),
+    "time": ("time", "docs"),
     "baby": ("baby", "docs"),
     "adhd": ("adhd", "docs"),
     # Elderhub's marketing page lives in its renamed standalone repository.
