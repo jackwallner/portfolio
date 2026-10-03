@@ -19,7 +19,7 @@ from __future__ import annotations
 import html
 import json
 import re
-from datetime import date
+from datetime import date, timedelta
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.request import Request, urlopen
@@ -32,48 +32,9 @@ EMAIL = "jackwallner@gmail.com"
 GITHUB = "https://github.com/jackwallner"
 LINKEDIN = "https://www.linkedin.com/in/wallnerjack/"
 
-GITHUB_WIDGET_CSS = "https://unpkg.com/github-contrib-graph@3.1.1/dist/gh.css"
-GITHUB_WIDGET_JS = "https://unpkg.com/github-contrib-graph@3.1.1/dist/browser.global.js"
-GITHUB_WIDGET_CSS_SRI = "sha384-WyVFrmGkHBrRyntJ5QkqEBDkThzAOxItNA1Vc2X99LRICq2JeUbKLyFxMWdAgl8K"
-GITHUB_WIDGET_JS_SRI = "sha384-zKPi8hTReOxYQ/OF8okarN6uf5kuFYdFhapZ48cK6gQcEJfhhYKcovbNk2eLpxMM"
-
-GITHUB_WIDGET_BOOTSTRAP = """    <script>
-        (() => {
-            const widget = document.getElementById("gh");
-            const fallback = document.querySelector(".github-activity-fallback");
-            if (!widget || !fallback) return;
-
-            const sync = () => {
-                const card = widget.querySelector(".ghCalendarCard");
-                const failed = widget.textContent.includes("Failed to load contribution data");
-                if (card) {
-                    widget.hidden = false;
-                    fallback.hidden = true;
-                    const total = widget.querySelector(".ghCalendarHeader span");
-                    if (total) {
-                        const formatted = total.textContent.replace(
-                            /^[\\d,]+/,
-                            value => Number(value.replace(/,/g, "")).toLocaleString()
-                        );
-                        if (formatted !== total.textContent) total.textContent = formatted;
-                    }
-                } else if (failed) {
-                    widget.hidden = true;
-                    fallback.hidden = false;
-                }
-            };
-
-            new MutationObserver(sync).observe(widget, {childList: true, subtree: true});
-            window.setTimeout(() => {
-                if (!widget.querySelector(".ghCalendarCard")) {
-                    widget.hidden = true;
-                    fallback.hidden = false;
-                }
-            }, 8000);
-            sync();
-        })();
-    </script>
-"""
+APPLE_DEVELOPER_ID = "1891233967"
+APPLE_LOOKUP_URL = "https://itunes.apple.com/lookup"
+CONTRIBUTION_CHART = DOCS / "assets" / "github-contributions.svg"
 
 # Filter chips on the home table: label -> group key in projects.json.
 FILTERS = [("All", "all"), ("iOS apps", "ios"), ("Web", "web"), ("Tools", "tools")]
@@ -90,27 +51,46 @@ CATEGORY_ORDER = [
 
 
 class ContributionSummaryParser(HTMLParser):
-    """Extract the official contribution total from GitHub's profile fragment."""
+    """Extract the official total and daily levels from GitHub's profile fragment."""
 
     def __init__(self) -> None:
         super().__init__()
         self.in_summary = False
         self.parts: list[str] = []
+        self.days: list[dict[str, str]] = []
+        self.tooltips: dict[str, str] = {}
+        self.active_tooltip: str | None = None
+        self.tooltip_parts: list[str] = []
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
-        if tag == "h2" and dict(attrs).get("id") == "js-contribution-activity-description":
+        attributes = dict(attrs)
+        if tag == "h2" and attributes.get("id") == "js-contribution-activity-description":
             self.in_summary = True
+        if tag == "td" and "ContributionCalendar-day" in (attributes.get("class") or ""):
+            day = attributes.get("data-date")
+            level = attributes.get("data-level")
+            cell_id = attributes.get("id")
+            if day and level and cell_id:
+                self.days.append({"date": day, "level": level, "id": cell_id})
+        if tag == "tool-tip" and attributes.get("for", "").startswith("contribution-day-component-"):
+            self.active_tooltip = attributes["for"]
+            self.tooltip_parts = []
 
     def handle_endtag(self, tag: str) -> None:
         if tag == "h2" and self.in_summary:
             self.in_summary = False
+        if tag == "tool-tip" and self.active_tooltip:
+            self.tooltips[self.active_tooltip] = " ".join(" ".join(self.tooltip_parts).split())
+            self.active_tooltip = None
 
     def handle_data(self, data: str) -> None:
         if self.in_summary:
             self.parts.append(data)
+        if self.active_tooltip:
+            self.tooltip_parts.append(data)
 
 
-def github_contribution_summary() -> str | None:
+def github_contribution_data() -> tuple[str | None, list[dict[str, str]]]:
     request = Request(
         "https://github.com/users/jackwallner/contributions",
         headers={"User-Agent": "jackwallner-portfolio-build"},
@@ -120,13 +100,138 @@ def github_contribution_summary() -> str | None:
             parser = ContributionSummaryParser()
             parser.feed(response.read().decode("utf-8"))
     except (OSError, UnicodeDecodeError):
-        return None
+        return None, []
 
     summary = " ".join(" ".join(parser.parts).split())
     match = re.search(r"([\d,]+) contributions in the last year", summary, re.IGNORECASE)
-    if not match:
+    total = None
+    if match:
+        total = f"{int(match.group(1).replace(',', '')):,} contributions in the last year"
+
+    days = []
+    for day in parser.days:
+        try:
+            parsed_date = date.fromisoformat(day["date"])
+        except ValueError:
+            continue
+        days.append({
+            **day,
+            "title": parser.tooltips.get(
+                day["id"],
+                f"{parsed_date.strftime('%A, %B')} {parsed_date.day}, {parsed_date.year}: "
+                f"contribution level {day['level']}",
+            ),
+        })
+    return total, days
+
+
+def contribution_chart_svg(days: list[dict[str, str]]) -> str:
+    """Render GitHub's public daily contribution levels as an inline SVG chart."""
+    if not days:
+        return ""
+
+    palette = ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"]
+    cell = 11
+    step = 14
+    left = 30
+    top = 22
+    ordered = sorted(days, key=lambda item: item["date"])
+    start = date.fromisoformat(ordered[0]["date"])
+    start_sunday = start - timedelta(days=(start.weekday() + 1) % 7)
+    end = date.fromisoformat(ordered[-1]["date"])
+    weeks = (end - start_sunday).days // 7 + 1
+    width = left + weeks * step + 8
+    height = top + 7 * step + 22
+
+    labels = []
+    squares = []
+    previous_month = None
+    for day in ordered:
+        current = date.fromisoformat(day["date"])
+        week = (current - start_sunday).days // 7
+        weekday = (current.weekday() + 1) % 7
+        x = left + week * step
+        y = top + weekday * step
+        if current.day == 1 and current.month != previous_month:
+            labels.append(
+                f'<text x="{x}" y="13" fill="#777" font-size="11">'
+                f'{current.strftime("%b")}</text>'
+            )
+        previous_month = current.month
+        level = min(max(int(day["level"]), 0), len(palette) - 1)
+        squares.append(
+            f'<rect x="{x}" y="{y}" width="11" height="11" rx="2" '
+            f'fill="{palette[level]}"><title>{e(day["title"])}</title></rect>'
+        )
+
+    weekday_labels = "".join(
+        f'<text x="0" y="{top + row * step + 9}" fill="#777" font-size="10">{label}</text>'
+        for row, label in ((1, "Mon"), (3, "Wed"), (5, "Fri"))
+    )
+    legend_start = max(left, width - 154)
+    legend = [f'<text x="{legend_start}" y="{height - 3}" fill="#777" font-size="10">Less</text>']
+    for level, color in enumerate(palette):
+        x = legend_start + 35 + level * step
+        legend.append(
+            f'<rect x="{x}" y="{height - 13}" width="11" height="11" '
+            f'rx="2" fill="{color}" />'
+        )
+    legend.append(
+        f'<text x="{legend_start + 35 + len(palette) * step + 2}" y="{height - 3}" '
+        'fill="#777" font-size="10">More</text>'
+    )
+
+    return (
+        f'<svg class="activity-chart" xmlns="http://www.w3.org/2000/svg" '
+        f'viewBox="0 0 {width} {height}" role="img" '
+        'aria-label="GitHub contributions over the last year">'
+        '<title>GitHub contributions over the last year</title>'
+        '<desc>Daily public contributions. Hover a square to see its date and count.</desc>'
+        f'{"".join(labels)}{weekday_labels}{"".join(squares)}{"".join(legend)}</svg>'
+    )
+
+
+def app_store_listings() -> dict[str, str] | None:
+    """Return public US App Store URLs for this developer's currently listed apps."""
+    request = Request(
+        f"https://itunes.apple.com/lookup?id={APPLE_DEVELOPER_ID}&entity=software&limit=200&country=us",
+        headers={"User-Agent": "jackwallner-portfolio-build"},
+    )
+    try:
+        with urlopen(request, timeout=10) as response:
+            results = json.load(response).get("results", [])
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError):
         return None
-    return f"{int(match.group(1).replace(',', '')):,} contributions in the last year"
+
+    return {
+        str(item["trackId"]): item["trackViewUrl"]
+        for item in results
+        if item.get("trackId") and item.get("trackViewUrl")
+    }
+
+
+def sync_app_store_status(projects: list[dict]) -> bool:
+    """Promote entries with appStoreId values once Apple lists them."""
+    listings = app_store_listings()
+    if listings is None:
+        return False
+
+    changed = False
+    for project in projects:
+        app_id = str(project.get("appStoreId") or "")
+        listing = listings.get(app_id)
+        if not app_id or not listing:
+            continue
+        updated = {
+            "appStore": listing,
+            "status": "App Store",
+            "cls": "live",
+        }
+        for key, value in updated.items():
+            if project.get(key) != value:
+                project[key] = value
+                changed = True
+    return changed
 
 
 def e(s):
@@ -142,14 +247,8 @@ def fmt_date(iso):
     return f"{months[int(m) - 1]} {y}"
 
 
-def head(title, desc, prefix="", canonical=None, github_widget=False):
+def head(title, desc, prefix="", canonical=None):
     canon = f'\n    <link rel="canonical" href="{canonical}">' if canonical else ""
-    widget_assets = ""
-    if github_widget:
-        widget_assets = (
-            f'    <link rel="stylesheet" href="{GITHUB_WIDGET_CSS}" '
-            f'integrity="{GITHUB_WIDGET_CSS_SRI}" crossorigin="anonymous">\n'
-        )
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -160,8 +259,8 @@ def head(title, desc, prefix="", canonical=None, github_widget=False):
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{prefix}home.css?v=6">
-{widget_assets}    <link rel="icon" type="image/x-icon" href="{prefix}favicon.ico">
+    <link rel="stylesheet" href="{prefix}home.css?v=7">
+    <link rel="icon" type="image/x-icon" href="{prefix}favicon.ico">
 </head>
 <body>"""
 
@@ -223,14 +322,14 @@ def table_row(p):
                         </tr>"""
 
 
-def build_home(projects):
+def build_home(projects, contribution_summary, contribution_svg):
     by_date = sorted(projects, key=lambda p: p.get("start") or "", reverse=True)
 
     counts = {"all": len(projects)}
     for _, key in FILTERS[1:]:
         counts[key] = sum(1 for p in projects if p["group"] == key)
     shipped = sum(1 for p in projects if p.get("appStore"))
-    contribution_summary = github_contribution_summary() or "GitHub activity"
+    contribution_summary = contribution_summary or "GitHub activity"
 
     chips = "\n".join(
         f'                    <button class="chip{" active" if key == "all" else ""}" '
@@ -241,8 +340,7 @@ def build_home(projects):
     return "".join([
         head("Jack Wallner - Work",
              f"{shipped} apps on the App Store and {len(projects)} projects by Jack Wallner.",
-             canonical="https://jackwallner.com/",
-             github_widget=True),
+             canonical="https://jackwallner.com/"),
         site_header("Vancouver, Washington"),
         f"""
     <main class="container">
@@ -256,13 +354,10 @@ def build_home(projects):
                     <span><strong>{len(projects)}</strong> projects</span>
                 </div>
             </div>
-            <div id="gh" class="github-activity-widget" data-login="jackwallner"
-                 data-show-thumbnail="false" data-show-header="true" data-show-footer="true"
-                 aria-label="GitHub contributions" hidden></div>
-            <div class="github-activity-fallback">
+            <div class="github-activity">
                 <p class="activity-summary">{e(contribution_summary)}</p>
                 <a class="activity-chart-link" href="{GITHUB}" target="_blank" rel="noopener" aria-label="View Jack Wallner's GitHub activity">
-                    <img src="https://ghchart.rshah.org/39d353/jackwallner" alt="GitHub contribution graph" class="activity-chart">
+{contribution_svg}
                 </a>
                 <div class="activity-chart-note">Public contributions only</div>
             </div>
@@ -301,12 +396,7 @@ def build_home(projects):
     </main>
 """,
         site_footer(),
-    ]).replace(
-        "</body>",
-        f'    <script src="{GITHUB_WIDGET_JS}" integrity="{GITHUB_WIDGET_JS_SRI}" crossorigin="anonymous" defer></script>\n'
-        + GITHUB_WIDGET_BOOTSTRAP
-        + '    <script src="script.js?v=5"></script>\n</body>'
-    )
+    ]).replace("</body>", '    <script src="script.js?v=5"></script>\n</body>')
 
 
 def build_ios(projects):
@@ -364,9 +454,22 @@ def build_ios(projects):
 
 def main():
     projects = json.loads(DATA.read_text())
-    (DOCS / "index.html").write_text(build_home(projects))
+    if sync_app_store_status(projects):
+        DATA.write_text(json.dumps(projects, indent=2, ensure_ascii=False) + "\n")
+
+    contribution_summary, contribution_days = github_contribution_data()
+    contribution_svg = contribution_chart_svg(contribution_days)
+    if contribution_svg:
+        CONTRIBUTION_CHART.write_text(contribution_svg)
+    elif CONTRIBUTION_CHART.exists():
+        contribution_svg = CONTRIBUTION_CHART.read_text()
+
+    (DOCS / "index.html").write_text(
+        build_home(projects, contribution_summary, contribution_svg)
+    )
     (DOCS / "ios" / "index.html").write_text(build_ios(projects))
-    print(f"built index.html and ios/index.html from {len(projects)} projects "
+    shipped = sum(1 for project in projects if project.get("appStore"))
+    print(f"built index pages from {len(projects)} projects, {shipped} on the App Store "
           f"({date.today().isoformat()})")
     return 0
 

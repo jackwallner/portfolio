@@ -6,6 +6,8 @@ name: Build index pages
 # CI rebuilds and commits the output whenever the inputs change.
 
 on:
+  schedule:
+    - cron: "15 12 * * *"
   push:
     branches: [main]
     paths:
@@ -33,7 +35,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/index.html docs/ios/index.html
+          git add docs/projects.json docs/index.html docs/ios/index.html docs/assets/github-contributions.svg
           if git diff --cached --quiet; then
             echo "Index pages already up to date."
             exit 0

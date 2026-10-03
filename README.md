@@ -19,8 +19,16 @@ In the repo settings:
 ## Editing projects
 
 `docs/projects.json` is the single source of truth for every project: name,
-status, description, tech, and links. To add or change a project, edit that
-file and rebuild:
+status, description, tech, and links. Add an `appStoreId` for an unreleased app
+so the build can promote it when Apple lists it in the US App Store. The
+generator writes the resulting status and link back to `projects.json`; the
+scheduled daily build checks again for new releases.
+
+The homepage's contribution chart is baked into its HTML at build time from
+GitHub's public contribution data, so it renders without loading a third-party
+widget in the visitor's browser.
+
+To add or change a project, edit that file and rebuild:
 
 ```sh
 python3 scripts/build_site.py
