@@ -1,5 +1,21 @@
 [
   {
+    "slug": "pelojack",
+    "repo": "pelojack",
+    "name": "Pelojack",
+    "icon": "pelojack-icon.png",
+    "group": "tools",
+    "type": "Open-source app",
+    "status": "Open source",
+    "cls": "code",
+    "page": "ios/pelojack/",
+    "github": "https://github.com/jackwallner/pelojack",
+    "tech": "Kotlin · Jetpack Compose · Swift · watchOS",
+    "desc": "Custom workouts, resistance control, live metrics, and Apple Watch heart rate for the Bike+.",
+    "start": "2026-10-03",
+    "updated": "2026-10-03"
+  },
+  {
     "slug": "vitals",
     "repo": "vitals",
     "name": "Total Calories - Daily Tracker",

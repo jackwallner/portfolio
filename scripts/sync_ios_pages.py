@@ -56,6 +56,8 @@ APPS = {
     "elderhub": ("elderhub", "docs"),
     # queasy publishes from its repo root, not /docs
     "queasy": ("queasy", "."),
+    # Pelojack is a Bike+ app with an Apple Watch companion.
+    "pelojack": ("pelojack", "docs"),
 }
 
 ROOT = Path(__file__).resolve().parent.parent
