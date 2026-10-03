@@ -259,7 +259,7 @@ def head(title, desc, prefix="", canonical=None):
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{prefix}home.css?v=7">
+    <link rel="stylesheet" href="{prefix}home.css?v=8">
     <link rel="icon" type="image/x-icon" href="{prefix}favicon.ico">
 </head>
 <body>"""
@@ -359,7 +359,10 @@ def build_home(projects, contribution_summary, contribution_svg):
                 <a class="activity-chart-link" href="{GITHUB}" target="_blank" rel="noopener" aria-label="View Jack Wallner's GitHub activity">
 {contribution_svg}
                 </a>
-                <div class="activity-chart-note">Public contributions only</div>
+                <div class="activity-chart-note">
+                    <span>Public contributions only</span>
+                    <span class="activity-chart-scroll-hint">Swipe for full year</span>
+                </div>
             </div>
         </section>
 
