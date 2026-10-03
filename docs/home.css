@@ -241,9 +241,6 @@ a:hover {
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.6rem;
 }
-.activity-chart-scroll-hint {
-  display: none;
-}
 .github-activity .activity-summary {
   margin: 0 0 0.8rem;
 }
@@ -772,10 +769,29 @@ a:hover {
     gap: 0.7rem;
   }
   .activity-chart {
-    width: auto;
+    width: 100%;
+    min-width: 0;
   }
-  .activity-chart-scroll-hint {
-    display: inline;
+  .activity-chart-link {
+    overflow-x: hidden;
+    padding: 0.5rem;
+  }
+  .activity-chart .month-label {
+    font-size: 20px !important;
+  }
+  .activity-chart .weekday-label,
+  .activity-chart .legend-label,
+  .activity-chart .legend-cell {
+    display: none;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 840px) {
+  .activity-chart {
+    min-width: 0;
+  }
+  .activity-chart-link {
+    overflow-x: hidden;
   }
 }
 

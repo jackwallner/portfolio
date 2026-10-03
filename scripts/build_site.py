@@ -140,7 +140,7 @@ def contribution_chart_svg(days: list[dict[str, str]]) -> str:
     start_sunday = start - timedelta(days=(start.weekday() + 1) % 7)
     end = date.fromisoformat(ordered[-1]["date"])
     weeks = (end - start_sunday).days // 7 + 1
-    width = left + weeks * step + 8
+    width = left + weeks * step + 36
     height = top + 7 * step + 22
 
     labels = []
@@ -154,7 +154,7 @@ def contribution_chart_svg(days: list[dict[str, str]]) -> str:
         y = top + weekday * step
         if current.day == 1 and current.month != previous_month:
             labels.append(
-                f'<text x="{x}" y="13" fill="#777" font-size="11">'
+                f'<text class="month-label" x="{x}" y="13" fill="#777" font-size="11">'
                 f'{current.strftime("%b")}</text>'
             )
         previous_month = current.month
@@ -165,19 +165,24 @@ def contribution_chart_svg(days: list[dict[str, str]]) -> str:
         )
 
     weekday_labels = "".join(
-        f'<text x="0" y="{top + row * step + 9}" fill="#777" font-size="10">{label}</text>'
+        f'<text class="weekday-label" x="0" y="{top + row * step + 9}" '
+        f'fill="#777" font-size="10">{label}</text>'
         for row, label in ((1, "Mon"), (3, "Wed"), (5, "Fri"))
     )
     legend_start = max(left, width - 154)
-    legend = [f'<text x="{legend_start}" y="{height - 3}" fill="#777" font-size="10">Less</text>']
+    legend = [
+        f'<text class="legend-label" x="{legend_start}" y="{height - 3}" '
+        'fill="#777" font-size="10">Less</text>'
+    ]
     for level, color in enumerate(palette):
         x = legend_start + 35 + level * step
         legend.append(
-            f'<rect x="{x}" y="{height - 13}" width="11" height="11" '
+            f'<rect class="legend-cell" x="{x}" y="{height - 13}" width="11" height="11" '
             f'rx="2" fill="{color}" />'
         )
     legend.append(
-        f'<text x="{legend_start + 35 + len(palette) * step + 2}" y="{height - 3}" '
+        f'<text class="legend-label" x="{legend_start + 35 + len(palette) * step + 2}" '
+        f'y="{height - 3}" '
         'fill="#777" font-size="10">More</text>'
     )
 
@@ -259,7 +264,7 @@ def head(title, desc, prefix="", canonical=None):
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{prefix}home.css?v=8">
+    <link rel="stylesheet" href="{prefix}home.css?v=9">
     <link rel="icon" type="image/x-icon" href="{prefix}favicon.ico">
 </head>
 <body>"""
@@ -359,10 +364,7 @@ def build_home(projects, contribution_summary, contribution_svg):
                 <a class="activity-chart-link" href="{GITHUB}" target="_blank" rel="noopener" aria-label="View Jack Wallner's GitHub activity">
 {contribution_svg}
                 </a>
-                <div class="activity-chart-note">
-                    <span>Public contributions only</span>
-                    <span class="activity-chart-scroll-hint">Swipe for full year</span>
-                </div>
+                <div class="activity-chart-note">Public contributions only</div>
             </div>
         </section>
 
