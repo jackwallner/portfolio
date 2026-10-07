@@ -297,7 +297,7 @@
     "appStore": "https://apps.apple.com/us/app/im-tri-tracker/id6803727074?uo=4",
     "github": "https://github.com/jackwallner/ironman",
     "tech": "Swift 6 · SwiftUI · OData · RevenueCat · GitHub Actions",
-    "desc": "Published triathlon and running results ranked by split, with a private race locker and shareable resume.",
+    "desc": "Published full and half-distance triathlon results ranked by split, with race notes and an optional Race Book export.",
     "start": "2026-08-20",
     "updated": "2026-08-21",
     "category": "Sports"
