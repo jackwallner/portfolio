@@ -308,6 +308,12 @@ def site_footer(prefix="", back=False):
 
 def table_row(p):
     ext = ' target="_blank" rel="noopener"' if p.get("ext") else ""
+    status = f'<span class="project-stamp {e(p["cls"])}">{e(p["status"])}</span>'
+    play_link = (
+        f'<br><a class="project-store-link" href="{e(p["googlePlay"])}" '
+        'target="_blank" rel="noopener">Google Play &#8599;</a>'
+        if p.get("googlePlay") else ""
+    )
     icon = (f'<img src="assets/{e(p["icon"])}" alt="" class="proj-icon">'
             if p.get("icon") else
             f'<span class="proj-icon ph">{e(p["name"][0].upper())}</span>')
@@ -322,7 +328,7 @@ def table_row(p):
                                 </div>
                             </td>
                             <td class="col-type"><span class="proj-type">{e(p['type'])}</span></td>
-                            <td class="col-status"><span class="project-stamp {e(p['cls'])}">{e(p['status'])}</span></td>
+                            <td class="col-status">{status}{play_link}</td>
                             <td class="col-updated"><span class="proj-when">{fmt_date(p.get('updated'))}</span></td>
                         </tr>"""
 
@@ -414,8 +420,12 @@ def build_ios(projects):
             continue
         rows = []
         for p in members:
-            store = (f'<a href="{e(p["appStore"])}" target="_blank" rel="noopener">App Store &#8599;</a>'
-                     if p.get("appStore") else
+            store_links = [
+                f'<a href="{e(p[key])}" target="_blank" rel="noopener">{label} &#8599;</a>'
+                for key, label in (("appStore", "App Store"), ("googlePlay", "Google Play"))
+                if p.get(key)
+            ]
+            store = (" ".join(store_links) if store_links else
                      f'<span class="project-stamp {e(p["cls"])}">{e(p["status"])}</span>')
             # A pre-release app can be listed before it has an icon.
             icon = (f'<img src="../assets/{e(p["icon"])}" alt="" class="proj-icon">'

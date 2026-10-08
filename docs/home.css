@@ -589,6 +589,19 @@ a:hover {
   line-height: 1.45;
   color: var(--text-secondary);
 }
+.project-store-link {
+  display: block;
+  margin-top: 0.25rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+  width: fit-content;
+}
+.project-store-link:hover {
+  color: var(--text);
+  border-bottom-color: var(--text);
+}
 
 .col-type,
 .col-status,
@@ -734,6 +747,10 @@ a:hover {
   color: var(--text-secondary);
 }
 .app-store {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.7rem;
   white-space: nowrap;
