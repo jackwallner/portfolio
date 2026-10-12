@@ -1,0 +1,64 @@
+# Jack Wallner
+
+> Independent iOS developer in Vancouver, Washington. Simple iPhone and Apple Watch apps, each with its own page, privacy policy and support.
+
+## Health & body
+
+- [Total Calories - Daily Tracker](https://jackwallner.com/ios/vitals/): Private calorie and step tracking from HealthKit, with TDEE burn on Watch and widgets. (App Store)
+- [Desk Reset: Posture Practice](https://jackwallner.com/ios/posture/): A three-minute guided posture practice with live AirPods cues and optional all-day monitoring. (App Store)
+- [Migraine Headache Tracker Log](https://jackwallner.com/ios/headaches/): One-tap headache logging that pairs each entry with health and barometric weather context. (App Store)
+- [Fitness Habit Tracker: Auto](https://jackwallner.com/ios/fitness-streaks/): Automatic fitness streak discovery from Apple Health. (App Store)
+- [Simple GLP: GLP-1 Dose Tracker](https://jackwallner.com/ios/simpleglp/): One-tap GLP-1 dose logging for weekly shots and daily pills, with schedules and optional Health context. (App Store)
+- [VO2 Max & Cardio Fitness](https://jackwallner.com/ios/vo2max/): A focused view of Apple Health cardio fitness estimates, fitness age, trends, and targets. (App Store)
+- [Trip Comfort: Motion Sickness](https://jackwallner.com/ios/queasy/): Four drug-free comfort routines for journeys, with breathing guidance and paced wrist pulses. (App Store)
+- [Protein Tracker - Grams Today](https://jackwallner.com/ios/protein/): One number on your wrist: the grams of protein you have tracked today. No calorie counting, no AI food scanning. (Pre-release)
+- [Caffeine Tracker: Bedtime](https://jackwallner.com/ios/caffeine/): Preview what another coffee may leave at bedtime before you log it, on iPhone and Apple Watch. (Pre-release)
+- [Daylight: Minutes Outside](https://jackwallner.com/ios/daylight/): Daylight time from Apple Health against a computed sunset, so you know the latest you can head out and still hit your target. (Pre-release)
+
+## Habits & recovery
+
+- [Sober: Sobriety Day Counter](https://jackwallner.com/ios/sober/): Day counter with a virtual garden that grows as sober days add up. (App Store)
+- [Quit Zyn: Pouch & Snus Tracker](https://jackwallner.com/ios/quitzyn/): Nicotine-free day counter, check-ins, and a garden that grows with every day off pouches. (App Store)
+- [Shoes On: Time Blindness Coach](https://jackwallner.com/ios/time/): A leave-on-time routine coach with learned step timing, one-day schedule changes, and a next-start widget. (Pre-release)
+
+## Card & tile games
+
+- [Bridge Trainer: Learn & Bid](https://jackwallner.com/ios/bridge/): Five-minute contract bridge practice for card basics, bidding, declarer play, and defense. (App Store)
+- [Cribbage Trainer: Count & Peg](https://jackwallner.com/ios/cribbage/): Five-minute cribbage drills for counting, discarding, pegging, and table judgment. (App Store)
+- [Sheepshead Trainer: Trump Play](https://jackwallner.com/ios/sheepshead/): Five-minute sheepshead drills for trump, picking, partner play, and bury decisions. (App Store)
+- [Skat Trainer: Learn Skat](https://jackwallner.com/ios/skat/): Short Skat practice for cards, bidding, discarding, and trick decisions. (App Store)
+- [Mahj Trainer: Mahjong Practice](https://jackwallner.com/ios/mahj/): Short practice rooms for American Mah Jongg tiles, card reading, Charleston, and table judgment. (App Store)
+
+## Sports
+
+- [Baseball Savvy StatScout](https://jackwallner.com/ios/baseball/): Mobile-first Statcast player cards and leaderboards, refreshed nightly by a scraper pipeline. (App Store)
+- [Sports Cheat Sheet: Daily News](https://jackwallner.com/ios/sports/): Plain-English sports catch-up so casual fans can follow along in five minutes a day. (App Store)
+- [Football Next: StatScout](https://jackwallner.com/ios/football/): Every NFL player ranked by percentile, with advanced stats in plain visual form. (App Store)
+- [Hockey Next: StatScout](https://jackwallner.com/ios/hockey/): Every NHL skater and goalie ranked by expected goals, with the xG race behind every game. (App Store)
+- [IM Tri Tracker](https://jackwallner.com/ios/ironman/): Published full and half-distance triathlon results ranked by split, with race notes and an optional Race Book export. (App Store)
+
+## Family & life admin
+
+- [Little Gestures: Couples Care](https://jackwallner.com/ios/bond/): Love-language reminders, shared milestones, and a daily check-in for couples. (App Store)
+- [Elderhub: Family Care Log](https://jackwallner.com/ios/elderhub/): One shared medication and medical record for the parent or partner your family looks after. (App Store)
+- [Baby Docs: Newborn Paperwork](https://jackwallner.com/ios/babydocs/): A newborn paperwork concierge: which tasks apply to your household, when each window closes, and where to go. (App Store)
+- [Baby Tracker: Feeds & Diapers](https://jackwallner.com/ios/baby/): One tap to log a feed, a diaper, or sleep from iPhone, Apple Watch, or the lock screen, with the first-week diaper count up front. (App Store)
+- [Next Cue: ADHD Routine Coach](https://jackwallner.com/ios/adhd/): Daily routines shown one step at a time, with a saved place to pick up again after an interruption. (Pre-release)
+
+## Play
+
+- [DreamCart: Dopamine Shopping](https://jackwallner.com/ios/dreamcart/): A virtual fashion shopping game with daily coins, cart checkout, and a dream closet. (App Store)
+- [Electrician Exam Practice 2026](https://jackwallner.com/ios/electrician/): 2023 NEC drills and calculators for the journeyman and master electrician exams, with generated practice rather than a fixed question bank. (App Store)
+- [DUPR IQ - Pickleball Drills](https://jackwallner.com/ios/pickleball/): Shot-selection drills for pickleball: a generator builds the situations, so the practice does not run out. (Pre-release)
+
+## Other projects
+
+- [Pelojack](https://jackwallner.com/ios/pelojack/): Custom workouts, resistance control, live metrics, and Apple Watch heart rate for the Bike+.
+- [e3fit.me](https://jackwallner.com/e3fit/): A production platform for coaching, booking, and workout delivery.
+- [Flight Tracker](https://jackwallner.com/flight-tracker/): Local flight tracking on an AWTRIX smart pixel clock.
+- [Any Song Clone Hero](https://jackwallner.com/songhero/): Generates custom Clone Hero charts from any Spotify link.
+
+## Contact
+
+- Email: jackwallner@gmail.com
+- GitHub: https://github.com/jackwallner

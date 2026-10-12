@@ -19,6 +19,7 @@ from __future__ import annotations
 import html
 import json
 import re
+import subprocess
 from datetime import date, timedelta
 from html.parser import HTMLParser
 from pathlib import Path
@@ -32,6 +33,8 @@ EMAIL = "jackwallner@gmail.com"
 GITHUB = "https://github.com/jackwallner"
 LINKEDIN = "https://www.linkedin.com/in/wallnerjack/"
 
+SITE = "https://jackwallner.com/"
+OG_IMAGE = SITE + "assets/profile.png"
 APPLE_DEVELOPER_ID = "1891233967"
 APPLE_LOOKUP_URL = "https://itunes.apple.com/lookup"
 CONTRIBUTION_CHART = DOCS / "assets" / "github-contributions.svg"
@@ -252,22 +255,79 @@ def fmt_date(iso):
     return f"{months[int(m) - 1]} {y}"
 
 
-def head(title, desc, prefix="", canonical=None):
+def head(title, desc, prefix="", canonical=None, jsonld=None):
     canon = f'\n    <link rel="canonical" href="{canonical}">' if canonical else ""
+    social = ""
+    if canonical:
+        social = f"""
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Jack Wallner">
+    <meta property="og:title" content="{e(title)}">
+    <meta property="og:description" content="{e(desc)}">
+    <meta property="og:url" content="{canonical}">
+    <meta property="og:image" content="{OG_IMAGE}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{e(title)}">
+    <meta name="twitter:description" content="{e(desc)}">"""
+    ld = ""
+    if jsonld:
+        # "</" can't appear inside a script element; JSON allows the escaped form.
+        body = json.dumps(jsonld, indent=2, ensure_ascii=False).replace("</", "<\\/")
+        ld = f'\n    <script type="application/ld+json">\n{body}\n    </script>'
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{e(title)}</title>
-    <meta name="description" content="{e(desc)}">{canon}
+    <meta name="description" content="{e(desc)}">{canon}{social}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{prefix}home.css?v=9">
-    <link rel="icon" type="image/x-icon" href="{prefix}favicon.ico">
+    <link rel="icon" type="image/x-icon" href="{prefix}favicon.ico">{ld}
 </head>
 <body>"""
+
+
+PERSON = {
+    "@type": "Person",
+    "@id": SITE + "#person",
+    "name": "Jack Wallner",
+    "url": SITE,
+    "image": OG_IMAGE,
+    "jobTitle": "iOS developer",
+    "homeLocation": {"@type": "Place", "name": "Vancouver, Washington"},
+    "sameAs": [GITHUB, LINKEDIN,
+               f"https://apps.apple.com/us/developer/id{APPLE_DEVELOPER_ID}"],
+}
+
+
+def page_url(p):
+    """Absolute URL of a project's own page, or None when it lives off-site."""
+    page = p.get("page") or ""
+    if not page or page.startswith("http"):
+        return None
+    return SITE + page
+
+
+def app_list(apps):
+    """ItemList of app pages, so crawlers see every app from one document."""
+    items = []
+    for i, p in enumerate(apps, 1):
+        app = {
+            "@type": "MobileApplication",
+            "name": p["name"],
+            "url": page_url(p),
+            "description": p["desc"],
+            "operatingSystem": "iOS",
+            "author": {"@id": SITE + "#person"},
+        }
+        if p.get("appStore"):
+            app["installUrl"] = p["appStore"]
+        items.append({"@type": "ListItem", "position": i, "item": app})
+    return {"@type": "ItemList", "numberOfItems": len(items), "itemListElement": items}
 
 
 def site_header(subtitle, prefix="", home_link=False):
@@ -349,9 +409,17 @@ def build_home(projects, contribution_summary, contribution_svg):
     )
 
     return "".join([
-        head("Jack Wallner - Work",
-             f"{shipped} apps on the App Store and {len(projects)} projects by Jack Wallner.",
-             canonical="https://jackwallner.com/"),
+        head("Jack Wallner - iPhone and Apple Watch Apps",
+             f"Jack Wallner builds simple iPhone and Apple Watch apps: {shipped} on the App "
+             "Store for health tracking, sports stats, card game practice, and family life.",
+             canonical=SITE,
+             jsonld={"@context": "https://schema.org", "@graph": [
+                 PERSON,
+                 {"@type": "WebSite", "@id": SITE + "#site", "url": SITE,
+                  "name": "Jack Wallner", "publisher": {"@id": SITE + "#person"}},
+                 {"@type": "ProfilePage", "url": SITE, "name": "Jack Wallner",
+                  "mainEntity": {"@id": SITE + "#person"}},
+             ]}),
         site_header("Vancouver, Washington"),
         f"""
     <main class="container">
@@ -449,10 +517,22 @@ def build_ios(projects):
             </section>""")
 
     return "".join([
-        head("iOS Apps - Jack Wallner",
-             f"Every iOS and watchOS app Jack Wallner has shipped: {live} on the App Store, "
-             "each with its own page.",
-             prefix="../", canonical="https://jackwallner.com/ios/"),
+        head("iPhone and Apple Watch Apps by Jack Wallner",
+             f"{live} iPhone and Apple Watch apps by Jack Wallner: calorie, migraine, sobriety "
+             "and GLP-1 trackers, advanced sports stats, and card game trainers.",
+             prefix="../", canonical=SITE + "ios/",
+             jsonld={"@context": "https://schema.org", "@graph": [
+                 PERSON,
+                 {"@type": "CollectionPage", "url": SITE + "ios/",
+                  "name": "iPhone and Apple Watch Apps by Jack Wallner",
+                  "author": {"@id": SITE + "#person"},
+                  "mainEntity": app_list([p for c in CATEGORY_ORDER for p in apps
+                                          if p.get("category") == c])},
+                 {"@type": "BreadcrumbList", "itemListElement": [
+                     {"@type": "ListItem", "position": 1, "name": "Jack Wallner", "item": SITE},
+                     {"@type": "ListItem", "position": 2, "name": "iOS apps",
+                      "item": SITE + "ios/"}]},
+             ]}),
         site_header("iOS and watchOS apps", prefix="../", home_link=True),
         f"""
     <main class="container">
@@ -465,6 +545,70 @@ def build_ios(projects):
 """,
         site_footer(prefix="../", back=True),
     ]).replace('    <script src="script.js?v=5"></script>\n', "")
+
+
+AI_CRAWLERS = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-SearchBot",
+               "Claude-User", "PerplexityBot", "Perplexity-User", "Google-Extended",
+               "Applebot-Extended", "Bingbot", "DuckAssistBot"]
+
+
+def last_modified(path):
+    """Date of the last commit touching a published file, falling back to today."""
+    try:
+        out = subprocess.run(["git", "log", "-1", "--format=%cs", "--", str(path)],
+                             cwd=ROOT, capture_output=True, text=True, check=True).stdout
+    except (OSError, subprocess.CalledProcessError):
+        out = ""
+    return out.strip() or date.today().isoformat()
+
+
+def build_sitemap(projects):
+    pages = [("", 1.0), ("ios/", 0.9)]
+    for p in projects:
+        url = page_url(p)
+        if url and (DOCS / p["page"] / "index.html").exists():
+            pages.append((p["page"], 0.8 if p["group"] == "ios" else 0.5))
+    rows = "\n".join(
+        f"  <url><loc>{SITE}{path}</loc>"
+        f"<lastmod>{last_modified(DOCS / path / 'index.html')}</lastmod>"
+        f"<priority>{prio}</priority></url>"
+        for path, prio in pages
+    )
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+            f"{rows}\n</urlset>\n")
+
+
+def build_robots():
+    named = "\n\n".join(f"User-agent: {bot}\nAllow: /" for bot in AI_CRAWLERS)
+    return (f"# Search engines and AI answer engines are welcome.\n\n{named}\n\n"
+            f"User-agent: *\nAllow: /\n\nSitemap: {SITE}sitemap.xml\n")
+
+
+def build_llms(projects):
+    """llms.txt: a plain index of every app page for AI answer engines."""
+    apps = [p for c in CATEGORY_ORDER for p in projects
+            if p["group"] == "ios" and p.get("category") == c]
+    lines = ["# Jack Wallner", "",
+             "> Independent iOS developer in Vancouver, Washington. Simple iPhone and "
+             "Apple Watch apps, each with its own page, privacy policy and support.", ""]
+    for cat in CATEGORY_ORDER:
+        members = [p for p in apps if p.get("category") == cat]
+        if not members:
+            continue
+        lines += [f"## {cat}", ""]
+        for p in members:
+            store = "App Store" if p.get("appStore") else p["status"]
+            lines.append(f"- [{p['name']}]({page_url(p)}): {p['desc']} ({store})")
+        lines.append("")
+    others = [p for p in projects if p["group"] != "ios" and page_url(p)
+              and p.get("status") != "Retired"]
+    if others:
+        lines += ["## Other projects", ""]
+        lines += [f"- [{p['name']}]({page_url(p)}): {p['desc']}" for p in others]
+        lines.append("")
+    lines += ["## Contact", "", f"- Email: {EMAIL}", f"- GitHub: {GITHUB}", ""]
+    return "\n".join(lines)
 
 
 def main():
@@ -483,6 +627,9 @@ def main():
         build_home(projects, contribution_summary, contribution_svg)
     )
     (DOCS / "ios" / "index.html").write_text(build_ios(projects))
+    (DOCS / "sitemap.xml").write_text(build_sitemap(projects))
+    (DOCS / "robots.txt").write_text(build_robots())
+    (DOCS / "llms.txt").write_text(build_llms(projects))
     shipped = sum(1 for project in projects if project.get("appStore"))
     print(f"built index pages from {len(projects)} projects, {shipped} on the App Store "
           f"({date.today().isoformat()})")

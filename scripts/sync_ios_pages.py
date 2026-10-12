@@ -58,6 +58,7 @@ APPS = {
     "queasy": ("queasy", "."),
     # Pelojack is a Bike+ app with an Apple Watch companion.
     "pelojack": ("pelojack", "docs"),
+    "hockey": ("hockey", "docs"),
 }
 
 ROOT = Path(__file__).resolve().parent.parent

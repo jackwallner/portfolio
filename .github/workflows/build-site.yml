@@ -12,6 +12,7 @@ on:
     branches: [main]
     paths:
       - docs/projects.json
+      - docs/ios/*/index.html
       - scripts/build_site.py
   workflow_dispatch:
 
@@ -27,6 +28,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Full history so sitemap.xml lastmod dates come from real commits.
+          fetch-depth: 0
 
       - name: Generate index pages
         run: python3 scripts/build_site.py
@@ -35,10 +39,16 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/projects.json docs/index.html docs/ios/index.html docs/assets/github-contributions.svg
+          git add docs/projects.json docs/index.html docs/ios/index.html docs/assets/github-contributions.svg \
+            docs/sitemap.xml docs/robots.txt docs/llms.txt
           if git diff --cached --quiet; then
             echo "Index pages already up to date."
             exit 0
           fi
           git commit -m "chore: rebuild index pages from projects.json"
-          git push
+          # App mirror pushes land concurrently; rebase onto them and retry.
+          for i in 1 2 3 4 5; do
+            git push && exit 0
+            git pull --rebase origin main
+          done
+          exit 1
