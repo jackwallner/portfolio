@@ -19,7 +19,7 @@
 
 - [Sober: Sobriety Day Counter](https://jackwallner.com/ios/sober/): Day counter with a virtual garden that grows as sober days add up. (App Store)
 - [Quit Zyn: Pouch & Snus Tracker](https://jackwallner.com/ios/quitzyn/): Nicotine-free day counter, check-ins, and a garden that grows with every day off pouches. (App Store)
-- [Shoes On: Time Blindness Coach](https://jackwallner.com/ios/time/): A leave-on-time routine coach with learned step timing, one-day schedule changes, and a next-start widget. (Pre-release)
+- [Shoes On: Time Blindness Coach](https://jackwallner.com/ios/time/): A leave-on-time routine coach with learned step timing, one-day schedule changes, and a next-start widget. (App Store)
 
 ## Card & tile games
 
