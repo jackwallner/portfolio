@@ -5,8 +5,15 @@
 ## Health & body
 
 - [Total Calories - Daily Tracker](https://jackwallner.com/ios/vitals/): Private calorie and step tracking from HealthKit, with TDEE burn on Watch and widgets. (App Store)
+  - [Active vs Resting Calories on Apple Watch: Total Burn Explained](https://jackwallner.com/ios/vitals/apple-watch-active-vs-resting-calories.html): What active and resting energy mean on Apple Watch, why the Move ring shows only part of your burn, and how to see your total calories burned for the day.
+  - [BMR Calculator: Basal Metabolic Rate Explained](https://jackwallner.com/ios/vitals/bmr-calculator.html): Free BMR calculator (Mifflin-St Jeor), what basal metabolic rate means, what changes it, and how Apple Watch resting energy compares.
+  - [Calorie burn guides: TDEE, BMR and Apple Watch energy](https://jackwallner.com/ios/vitals/guides.html): Short guides on calories burned: TDEE, BMR, and how Apple Watch measures active and resting energy.
+  - [TDEE Calculator: Total Daily Energy Expenditure Explained](https://jackwallner.com/ios/vitals/tdee-calculator.html): Free TDEE calculator using Mifflin-St Jeor, what total daily energy expenditure means, and how to measure your real daily burn with an Apple Watch.
 - [Desk Reset: Posture Practice](https://jackwallner.com/ios/posture/): A three-minute guided posture practice with live AirPods cues and optional all-day monitoring. (App Store)
 - [Migraine Headache Tracker Log](https://jackwallner.com/ios/headaches/): One-tap headache logging that pairs each entry with health and barometric weather context. (App Store)
+  - [Barometric Pressure and Headaches: How to Track the Connection | One Tap Headache Tracker](https://jackwallner.com/ios/headaches/barometric-pressure-headaches.html): Learn how barometric pressure changes trigger headaches and migraines, and how to automatically track the connection with your iPhone. Free app captures pressure data with every headache log.
+  - [Best Headache Tracker Apps for iPhone in 2026 | One Tap Headache Tracker](https://jackwallner.com/ios/headaches/best-headache-tracker-app.html): Compare the best headache and migraine tracking apps for iPhone in 2026. Detailed comparison of One Tap Headache Tracker, Migraine Buddy, Bearable, and N1 Headache: features, privacy, price, and data export.
+  - [How to Identify Your Migraine Triggers with Data | One Tap Headache Tracker](https://jackwallner.com/ios/headaches/migraine-trigger-tracking.html): Learn how to track and identify migraine triggers using automatic data capture. Capture weather, sleep, heart rate, air quality, and 60+ data points per headache with zero effort.
 - [Fitness Habit Tracker: Auto](https://jackwallner.com/ios/fitness-streaks/): Automatic fitness streak discovery from Apple Health. (App Store)
 - [Simple GLP: GLP-1 Dose Tracker](https://jackwallner.com/ios/simpleglp/): One-tap GLP-1 dose logging for weekly shots and daily pills, with schedules and optional Health context. (App Store)
 - [VO2 Max & Cardio Fitness](https://jackwallner.com/ios/vo2max/): A focused view of Apple Health cardio fitness estimates, fitness age, trends, and targets. (App Store)
@@ -28,6 +35,13 @@
 - [Sheepshead Trainer: Trump Play](https://jackwallner.com/ios/sheepshead/): Five-minute sheepshead drills for trump, picking, partner play, and bury decisions. (App Store)
 - [Skat Trainer: Learn Skat](https://jackwallner.com/ios/skat/): Short Skat practice for cards, bidding, discarding, and trick decisions. (App Store)
 - [Mahj Trainer: Mahjong Practice](https://jackwallner.com/ios/mahj/): Short practice rooms for American Mah Jongg tiles, card reading, Charleston, and table judgment. (App Store)
+  - [How to Read the Mah Jongg Card: the 9 Sections Explained](https://jackwallner.com/ios/mahj/learn/card-sections.html): The NMJL card is built from nine sections that keep the same shape every year: 2468, 13579, Consecutive Run, Like Numbers, Winds and Dragons, 369, Quints, Singles and Pairs and the Year hand. Learn to spot each one on a rack.
+  - [The Charleston in American Mah Jongg: Rules, Order and Strategy](https://jackwallner.com/ios/mahj/learn/charleston.html): How the Charleston works in American Mah Jongg: the three passes, the optional second Charleston, blind passes, the courtesy pass, and a simple strategy for choosing which three tiles to pass.
+  - [American Mah Jongg Glossary: Every Term Explained (Soap, Pung, Kong, Charleston)](https://jackwallner.com/ios/mahj/learn/glossary.html): A plain-English glossary of American Mah Jongg terms: craks, bams, dots, soap, pung, kong, quint, exposure, Charleston, blind pass, courtesy pass, joker swap, hot tile, wall game and more.
+  - [How to Play American Mah Jongg: Rules for Beginners (2026 Guide)](https://jackwallner.com/ios/mahj/learn/how-to-play-american-mahjong.html): The rules of American Mah Jongg in plain English: the 152 tiles, the card, the Charleston, calling, jokers, and how a hand is won. Written for brand-new players.
+  - [Learn American Mah Jongg: Rules, the Card, the Charleston, Jokers and Scoring](https://jackwallner.com/ios/mahj/learn/): Free guides to American Mah Jongg from the makers of Mahj Trainer: how to play, how to read the card's nine sections, the Charleston, joker rules, scoring and a full glossary.
+  - [Joker Rules in American Mah Jongg: Where They Can and Cannot Go](https://jackwallner.com/ios/mahj/learn/jokers.html): Every joker rule in American Mah Jongg: groups of three or more only, never in pairs or singles, never passed in the Charleston, dead when discarded, and how joker redemption (swapping) works.
+  - [American Mah Jongg Scoring and Table Rules: Who Pays What](https://jackwallner.com/ios/mahj/learn/scoring-and-table-rules.html): How payment works when someone wins at American Mah Jongg, when a call is too late, what happens after a wrong mah jongg, dead hands, and wall games.
 
 ## Sports
 
