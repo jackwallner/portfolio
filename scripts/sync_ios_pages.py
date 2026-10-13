@@ -14,6 +14,7 @@ URL, so nothing is rewritten here; the copy is byte-identical to the source.
 Run locally with `python3 scripts/sync_ios_pages.py`; CI runs the same file.
 """
 
+import posixpath
 import re
 import shutil
 import subprocess
@@ -59,6 +60,7 @@ APPS = {
     # Pelojack is a Bike+ app with an Apple Watch companion.
     "pelojack": ("pelojack", "docs"),
     "hockey": ("hockey", "docs"),
+    "basketball": ("basketball", "docs"),
 }
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -71,17 +73,29 @@ ASSET_EXT = (".html", ".css", ".js", ".png", ".jpg", ".jpeg", ".gif", ".svg",
              ".webp", ".ico", ".webmanifest", ".json", ".mp4", ".xml", ".txt")
 
 
-def referenced(html: str) -> set[str]:
-    """Relative asset paths referenced by an HTML document."""
+def referenced(html: str, base: str = "") -> set[str]:
+    """Asset paths an HTML document links to, resolved against its own folder.
+
+    `base` is the document's directory relative to the page root, so a guide at
+    learn/jokers.html linking "learn.css" resolves to learn/learn.css. A link to
+    a folder ("learn/") means that folder's index.html. Paths that escape the
+    page root are ignored.
+    """
     out = set()
     for raw in ASSET_RE.findall(html):
         if raw.startswith(SKIP_SCHEMES) or not raw.strip():
             continue
-        path = raw.split("#")[0].split("?")[0].lstrip("./")
-        if not path or ".." in path or " " in path:
+        path = raw.split("#")[0].split("?")[0]
+        if not path or " " in path:
             continue
-        if path.lower().endswith(ASSET_EXT):
-            out.add(path)
+        if path.endswith("/"):
+            path += "index.html"
+        if not path.lower().endswith(ASSET_EXT):
+            continue
+        resolved = posixpath.normpath(posixpath.join(base, path))
+        if resolved.startswith(("..", "/")):
+            continue
+        out.add(resolved)
     return out
 
 
@@ -104,7 +118,8 @@ def copy_closure(src: Path, dest: Path) -> int:
         shutil.copy2(source, target)
         copied += 1
         if rel.endswith(".html"):
-            pending.extend(referenced(source.read_text(encoding="utf-8", errors="replace")))
+            text = source.read_text(encoding="utf-8", errors="replace")
+            pending.extend(referenced(text, posixpath.dirname(rel)))
     return copied
 
 

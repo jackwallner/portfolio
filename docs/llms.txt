@@ -34,7 +34,8 @@
 - [Baseball Savvy StatScout](https://jackwallner.com/ios/baseball/): Mobile-first Statcast player cards and leaderboards, refreshed nightly by a scraper pipeline. (App Store)
 - [Sports Cheat Sheet: Daily News](https://jackwallner.com/ios/sports/): Plain-English sports catch-up so casual fans can follow along in five minutes a day. (App Store)
 - [Football Next: StatScout](https://jackwallner.com/ios/football/): Every NFL player ranked by percentile, with advanced stats in plain visual form. (App Store)
-- [Hockey Next: StatScout](https://jackwallner.com/ios/hockey/): Every NHL skater and goalie ranked by expected goals, with the xG race behind every game. (App Store)
+- [Hockey Edge: Puck StatScout](https://jackwallner.com/ios/hockey/): Every NHL skater and goalie ranked by expected goals, with the xG race behind every game. (Pre-release)
+- [Basketball: Hardwood StatScout](https://jackwallner.com/ios/basketball/): Every NBA player ranked on advanced percentiles: usage, true shooting, shot zones, playmaking and on-court impact. (Pre-release)
 - [IM Tri Tracker](https://jackwallner.com/ios/ironman/): Published full and half-distance triathlon results ranked by split, with race notes and an optional Race Book export. (App Store)
 
 ## Family & life admin
@@ -43,7 +44,7 @@
 - [Elderhub: Family Care Log](https://jackwallner.com/ios/elderhub/): One shared medication and medical record for the parent or partner your family looks after. (App Store)
 - [Baby Docs: Newborn Paperwork](https://jackwallner.com/ios/babydocs/): A newborn paperwork concierge: which tasks apply to your household, when each window closes, and where to go. (App Store)
 - [Baby Tracker: Feeds & Diapers](https://jackwallner.com/ios/baby/): One tap to log a feed, a diaper, or sleep from iPhone, Apple Watch, or the lock screen, with the first-week diaper count up front. (App Store)
-- [Next Cue: ADHD Routine Coach](https://jackwallner.com/ios/adhd/): Daily routines shown one step at a time, with a saved place to pick up again after an interruption. (Pre-release)
+- [Next Cue: ADHD Routine Planner](https://jackwallner.com/ios/adhd/): Daily routines shown one step at a time, with a saved place to pick up again after an interruption. (Pre-release)
 
 ## Play
 
