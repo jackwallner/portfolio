@@ -18,6 +18,7 @@
   <url><loc>https://jackwallner.com/ios/posture/terms.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/baseball/</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
   <url><loc>https://jackwallner.com/ios/baseball/privacy-policy.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
+  <url><loc>https://jackwallner.com/ios/baseball/statcast-metrics-explained.html</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
   <url><loc>https://jackwallner.com/ios/baseball/support.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/baseball/terms.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/sports/</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
@@ -37,9 +38,9 @@
   <url><loc>https://jackwallner.com/ios/fitness-streaks/support.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/fitness-streaks/terms.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/sober/</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
-  <url><loc>https://jackwallner.com/ios/sober/privacy-policy.html</loc><lastmod>2026-08-17</lastmod><priority>0.3</priority></url>
+  <url><loc>https://jackwallner.com/ios/sober/privacy-policy.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/sober/support.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
-  <url><loc>https://jackwallner.com/ios/sober/terms.html</loc><lastmod>2026-08-17</lastmod><priority>0.3</priority></url>
+  <url><loc>https://jackwallner.com/ios/sober/terms.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/quitzyn/</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
   <url><loc>https://jackwallner.com/ios/quitzyn/privacy-policy.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/quitzyn/support.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
@@ -57,25 +58,25 @@
   <url><loc>https://jackwallner.com/ios/vo2max/support.html</loc><lastmod>2026-07-30</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/vo2max/terms.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/queasy/</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
-  <url><loc>https://jackwallner.com/ios/queasy/privacy-policy.html</loc><lastmod>2026-08-18</lastmod><priority>0.3</priority></url>
+  <url><loc>https://jackwallner.com/ios/queasy/privacy-policy.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/queasy/support.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
-  <url><loc>https://jackwallner.com/ios/queasy/terms.html</loc><lastmod>2026-08-18</lastmod><priority>0.3</priority></url>
+  <url><loc>https://jackwallner.com/ios/queasy/terms.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/football/</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
   <url><loc>https://jackwallner.com/ios/football/privacy-policy.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/football/support.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/football/terms.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/hockey/</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
-  <url><loc>https://jackwallner.com/ios/hockey/privacy-policy.html</loc><lastmod>2026-10-12</lastmod><priority>0.3</priority></url>
-  <url><loc>https://jackwallner.com/ios/hockey/support.html</loc><lastmod>2026-10-12</lastmod><priority>0.3</priority></url>
-  <url><loc>https://jackwallner.com/ios/hockey/terms.html</loc><lastmod>2026-10-12</lastmod><priority>0.3</priority></url>
+  <url><loc>https://jackwallner.com/ios/hockey/privacy-policy.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
+  <url><loc>https://jackwallner.com/ios/hockey/support.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
+  <url><loc>https://jackwallner.com/ios/hockey/terms.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/basketball/</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
   <url><loc>https://jackwallner.com/ios/basketball/privacy-policy.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/basketball/support.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/basketball/terms.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/dreamcart/</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
-  <url><loc>https://jackwallner.com/ios/dreamcart/privacy-policy.html</loc><lastmod>2026-08-17</lastmod><priority>0.3</priority></url>
+  <url><loc>https://jackwallner.com/ios/dreamcart/privacy-policy.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/dreamcart/support.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
-  <url><loc>https://jackwallner.com/ios/dreamcart/terms.html</loc><lastmod>2026-08-17</lastmod><priority>0.3</priority></url>
+  <url><loc>https://jackwallner.com/ios/dreamcart/terms.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/ironman/</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
   <url><loc>https://jackwallner.com/ios/ironman/privacy-policy.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/ironman/support.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
@@ -85,17 +86,17 @@
   <url><loc>https://jackwallner.com/ios/bridge/support.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/bridge/terms.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/cribbage/</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
-  <url><loc>https://jackwallner.com/ios/cribbage/privacy-policy.html</loc><lastmod>2026-10-12</lastmod><priority>0.3</priority></url>
-  <url><loc>https://jackwallner.com/ios/cribbage/support.html</loc><lastmod>2026-10-03</lastmod><priority>0.3</priority></url>
-  <url><loc>https://jackwallner.com/ios/cribbage/terms.html</loc><lastmod>2026-10-03</lastmod><priority>0.3</priority></url>
+  <url><loc>https://jackwallner.com/ios/cribbage/privacy-policy.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
+  <url><loc>https://jackwallner.com/ios/cribbage/support.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
+  <url><loc>https://jackwallner.com/ios/cribbage/terms.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/sheepshead/</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
   <url><loc>https://jackwallner.com/ios/sheepshead/privacy-policy.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/sheepshead/support.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/sheepshead/terms.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/skat/</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
-  <url><loc>https://jackwallner.com/ios/skat/privacy-policy.html</loc><lastmod>2026-10-12</lastmod><priority>0.3</priority></url>
-  <url><loc>https://jackwallner.com/ios/skat/support.html</loc><lastmod>2026-08-11</lastmod><priority>0.3</priority></url>
-  <url><loc>https://jackwallner.com/ios/skat/terms.html</loc><lastmod>2026-10-03</lastmod><priority>0.3</priority></url>
+  <url><loc>https://jackwallner.com/ios/skat/privacy-policy.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
+  <url><loc>https://jackwallner.com/ios/skat/support.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
+  <url><loc>https://jackwallner.com/ios/skat/terms.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/mahj/</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
   <url><loc>https://jackwallner.com/ios/mahj/learn/card-sections.html</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
   <url><loc>https://jackwallner.com/ios/mahj/learn/charleston.html</loc><lastmod>2026-10-13</lastmod><priority>0.7</priority></url>
@@ -121,9 +122,9 @@
   <url><loc>https://jackwallner.com/ios/baby/support.html</loc><lastmod>2026-09-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/baby/terms.html</loc><lastmod>2026-09-11</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/adhd/</loc><lastmod>2026-10-12</lastmod><priority>0.8</priority></url>
-  <url><loc>https://jackwallner.com/ios/adhd/privacy-policy.html</loc><lastmod>2026-09-26</lastmod><priority>0.3</priority></url>
-  <url><loc>https://jackwallner.com/ios/adhd/support.html</loc><lastmod>2026-09-22</lastmod><priority>0.3</priority></url>
-  <url><loc>https://jackwallner.com/ios/adhd/terms.html</loc><lastmod>2026-09-22</lastmod><priority>0.3</priority></url>
+  <url><loc>https://jackwallner.com/ios/adhd/privacy-policy.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
+  <url><loc>https://jackwallner.com/ios/adhd/support.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
+  <url><loc>https://jackwallner.com/ios/adhd/terms.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/protein/</loc><lastmod>2026-10-13</lastmod><priority>0.8</priority></url>
   <url><loc>https://jackwallner.com/ios/protein/privacy-policy.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/protein/support.html</loc><lastmod>2026-10-13</lastmod><priority>0.3</priority></url>

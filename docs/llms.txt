@@ -46,6 +46,7 @@
 ## Sports
 
 - [Baseball Savvy StatScout](https://jackwallner.com/ios/baseball/): Mobile-first Statcast player cards and leaderboards, refreshed nightly by a scraper pipeline. (App Store)
+  - [What Is xwOBA? Barrel Rate, Hard-Hit % and Sprint Speed](https://jackwallner.com/ios/baseball/statcast-metrics-explained.html): What xwOBA, barrel rate, hard-hit rate and sprint speed mean, with the exact Statcast definitions and what a good number looks like in a 2025 MLB season.
 - [Sports Cheat Sheet: Daily News](https://jackwallner.com/ios/sports/): Plain-English sports catch-up so casual fans can follow along in five minutes a day. (App Store)
 - [Football Next: StatScout](https://jackwallner.com/ios/football/): Every NFL player ranked by percentile, with advanced stats in plain visual form. (App Store)
 - [Hockey Edge: Puck StatScout](https://jackwallner.com/ios/hockey/): Every NHL skater and goalie ranked by expected goals, with the xG race behind every game. (Pre-release)
