@@ -468,6 +468,7 @@ def build_home(projects, contribution_summary, contribution_svg):
 
             <p class="all-foot mono">
                 <a href="ios/">All {counts['ios']} iOS apps &rarr;</a>
+                <a href="guides/">Guides and comparisons &rarr;</a>
                 <a href="{GITHUB}?tab=repositories" target="_blank" rel="noopener">GitHub profile</a>
             </p>
         </section>
@@ -538,13 +539,78 @@ def build_ios(projects):
     <main class="container">
         <section class="apps-index">
             <h1 class="intro-title">iOS apps</h1>
-            <p class="intro-text">{live} apps on the App Store, {len(apps) - live} in the pipeline. Every one has its own page here with screenshots, privacy policy, and support.</p>
+            <p class="intro-text">{live} apps on the App Store, {len(apps) - live} in the pipeline. Every one has its own page here with screenshots, privacy policy, and support. <a href="../guides/">Guides and comparisons</a> for each app are collected on one page.</p>
 {chr(10).join(sections)}
         </section>
     </main>
 """,
         site_footer(prefix="../", back=True),
     ]).replace('    <script src="script.js?v=5"></script>\n', "")
+
+
+def guide_title(title):
+    """Page title without the trailing "| App name" brand suffix."""
+    return title.split(" | ")[0].strip()
+
+
+def build_guides(projects):
+    """One page linking every guide and comparison, so each sits a click from the home page."""
+    apps = [p for p in projects if p["group"] == "ios"]
+    total = 0
+    sections = []
+    items = []
+    for cat in CATEGORY_ORDER:
+        rows = []
+        for p in (a for a in apps if a.get("category") == cat):
+            for url, title, desc in guides(p):
+                total += 1
+                items.append({"@type": "ListItem", "position": total, "url": url,
+                              "name": guide_title(title)})
+                rows.append(f"""                    <li class="app-row">
+                        <a class="app-link" href="{e(url.replace(SITE, '../'))}">
+                            <span class="app-body">
+                                <span class="app-name">{e(guide_title(title))}</span>
+                                <span class="app-desc">{e(desc)}</span>
+                            </span>
+                        </a>
+                        <span class="app-store"><a href="../{e(p['page'])}">{e(p['name'].split(':')[0].split(' - ')[0])}</a></span>
+                    </li>""")
+        if rows:
+            sections.append(f"""            <section class="app-group">
+                <h2 class="group-title mono">{e(cat)} <span class="group-n">{len(rows)}</span></h2>
+                <ul class="app-list">
+{chr(10).join(rows)}
+                </ul>
+            </section>""")
+
+    title = "Guides and App Comparisons by Jack Wallner"
+    desc = (f"{total} plain guides and app comparisons: calorie burn and VO2 max on Apple Watch, "
+            "GLP-1 and sobriety tracking, Statcast and NFL stats, and card game rules.")
+    return "".join([
+        head(title, desc, prefix="../", canonical=SITE + "guides/",
+             jsonld={"@context": "https://schema.org", "@graph": [
+                 PERSON,
+                 {"@type": "CollectionPage", "url": SITE + "guides/", "name": title,
+                  "author": {"@id": SITE + "#person"},
+                  "mainEntity": {"@type": "ItemList", "numberOfItems": total,
+                                 "itemListElement": items}},
+                 {"@type": "BreadcrumbList", "itemListElement": [
+                     {"@type": "ListItem", "position": 1, "name": "Jack Wallner", "item": SITE},
+                     {"@type": "ListItem", "position": 2, "name": "Guides",
+                      "item": SITE + "guides/"}]},
+             ]}),
+        site_header("Guides and comparisons", prefix="../", home_link=True),
+        f"""
+    <main class="container">
+        <section class="apps-index">
+            <h1 class="intro-title">Guides</h1>
+            <p class="intro-text">{total} guides and comparisons, each written alongside one of my <a href="../ios/">iOS apps</a> and sourced at the bottom. Comparisons cover the main alternatives, not only my app.</p>
+{chr(10).join(sections)}
+        </section>
+    </main>
+""",
+        site_footer(prefix="../", back=True),
+    ])
 
 
 AI_CRAWLERS = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-SearchBot",
@@ -582,7 +648,7 @@ def build_sitemap(projects):
     The guides, calculators and support pages inside an app folder are what match
     long-tail searches, so they belong in the sitemap too.
     """
-    pages = [("", 1.0), ("ios/", 0.9)]
+    pages = [("", 1.0), ("ios/", 0.9), ("guides/", 0.9)]
     for p in projects:
         if not page_url(p) or not (DOCS / p["page"] / "index.html").exists():
             continue
@@ -677,6 +743,8 @@ def main():
         build_home(projects, contribution_summary, contribution_svg)
     )
     (DOCS / "ios" / "index.html").write_text(build_ios(projects))
+    (DOCS / "guides").mkdir(exist_ok=True)
+    (DOCS / "guides" / "index.html").write_text(build_guides(projects))
     (DOCS / "sitemap.xml").write_text(build_sitemap(projects))
     (DOCS / "robots.txt").write_text(build_robots())
     (DOCS / "llms.txt").write_text(build_llms(projects))
