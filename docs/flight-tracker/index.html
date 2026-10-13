@@ -29,8 +29,8 @@
             <p class="project-desc" style="font-size: 1rem; max-width: 600px; margin-bottom: 2rem;">macOS background service that monitors flights within 2 nautical miles of Vancouver, WA, rotating them on an AWTRIX smart pixel clock and archiving to GitHub Pages.</p>
 
             <div class="project-links" style="margin-bottom: 3rem;">
-                <a href="https://jackwallner.github.io/my-flights/" target="_blank" rel="noopener">History ↗</a>
-                <a href="https://github.com/jackwallner/flight-tracker" target="_blank" rel="noopener">Source ↗</a>
+                <a href="https://jackwallner.github.io/my-flights/" target="_blank" rel="noopener">History</a>
+                <a href="https://github.com/jackwallner/flight-tracker" target="_blank" rel="noopener">Source</a>
             </div>
 
             <div style="max-width: 600px;">
@@ -72,7 +72,7 @@
 
                 <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">The AWTRIX display.</strong> A 32x8 pixel matrix mounted on the wall cycles through nearby flights: callsign → altitude → speed. Custom icons for different aircraft types. Visible across the room, glanceable like a clock.</p>
 
-                <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">Rotating display logic.</strong> If multiple flights are in range, it rotates every 10 seconds. If nothing's close, it shows the time. Prioritizes by proximity, not just signal strength. A flight directly overhead gets featured even if it's farther away laterally.</p>
+                <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">Rotating display logic.</strong> If multiple flights are in range, it rotates every 10 seconds. If nothing's close, it shows the time. It ranks flights by proximity rather than signal strength, so a flight directly overhead gets featured even if it's farther away laterally.</p>
 
                 <p class="project-desc" style="margin-bottom: 1.25rem;"><strong style="color: var(--text);">GitHub Pages as a database.</strong> Every detected flight gets logged to a JSON file, committed by a GitHub Action, and deployed to Pages. The history is a static site. No server costs, no database, git history as audit trail.</p>
 

@@ -371,7 +371,7 @@ def table_row(p):
     status = f'<span class="project-stamp {e(p["cls"])}">{e(p["status"])}</span>'
     play_link = (
         f'<br><a class="project-store-link" href="{e(p["googlePlay"])}" '
-        'target="_blank" rel="noopener">Google Play &#8599;</a>'
+        'target="_blank" rel="noopener">Google Play</a>'
         if p.get("googlePlay") else ""
     )
     icon = (f'<img src="assets/{e(p["icon"])}" alt="" class="proj-icon">'
@@ -468,7 +468,7 @@ def build_home(projects, contribution_summary, contribution_svg):
 
             <p class="all-foot mono">
                 <a href="ios/">All {counts['ios']} iOS apps &rarr;</a>
-                <a href="{GITHUB}?tab=repositories" target="_blank" rel="noopener">GitHub profile &#8599;</a>
+                <a href="{GITHUB}?tab=repositories" target="_blank" rel="noopener">GitHub profile</a>
             </p>
         </section>
 
@@ -489,7 +489,7 @@ def build_ios(projects):
         rows = []
         for p in members:
             store_links = [
-                f'<a href="{e(p[key])}" target="_blank" rel="noopener">{label} &#8599;</a>'
+                f'<a href="{e(p[key])}" target="_blank" rel="noopener">{label}</a>'
                 for key, label in (("appStore", "App Store"), ("googlePlay", "Google Play"))
                 if p.get(key)
             ]

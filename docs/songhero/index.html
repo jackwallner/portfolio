@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SongHero — AI Clone Hero Charts From Any Song</title>
-  <meta name="description" content="Paste a Spotify link, get a fully playable Clone Hero chart. AI-powered note generation, 4 difficulties, music video support.">
-  <meta property="og:title" content="SongHero — AI Clone Hero Charts From Any Song">
-  <meta property="og:description" content="Paste a Spotify link, get a Clone Hero chart instantly.">
+  <title>SongHero: Clone Hero Charts From a Spotify Link</title>
+  <meta name="description" content="A command line tool that turns a Spotify link into a playable Clone Hero chart with 4 difficulties and an optional music video.">
+  <meta property="og:title" content="SongHero: Clone Hero Charts From a Spotify Link">
+  <meta property="og:description" content="Paste a Spotify link, get a Clone Hero chart folder.">
   <meta property="og:type" content="website">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🎸</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='12' fill='%23d4a853'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg:      #080708;
@@ -39,7 +39,7 @@
       scroll-behavior: smooth;
       background: var(--bg);
       color: var(--fg);
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-family: system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -282,13 +282,6 @@
       border-color: rgba(212,168,83,0.25);
       transform: translateY(-3px);
     }
-    .feature-icon {
-      font-size: 32px; margin-bottom: 16px;
-      display: inline-block;
-      background: rgba(212,168,83,0.06);
-      width: 52px; height: 52px; border-radius: var(--radius);
-      display: flex; align-items: center; justify-content: center;
-    }
     .feature-card h3 {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 22px; font-weight: 400;
@@ -391,7 +384,7 @@
       background: var(--bg3); border: 1px solid var(--border);
       color: var(--fg2); padding: 5px 14px; border-radius: 4px;
       font-size: 11px; font-weight: 700; cursor: pointer;
-      transition: all .15s; font-family: 'Inter', sans-serif;
+      transition: all .15s; font-family: system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
       letter-spacing: 0.5px;
     }
     .copy-btn:hover { background: var(--gold); color: #0a0908; border-color: var(--gold); }
@@ -504,10 +497,10 @@
         SONGHERO
       </a>
       <div class="nav-links">
-        <a href="#how" class="hide-mobile">How It Works</a>
+        <a href="#how" class="hide-mobile">Pipeline</a>
         <a href="#install">Install</a>
         <a href="https://github.com/jackwallner/any-song-clone-hero-cli" target="_blank" class="hide-mobile">GitHub</a>
-        <a href="#install" class="nav-cta">GET STARTED</a>
+        <a href="#install" class="nav-cta">INSTALL</a>
       </div>
     </div>
   </nav>
@@ -516,28 +509,28 @@
   <section class="hero">
     <div class="container">
       <div class="hero-badge">
-        <span class="dot"></span> AI-POWERED CHART GENERATION
+        <span class="dot"></span> COMMAND LINE TOOL FOR CLONE HERO
       </div>
       <h1>
         PASTE A <span class="gold">SPOTIFY LINK</span>.<br>
         GET A <span class="red">CLONE HERO</span> CHART.
       </h1>
       <p class="sub">
-        SongHero downloads the track, analyzes every beat with AI, and builds a full chart with 4 difficulty levels — in one command. No charting experience needed.
+        SongHero downloads the track, analyzes the audio, and builds a chart with 4 difficulty levels in one command. You don't need to know how to chart.
       </p>
 
       <div class="terminal">
         <div class="terminal-bar">
           <span class="t-dot r"></span><span class="t-dot y"></span><span class="t-dot g"></span>
-          <span class="title">amplifier — songhero</span>
+          <span class="title">amplifier: songhero</span>
         </div>
         <div class="terminal-body">
           <span class="prompt">~ $ </span><span class="cmd">songhero</span> <span class="url-clr">https://open.spotify.com/track/0VjIjW4GlUZAMYd2vXMi3b</span> <span class="flag">--gemini</span> <span class="flag">--video</span><br>
           <div class="out">
-            ⬇ Downloading Bohemian Rhapsody...<br>
-            🎛️ Analyzing beats, pitch & song structure...<br>
-            🤖 Gemini enhancing note patterns...<br>
-            ✅ Saved to ~/Desktop/Clone Hero/Queen - Bohemian Rhapsody (SongHero AI)/
+            Downloading Bohemian Rhapsody...<br>
+            Analyzing beats, pitch & song structure...<br>
+            Gemini refining note patterns...<br>
+            Saved to ~/Desktop/Clone Hero/Queen - Bohemian Rhapsody (SongHero AI)/
           </div>
         </div>
       </div>
@@ -561,39 +554,33 @@
       <div class="knob-row">
         <div class="knob"></div><div class="knob"></div><div class="knob"></div>
       </div>
-      <div class="section-label">Features</div>
-      <h2 class="section-title">Everything you need for the perfect chart</h2>
-      <p class="section-desc">No MIDI knowledge. No manual charting. Just a Spotify link and one command.</p>
+      <div class="section-label">What it does</div>
+      <h2 class="section-title">From link to chart folder</h2>
+      <p class="section-desc">No MIDI editing and no manual charting. You give it a Spotify link and run one command.</p>
       <div class="feature-grid">
         <div class="feature-card">
-          <div class="feature-icon">🎧</div>
-          <h3>Spotify → Chart</h3>
-          <p>Paste any Spotify track URL and SongHero finds the audio, downloads it, and generates a full chart. No API keys, no setup — just the link.</p>
+          <h3>Spotify to chart</h3>
+          <p>Paste a Spotify track URL and SongHero finds the audio, downloads it, and generates a chart. It needs no API keys for Spotify, only the link.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🤖</div>
-          <h3>Gemini AI Engine</h3>
-          <p>Google Gemini 2.0 Flash maps song sections — verses, choruses, bridges — and builds note patterns that feel like a human charted every phrase.</p>
+          <h3>Gemini section mapping</h3>
+          <p>With the --gemini flag, Google Gemini 2.0 Flash maps song sections (verses, choruses, bridges) and suggests note patterns for each one.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🎚️</div>
           <h3>4 Difficulty Levels</h3>
-          <p>Easy, Medium, Hard, and Expert — each with independent note grids. Progressive orange fret and chord usage tuned to the song's actual intensity.</p>
+          <p>Easy, Medium, Hard, and Expert, each with its own note grid. Orange fret and chords appear from Hard up, scaled to the song's intensity.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">📺</div>
-          <h3>Music Video Included</h3>
-          <p>Automatically downloads the official music video and packages it as a video background — just like Clone Hero expects. Drop in and play.</p>
+          <h3>Music video background</h3>
+          <p>With the --video flag, SongHero also downloads the music video and saves it as the video background Clone Hero expects.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🥁</div>
           <h3>Beat-Accurate Timing</h3>
-          <p>librosa audio analysis extracts precise onsets, tempo maps, and pitch curves. Every note lands on an actual beat — no random placement.</p>
+          <p>librosa extracts onsets, tempo, and pitch curves from the audio, so each note is placed on a detected beat.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">📦</div>
-          <h3>Ready-to-Play Output</h3>
-          <p>Outputs a complete Clone Hero song folder with notes.chart, song.ini, album art, and audio. Move it to your Songs folder and you're done.</p>
+          <h3>Ready-to-play folder</h3>
+          <p>The output is a Clone Hero song folder with notes.chart, song.ini, album art, and audio. Move it to your Songs folder and play.</p>
         </div>
       </div>
     </div>
@@ -606,13 +593,13 @@
         <div class="knob"></div><div class="knob"></div><div class="knob"></div><div class="knob"></div>
       </div>
       <div class="section-label">Pipeline</div>
-      <h2 class="section-title">Four steps. Zero effort.</h2>
-      <p class="section-desc">From a Spotify URL to a playable chart folder in under a minute.</p>
+      <h2 class="section-title">Four steps, one command</h2>
+      <p class="section-desc">From a Spotify URL to a chart folder you can play.</p>
       <div class="steps">
         <div class="step">
           <span class="step-num">01</span>
           <h3>Resolve</h3>
-          <p>Extracts song title, artist, album art, and metadata from the Spotify URL using public info — no auth required.</p>
+          <p>Extracts song title, artist, album art, and metadata from the Spotify URL using public info, so no login is required.</p>
         </div>
         <div class="step">
           <span class="step-num">02</span>
@@ -638,7 +625,7 @@
     <div class="container">
       <div class="section-label">Difficulties</div>
       <h2 class="section-title">From Easy to Expert</h2>
-      <p class="section-desc">Every chart ships with all four difficulty levels. Pick your pace and play.</p>
+      <p class="section-desc">Every chart includes all four difficulty levels.</p>
       <div class="diff-table-wrap" style="overflow-x:auto;">
         <table class="diff-table">
           <thead>
@@ -652,31 +639,31 @@
           </thead>
           <tbody>
             <tr>
-              <td class="diff-name">🥉 EASY</td>
+              <td class="diff-name">EASY</td>
               <td>25%</td>
-              <td><span class="cross">—</span></td>
-              <td><span class="cross">—</span></td>
+              <td><span class="cross">No</span></td>
+              <td><span class="cross">No</span></td>
               <td>Simple single notes on strong beats</td>
             </tr>
             <tr>
-              <td class="diff-name">🥈 MEDIUM</td>
+              <td class="diff-name">MEDIUM</td>
               <td>50%</td>
-              <td><span class="cross">—</span></td>
-              <td><span class="cross">—</span></td>
+              <td><span class="cross">No</span></td>
+              <td><span class="cross">No</span></td>
               <td>Faster single notes, varied patterns</td>
             </tr>
             <tr>
-              <td class="diff-name">🥇 HARD</td>
+              <td class="diff-name">HARD</td>
               <td>70%</td>
-              <td><span class="check">✓</span></td>
-              <td><span class="check">✓</span></td>
+              <td><span class="check">Yes</span></td>
+              <td><span class="check">Yes</span></td>
               <td>Orange notes, some chords, faster sections</td>
             </tr>
             <tr>
-              <td class="diff-name">🎸 EXPERT</td>
+              <td class="diff-name">EXPERT</td>
               <td>90%</td>
-              <td><span class="check">✓</span></td>
-              <td><span class="check">✓</span></td>
+              <td><span class="check">Yes</span></td>
+              <td><span class="check">Yes</span></td>
               <td>Dense patterns, full chords, all notes mapped</td>
             </tr>
           </tbody>
@@ -691,7 +678,7 @@
   <section id="install" class="install-section">
     <div class="container">
       <div class="section-label">Install</div>
-      <h2 class="section-title">One command. That's it.</h2>
+      <h2 class="section-title">Install in one command</h2>
       <p class="section-desc">Works on macOS and Linux. Windows via WSL.</p>
       <div class="install-block">
         <div class="install-tabs">
@@ -721,8 +708,8 @@
         <div class="knob"></div><div class="knob"></div><div class="knob"></div>
       </div>
       <div class="section-label">Output</div>
-      <h2 class="section-title">Ready to play, instantly</h2>
-      <p class="section-desc">Every chart lands in a complete Clone Hero song folder. Drop it in your Songs directory and play.</p>
+      <h2 class="section-title">What you get</h2>
+      <p class="section-desc">Each chart is saved as a Clone Hero song folder. Copy it into your Songs directory.</p>
       <div class="output-tree">
         <span class="dir">~/Desktop/Clone Hero/</span><br>
         <span class="dir">└── Queen - Bohemian Rhapsody (SongHero AI)/</span><br>
@@ -745,7 +732,7 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           INSTALL NOW
         </a>
-        <a href="https://github.com/jackwallner/any-song-clone-hero-cli" target="_blank" class="btn btn-secondary">STAR ON GITHUB ⭐</a>
+        <a href="https://github.com/jackwallner/any-song-clone-hero-cli" target="_blank" class="btn btn-secondary">STAR ON GITHUB</a>
       </div>
     </div>
   </section>
