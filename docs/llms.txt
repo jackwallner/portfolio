@@ -50,6 +50,7 @@
 ## Card & tile games
 
 - [Bridge Trainer: Learn & Bid](https://jackwallner.com/ios/bridge/): Five-minute contract bridge practice for card basics, bidding, declarer play, and defense. (App Store)
+  - [Best Bridge App for Beginners (2026): 5 Compared](https://jackwallner.com/ios/bridge/best-bridge-app-for-beginners.html): The best bridge apps for beginners on iPhone and iPad compared in October 2026: lesson courses, bot games, online duplicate and drills, with honest trade-offs.
   - [Bridge Bidding for Beginners | Bridge Trainer](https://jackwallner.com/ios/bridge/bridge-bidding-for-beginners.html): Bridge bidding for beginners: count high-card points, pick your opening bid, and respond to partner with worked hands for 1NT, one-of-a-suit and passes.
 - [Cribbage Trainer: Count & Peg](https://jackwallner.com/ios/cribbage/): Five-minute cribbage drills for counting, discarding, pegging, and table judgment. (App Store)
   - [Best Cribbage App for iPhone (2026): 5 Compared](https://jackwallner.com/ios/cribbage/best-cribbage-app.html): The best cribbage apps for iPhone and iPad compared in October 2026: full games, discard analyzers, hand scorers and drills, with the strengths and trade-offs of each.
