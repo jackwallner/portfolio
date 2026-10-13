@@ -58,6 +58,7 @@
 - [Baseball Savvy StatScout](https://jackwallner.com/ios/baseball/): Mobile-first Statcast player cards and leaderboards, refreshed nightly by a scraper pipeline. (App Store)
   - [What Is xwOBA? Barrel Rate, Hard-Hit % and Sprint Speed](https://jackwallner.com/ios/baseball/statcast-metrics-explained.html): What xwOBA, barrel rate, hard-hit rate and sprint speed mean, with the exact Statcast definitions and what a good number looks like in a 2025 MLB season.
 - [Sports Cheat Sheet: Daily News](https://jackwallner.com/ios/sports/): Plain-English sports catch-up so casual fans can follow along in five minutes a day. (App Store)
+  - [How to Talk About Sports When You Don't Follow Sports](https://jackwallner.com/ios/sports/how-to-talk-about-sports.html): Small talk for non-fans: one story to know, one question to ask, sample lines for work and dinner, and what to skip so you never get caught bluffing.
 - [Football Next: StatScout](https://jackwallner.com/ios/football/): Every NFL player ranked by percentile, with advanced stats in plain visual form. (App Store)
   - [What Is EPA Per Play in Football? EPA and CPOE Explained](https://jackwallner.com/ios/football/what-is-epa-per-play.html): EPA per play measures how much each play changes a team's expected points. Learn how it works, what CPOE adds, and what good looks like for NFL quarterbacks.
 - [Hockey Edge: Puck StatScout](https://jackwallner.com/ios/hockey/): Every NHL skater and goalie ranked by expected goals, with the xG race behind every game. (Pre-release)
