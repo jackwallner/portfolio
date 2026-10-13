@@ -25,6 +25,7 @@
 - [Trip Comfort: Motion Sickness](https://jackwallner.com/ios/queasy/): Four drug-free comfort routines for journeys, with breathing guidance and paced wrist pulses. (App Store)
 - [Protein Tracker - Grams Today](https://jackwallner.com/ios/protein/): One number on your wrist: the grams of protein you have tracked today. No calorie counting, no AI food scanning. (Pre-release)
 - [Caffeine Tracker: Bedtime](https://jackwallner.com/ios/caffeine/): Preview what another coffee may leave at bedtime before you log it, on iPhone and Apple Watch. (Pre-release)
+  - [Caffeine Half-Life: How Long Caffeine Stays in Your System](https://jackwallner.com/ios/caffeine/caffeine-half-life.html): Caffeine has a half-life of about 3 to 7 hours in adults. See how much of a 200 mg coffee is left at bedtime, what changes the number, and how estimates work.
 - [Daylight: Minutes Outside](https://jackwallner.com/ios/daylight/): Daylight time from Apple Health against a computed sunset, so you know the latest you can head out and still hit your target. (Pre-release)
 
 ## Habits & recovery
