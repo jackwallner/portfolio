@@ -17,6 +17,7 @@
 - [Fitness Habit Tracker: Auto](https://jackwallner.com/ios/fitness-streaks/): Automatic fitness streak discovery from Apple Health. (App Store)
 - [Simple GLP: GLP-1 Dose Tracker](https://jackwallner.com/ios/simpleglp/): One-tap GLP-1 dose logging for weekly shots and daily pills, with schedules and optional Health context. (App Store)
 - [VO2 Max & Cardio Fitness](https://jackwallner.com/ios/vo2max/): A focused view of Apple Health cardio fitness estimates, fitness age, trends, and targets. (App Store)
+  - [VO2 Max Chart by Age and Sex: Apple Watch Levels](https://jackwallner.com/ios/vo2max/vo2-max-chart-by-age-and-sex.html): VO2 max percentiles by age and sex from the FRIEND registry, how Apple Watch cardio fitness levels use them, and how to read your own number. Sourced and plain.
 - [Trip Comfort: Motion Sickness](https://jackwallner.com/ios/queasy/): Four drug-free comfort routines for journeys, with breathing guidance and paced wrist pulses. (App Store)
 - [Protein Tracker - Grams Today](https://jackwallner.com/ios/protein/): One number on your wrist: the grams of protein you have tracked today. No calorie counting, no AI food scanning. (Pre-release)
 - [Caffeine Tracker: Bedtime](https://jackwallner.com/ios/caffeine/): Preview what another coffee may leave at bedtime before you log it, on iPhone and Apple Watch. (Pre-release)
@@ -58,6 +59,7 @@
 - [Little Gestures: Couples Care](https://jackwallner.com/ios/bond/): Love-language reminders, shared milestones, and a daily check-in for couples. (App Store)
 - [Elderhub: Family Care Log](https://jackwallner.com/ios/elderhub/): One shared medication and medical record for the parent or partner your family looks after. (App Store)
 - [Baby Docs: Newborn Paperwork](https://jackwallner.com/ios/babydocs/): A newborn paperwork concierge: which tasks apply to your household, when each window closes, and where to go. (App Store)
+  - [Newborn Paperwork Checklist: Certificate, SSN, Insurance](https://jackwallner.com/ios/babydocs/newborn-paperwork-checklist.html): A US newborn paperwork checklist: birth certificate, Social Security number and card, and health insurance deadlines (30 days job-based, 60 days Marketplace).
 - [Baby Tracker: Feeds & Diapers](https://jackwallner.com/ios/baby/): One tap to log a feed, a diaper, or sleep from iPhone, Apple Watch, or the lock screen, with the first-week diaper count up front. (App Store)
 - [Next Cue: ADHD Routine Planner](https://jackwallner.com/ios/adhd/): Daily routines shown one step at a time, with a saved place to pick up again after an interruption. (Pre-release)
 
