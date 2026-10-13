@@ -71,6 +71,7 @@
 - [Basketball: Hardwood StatScout](https://jackwallner.com/ios/basketball/): Every NBA player ranked on advanced percentiles: usage, true shooting, shot zones, playmaking and on-court impact. (Pre-release)
   - [True Shooting Percentage Explained (Formula and Usage Rate)](https://jackwallner.com/ios/basketball/true-shooting-percentage-explained.html): True shooting percentage (TS%) counts threes and free throws to measure scoring efficiency. See the formula, a worked example, and how usage rate fits in.
 - [IM Tri Tracker](https://jackwallner.com/ios/ironman/): Published full and half-distance triathlon results ranked by split, with race notes and an optional Race Book export. (App Store)
+  - [Triathlon Splits Explained: Swim, T1, Bike, T2 and Run](https://jackwallner.com/ios/ironman/triathlon-splits-explained.html): What each triathlon split means, how to turn it into pace, and how to compare your swim, T1, bike, T2 and run with sourced finish times for age-groupers.
 
 ## Family & life admin
 
