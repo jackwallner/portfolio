@@ -18,6 +18,7 @@
 - [Fitness Habit Tracker: Auto](https://jackwallner.com/ios/fitness-streaks/): Automatic fitness streak discovery from Apple Health. (App Store)
   - [Apple Watch Streak Broken? How to Keep a Workout Streak](https://jackwallner.com/ios/fitness-streaks/apple-watch-streak-broken.html): What Apple documents about protecting an Apple Watch award streak (Pause Rings, up to 90 days), what a missed day really costs, and how to keep a streak.
 - [Simple GLP: GLP-1 Dose Tracker](https://jackwallner.com/ios/simpleglp/): One-tap GLP-1 dose logging for weekly shots and daily pills, with schedules and optional Health context. (App Store)
+  - [GLP-1 Injection Site Rotation: Where to Inject](https://jackwallner.com/ios/simpleglp/glp-1-injection-site-rotation.html): Where Ozempic, Wegovy, Mounjaro and Zepbound instructions say to inject, what each maker says about rotating sites, and a simple way to track your last site.
 - [VO2 Max & Cardio Fitness](https://jackwallner.com/ios/vo2max/): A focused view of Apple Health cardio fitness estimates, fitness age, trends, and targets. (App Store)
   - [VO2 Max Chart by Age and Sex: Apple Watch Levels](https://jackwallner.com/ios/vo2max/vo2-max-chart-by-age-and-sex.html): VO2 max percentiles by age and sex from the FRIEND registry, how Apple Watch cardio fitness levels use them, and how to read your own number. Sourced and plain.
 - [Trip Comfort: Motion Sickness](https://jackwallner.com/ios/queasy/): Four drug-free comfort routines for journeys, with breathing guidance and paced wrist pulses. (App Store)
