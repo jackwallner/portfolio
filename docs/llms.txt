@@ -60,6 +60,7 @@
 - [Hockey Edge: Puck StatScout](https://jackwallner.com/ios/hockey/): Every NHL skater and goalie ranked by expected goals, with the xG race behind every game. (Pre-release)
   - [What Is xG in Hockey? Expected Goals and GSAx Explained](https://jackwallner.com/ios/hockey/what-is-xg-in-hockey.html): Expected goals (xG) give every NHL shot a probability of scoring. See how xG works, how goalies are judged with GSAx, and what good numbers look like.
 - [Basketball: Hardwood StatScout](https://jackwallner.com/ios/basketball/): Every NBA player ranked on advanced percentiles: usage, true shooting, shot zones, playmaking and on-court impact. (Pre-release)
+  - [True Shooting Percentage Explained (Formula and Usage Rate)](https://jackwallner.com/ios/basketball/true-shooting-percentage-explained.html): True shooting percentage (TS%) counts threes and free throws to measure scoring efficiency. See the formula, a worked example, and how usage rate fits in.
 - [IM Tri Tracker](https://jackwallner.com/ios/ironman/): Published full and half-distance triathlon results ranked by split, with race notes and an optional Race Book export. (App Store)
 
 ## Family & life admin
