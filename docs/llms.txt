@@ -84,6 +84,7 @@
 - [Baby Tracker: Feeds & Diapers](https://jackwallner.com/ios/baby/): One tap to log a feed, a diaper, or sleep from iPhone, Apple Watch, or the lock screen, with the first-week diaper count up front. (App Store)
   - [Newborn Wet and Dirty Diapers by Day: First Week Guide](https://jackwallner.com/ios/baby/newborn-wet-dirty-diapers-first-week.html): Day-by-day newborn diaper count for the first week: 1 wet diaper on day 1 rising to 6 or more by day 6, plus what the stools look like and when to call.
 - [Next Cue: ADHD Routine Planner](https://jackwallner.com/ios/adhd/): Daily routines shown one step at a time, with a saved place to pick up again after an interruption. (Pre-release)
+  - [How to Start a Task When You Have ADHD: 7 Techniques](https://jackwallner.com/ios/adhd/how-to-start-a-task-with-adhd.html): How to start a task when you have ADHD: seven practical task initiation techniques, from smallest starts to if-then plans, citing NIMH, CDC and CHADD.
 
 ## Play
 
