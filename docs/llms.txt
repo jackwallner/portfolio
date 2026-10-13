@@ -69,6 +69,7 @@
 ## Family & life admin
 
 - [Little Gestures: Couples Care](https://jackwallner.com/ios/bond/): Love-language reminders, shared milestones, and a daily check-in for couples. (App Store)
+  - [The 5 Love Languages With Everyday Examples](https://jackwallner.com/ios/bond/5-love-languages-examples.html): The five love languages from Gary Chapman's model, each with small everyday gestures you can do in under a minute, plus what research says about using them.
 - [Elderhub: Family Care Log](https://jackwallner.com/ios/elderhub/): One shared medication and medical record for the parent or partner your family looks after. (App Store)
   - [Medication List for an Aging Parent: What to Include](https://jackwallner.com/ios/elderhub/medication-list-for-aging-parent.html): What to put on a medication list for an aging parent, how to build it from the pill bottles, who to share it with, and what to bring to appointments.
 - [Baby Docs: Newborn Paperwork](https://jackwallner.com/ios/babydocs/): A newborn paperwork concierge: which tasks apply to your household, when each window closes, and where to go. (App Store)
