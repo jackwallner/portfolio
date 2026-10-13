@@ -67,6 +67,7 @@
 
 - [Little Gestures: Couples Care](https://jackwallner.com/ios/bond/): Love-language reminders, shared milestones, and a daily check-in for couples. (App Store)
 - [Elderhub: Family Care Log](https://jackwallner.com/ios/elderhub/): One shared medication and medical record for the parent or partner your family looks after. (App Store)
+  - [Medication List for an Aging Parent: What to Include](https://jackwallner.com/ios/elderhub/medication-list-for-aging-parent.html): What to put on a medication list for an aging parent, how to build it from the pill bottles, who to share it with, and what to bring to appointments.
 - [Baby Docs: Newborn Paperwork](https://jackwallner.com/ios/babydocs/): A newborn paperwork concierge: which tasks apply to your household, when each window closes, and where to go. (App Store)
   - [Newborn Paperwork Checklist: Certificate, SSN, Insurance](https://jackwallner.com/ios/babydocs/newborn-paperwork-checklist.html): A US newborn paperwork checklist: birth certificate, Social Security number and card, and health insurance deadlines (30 days job-based, 60 days Marketplace).
 - [Baby Tracker: Feeds & Diapers](https://jackwallner.com/ios/baby/): One tap to log a feed, a diaper, or sleep from iPhone, Apple Watch, or the lock screen, with the first-week diaper count up front. (App Store)
