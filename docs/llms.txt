@@ -35,6 +35,7 @@
 - [Quit Zyn: Pouch & Snus Tracker](https://jackwallner.com/ios/quitzyn/): Nicotine-free day counter, check-ins, and a garden that grows with every day off pouches. (App Store)
   - [How to Quit Zyn: Withdrawal Timeline and What to Expect](https://jackwallner.com/ios/quitzyn/how-to-quit-zyn.html): How to quit Zyn and nicotine pouches: a sourced withdrawal timeline, common symptoms, practical steps, and free quitline support from the NCI, CDC and FDA.
 - [Shoes On: Time Blindness Coach](https://jackwallner.com/ios/time/): A leave-on-time routine coach with learned step timing, one-day schedule changes, and a next-start widget. (App Store)
+  - [Time Blindness: Why You're Always Late and What Helps](https://jackwallner.com/ios/time/time-blindness-always-late.html): Time blindness explained: why you run late even when you try, what research on the planning fallacy and ADHD timing shows, and practical steps that help.
 
 ## Card & tile games
 
