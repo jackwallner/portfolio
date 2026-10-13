@@ -562,15 +562,44 @@ def last_modified(path):
     return out.strip() or date.today().isoformat()
 
 
+LEGAL_PAGE = re.compile(r"(privacy|terms|support|consumer-health|join)[^/]*\.html$")
+
+
+def indexable(path):
+    """True unless the page opts out of search or points its canonical elsewhere."""
+    head = path.read_text(encoding="utf-8", errors="replace")[:6000]
+    if re.search(r'name="robots"[^>]*noindex', head):
+        return False
+    canon = re.search(r'rel="canonical"\s+href="([^"]+)"', head)
+    rel = path.relative_to(DOCS).as_posix()
+    own = SITE + (rel[: -len("index.html")] if rel.endswith("index.html") else rel)
+    return not canon or canon.group(1) == own
+
+
 def build_sitemap(projects):
+    """Every indexable page under each project's folder, not just its front page.
+
+    The guides, calculators and support pages inside an app folder are what match
+    long-tail searches, so they belong in the sitemap too.
+    """
     pages = [("", 1.0), ("ios/", 0.9)]
     for p in projects:
-        url = page_url(p)
-        if url and (DOCS / p["page"] / "index.html").exists():
-            pages.append((p["page"], 0.8 if p["group"] == "ios" else 0.5))
+        if not page_url(p) or not (DOCS / p["page"] / "index.html").exists():
+            continue
+        root = DOCS / p["page"]
+        for f in sorted(root.rglob("*.html")):
+            if not indexable(f):
+                continue
+            rel = f.relative_to(DOCS).as_posix()
+            path = rel[: -len("index.html")] if rel.endswith("index.html") else rel
+            if f.parent == root and f.name == "index.html":
+                prio = 0.8 if p["group"] == "ios" else 0.5
+            else:
+                prio = 0.3 if LEGAL_PAGE.search(rel) else 0.7
+            pages.append((path, prio))
     rows = "\n".join(
         f"  <url><loc>{SITE}{path}</loc>"
-        f"<lastmod>{last_modified(DOCS / path / 'index.html')}</lastmod>"
+        f"<lastmod>{last_modified(DOCS / (path + 'index.html' if path.endswith('/') or not path else path))}</lastmod>"
         f"<priority>{prio}</priority></url>"
         for path, prio in pages
     )
@@ -583,6 +612,26 @@ def build_robots():
     named = "\n\n".join(f"User-agent: {bot}\nAllow: /" for bot in AI_CRAWLERS)
     return (f"# Search engines and AI answer engines are welcome.\n\n{named}\n\n"
             f"User-agent: *\nAllow: /\n\nSitemap: {SITE}sitemap.xml\n")
+
+
+def guides(p):
+    """(url, title, description) for an app's indexable guide pages, legal pages excluded."""
+    root = DOCS / (p.get("page") or "")
+    if not page_url(p) or not root.is_dir():
+        return []
+    out = []
+    for f in sorted(root.rglob("*.html")):
+        rel = f.relative_to(DOCS).as_posix()
+        if f.parent == root and f.name == "index.html" or LEGAL_PAGE.search(rel) or not indexable(f):
+            continue
+        h = f.read_text(encoding="utf-8", errors="replace")
+        t = re.search(r"<title[^>]*>(.*?)</title>", h, re.S)
+        d = re.search(r'<meta\s+name="description"\s+content="([^"]*)"', h)
+        if not (t and d):
+            continue
+        url = SITE + (rel[: -len("index.html")] if rel.endswith("index.html") else rel)
+        out.append((url, html.unescape(t.group(1).strip()), html.unescape(d.group(1))))
+    return out
 
 
 def build_llms(projects):
@@ -600,6 +649,7 @@ def build_llms(projects):
         for p in members:
             store = "App Store" if p.get("appStore") else p["status"]
             lines.append(f"- [{p['name']}]({page_url(p)}): {p['desc']} ({store})")
+            lines += [f"  - [{t}]({u}): {d}" for u, t, d in guides(p)]
         lines.append("")
     others = [p for p in projects if p["group"] != "ios" and page_url(p)
               and p.get("status") != "Retired"]
