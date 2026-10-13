@@ -34,6 +34,7 @@
 
 - [Bridge Trainer: Learn & Bid](https://jackwallner.com/ios/bridge/): Five-minute contract bridge practice for card basics, bidding, declarer play, and defense. (App Store)
 - [Cribbage Trainer: Count & Peg](https://jackwallner.com/ios/cribbage/): Five-minute cribbage drills for counting, discarding, pegging, and table judgment. (App Store)
+  - [How to Count a Cribbage Hand | Cribbage Trainer](https://jackwallner.com/ios/cribbage/how-to-count-a-cribbage-hand.html): How to count a cribbage hand step by step: fifteens, pairs, runs, flush and nobs, five worked examples, the 29 hand, and the scores that cannot happen.
 - [Sheepshead Trainer: Trump Play](https://jackwallner.com/ios/sheepshead/): Five-minute sheepshead drills for trump, picking, partner play, and bury decisions. (App Store)
 - [Skat Trainer: Learn Skat](https://jackwallner.com/ios/skat/): Short Skat practice for cards, bidding, discarding, and trick decisions. (App Store)
 - [Mahj Trainer: Mahjong Practice](https://jackwallner.com/ios/mahj/): Short practice rooms for American Mah Jongg tiles, card reading, Charleston, and table judgment. (App Store)
