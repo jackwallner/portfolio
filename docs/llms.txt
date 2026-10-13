@@ -13,8 +13,10 @@
 - [Migraine Headache Tracker Log](https://jackwallner.com/ios/headaches/): One-tap headache logging that pairs each entry with health and barometric weather context. (App Store)
   - [Barometric Pressure and Headaches: How to Track the Connection | One Tap Headache Tracker](https://jackwallner.com/ios/headaches/barometric-pressure-headaches.html): Learn how barometric pressure changes trigger headaches and migraines, and how to automatically track the connection with your iPhone. Free app captures pressure data with every headache log.
   - [Best Headache Tracker Apps for iPhone in 2026 | One Tap Headache Tracker](https://jackwallner.com/ios/headaches/best-headache-tracker-app.html): Compare the best headache and migraine tracking apps for iPhone in 2026. Detailed comparison of One Tap Headache Tracker, Migraine Buddy, Bearable, and N1 Headache: features, privacy, price, and data export.
+  - [How to Keep a Headache Diary: What to Log and What to Skip](https://jackwallner.com/ios/headaches/how-to-keep-a-headache-diary.html): How to keep a headache diary: the five fields to log every time, optional context worth adding, a sample entry, and when to bring it to a doctor.
   - [How to Identify Your Migraine Triggers with Data | One Tap Headache Tracker](https://jackwallner.com/ios/headaches/migraine-trigger-tracking.html): Learn how to track and identify migraine triggers using automatic data capture. Capture weather, sleep, heart rate, air quality, and 60+ data points per headache with zero effort.
 - [Fitness Habit Tracker: Auto](https://jackwallner.com/ios/fitness-streaks/): Automatic fitness streak discovery from Apple Health. (App Store)
+  - [Apple Watch Streak Broken? How to Keep a Workout Streak](https://jackwallner.com/ios/fitness-streaks/apple-watch-streak-broken.html): What Apple documents about protecting an Apple Watch award streak (Pause Rings, up to 90 days), what a missed day really costs, and how to keep a streak.
 - [Simple GLP: GLP-1 Dose Tracker](https://jackwallner.com/ios/simpleglp/): One-tap GLP-1 dose logging for weekly shots and daily pills, with schedules and optional Health context. (App Store)
 - [VO2 Max & Cardio Fitness](https://jackwallner.com/ios/vo2max/): A focused view of Apple Health cardio fitness estimates, fitness age, trends, and targets. (App Store)
   - [VO2 Max Chart by Age and Sex: Apple Watch Levels](https://jackwallner.com/ios/vo2max/vo2-max-chart-by-age-and-sex.html): VO2 max percentiles by age and sex from the FRIEND registry, how Apple Watch cardio fitness levels use them, and how to read your own number. Sourced and plain.
@@ -54,7 +56,9 @@
   - [What Is xwOBA? Barrel Rate, Hard-Hit % and Sprint Speed](https://jackwallner.com/ios/baseball/statcast-metrics-explained.html): What xwOBA, barrel rate, hard-hit rate and sprint speed mean, with the exact Statcast definitions and what a good number looks like in a 2025 MLB season.
 - [Sports Cheat Sheet: Daily News](https://jackwallner.com/ios/sports/): Plain-English sports catch-up so casual fans can follow along in five minutes a day. (App Store)
 - [Football Next: StatScout](https://jackwallner.com/ios/football/): Every NFL player ranked by percentile, with advanced stats in plain visual form. (App Store)
+  - [What Is EPA Per Play in Football? EPA and CPOE Explained](https://jackwallner.com/ios/football/what-is-epa-per-play.html): EPA per play measures how much each play changes a team's expected points. Learn how it works, what CPOE adds, and what good looks like for NFL quarterbacks.
 - [Hockey Edge: Puck StatScout](https://jackwallner.com/ios/hockey/): Every NHL skater and goalie ranked by expected goals, with the xG race behind every game. (Pre-release)
+  - [What Is xG in Hockey? Expected Goals and GSAx Explained](https://jackwallner.com/ios/hockey/what-is-xg-in-hockey.html): Expected goals (xG) give every NHL shot a probability of scoring. See how xG works, how goalies are judged with GSAx, and what good numbers look like.
 - [Basketball: Hardwood StatScout](https://jackwallner.com/ios/basketball/): Every NBA player ranked on advanced percentiles: usage, true shooting, shot zones, playmaking and on-court impact. (Pre-release)
 - [IM Tri Tracker](https://jackwallner.com/ios/ironman/): Published full and half-distance triathlon results ranked by split, with race notes and an optional Race Book export. (App Store)
 
@@ -65,6 +69,7 @@
 - [Baby Docs: Newborn Paperwork](https://jackwallner.com/ios/babydocs/): A newborn paperwork concierge: which tasks apply to your household, when each window closes, and where to go. (App Store)
   - [Newborn Paperwork Checklist: Certificate, SSN, Insurance](https://jackwallner.com/ios/babydocs/newborn-paperwork-checklist.html): A US newborn paperwork checklist: birth certificate, Social Security number and card, and health insurance deadlines (30 days job-based, 60 days Marketplace).
 - [Baby Tracker: Feeds & Diapers](https://jackwallner.com/ios/baby/): One tap to log a feed, a diaper, or sleep from iPhone, Apple Watch, or the lock screen, with the first-week diaper count up front. (App Store)
+  - [Newborn Wet and Dirty Diapers by Day: First Week Guide](https://jackwallner.com/ios/baby/newborn-wet-dirty-diapers-first-week.html): Day-by-day newborn diaper count for the first week: 1 wet diaper on day 1 rising to 6 or more by day 6, plus what the stools look like and when to call.
 - [Next Cue: ADHD Routine Planner](https://jackwallner.com/ios/adhd/): Daily routines shown one step at a time, with a saved place to pick up again after an interruption. (Pre-release)
 
 ## Play
