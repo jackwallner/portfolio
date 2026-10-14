@@ -38,6 +38,10 @@ OG_IMAGE = SITE + "assets/profile.png"
 APPLE_DEVELOPER_ID = "1891233967"
 APPLE_LOOKUP_URL = "https://itunes.apple.com/lookup"
 CONTRIBUTION_CHART = DOCS / "assets" / "github-contributions.svg"
+ASSETS = DOCS / "assets"
+THUMBS = ASSETS / "thumbs"
+# Icons render at 32px and the avatar at 40px; 3x covers every screen density.
+THUMB_PX = 120
 
 # Filter chips on the home table: label -> group key in projects.json.
 FILTERS = [("All", "all"), ("iOS apps", "ios"), ("Web", "web"), ("Tools", "tools")]
@@ -242,6 +246,31 @@ def sync_app_store_status(projects: list[dict]) -> bool:
     return changed
 
 
+def thumb(name):
+    """Return the assets-relative path of a small WebP copy of an image.
+
+    Source icons are 256px+ PNGs (100 to 400 KB each) shown at 32px, which made
+    the home page pull about 2.7 MB of images. The copy is regenerated when the
+    source is newer; without Pillow (for example in CI) an existing copy is
+    reused and a missing one falls back to the original file.
+    """
+    src = ASSETS / name
+    out = THUMBS / (Path(name).stem + ".webp")
+    stale = not out.exists() or (src.exists() and src.stat().st_mtime > out.stat().st_mtime)
+    if stale and src.exists():
+        try:
+            from PIL import Image
+        except ImportError:
+            pass
+        else:
+            THUMBS.mkdir(exist_ok=True)
+            with Image.open(src) as im:
+                im = im.convert("RGBA")
+                im.thumbnail((THUMB_PX, THUMB_PX), Image.LANCZOS)
+                im.save(out, "WEBP", quality=85, method=6)
+    return f"thumbs/{out.name}" if out.exists() else name
+
+
 def e(s):
     return html.escape(s or "", quote=True)
 
@@ -334,7 +363,7 @@ def site_header(subtitle, prefix="", home_link=False):
     title = f'<a href="{prefix or "./"}">Jack Wallner</a>' if home_link else "Jack Wallner"
     return f"""
     <header class="site-header container">
-        <img src="{prefix}assets/profile.png" alt="Jack Wallner" class="profile-img">
+        <img src="{prefix}assets/{thumb('profile.png')}" alt="Jack Wallner" class="profile-img" width="40" height="40">
         <div class="site-title-wrap">
             <div class="site-title">{title}</div>
             <div class="site-subtitle">{e(subtitle)}</div>
@@ -374,7 +403,8 @@ def table_row(p):
         'target="_blank" rel="noopener">Google Play</a>'
         if p.get("googlePlay") else ""
     )
-    icon = (f'<img src="assets/{e(p["icon"])}" alt="" class="proj-icon">'
+    icon = (f'<img src="assets/{e(thumb(p["icon"]))}" alt="" class="proj-icon" '
+            'width="32" height="32" loading="lazy" decoding="async">'
             if p.get("icon") else
             f'<span class="proj-icon ph">{e(p["name"][0].upper())}</span>')
     return f"""                        <tr class="proj-tr" data-group="{e(p['group'])}">
@@ -497,7 +527,8 @@ def build_ios(projects):
             store = (" ".join(store_links) if store_links else
                      f'<span class="project-stamp {e(p["cls"])}">{e(p["status"])}</span>')
             # A pre-release app can be listed before it has an icon.
-            icon = (f'<img src="../assets/{e(p["icon"])}" alt="" class="proj-icon">'
+            icon = (f'<img src="../assets/{e(thumb(p["icon"]))}" alt="" class="proj-icon" '
+                    'width="32" height="32" loading="lazy" decoding="async">'
                     if p.get("icon") else
                     f'<span class="proj-icon ph">{e(p["name"][0].upper())}</span>')
             rows.append(f"""                    <li class="app-row">

@@ -273,8 +273,8 @@
     "icon": "hockey-icon.png",
     "group": "ios",
     "type": "iOS App",
-    "status": "Pre-release",
-    "cls": "soon",
+    "status": "App Store",
+    "cls": "live",
     "page": "ios/hockey/",
     "github": "https://github.com/jackwallner/hockey",
     "tech": "Swift 6 · SwiftUI · Supabase · MoneyPuck · NHL API · GitHub Actions",
@@ -282,7 +282,8 @@
     "start": "2026-10-08",
     "updated": "2026-10-08",
     "category": "Sports",
-    "appStoreId": "6820644691"
+    "appStoreId": "6820644691",
+    "appStore": "https://apps.apple.com/us/app/hockey-edge-puck-statscout/id6820644691?uo=4"
   },
   {
     "slug": "basketball",
