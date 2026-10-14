@@ -68,3 +68,7 @@ per session to avoid the CAPTCHA.
 Protein Tracker and Daylight came off the site (both removed from App Store Connect), including
 the "time in daylight apple watch" and "track protein apple watch" guides. Skip those queries in
 the re-check.
+
+## Indexing submitted 2026-10-14
+- Bing URL Submission: 96 main pages (all priority 0.7+ sitemap URLs), quota 100 to 4.
+- Google Request Indexing: 10 pages (baseball, streaks alternative, quit zyn, vo2 max, nfl stats, bridge, cribbage, baby tracker, time blindness x2). 5 were "URL is unknown to Google" though listed in sitemap.xml since Oct 13 (Google has not re-read it yet). Next: guides/ hub and the remaining comparison pages on Oct 15.
