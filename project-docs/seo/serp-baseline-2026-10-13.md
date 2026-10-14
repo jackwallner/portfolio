@@ -35,8 +35,7 @@ Weak page 1 (forums, social posts, small shop blogs, few results). Most likely t
 - Comparisons: best american mahjong app, best sheepshead app, best cribbage app, best baseball
   savant app, best quit zyn app, streaks app alternative, best app for time blindness, best
   journeyman electrician test prep app, best motion sickness app.
-- Guides: apple watch streak broken, time in daylight apple watch, how to talk about sports, how to
-  play sheepshead.
+- Guides: apple watch streak broken, how to talk about sports, how to play sheepshead.
 
 Held by health systems, government or big calculator sites (Cleveland Clinic, Mayo, Healthline,
 calculator.net, OSHA, NIH, MLB). Long shots for a new domain: bmr calculator, tdee calculator, how
@@ -64,3 +63,8 @@ per session to avoid the CAPTCHA.
   pages; Cribbage Pro Classic noted as the Mac version of Cribbage Pro). MyFitnessPal covered by a
   calories-page FAQ instead.
 - SongHero title and description retargeted to "clone hero chart generator" and "auto charter".
+
+## Removed 2026-10-14
+Protein Tracker and Daylight came off the site (both removed from App Store Connect), including
+the "time in daylight apple watch" and "track protein apple watch" guides. Skip those queries in
+the re-check.
