@@ -506,25 +506,6 @@
     "category": "Family & life admin"
   },
   {
-    "slug": "protein",
-    "repo": "protein",
-    "name": "Protein Tracker - Grams Today",
-    "icon": "protein-icon.png",
-    "group": "ios",
-    "type": "iOS App",
-    "status": "Pre-release",
-    "cls": "soon",
-    "page": "ios/protein/",
-    "appStore": null,
-    "appStoreId": "6797089333",
-    "github": "https://github.com/jackwallner/protein",
-    "tech": "Swift 6 · SwiftUI · HealthKit · WidgetKit · watchOS · RevenueCat",
-    "desc": "One number on your wrist: the grams of protein you have tracked today. No calorie counting, no AI food scanning.",
-    "start": "2026-08-04",
-    "updated": "2026-09-01",
-    "category": "Health & body"
-  },
-  {
     "slug": "caffeine",
     "repo": "caffeine",
     "name": "Caffeine Tracker: Bedtime",
