@@ -56,3 +56,11 @@ quit zyn, what is xwoba, desk posture checklist.
 ## Re-check
 Re-run these queries around 2026-11-10, after Google has indexed the pages. Pace about 40 searches
 per session to avoid the CAPTCHA.
+
+## Done the same day
+- People Also Ask questions answered on 38 pages (visible FAQ + FAQPage schema). Skipped: the
+  mahjong "1/4/7 rule" and "Move streak not updating" (no reliable source).
+- "Other apps you will see" sections added for the page-1 apps listed under Gaps (8 comparison
+  pages; Cribbage Pro Classic noted as the Mac version of Cribbage Pro). MyFitnessPal covered by a
+  calories-page FAQ instead.
+- SongHero title and description retargeted to "clone hero chart generator" and "auto charter".
