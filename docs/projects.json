@@ -525,25 +525,6 @@
     "category": "Health & body"
   },
   {
-    "slug": "daylight",
-    "repo": "daylight",
-    "name": "Daylight: Minutes Outside",
-    "icon": "daylight-icon.png",
-    "group": "ios",
-    "type": "iOS App",
-    "status": "Pre-release",
-    "cls": "soon",
-    "page": "ios/daylight/",
-    "appStore": null,
-    "appStoreId": "6806112259",
-    "github": "https://github.com/jackwallner/daylight",
-    "tech": "Swift 6 · SwiftUI · HealthKit · WidgetKit · watchOS · RevenueCat",
-    "desc": "Daylight time from Apple Health against a computed sunset, so you know the latest you can head out and still hit your target.",
-    "start": "2026-08-28",
-    "updated": "2026-09-01",
-    "category": "Health & body"
-  },
-  {
     "slug": "time",
     "repo": "time",
     "name": "Shoes On: Time Blindness Coach",

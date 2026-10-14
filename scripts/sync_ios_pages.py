@@ -48,7 +48,6 @@ APPS = {
     "electrician": ("electrician", "docs"),
     "pickleball": ("pickleball", "docs"),
     "caffeine": ("caffeine", "docs"),
-    "daylight": ("daylight", "docs"),
     "time": ("time", "docs"),
     "baby": ("baby", "docs"),
     "adhd": ("adhd", "docs"),

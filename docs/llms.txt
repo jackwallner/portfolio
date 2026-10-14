@@ -33,8 +33,6 @@
   - [Motion Sickness on a Road Trip: Practical Things to Try](https://jackwallner.com/ios/queasy/motion-sickness-road-trip.html): Practical things to try on a car trip if you get motion sick: seat choice, where to look, what to eat, breathing and more, with what the CDC Yellow Book says.
 - [Caffeine Tracker: Bedtime](https://jackwallner.com/ios/caffeine/): Preview what another coffee may leave at bedtime before you log it, on iPhone and Apple Watch. (Pre-release)
   - [Caffeine Half-Life: How Long Caffeine Stays in Your System](https://jackwallner.com/ios/caffeine/caffeine-half-life.html): Caffeine has a half-life of about 3 to 7 hours in adults. See how much of a 200 mg coffee is left at bedtime, what changes the number, and how estimates work.
-- [Daylight: Minutes Outside](https://jackwallner.com/ios/daylight/): Daylight time from Apple Health against a computed sunset, so you know the latest you can head out and still hit your target. (Pre-release)
-  - [Time in Daylight on Apple Watch, Explained](https://jackwallner.com/ios/daylight/time-in-daylight-apple-watch.html): How Apple Watch estimates Time in Daylight, which models support it, where to find and turn it off, and what typical daily numbers look like by season.
 
 ## Habits & recovery
 
