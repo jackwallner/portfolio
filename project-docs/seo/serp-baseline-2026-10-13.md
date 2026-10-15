@@ -89,3 +89,22 @@ the re-check.
 - Google Request Indexing, 10 accepted: guides/, mahj/learn/charleston, and the 8 remaining comparison pages (posture, bond love language, queasy motion sickness, ironman triathlon results, sheepshead, beste-skat-app, elderhub medication tracker, electrician journeyman). The 11th (mahj/learn/jokers) hit Quota Exceeded. Most showed "Discovered - currently not indexed"; queasy, ironman and electrician were still "URL is unknown to Google".
 - Every comparison page has now been requested once. Next Google batch (Oct 16 after about 1:15 PM PT): mahj/learn/jokers, card-sections, scoring-and-table-rules, glossary, then app pages not yet requested (skat, sheepshead, electrician, ironman, babydocs, elderhub, posture, sports, bond, baby, fitness-streaks, vo2max, queasy).
 - IndexNow (Bing, Yandex): 98 pages changed since Oct 14 evening (campaign-tagged links).
+
+## Indexing outcome check (2026-10-15 afternoon, live URL Inspection)
+20 of the 31 URLs requested Oct 12-14 are indexed. Google crawled each within minutes of the request.
+- Oct 12 app pages: 10 of 11 indexed (mahj, /ios/, vitals, headaches, simpleglp, baseball, football,
+  quitzyn, cribbage, bridge). sober/ is "Crawled - currently not indexed".
+- Oct 13: 4 of 10 indexed (mahj how-to-play, vitals calories-a-day, cribbage hand count, vo2 max chart).
+  Crawled, not indexed: mahj best-american-mahjong-app, sober i-am-sober-alternative,
+  headaches best-headache-tracker-app, quitzyn how-to-quit-zyn, simpleglp best-glp-1-tracker-app.
+  Never crawled ("Discovered"): vitals best-app-to-track-calories-burned-apple-watch.
+- Oct 14: 6 of 10 indexed (guides/, baseball best-baseball-savant-app, football best-nfl-stats-app,
+  bridge best-bridge-app-for-beginners, baby best-baby-tracker-app, time best-app-for-time-blindness).
+  Crawled, not indexed: cribbage best-cribbage-app, quitzyn best-quit-zyn-app,
+  fitness-streaks streaks-app-alternative. Never crawled: vo2max best-vo2-max-app-for-apple-watch.
+- Pattern: app pages and guides index; comparison pages are about half "crawled, not indexed"
+  (Google judged them not worth indexing yet). Re-requesting does not change that verdict; inbound
+  links and time do.
+- GSC Performance still ends 2026-10-13 (7 days: SongHero 203 of 215 impressions, mahj 5, others
+  1 each). Pages report last updated 2026-10-11 (26 indexed), so it predates all requests.
+- Bing Search Performance: "check back in 48 hours", no data yet.
