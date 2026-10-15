@@ -84,3 +84,8 @@ the re-check.
 - App Store web referrals by week, all apps (views/downloads), June to Oct 13: google.com grew from 3/1 (week of Jun 1) to about 40/15 a week and has been flat since mid-September (Sep 14: 47/21, Sep 21: 43/14, Sep 28: 36/12, Oct 5: 43/18). chatgpt.com peaked at 3/3 (week of Aug 24) and was 0 in 3 of the last 4 weeks; nearly all of it is Total Calories. These are clicks from Google or ChatGPT straight to the App Store listing, not via jackwallner.com, so they predate this work and are the baseline it should lift.
 - Google Play links now carry `referrer=utm_source=jackwallner.com&utm_campaign=jw-<page>` (Tri Locker page, homepage, apps index).
 - Next read: about Oct 28 (GSC impressions per app page, ASC Campaigns report, weekly google.com and chatgpt.com referrals vs the 40/15 baseline).
+
+## Indexing submitted 2026-10-15 (about 1:15 PM PT)
+- Google Request Indexing, 10 accepted: guides/, mahj/learn/charleston, and the 8 remaining comparison pages (posture, bond love language, queasy motion sickness, ironman triathlon results, sheepshead, beste-skat-app, elderhub medication tracker, electrician journeyman). The 11th (mahj/learn/jokers) hit Quota Exceeded. Most showed "Discovered - currently not indexed"; queasy, ironman and electrician were still "URL is unknown to Google".
+- Every comparison page has now been requested once. Next Google batch (Oct 16 after about 1:15 PM PT): mahj/learn/jokers, card-sections, scoring-and-table-rules, glossary, then app pages not yet requested (skat, sheepshead, electrician, ironman, babydocs, elderhub, posture, sports, bond, baby, fitness-streaks, vo2max, queasy).
+- IndexNow (Bing, Yandex): 98 pages changed since Oct 14 evening (campaign-tagged links).
