@@ -72,3 +72,8 @@ the re-check.
 ## Indexing submitted 2026-10-14
 - Bing URL Submission: 96 main pages (all priority 0.7+ sitemap URLs), quota 100 to 4.
 - Google Request Indexing: 10 pages (baseball, streaks alternative, quit zyn, vo2 max, nfl stats, bridge, cribbage, baby tracker, time blindness x2). 5 were "URL is unknown to Google" though listed in sitemap.xml since Oct 13 (Google has not re-read it yet). Next: guides/ hub and the remaining comparison pages on Oct 15.
+
+## Install attribution (2026-10-14)
+- Every link to our own apps on jackwallner.com now carries `pt=128748779&ct=jw-<app>-<page>&mt=8` (182 links on 75 pages; apps index uses `ct=jw-apps-index`). JSON-LD URLs stay untagged. Tagging script lives in each app repo commit history; new pages need the same query string.
+- Read installs per page in App Store Connect > app > Analytics > Acquisition > Campaigns. Apple hides values under 5 devices.
+- Baseline before tags (Aug 15 to Oct 12, Web Referrer by domain, all apps): google.com 347 product page views and 149 downloads (Mahj, Total Calories, Sober, Baseball lead); chatgpt.com 10 views and 9 downloads (Total Calories); jackwallner.com 0, below Apple threshold.
