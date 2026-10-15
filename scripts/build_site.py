@@ -35,6 +35,7 @@ LINKEDIN = "https://www.linkedin.com/in/wallnerjack/"
 
 SITE = "https://jackwallner.com/"
 OG_IMAGE = SITE + "assets/profile.png"
+APPLE_PROVIDER_TOKEN = "128748779"
 APPLE_DEVELOPER_ID = "1891233967"
 APPLE_LOOKUP_URL = "https://itunes.apple.com/lookup"
 CONTRIBUTION_CHART = DOCS / "assets" / "github-contributions.svg"
@@ -509,6 +510,15 @@ def build_home(projects, contribution_summary, contribution_svg):
     ]).replace("</body>", '    <script src="script.js?v=5"></script>\n</body>')
 
 
+def store_url(p, key):
+    """Store link for the apps index; App Store links carry a campaign tag so
+    App Store Connect can attribute installs to this page."""
+    url = p[key]
+    if key != "appStore":
+        return url
+    return f"{url.split('?')[0]}?pt={APPLE_PROVIDER_TOKEN}&ct=jw-apps-index&mt=8"
+
+
 def build_ios(projects):
     apps = [p for p in projects if p["group"] == "ios"]
     live = sum(1 for p in apps if p.get("appStore"))
@@ -520,7 +530,7 @@ def build_ios(projects):
         rows = []
         for p in members:
             store_links = [
-                f'<a href="{e(p[key])}" target="_blank" rel="noopener">{label}</a>'
+                f'<a href="{e(store_url(p, key))}" target="_blank" rel="noopener">{label}</a>'
                 for key, label in (("appStore", "App Store"), ("googlePlay", "Google Play"))
                 if p.get(key)
             ]
