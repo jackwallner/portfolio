@@ -108,3 +108,16 @@ the re-check.
 - GSC Performance still ends 2026-10-13 (7 days: SongHero 203 of 215 impressions, mahj 5, others
   1 each). Pages report last updated 2026-10-11 (26 indexed), so it predates all requests.
 - Bing Search Performance: "check back in 48 hours", no data yet.
+
+## Install outcome check (2026-10-15, RevenueCat + ASC web dashboard, data through Oct 14)
+Baseline = Sep 14 to Oct 11 (28 days), post = Oct 12 to 14 (3 days), per day.
+- RevenueCat new customers, fleet: 73.4 to 90.7 a day (+24%). Mahj 14.4 to 22.3 (all iOS), trials
+  4.1 to 6.3. Others within noise (Total Calories 22.4 to 21.3, Sober 8.4 to 9.7).
+- ASC Web Referrer by domain, all apps: google.com 6.0 views / 2.3 downloads a day before, 4.3 / 3.0
+  after. Flat. chatgpt.com 0 after. jackwallner.com still below Apple's threshold. Campaigns (ct=jw-*)
+  return no rows for any app yet (under 5 devices each, or no tagged installs).
+- Mahj downloads by source (ASC): App Store Search 11.5 to 16.3 a day; App Referrer 1.3 to 5.7 a day
+  (WhatsApp page views 3 in 28 days, then 12 in 3 days, so someone shared it in a group chat); Web
+  Referrer 1.2 to 1.0. The Mahj lift is search plus a WhatsApp share, not Google or the site.
+- Verdict: no measurable install impact from indexing yet. Expected, since GSC shows almost no
+  impressions on app pages. Re-read on Oct 28 as planned.
