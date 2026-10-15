@@ -77,3 +77,10 @@ the re-check.
 - Every link to our own apps on jackwallner.com now carries `pt=128748779&ct=jw-<app>-<page>&mt=8` (182 links on 75 pages; apps index uses `ct=jw-apps-index`). JSON-LD URLs stay untagged. Run `scripts/tag_app_store_links.py <repo>/docs <slug>` after adding a page or app.
 - Read installs per page in App Store Connect > app > Analytics > Acquisition > Campaigns. Apple hides values under 5 devices.
 - Baseline before tags (Aug 15 to Oct 12, Web Referrer by domain, all apps): google.com 347 product page views and 149 downloads (Mahj, Total Calories, Sober, Baseball lead); chatgpt.com 10 views and 9 downloads (Total Calories); jackwallner.com 0, below Apple threshold.
+
+## Impact check (2026-10-14 evening)
+- Google Search Console (data through Oct 12): 17 clicks, 131 impressions, all clicks to SongHero. App pages: 1 to 2 impressions each (mahj, sheepshead, elderhub, babydocs, bridge, dreamcart, apps index). Page indexing report still "processing data".
+- Bing Webmaster Tools: no search performance data yet.
+- App Store web referrals by week, all apps (views/downloads), June to Oct 13: google.com grew from 3/1 (week of Jun 1) to about 40/15 a week and has been flat since mid-September (Sep 14: 47/21, Sep 21: 43/14, Sep 28: 36/12, Oct 5: 43/18). chatgpt.com peaked at 3/3 (week of Aug 24) and was 0 in 3 of the last 4 weeks; nearly all of it is Total Calories. These are clicks from Google or ChatGPT straight to the App Store listing, not via jackwallner.com, so they predate this work and are the baseline it should lift.
+- Google Play links now carry `referrer=utm_source=jackwallner.com&utm_campaign=jw-<page>` (Tri Locker page, homepage, apps index).
+- Next read: about Oct 28 (GSC impressions per app page, ASC Campaigns report, weekly google.com and chatgpt.com referrals vs the 40/15 baseline).
