@@ -400,7 +400,7 @@ def table_row(p):
     ext = ' target="_blank" rel="noopener"' if p.get("ext") else ""
     status = f'<span class="project-stamp {e(p["cls"])}">{e(p["status"])}</span>'
     play_link = (
-        f'<br><a class="project-store-link" href="{e(p["googlePlay"])}" '
+        f'<br><a class="project-store-link" href="{e(play_url(p["googlePlay"], "jw-home"))}" '
         'target="_blank" rel="noopener">Google Play</a>'
         if p.get("googlePlay") else ""
     )
@@ -514,9 +514,15 @@ def store_url(p, key):
     """Store link for the apps index; App Store links carry a campaign tag so
     App Store Connect can attribute installs to this page."""
     url = p[key]
-    if key != "appStore":
-        return url
+    if key == "googlePlay":
+        return play_url(url, "jw-apps-index")
     return f"{url.split('?')[0]}?pt={APPLE_PROVIDER_TOKEN}&ct=jw-apps-index&mt=8"
+
+
+def play_url(url, campaign):
+    """Google Play link with a UTM referrer, reported in Play Console acquisition."""
+    return (f"{url}&referrer=utm_source%3Djackwallner.com%26utm_medium%3Dweb"
+            f"%26utm_campaign%3D{campaign}")
 
 
 def build_ios(projects):
