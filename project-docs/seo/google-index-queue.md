@@ -8,21 +8,21 @@ unchecked URLs, ticks each one with the date and the inspection status it saw, a
 "Crawled - currently not indexed" pages, it does not change Google's verdict.
 
 ## Mahj learn guides
-- [ ] ios/mahj/learn/jokers.html
-- [ ] ios/mahj/learn/card-sections.html
-- [ ] ios/mahj/learn/scoring-and-table-rules.html
-- [ ] ios/mahj/learn/glossary.html
+- [x] ios/mahj/learn/jokers.html (2026-10-16, requested, was: Discovered - currently not indexed)
+- [x] ios/mahj/learn/card-sections.html (2026-10-16, requested, was: URL is unknown to Google)
+- [x] ios/mahj/learn/scoring-and-table-rules.html (2026-10-16, requested, was: Discovered - currently not indexed)
+- [x] ios/mahj/learn/glossary.html (2026-10-16, requested, was: Discovered - currently not indexed)
 
 ## App pages not yet requested
-- [ ] ios/skat/
-- [ ] ios/sheepshead/
-- [ ] ios/electrician/
-- [ ] ios/ironman/
-- [ ] ios/babydocs/
-- [ ] ios/elderhub/
-- [ ] ios/posture/
-- [ ] ios/sports/
-- [ ] ios/bond/
+- [x] ios/skat/ (2026-10-16, requested, was: Discovered - currently not indexed)
+- [x] ios/sheepshead/ (2026-10-16, already indexed)
+- [x] ios/electrician/ (2026-10-16, requested, was: Discovered - currently not indexed)
+- [x] ios/ironman/ (2026-10-16, requested, was: Discovered - currently not indexed)
+- [x] ios/babydocs/ (2026-10-16, already indexed)
+- [x] ios/elderhub/ (2026-10-16, already indexed)
+- [x] ios/posture/ (2026-10-16, requested, was: Discovered - currently not indexed)
+- [x] ios/sports/ (2026-10-16, requested, was: URL is unknown to Google)
+- [x] ios/bond/ (2026-10-16, requested, was: Discovered - currently not indexed)
 - [ ] ios/baby/
 - [ ] ios/fitness-streaks/
 - [ ] ios/vo2max/
