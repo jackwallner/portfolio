@@ -49,7 +49,8 @@ APPS = {
     "pickleball": ("pickleball", "docs"),
     "caffeine": ("caffeine", "docs"),
     "time": ("time", "docs"),
-    "keyring": ("keyring", "docs"),
+    # Renamed from Keyring 2026-10-17; /ios/keyring/ is a hand-kept redirect stub.
+    "vehicle-maintenance-log": ("keyring", "docs"),
     "baby": ("baby", "docs"),
     "adhd": ("adhd", "docs"),
     # Elderhub's marketing page lives in its renamed standalone repository.
