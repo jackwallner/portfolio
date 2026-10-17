@@ -23,16 +23,16 @@ unchecked URLs, ticks each one with the date and the inspection status it saw, a
 - [x] ios/posture/ (2026-10-16, requested, was: Discovered - currently not indexed)
 - [x] ios/sports/ (2026-10-16, requested, was: URL is unknown to Google)
 - [x] ios/bond/ (2026-10-16, requested, was: Discovered - currently not indexed)
-- [ ] ios/baby/
-- [ ] ios/fitness-streaks/
-- [ ] ios/vo2max/
-- [ ] ios/queasy/
-- [ ] ios/time/
-- [ ] ios/adhd/
-- [ ] ios/caffeine/
-- [ ] ios/pickleball/
-- [ ] ios/hockey/
-- [ ] ios/basketball/
+- [x] ios/baby/ (2026-10-17, requested, was: Discovered - currently not indexed)
+- [x] ios/fitness-streaks/ (2026-10-17, requested, was: Discovered - currently not indexed)
+- [x] ios/vo2max/ (2026-10-17, requested, was: Discovered - currently not indexed)
+- [x] ios/queasy/ (2026-10-17, requested, was: URL is unknown to Google)
+- [x] ios/time/ (2026-10-17, requested, was: Discovered - currently not indexed)
+- [x] ios/adhd/ (2026-10-17, requested, was: URL is unknown to Google)
+- [x] ios/caffeine/ (2026-10-17, requested, was: Discovered - currently not indexed)
+- [x] ios/pickleball/ (2026-10-17, requested, was: Discovered - currently not indexed)
+- [x] ios/hockey/ (2026-10-17, requested, was: Discovered - currently not indexed)
+- [x] ios/basketball/ (2026-10-17, requested, was: Discovered - currently not indexed)
 - [ ] ios/dreamcart/
 - [ ] (home page, https://jackwallner.com/)
 
