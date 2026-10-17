@@ -49,6 +49,7 @@ APPS = {
     "pickleball": ("pickleball", "docs"),
     "caffeine": ("caffeine", "docs"),
     "time": ("time", "docs"),
+    "keyring": ("keyring", "docs"),
     "baby": ("baby", "docs"),
     "adhd": ("adhd", "docs"),
     # Elderhub's marketing page lives in its renamed standalone repository.

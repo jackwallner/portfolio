@@ -545,6 +545,25 @@
     "category": "Habits & recovery"
   },
   {
+    "slug": "keyring",
+    "repo": "keyring",
+    "name": "Keyring: Car Maintenance Log",
+    "icon": "keyring-icon.png",
+    "group": "ios",
+    "type": "iOS App",
+    "status": "Pre-release",
+    "cls": "soon",
+    "page": "ios/keyring/",
+    "appStore": null,
+    "appStoreId": "6823808045",
+    "github": "https://github.com/jackwallner/keyring",
+    "tech": "Swift 6 · SwiftUI · Core Data · CloudKit sharing · WidgetKit · RevenueCat",
+    "desc": "A maintenance log for every vehicle in the family, from cars to boats, that knows what is due by miles, hours or months and builds a service record worth handing to the next owner.",
+    "start": "2026-10-16",
+    "updated": "2026-10-17",
+    "category": "Family & life admin"
+  },
+  {
     "slug": "electrician",
     "repo": "electrician",
     "name": "Electrician Exam Practice 2026",
