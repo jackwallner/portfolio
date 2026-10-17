@@ -103,7 +103,6 @@
 - [Next Cue: ADHD Routine Planner](https://jackwallner.com/ios/adhd/): Daily routines shown one step at a time, with a saved place to pick up again after an interruption. (Pre-release)
   - [How to Start a Task When You Have ADHD: 7 Techniques](https://jackwallner.com/ios/adhd/how-to-start-a-task-with-adhd.html): How to start a task when you have ADHD: seven practical task initiation techniques, from smallest starts to if-then plans, citing NIMH, CDC and CHADD.
 - [Keyring: Car Maintenance Log](https://jackwallner.com/ios/keyring/): A maintenance log for every vehicle in the family, from cars to boats, that knows what is due by miles, hours or months and builds a service record worth handing to the next owner. (Pre-release)
-  - [Community Guidelines: Keyring](https://jackwallner.com/ios/keyring/community.html): Rules for photos shared in Keyring.
 
 ## Play
 
