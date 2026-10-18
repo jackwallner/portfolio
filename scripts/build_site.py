@@ -454,10 +454,15 @@ def build_home(projects, contribution_summary, contribution_svg):
         site_header("Vancouver, Washington"),
         f"""
     <main class="container">
+        <section class="intro">
+            <h1 class="intro-title">Simple iPhone and Apple Watch apps</h1>
+            <p class="intro-text">Jack Wallner is an independent developer in Vancouver, Washington who makes simple iPhone and Apple Watch apps: {shipped} on the App Store for health tracking, sports stats, card game practice, and family life. Browse them all on the <a href="ios/">iOS apps</a> page, or read the <a href="guides/">guides and comparisons</a>.</p>
+        </section>
+
         <section class="activity-section" aria-labelledby="activity-title">
             <div class="activity-head">
                 <div class="activity-title-wrap">
-                    <h1 id="activity-title" class="section-title">Activity</h1>
+                    <h2 id="activity-title" class="section-title">Activity</h2>
                 </div>
                 <div class="activity-stats mono" aria-label="Portfolio stats">
                     <span><strong>{shipped}</strong> on the App Store</span>
