@@ -33,11 +33,11 @@ unchecked URLs, ticks each one with the date and the inspection status it saw, a
 - [x] ios/pickleball/ (2026-10-17, requested, was: Discovered - currently not indexed)
 - [x] ios/hockey/ (2026-10-17, requested, was: Discovered - currently not indexed)
 - [x] ios/basketball/ (2026-10-17, requested, was: Discovered - currently not indexed)
-- [ ] ios/dreamcart/
-- [ ] (home page, https://jackwallner.com/)
+- [x] ios/dreamcart/ (2026-10-18, already indexed)
+- [x] (home page, https://jackwallner.com/) (2026-10-18, already indexed)
 
 ## Guides
-- [ ] ios/sober/sobriety-milestones.html
+- [x] ios/sober/sobriety-milestones.html (2026-10-18, requested, was: Discovered - currently not indexed)
 - [ ] ios/simpleglp/glp-1-injection-site-rotation.html
 - [ ] ios/baseball/statcast-metrics-explained.html
 - [ ] ios/babydocs/newborn-paperwork-checklist.html
