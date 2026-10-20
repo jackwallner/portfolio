@@ -38,7 +38,7 @@ unchecked URLs, ticks each one with the date and the inspection status it saw, a
 
 ## Guides
 - [x] ios/sober/sobriety-milestones.html (2026-10-18, requested, was: Discovered - currently not indexed)
-- [ ] ios/simpleglp/glp-1-injection-site-rotation.html
+- [x] ios/simpleglp/glp-1-injection-site-rotation.html (2026-10-20, requested, was: Discovered - currently not indexed)
 - [ ] ios/baseball/statcast-metrics-explained.html
 - [ ] ios/babydocs/newborn-paperwork-checklist.html
 - [ ] ios/caffeine/caffeine-half-life.html
