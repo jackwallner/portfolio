@@ -1,5 +1,22 @@
 [
   {
+    "slug": "breathing-autostart",
+    "repo": "nanit-breathing-autostart",
+    "name": "Breathing Autostart",
+    "icon": "breathing-autostart-icon.png",
+    "group": "tools",
+    "type": "Open-source app",
+    "status": "Open source",
+    "cls": "code",
+    "page": "breathing-autostart/",
+    "appStore": null,
+    "github": "https://github.com/jackwallner/nanit-breathing-autostart",
+    "tech": "Electron · Node.js · FFmpeg · Protobuf · GitHub Actions",
+    "desc": "Starts Nanit breathing monitoring when the baby is put down and stops it at pickup. Mac and Windows.",
+    "start": "2026-10-17",
+    "updated": "2026-10-21"
+  },
+  {
     "slug": "pelojack",
     "repo": "pelojack",
     "name": "Pelojack",

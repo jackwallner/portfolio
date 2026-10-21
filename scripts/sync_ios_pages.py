@@ -22,8 +22,9 @@ import sys
 import tempfile
 from pathlib import Path
 
-# slug -> (repo, path inside the repo holding index.html)
-# The slug is the public URL segment: https://jackwallner.com/ios/<slug>/
+# slug -> (repo, path inside the repo holding index.html[, folder under docs/])
+# The slug is the public URL segment: https://jackwallner.com/ios/<slug>/, or
+# https://jackwallner.com/<folder>/ when a folder is given (non-iOS projects).
 APPS = {
     "vitals": ("vitals", "docs"),
     "headaches": ("headaches", "docs"),
@@ -61,6 +62,8 @@ APPS = {
     "pelojack": ("pelojack", "docs"),
     "hockey": ("hockey", "docs"),
     "basketball": ("basketball", "docs"),
+    # Mac and Windows app, so it lives at the site root rather than under /ios/.
+    "breathing-autostart": ("nanit-breathing-autostart", "docs", "breathing-autostart"),
 }
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -126,7 +129,7 @@ def copy_closure(src: Path, dest: Path) -> int:
 def main() -> int:
     only = sys.argv[1:]
     with tempfile.TemporaryDirectory() as tmp:
-        for slug, (repo, sub) in APPS.items():
+        for slug, (repo, sub, *folder) in APPS.items():
             if only and slug not in only:
                 continue
             clone = Path(tmp) / repo
@@ -139,7 +142,7 @@ def main() -> int:
             if not (src / "index.html").is_file():
                 print(f"!! {slug}: no index.html in {repo}/{sub}")
                 return 1
-            dest = DEST_ROOT / slug
+            dest = ROOT / "docs" / folder[0] if folder else DEST_ROOT / slug
             if dest.exists():
                 shutil.rmtree(dest)
             dest.mkdir(parents=True)
