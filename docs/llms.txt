@@ -115,6 +115,7 @@
 
 ## Other projects
 
+- [Breathing Autostart](https://jackwallner.com/breathing-autostart/): Starts Nanit breathing monitoring when the baby is put down and stops it at pickup. Mac and Windows.
 - [Pelojack](https://jackwallner.com/ios/pelojack/): Custom workouts, resistance control, live metrics, and Apple Watch heart rate for the Bike+.
 - [e3fit.me](https://jackwallner.com/e3fit/): A production platform for coaching, booking, and workout delivery.
 - [Flight Tracker](https://jackwallner.com/flight-tracker/): Local flight tracking on an AWTRIX smart pixel clock.
