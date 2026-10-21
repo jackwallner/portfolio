@@ -48,7 +48,6 @@ APPS = {
     "babydocs": ("babydocs", "docs"),
     "electrician": ("electrician", "docs"),
     "pickleball": ("pickleball", "docs"),
-    "caffeine": ("caffeine", "docs"),
     "time": ("time", "docs"),
     # Renamed from Keyring 2026-10-17; /ios/keyring/ is a hand-kept redirect stub.
     "vehicle-maintenance-log": ("keyring", "docs"),
