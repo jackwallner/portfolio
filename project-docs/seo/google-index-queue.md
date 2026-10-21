@@ -41,7 +41,6 @@ unchecked URLs, ticks each one with the date and the inspection status it saw, a
 - [x] ios/simpleglp/glp-1-injection-site-rotation.html (2026-10-20, requested, was: Discovered - currently not indexed)
 - [ ] ios/baseball/statcast-metrics-explained.html
 - [ ] ios/babydocs/newborn-paperwork-checklist.html
-- [ ] ios/caffeine/caffeine-half-life.html
 - [ ] ios/bridge/bridge-bidding-for-beginners.html
 - [ ] ios/sheepshead/how-to-play-sheepshead.html
 - [ ] ios/skat/skat-regeln-einfach-erklaert.html
