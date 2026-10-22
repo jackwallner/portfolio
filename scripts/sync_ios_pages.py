@@ -65,6 +65,13 @@ APPS = {
     "breathing-autostart": ("nanit-breathing-autostart", "docs", "breathing-autostart"),
 }
 
+# Pages a slug serves that its landing page never links to, copied (with their
+# own linked assets) alongside index.html. Mahj's ChatGPT plugin page is the
+# plugin listing's website and must not be linked from the app's sales page.
+EXTRA_ENTRIES = {
+    "mahj": ["chatgpt/index.html", "chatgpt/demo.mp4"],
+}
+
 ROOT = Path(__file__).resolve().parent.parent
 DEST_ROOT = ROOT / "docs" / "ios"
 ASSET_RE = re.compile(r'(?:href|src|content)="([^"]+)"')
@@ -101,9 +108,9 @@ def referenced(html: str, base: str = "") -> set[str]:
     return out
 
 
-def copy_closure(src: Path, dest: Path) -> int:
-    """Copy index.html and everything it (transitively) links to."""
-    pending = ["index.html"]
+def copy_closure(src: Path, dest: Path, extra: list[str]) -> int:
+    """Copy index.html, any extra entry pages, and everything they link to."""
+    pending = ["index.html", *extra]
     seen: set[str] = set()
     copied = 0
     while pending:
@@ -145,7 +152,7 @@ def main() -> int:
             if dest.exists():
                 shutil.rmtree(dest)
             dest.mkdir(parents=True)
-            n = copy_closure(src, dest)
+            n = copy_closure(src, dest, EXTRA_ENTRIES.get(slug, []))
             print(f"{slug:16} <- {repo}/{sub}  ({n} files)")
     return 0
 
