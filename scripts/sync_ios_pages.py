@@ -67,9 +67,10 @@ APPS = {
 
 # Pages a slug serves that its landing page never links to, copied (with their
 # own linked assets) alongside index.html. Mahj's ChatGPT plugin page is the
-# plugin listing's website and must not be linked from the app's sales page.
+# plugin listing's website and must not be linked from the app's sales page;
+# the Claude connector page is the same for its directory listing.
 EXTRA_ENTRIES = {
-    "mahj": ["chatgpt/index.html", "chatgpt/demo.mp4"],
+    "mahj": ["chatgpt/index.html", "chatgpt/demo.mp4", "claude/index.html"],
 }
 
 ROOT = Path(__file__).resolve().parent.parent
