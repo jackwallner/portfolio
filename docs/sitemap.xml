@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://jackwallner.com/</loc><lastmod>2026-10-22</lastmod><priority>1.0</priority></url>
+  <url><loc>https://jackwallner.com/</loc><lastmod>2026-10-23</lastmod><priority>1.0</priority></url>
   <url><loc>https://jackwallner.com/ios/</loc><lastmod>2026-10-21</lastmod><priority>0.9</priority></url>
   <url><loc>https://jackwallner.com/guides/</loc><lastmod>2026-10-22</lastmod><priority>0.9</priority></url>
   <url><loc>https://jackwallner.com/breathing-autostart/</loc><lastmod>2026-10-21</lastmod><priority>0.5</priority></url>
@@ -137,6 +137,7 @@
   <url><loc>https://jackwallner.com/ios/skat/terms.html</loc><lastmod>2026-10-21</lastmod><priority>0.3</priority></url>
   <url><loc>https://jackwallner.com/ios/mahj/best-american-mahjong-app.html</loc><lastmod>2026-10-21</lastmod><priority>0.7</priority></url>
   <url><loc>https://jackwallner.com/ios/mahj/chatgpt/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://jackwallner.com/ios/mahj/claude/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
   <url><loc>https://jackwallner.com/ios/mahj/</loc><lastmod>2026-10-21</lastmod><priority>0.8</priority></url>
   <url><loc>https://jackwallner.com/ios/mahj/learn/card-sections.html</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
   <url><loc>https://jackwallner.com/ios/mahj/learn/charleston.html</loc><lastmod>2026-10-21</lastmod><priority>0.7</priority></url>
