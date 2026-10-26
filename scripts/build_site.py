@@ -204,8 +204,8 @@ def contribution_chart_svg(days: list[dict[str, str]]) -> str:
     )
 
 
-def app_store_listings() -> dict[str, str] | None:
-    """Return public US App Store URLs for this developer's currently listed apps."""
+def app_store_listings() -> dict[str, tuple[str, str | None]] | None:
+    """Return (URL, name) of this developer's currently listed US App Store apps."""
     request = Request(
         f"https://itunes.apple.com/lookup?id={APPLE_DEVELOPER_ID}&entity=software&limit=200&country=us",
         headers={"User-Agent": "jackwallner-portfolio-build"},
@@ -217,14 +217,14 @@ def app_store_listings() -> dict[str, str] | None:
         return None
 
     return {
-        str(item["trackId"]): item["trackViewUrl"]
+        str(item["trackId"]): (item["trackViewUrl"], item.get("trackName"))
         for item in results
         if item.get("trackId") and item.get("trackViewUrl")
     }
 
 
 def sync_app_store_status(projects: list[dict]) -> bool:
-    """Promote entries with appStoreId values once Apple lists them."""
+    """Promote entries once Apple lists them, and keep their names current."""
     listings = app_store_listings()
     if listings is None:
         return False
@@ -232,14 +232,22 @@ def sync_app_store_status(projects: list[dict]) -> bool:
     changed = False
     for project in projects:
         app_id = str(project.get("appStoreId") or "")
+        if not app_id:
+            m = re.search(r"/id(\d+)", project.get("appStore") or "")
+            app_id = m.group(1) if m else ""
         listing = listings.get(app_id)
         if not app_id or not listing:
             continue
+        url, name = listing
         updated = {
-            "appStore": listing,
+            "appStore": url,
             "status": "App Store",
             "cls": "live",
         }
+        # The listing name is the source of truth (see the naming rule in
+        # ~/ios/landing-pages/README.md), so renames reach the site on their own.
+        if name:
+            updated["name"] = name
         for key, value in updated.items():
             if project.get(key) != value:
                 project[key] = value
