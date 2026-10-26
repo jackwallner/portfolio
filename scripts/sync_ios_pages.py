@@ -61,6 +61,7 @@ APPS = {
     "pelojack": ("pelojack", "docs"),
     "hockey": ("hockey", "docs"),
     "basketball": ("basketball", "docs"),
+    "deepcuts": ("deepcuts", "docs"),
     # Mac and Windows app, so it lives at the site root rather than under /ios/.
     "breathing-autostart": ("nanit-breathing-autostart", "docs", "breathing-autostart"),
 }
