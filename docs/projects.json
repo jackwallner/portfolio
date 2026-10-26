@@ -303,6 +303,25 @@
     "appStore": "https://apps.apple.com/us/app/hockey-edge-puck-statscout/id6820644691?uo=4"
   },
   {
+    "slug": "deepcuts",
+    "repo": "deepcuts",
+    "name": "Deep Cuts: Music Trivia",
+    "icon": "deepcuts-icon.png",
+    "group": "ios",
+    "type": "iOS App",
+    "status": "Pre-release",
+    "cls": "soon",
+    "page": "ios/deepcuts/",
+    "appStore": null,
+    "appStoreId": "6825448110",
+    "github": "https://github.com/jackwallner/deepcuts",
+    "tech": "Swift 6 · SwiftUI · AVFoundation · Supabase",
+    "desc": "Music trivia in crates from Classic Rock to Hip-Hop: a daily ten, Name That Tune with real previews, cover songs and music stories.",
+    "start": "2026-10-21",
+    "updated": "2026-10-25",
+    "category": "Play"
+  },
+  {
     "slug": "basketball",
     "repo": "basketball",
     "name": "Basketball: Hardwood StatScout",

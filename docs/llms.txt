@@ -106,6 +106,7 @@
 
 ## Play
 
+- [Deep Cuts: Music Trivia](https://jackwallner.com/ios/deepcuts/): Music trivia in crates from Classic Rock to Hip-Hop: a daily ten, Name That Tune with real previews, cover songs and music stories. (Pre-release)
 - [DreamCart: Dopamine Shopping](https://jackwallner.com/ios/dreamcart/): A virtual fashion shopping game with daily coins, cart checkout, and a dream closet. (App Store)
 - [Electrician Exam Practice 2026](https://jackwallner.com/ios/electrician/): 2023 NEC drills and calculators for the journeyman and master electrician exams, with generated practice rather than a fixed question bank. (App Store)
   - [Best Journeyman Electrician Test Prep App (2026)](https://jackwallner.com/ios/electrician/best-journeyman-electrician-test-prep-app.html): Five journeyman electrician test prep apps for iPhone and iPad compared: question banks, NEC edition, mock exams, calculators and what each one leaves out.
