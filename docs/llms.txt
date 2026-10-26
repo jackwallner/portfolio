@@ -31,6 +31,7 @@
 - [Trip Comfort: Motion Sickness](https://jackwallner.com/ios/queasy/): Four drug-free comfort routines for journeys, with breathing guidance and paced wrist pulses. (App Store)
   - [Best Motion Sickness App for iPhone (2026)](https://jackwallner.com/ios/queasy/best-motion-sickness-app.html): Motion sickness apps for iPhone and Apple Watch compared: Apple's Vehicle Motion Cues, RideCalm, Dizzout, Hearapy and Trip Comfort, with what each one does.
   - [Motion Sickness on a Road Trip: Practical Things to Try](https://jackwallner.com/ios/queasy/motion-sickness-road-trip.html): Practical things to try on a car trip if you get motion sick: seat choice, where to look, what to eat, breathing and more, with what the CDC Yellow Book says.
+- [Recharge Workout Recovery Time](https://jackwallner.com/ios/recovery/): A training-load countdown after every workout on the Apple Watch you already own. (App Store)
 
 ## Habits & recovery
 
@@ -76,7 +77,7 @@
   - [What Is xwOBA? Barrel Rate, Hard-Hit % and Sprint Speed](https://jackwallner.com/ios/baseball/statcast-metrics-explained.html): What xwOBA, barrel rate, hard-hit rate and sprint speed mean, with the exact Statcast definitions and what a good number looks like in a 2025 MLB season.
 - [Sports Cheat Sheet: Daily News](https://jackwallner.com/ios/sports/): Plain-English sports catch-up so casual fans can follow along in five minutes a day. (App Store)
   - [How to Talk About Sports When You Don't Follow Sports](https://jackwallner.com/ios/sports/how-to-talk-about-sports.html): Small talk for non-fans: one story to know, one question to ask, sample lines for work and dinner, and what to skip so you never get caught bluffing.
-- [Football Next: StatScout](https://jackwallner.com/ios/football/): Every NFL player ranked by percentile, with advanced stats in plain visual form. (App Store)
+- [Pro Football: EPA StatScout](https://jackwallner.com/ios/football/): Every NFL player ranked by percentile, with advanced stats in plain visual form. (App Store)
   - [Best NFL Stats App for iPhone: 6 Compared (2026)](https://jackwallner.com/ios/football/best-nfl-stats-app.html): Which NFL stats app fits you? Six iPhone apps compared on advanced stats, scores, fantasy and price model, with ratings and trade-offs as of October 2026.
   - [What Is EPA Per Play in Football? EPA and CPOE Explained](https://jackwallner.com/ios/football/what-is-epa-per-play.html): EPA per play measures how much each play changes a team's expected points. Learn how it works, what CPOE adds, and what good looks like for NFL quarterbacks.
 - [Hockey Edge: Puck StatScout](https://jackwallner.com/ios/hockey/): Every NHL skater and goalie ranked by expected goals, with the xG race behind every game. (App Store)
@@ -102,7 +103,7 @@
   - [Newborn Wet and Dirty Diapers by Day: First Week Guide](https://jackwallner.com/ios/baby/newborn-wet-dirty-diapers-first-week.html): Day-by-day newborn diaper count for the first week: 1 wet diaper on day 1 rising to 6 or more by day 6, plus what the stools look like and when to call.
 - [Next Cue: ADHD Routine Planner](https://jackwallner.com/ios/adhd/): Daily routines shown one step at a time, with a saved place to pick up again after an interruption. (Pre-release)
   - [How to Start a Task When You Have ADHD: 7 Techniques](https://jackwallner.com/ios/adhd/how-to-start-a-task-with-adhd.html): How to start a task when you have ADHD: seven practical task initiation techniques, from smallest starts to if-then plans, citing NIMH, CDC and CHADD.
-- [Vehicle Maintenance Log](https://jackwallner.com/ios/vehicle-maintenance-log/): A shared maintenance log for every vehicle in the family, from cars to boats, that knows what is due by miles, hours or months, works out mpg from your fill-ups, and builds a service record worth handing to the next owner. (App Store)
+- [Vehicle Maintenance Log & MPG](https://jackwallner.com/ios/vehicle-maintenance-log/): A shared maintenance log for every vehicle in the family, from cars to boats, that knows what is due by miles, hours or months, works out mpg from your fill-ups, and builds a service record worth handing to the next owner. (App Store)
 
 ## Play
 
@@ -111,8 +112,9 @@
 - [Electrician Exam Practice 2026](https://jackwallner.com/ios/electrician/): 2023 NEC drills and calculators for the journeyman and master electrician exams, with generated practice rather than a fixed question bank. (App Store)
   - [Best Journeyman Electrician Test Prep App (2026)](https://jackwallner.com/ios/electrician/best-journeyman-electrician-test-prep-app.html): Five journeyman electrician test prep apps for iPhone and iPad compared: question banks, NEC edition, mock exams, calculators and what each one leaves out.
   - [How to Calculate Conduit Fill (NEC Chapter 9) | Electrician](https://jackwallner.com/ios/electrician/how-to-calculate-conduit-fill.html): How to calculate conduit fill under NEC Chapter 9: Table 1 fill limits, Table 4 conduit areas, Table 5 wire areas, and four worked examples in EMT.
-- [DUPR IQ - Pickleball Drills](https://jackwallner.com/ios/pickleball/): Shot-selection drills for pickleball: a generator builds the situations, so the practice does not run out. (Pre-release)
+- [Third Shot Pickleball Strategy](https://jackwallner.com/ios/pickleball/): Shot-selection drills for pickleball: a generator builds the situations, so the practice does not run out. (Pre-release)
   - [Third Shot Drop vs Drive in Pickleball: When to Use Each](https://jackwallner.com/ios/pickleball/third-shot-drop-vs-drive.html): Drop the third shot when both opponents are set at the kitchen. Drive when one is still moving or the ball sits up. A plain guide with the exact cues to read.
+- [Sunset & Sunrise Prediction](https://jackwallner.com/ios/sunset/): A 0 to 100 score for every sunrise and sunset from the cloud, humidity and visibility forecast, with alerts before the good ones. (App Store)
 
 ## Other projects
 
