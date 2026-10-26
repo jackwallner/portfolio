@@ -9,3 +9,4 @@ Working notes that are not part of the published site (`docs/` is the site).
 - [marketing/outreach-targets-2026-10-18.md](marketing/outreach-targets-2026-10-18.md): 37 researched targets (teachers, coaches, list authors) with contact sources and per-person draft pitches
 - [marketing/outreach-pitches-final-2026-10-18.md](marketing/outreach-pitches-final-2026-10-18.md): final humanized copy for all 37 pitches with App Store links, as staged in Chrome
 - [marketing/source-of-sources-profile.md](marketing/source-of-sources-profile.md): journalist-request profile, bio and answer templates for Jack to paste
+- [audits/ux-audit-2026-05-02.md](audits/ux-audit-2026-05-02.md): early portfolio UX audit (May 2026), moved out of the published site
