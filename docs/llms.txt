@@ -28,10 +28,10 @@
 - [VO2 Max & Cardio Fitness](https://jackwallner.com/ios/vo2max/): A focused view of Apple Health cardio fitness estimates, fitness age, trends, and targets. (App Store)
   - [Best VO2 Max App for Apple Watch (5 Compared)](https://jackwallner.com/ios/vo2max/best-vo2-max-app-for-apple-watch.html): Five iPhone apps for your Apple Watch VO2 max compared: Athlytic, VO2 Max Pro, Health Hive, VO2 Max Widget Notifications and VO2 Max & Cardio Fitness.
   - [VO2 Max Chart by Age and Sex: Apple Watch Levels](https://jackwallner.com/ios/vo2max/vo2-max-chart-by-age-and-sex.html): VO2 max percentiles by age and sex from the FRIEND registry, how Apple Watch cardio fitness levels use them, and how to read your own number. Sourced and plain.
-- [Trip Comfort: Motion Sickness](https://jackwallner.com/ios/queasy/): Four drug-free comfort routines for journeys, with breathing guidance and paced wrist pulses. (App Store)
-  - [Best Motion Sickness App for iPhone (2026)](https://jackwallner.com/ios/queasy/best-motion-sickness-app.html): Motion sickness apps for iPhone and Apple Watch compared: Apple's Vehicle Motion Cues, RideCalm, Dizzout, Hearapy and Trip Comfort, with what each one does.
-  - [Motion Sickness on a Road Trip: Practical Things to Try](https://jackwallner.com/ios/queasy/motion-sickness-road-trip.html): Practical things to try on a car trip if you get motion sick: seat choice, where to look, what to eat, breathing and more, with what the CDC Yellow Book says.
-- [Recharge Workout Recovery Time](https://jackwallner.com/ios/recovery/): A training-load countdown after every workout on the Apple Watch you already own. (App Store)
+- [Trip Comfort: Motion Sickness](https://jackwallner.com/ios/queasy/index.html.md): Four drug-free comfort routines for journeys, with breathing guidance and paced wrist pulses. (App Store)
+  - [Best Motion Sickness App for iPhone (2026)](https://jackwallner.com/ios/queasy/best-motion-sickness-app.html.md): Motion sickness apps for iPhone and Apple Watch compared: Apple's Vehicle Motion Cues, RideCalm, Dizzout, Hearapy and Trip Comfort, with what each one does.
+  - [Motion Sickness on a Road Trip: Practical Things to Try](https://jackwallner.com/ios/queasy/motion-sickness-road-trip.html.md): Practical things to try on a car trip if you get motion sick: seat choice, where to look, what to eat, breathing and more, with what the CDC Yellow Book says.
+- [Recharge Workout Recovery Time](https://jackwallner.com/ios/recovery/index.html.md): A training-load countdown after every workout on the Apple Watch you already own. (App Store)
 
 ## Habits & recovery
 
@@ -81,10 +81,10 @@
 - [Pro Football: EPA StatScout](https://jackwallner.com/ios/football/index.html.md): Every NFL player ranked by percentile, with advanced stats in plain visual form. (App Store)
   - [Best NFL Stats App for iPhone: 6 Compared (2026)](https://jackwallner.com/ios/football/best-nfl-stats-app.html.md): Which NFL stats app fits you? Six iPhone apps compared on advanced stats, scores, fantasy and price model, with ratings and trade-offs as of October 2026.
   - [What Is EPA Per Play in Football? EPA and CPOE Explained](https://jackwallner.com/ios/football/what-is-epa-per-play.html.md): EPA per play measures how much each play changes a team's expected points. Learn how it works, what CPOE adds, and what good looks like for NFL quarterbacks.
-- [Hockey Edge: Puck StatScout](https://jackwallner.com/ios/hockey/): Every NHL skater and goalie ranked by expected goals, with the xG race behind every game. (App Store)
-  - [What Is xG in Hockey? Expected Goals and GSAx Explained](https://jackwallner.com/ios/hockey/what-is-xg-in-hockey.html): Expected goals (xG) give every NHL shot a probability of scoring. See how xG works, how goalies are judged with GSAx, and what good numbers look like.
-- [Basketball: Hardwood StatScout](https://jackwallner.com/ios/basketball/): Every NBA player ranked on advanced percentiles: usage, true shooting, shot zones, playmaking and on-court impact. (Pre-release)
-  - [True Shooting Percentage Explained (Formula and Usage Rate)](https://jackwallner.com/ios/basketball/true-shooting-percentage-explained.html): True shooting percentage (TS%) counts threes and free throws to measure scoring efficiency. See the formula, a worked example, and how usage rate fits in.
+- [Hockey Edge: Puck StatScout](https://jackwallner.com/ios/hockey/index.html.md): Every NHL skater and goalie ranked by expected goals, with the xG race behind every game. (App Store)
+  - [What Is xG in Hockey? Expected Goals and GSAx Explained](https://jackwallner.com/ios/hockey/what-is-xg-in-hockey.html.md): Expected goals (xG) give every NHL shot a probability of scoring. See how xG works, how goalies are judged with GSAx, and what good numbers look like.
+- [Basketball: Hardwood StatScout](https://jackwallner.com/ios/basketball/index.html.md): Every NBA player ranked on advanced percentiles: usage, true shooting, shot zones, playmaking and on-court impact. (Pre-release)
+  - [True Shooting Percentage Explained (Formula and Usage Rate)](https://jackwallner.com/ios/basketball/true-shooting-percentage-explained.html.md): True shooting percentage (TS%) counts threes and free throws to measure scoring efficiency. See the formula, a worked example, and how usage rate fits in.
 - [IM Tri Tracker](https://jackwallner.com/ios/ironman/): Published full and half-distance triathlon results ranked by split, with race notes and an optional Race Book export. (App Store)
   - [Best Triathlon Results App for iPhone: 5 Compared](https://jackwallner.com/ios/ironman/best-triathlon-results-app.html): Five iPhone apps for triathlon results compared: live race-day tracking, looking up past results by name, and logging your own. Ratings as of October 2026.
   - [Triathlon Splits Explained: Swim, T1, Bike, T2 and Run](https://jackwallner.com/ios/ironman/triathlon-splits-explained.html): What each triathlon split means, how to turn it into pace, and how to compare your swim, T1, bike, T2 and run with sourced finish times for age-groupers.
@@ -116,7 +116,7 @@
   - [How to Calculate Conduit Fill (NEC Chapter 9) | Electrician](https://jackwallner.com/ios/electrician/how-to-calculate-conduit-fill.html): How to calculate conduit fill under NEC Chapter 9: Table 1 fill limits, Table 4 conduit areas, Table 5 wire areas, and four worked examples in EMT.
 - [Third Shot Pickleball Strategy](https://jackwallner.com/ios/pickleball/index.html.md): Shot-selection drills for pickleball: a generator builds the situations, so the practice does not run out. (Pre-release)
   - [Third Shot Drop vs Drive in Pickleball: When to Use Each](https://jackwallner.com/ios/pickleball/third-shot-drop-vs-drive.html.md): Drop the third shot when both opponents are set at the kitchen. Drive when one is still moving or the ball sits up. A plain guide with the exact cues to read.
-- [Sunset & Sunrise Prediction](https://jackwallner.com/ios/sunset/): A 0 to 100 score for every sunrise and sunset from the cloud, humidity and visibility forecast, with alerts before the good ones. (App Store)
+- [Sunset & Sunrise Prediction](https://jackwallner.com/ios/sunset/index.html.md): A 0 to 100 score for every sunrise and sunset from the cloud, humidity and visibility forecast, with alerts before the good ones. (App Store)
 
 ## Other projects
 
