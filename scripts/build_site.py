@@ -760,6 +760,13 @@ def guides(p):
     return out
 
 
+def markdown_url(url):
+    """The page's markdown twin (<page>.html.md) when the app ships one, else the page."""
+    rel = url[len(SITE):]
+    twin = rel + "index.html.md" if rel.endswith("/") or not rel else rel + ".md"
+    return SITE + twin if (DOCS / twin).is_file() else url
+
+
 def build_llms(projects):
     """llms.txt: a plain index of every app page for AI answer engines."""
     apps = [p for c in CATEGORY_ORDER for p in projects
@@ -774,8 +781,8 @@ def build_llms(projects):
         lines += [f"## {cat}", ""]
         for p in members:
             store = "App Store" if p.get("appStore") else p["status"]
-            lines.append(f"- [{p['name']}]({page_url(p)}): {p['desc']} ({store})")
-            lines += [f"  - [{t}]({u}): {d}" for u, t, d in guides(p)]
+            lines.append(f"- [{p['name']}]({markdown_url(page_url(p))}): {p['desc']} ({store})")
+            lines += [f"  - [{t}]({markdown_url(u)}): {d}" for u, t, d in guides(p)]
         lines.append("")
     others = [p for p in projects if p["group"] != "ios" and page_url(p)
               and p.get("status") != "Retired"]
