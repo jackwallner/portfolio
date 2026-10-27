@@ -113,8 +113,14 @@ def referenced(html: str, base: str = "") -> set[str]:
 
 
 def copy_closure(src: Path, dest: Path, extra: list[str]) -> int:
-    """Copy index.html, any extra entry pages, and everything they link to."""
+    """Copy index.html, any extra entry pages, and everything they link to.
+
+    Also copies llms.txt and each copied page's markdown twin (<page>.html.md),
+    which no page links to but AI answer engines fetch.
+    """
     pending = ["index.html", *extra]
+    if (src / "llms.txt").is_file():
+        pending.append("llms.txt")
     seen: set[str] = set()
     copied = 0
     while pending:
@@ -133,6 +139,8 @@ def copy_closure(src: Path, dest: Path, extra: list[str]) -> int:
         if rel.endswith(".html"):
             text = source.read_text(encoding="utf-8", errors="replace")
             pending.extend(referenced(text, posixpath.dirname(rel)))
+            if (src / f"{rel}.md").is_file():
+                pending.append(f"{rel}.md")
     return copied
 
 
