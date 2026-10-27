@@ -1,0 +1,13 @@
+# Sunset & Sunrise Prediction
+
+> Sunset & Sunrise Prediction scores every sunrise and sunset from 0 to 100 using the cloud, humidity and visibility forecast, with a free alert before the good ones.
+
+## App
+
+- [Sunset & Sunrise Prediction: Sky Quality Forecast](https://jackwallner.com/ios/sunset/index.html.md): Sunset & Sunrise Prediction scores every sunrise and sunset from 0 to 100 using the cloud, humidity and visibility forecast, with a free alert before the good ones.
+
+## Optional
+
+- [Privacy Policy | Sunset](https://jackwallner.com/ios/sunset/privacy-policy.html.md)
+- [Support | Sunset](https://jackwallner.com/ios/sunset/support.html.md)
+- [Terms of Use | Sunset](https://jackwallner.com/ios/sunset/terms.html.md)
