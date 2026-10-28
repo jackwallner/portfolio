@@ -17,9 +17,9 @@ Email: [jackwallner+q@gmail.com](mailto:jackwallner+q@gmail.com)
 
 Posture reads alignment from the head-motion sensor in your AirPods. You need:
 
-- **Compatible AirPods**: AirPods Pro (1st & 2nd gen), AirPods (3rd gen), AirPods 4 with ANC, or AirPods Max, connected to this iPhone
+- **Compatible AirPods**: AirPods Pro (any generation), AirPods (3rd gen), AirPods 4 with ANC, or AirPods Max, connected to this iPhone
 - **Motion access**: to read head angle from your AirPods during monitoring
-- **Notifications**: optional, for gentle reminders during your active hours
+- **Notifications**: optional, for gentle reminders and for slouch alerts while Posture is in the background
 - **Background audio**: Posture+ uses a silent audio session so iOS keeps delivering AirPods motion while the app is in the background; iOS shows an orange dot when monitoring is active
 
 For Apple Watch coaching:
