@@ -702,6 +702,24 @@ def indexable(path):
     return not canon or canon.group(1) == own
 
 
+ALTERNATE = re.compile(r'<link rel="alternate" hreflang="([^"]+)" href="([^"]+)"')
+
+
+def alternates(path):
+    """xhtml:link rows for a page's hreflang versions (localize_pages.py writes them)."""
+    head = path.read_text(encoding="utf-8", errors="replace")[:8000]
+    return "".join(f'<xhtml:link rel="alternate" hreflang="{lang}" href="{href}"/>'
+                   for lang, href in ALTERNATE.findall(head))
+
+
+def original(path):
+    """False for the translated copies localize_pages.py writes (x-default points elsewhere)."""
+    head = path.read_text(encoding="utf-8", errors="replace")[:8000]
+    canon = re.search(r'<link rel="canonical" href="([^"]+)"', head)
+    default = re.search(r'hreflang="x-default" href="([^"]+)"', head)
+    return not default or not canon or canon.group(1) == default.group(1)
+
+
 def build_sitemap(projects):
     """Every indexable page under each project's folder, not just its front page.
 
@@ -723,14 +741,16 @@ def build_sitemap(projects):
             else:
                 prio = 0.3 if LEGAL_PAGE.search(rel) else 0.7
             pages.append((path, prio))
+    file = lambda path: DOCS / (path + 'index.html' if path.endswith('/') or not path else path)
     rows = "\n".join(
         f"  <url><loc>{SITE}{path}</loc>"
-        f"<lastmod>{last_modified(DOCS / (path + 'index.html' if path.endswith('/') or not path else path))}</lastmod>"
-        f"<priority>{prio}</priority></url>"
+        f"<lastmod>{last_modified(file(path))}</lastmod>"
+        f"<priority>{prio}</priority>{alternates(file(path))}</url>"
         for path, prio in pages
     )
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
-            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+            'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
             f"{rows}\n</urlset>\n")
 
 
@@ -748,7 +768,8 @@ def guides(p):
     out = []
     for f in sorted(root.rglob("*.html")):
         rel = f.relative_to(DOCS).as_posix()
-        if f.parent == root and f.name == "index.html" or LEGAL_PAGE.search(rel) or not indexable(f):
+        if (f.parent == root and f.name == "index.html" or LEGAL_PAGE.search(rel) or not indexable(f)
+                or not original(f)):
             continue
         h = f.read_text(encoding="utf-8", errors="replace")
         t = re.search(r"<title[^>]*>(.*?)</title>", h, re.S)

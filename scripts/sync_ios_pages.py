@@ -79,6 +79,7 @@ EXTRA_ENTRIES = {
 ROOT = Path(__file__).resolve().parent.parent
 DEST_ROOT = ROOT / "docs" / "ios"
 ASSET_RE = re.compile(r'(?:href|src|content)="([^"]+)"')
+SRCSET_RE = re.compile(r'srcset="([^"]+)"')
 SKIP_SCHEMES = ("http://", "https://", "//", "mailto:", "tel:", "data:", "#")
 # `content="..."` is mostly meta-tag prose, so only values that look like a file
 # with one of these extensions are treated as an asset to copy.
@@ -95,7 +96,10 @@ def referenced(html: str, base: str = "") -> set[str]:
     page root are ignored.
     """
     out = set()
-    for raw in ASSET_RE.findall(html):
+    candidates = ASSET_RE.findall(html)
+    for srcset in SRCSET_RE.findall(html):
+        candidates += [c.split()[0] for c in srcset.split(",") if c.strip()]
+    for raw in candidates:
         if raw.startswith(SKIP_SCHEMES) or not raw.strip():
             continue
         path = raw.split("#")[0].split("?")[0]
