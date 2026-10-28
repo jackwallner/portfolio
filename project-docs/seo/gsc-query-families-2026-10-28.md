@@ -88,3 +88,55 @@ Baby Docs and Sunset carries the full set of store locales.
 Own-app App Store links already carry `pt=128748779&ct=jw-<app>-<page>`. As of 2026-10-25 the ASC
 campaign report returned no rows for any `ct=jw-` tag: /ios/ pages sent 7 Google clicks in 16 days,
 under Apple's reporting threshold. Per-page App Store click-through is not measurable yet.
+
+## Shipped 2026-10-28
+
+Content upgrades (English):
+
+| Page | Change |
+|---|---|
+| bridge/best-bridge-app-for-beginners.html | 12 apps compared: BBO, BBO Trainer, Audrey Grant, NeuralPlay, Shark Bridge, Bridge V+, Bridge Baron added; "Is BBO good for beginners?" FAQ |
+| mahj/learn/charleston.html | Fixed the stop rule (any one player stops the second Charleston); Heavenly Hand and when-to-stop sections |
+| football/what-is-epa-per-play.html | EPA + CPOE (DAKOTA) section, 2025 top and bottom QBs, 2026 week 7 leaders |
+| basketball/true-shooting-percentage-explained.html | League-average TS% by season 2015-16 to 2026-27, 2024-25 leaders |
+| vitals/apple-watch-active-vs-resting-calories.html | Apple's per-workout accuracy table replaces the unsourced "10 to 20%" |
+| vo2max/where-to-find-vo2-max-on-iphone.html | New page: Health path, watch models, qualifying workouts, why no reading, notifications |
+
+Localization: Total Calories, Sober and Bridge, home page plus the main guide, 10 languages each
+(60 pages) at `/ios/<app>/<lang>/`. Languages follow each app's UI localizations and App Store
+download markets. Every version carries hreflang for all 11 plus x-default, a native-name
+language switcher in the footer, the local App Store storefront and a localized date. App
+sitemaps, the jackwallner.com sitemap and each app's llms.txt ("Other languages") list them.
+Tooling: `~/ios/landing-pages/localize_pages.py` (extract, build), translations in
+`<repo>/i18n/<lang>/<page>.json`. Rerun `build` after any English edit; `extract` lists strings
+that need translating.
+
+Speed pass (`~/ios/landing-pages/speed_pass.py`): 360w and 540w WebP screenshot variants with
+srcset/sizes, 64px WebP nav icon, WebP Play badge where smaller, 24px footer tap targets, labeled
+nav brand link. The iOS mirror now copies srcset files.
+
+Lighthouse mobile, median of 3 (`lighthouse/before-2026-10-28.tsv`, `after-2026-10-28.tsv`):
+
+| Page | Perf | A11y | LCP | Bytes |
+|---|---|---|---|---|
+| vitals/ | 100 > 100 | 99 > 100 | 1.6 > 1.2 s | 212 > 123 KiB |
+| vitals guide | 100 > 100 | 99 > 100 | 1.1 > 0.9 s | 38 > 38 KiB |
+| sober/ | 100 > 100 | 92 > 100 | 1.2 > 0.9 s | 173 > 90 KiB |
+| sober milestones | 100 > 100 | 100 > 100 | 0.9 > 1.0 s | 17 > 11 KiB |
+| bridge/ | 97 > 100 | 90 > 100 | 2.6 > 1.4 s | 433 > 194 KiB |
+| bridge guide | 100 > 100 | 99 > 100 | 1.2 > 0.9 s | 65 > 67 KiB |
+| football EPA | 100 > 100 | 100 > 100* | 1.2 > 0.8 s | 64 > 66 KiB |
+| basketball TS% | 100 > 100 | 92 > 100 | 1.1 > 0.9 s | 23 > 25 KiB |
+| mahj Charleston | 100 > 100 | 100 > 100 | 1.1 > 0.8 s | 21 > 21 KiB |
+| vo2max/ | 100 > 100 | 90 > 100 | 1.4 > 1.5 s | 406 > 211 KiB |
+
+*The after run caught EPA at 93 (nav link lost its name when the brand text hides under 420px);
+fixed with aria-label and pushed the same day.
+
+Submitted: IndexNow 200 for 72 URLs (new, upgraded and localized pages); Bing URL Submission
+72 of 100 daily quota. Google needs Search Console URL Inspection or the sitemap recrawl.
+
+Tracking: localized pages append `-<lang>` to the English page's `ct=jw-` token, trimmed to
+Apple's 40-character limit (e.g. `jw-bridge-home-de`, `jw-vitals-apple-watch-active-vs-resti-ja`).
+The ASC campaign report shows per-language click-through once a tag clears Apple's threshold.
+Check again around 2026-11-25 with the GSC 28-day comparison.
