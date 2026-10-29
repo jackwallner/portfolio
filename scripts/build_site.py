@@ -809,7 +809,9 @@ def build_llms(projects):
               and p.get("status") != "Retired"]
     if others:
         lines += ["## Other projects", ""]
-        lines += [f"- [{p['name']}]({page_url(p)}): {p['desc']}" for p in others]
+        for p in others:
+            lines.append(f"- [{p['name']}]({markdown_url(page_url(p))}): {p['desc']}")
+            lines += [f"  - [{t}]({markdown_url(u)}): {d}" for u, t, d in guides(p)]
         lines.append("")
     lines += ["## Contact", "", f"- Email: {EMAIL}", f"- GitHub: {GITHUB}", ""]
     return "\n".join(lines)
