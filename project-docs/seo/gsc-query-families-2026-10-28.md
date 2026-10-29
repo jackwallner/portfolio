@@ -140,3 +140,58 @@ Tracking: localized pages append `-<lang>` to the English page's `ct=jw-` token,
 Apple's 40-character limit (e.g. `jw-bridge-home-de`, `jw-vitals-apple-watch-active-vs-resti-ja`).
 The ASC campaign report shows per-language click-through once a tag clears Apple's threshold.
 Check again around 2026-11-25 with the GSC 28-day comparison.
+
+### Fleet speed pass (all other app sites, same day)
+
+Ran on the remaining 31 sites (`lighthouse/fleet-before-2026-10-28.tsv`, `fleet-after-2026-10-28.tsv`).
+Every app home page, including the four above, now scores 100 performance and 100 accessibility.
+
+| Page | Perf | A11y | LCP | Bytes |
+|---|---|---|---|---|
+| headaches/ | 100 > 100 | 92 > 100 | 1.1 > 1.2 s | 112 KiB > 102 KiB |
+| fitness-streaks/ | 100 > 100 | 90 > 100 | 1.5 > 1.2 s | 268 KiB > 109 KiB |
+| quitzyn/ | 100 > 100 | 92 > 100 | 0.9 > 0.8 s | 173 KiB > 90 KiB |
+| bond/ | 100 > 100 | 90 > 100 | 1.3 > 1.1 s | 258 KiB > 154 KiB |
+| simpleglp/ | 100 > 100 | 90 > 100 | 1.5 > 0.9 s | 197 KiB > 124 KiB |
+| sports/ | 100 > 100 | 90 > 100 | 1.9 > 1.1 s | 345 KiB > 278 KiB |
+| baseball/ | 100 > 100 | 90 > 100 | 1.8 > 0.9 s | 489 KiB > 319 KiB |
+| posture/ | 100 > 100 | 90 > 100 | 1.1 > 1.1 s | 140 KiB > 71 KiB |
+| mahj/ | 100 > 100 | 91 > 100 | 1.5 > 1.0 s | 307 KiB > 150 KiB |
+| cribbage/ | 100 > 100 | 90 > 100 | 1.1 > 1.1 s | 288 KiB > 194 KiB |
+| sheepshead/ | 100 > 100 | 90 > 100 | 1.1 > 0.9 s | 315 KiB > 198 KiB |
+| skat/ | 100 > 100 | 90 > 100 | 1.5 > 1.1 s | 325 KiB > 213 KiB |
+| dreamcart/ | 100 > 100 | 99 > 100 | 1.4 > 1.1 s | 244 KiB > 126 KiB |
+| football/ | 100 > 100 | 92 > 100 | 1.5 > 1.2 s | 336 KiB > 192 KiB |
+| ironman/ | 99 > 100 | 89 > 100 | 1.5 > 1.2 s | 643 KiB > 475 KiB |
+| babydocs/ | 100 > 100 | 90 > 100 | 0.9 > 0.8 s | 69 KiB > 68 KiB |
+| electrician/ | 100 > 100 | 95 > 100 | 0.8 > 0.8 s | 65 KiB > 65 KiB |
+| pickleball/ | 100 > 100 | 98 > 100 | 0.8 > 0.8 s | 9 KiB > 9 KiB |
+| time/ | 100 > 100 | 95 > 100 | 1.1 > 1.1 s | 18 KiB > 19 KiB |
+| vehicle-maintenance-log/ | 99 > 100 | 91 > 100 | 1.1 > 0.8 s | 1,164 KiB > 176 KiB |
+| baby/ | 100 > 100 | 91 > 100 | 1.2 > 0.8 s | 14 KiB > 14 KiB |
+| adhd/ | 91 > 100 | 99 > 100 | 1.1 > 0.9 s | 63 KiB > 68 KiB |
+| elderhub/ | 100 > 100 | 82 > 100 | 1.5 > 1.1 s | 189 KiB > 186 KiB |
+| queasy/ | 100 > 100 | 90 > 100 | 1.2 > 0.8 s | 149 KiB > 152 KiB |
+| pelojack/ | 100 > 100 | 95 > 100 | 1.1 > 1.2 s | 48 KiB > 48 KiB |
+| hockey/ | 100 > 100 | 90 > 100 | 1.8 > 1.1 s | 343 KiB > 168 KiB |
+| basketball/ | 100 > 100 | 94 > 100 | 1.4 > 1.1 s | 347 KiB > 173 KiB |
+| deepcuts/ | 100 > 100 | 94 > 100 | 1.7 > 1.1 s | 350 KiB > 165 KiB |
+| sunset/ | 100 > 100 | 92 > 100 | 0.8 > 0.8 s | 12 KiB > 14 KiB |
+| recovery/ | 100 > 100 | 92 > 100 | 0.8 > 0.8 s | 18 KiB > 21 KiB |
+| breathing-autostart/ | 100 > 100 | 100 > 100 | 1.4 > 1.1 s | 253 KiB > 80 KiB |
+
+What changed:
+- Sized WebP screenshots with srcset on every showcase; the first screenshot loads eagerly
+  with high fetch priority (it is the mobile LCP on 23 sites). PNG screenshots on Vehicle
+  Maintenance Log (1.1 MB of PNG) and Breathing Autostart became sized WebP.
+- 32-42px nav icons now load a 64 or 128px WebP instead of the 256px PNG.
+- Footer links got 24px tap targets; low-contrast text on IM Tri Tracker, Vehicle Maintenance
+  Log, Elderhub and Recharge raised to WCAG AA; skipped heading levels fixed on five sites.
+- Bugs fixed on the way: Queasy's screenshots rendered squashed (720x540) because the CSS set
+  a height with no `width: auto`; the IM Tri Tracker comparison table widened the phone page
+  by 394px (wrapper class typo); a long code term overflowed two Elderhub legal pages; the
+  Next Cue page shifted 0.19 CLS from icons without dimensions.
+
+Lighthouse is a lab score, not a ranking input. Google ranks on Core Web Vitals from real
+Chrome visits (CrUX), and these sites are below CrUX's traffic threshold, so the gain shows up
+as faster pages for visitors, not as a measurable ranking change.
