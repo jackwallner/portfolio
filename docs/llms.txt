@@ -121,8 +121,9 @@
 
 ## Other projects
 
-- [Breathing Autostart](https://jackwallner.com/breathing-autostart/): Starts Nanit breathing monitoring when the baby is put down and stops it at pickup. Mac and Windows.
-- [Pelojack](https://jackwallner.com/ios/pelojack/): Custom workouts, resistance control, live metrics, and Apple Watch heart rate for the Bike+.
+- [Breathing Autostart](https://jackwallner.com/breathing-autostart/index.html.md): Starts Nanit breathing monitoring when the baby is put down and stops it at pickup. Mac and Windows.
+- [Pelojack](https://jackwallner.com/ios/pelojack/index.html.md): Custom workouts, resistance control, live metrics, and Apple Watch heart rate for the Bike+.
+  - [Apple Watch Heart Rate on a Peloton Bike+: Your Options](https://jackwallner.com/ios/pelojack/apple-watch-heart-rate-peloton-bike-plus.html.md): Three ways to get Apple Watch heart rate onto a Peloton Bike+: Peloton's One-Tap tracking, a Bluetooth or ANT+ strap, or the open-source Pelojack app.
 - [e3fit.me](https://jackwallner.com/e3fit/): A production platform for coaching, booking, and workout delivery.
 - [Flight Tracker](https://jackwallner.com/flight-tracker/): Local flight tracking on an AWTRIX smart pixel clock.
 - [Any Song Clone Hero](https://jackwallner.com/songhero/): Generates custom Clone Hero charts from any Spotify link.
