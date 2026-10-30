@@ -37,6 +37,7 @@
   - [Best Motion Sickness App for iPhone (2026)](https://jackwallner.com/ios/queasy/best-motion-sickness-app.html.md): Motion sickness apps for iPhone and Apple Watch compared: Apple's Vehicle Motion Cues, RideCalm, Dizzout, Hearapy and Trip Comfort, and what each does.
   - [Motion Sickness on a Road Trip: Practical Things to Try](https://jackwallner.com/ios/queasy/motion-sickness-road-trip.html.md): Practical things to try on a car trip if you get motion sick: seat choice, where to look, what to eat, breathing and more, with what the CDC Yellow Book says.
 - [Recharge Workout Recovery Time](https://jackwallner.com/ios/recovery/index.html.md): A training-load countdown after every workout on the Apple Watch you already own. (App Store)
+  - [Best Workout Recovery Time App for Apple Watch](https://jackwallner.com/ios/recovery/best-workout-recovery-app.html.md): Five Apple Watch apps for workout recovery time compared: a countdown after each workout, or a morning readiness score. Ratings as of October 2026.
 
 ## Habits & recovery
 
@@ -124,10 +125,12 @@
 - [Next Cue: ADHD Routine Planner](https://jackwallner.com/ios/adhd/index.html.md): Daily routines shown one step at a time, with a saved place to pick up again after an interruption. (Pre-release)
   - [How to Start a Task When You Have ADHD: 7 Techniques](https://jackwallner.com/ios/adhd/how-to-start-a-task-with-adhd.html.md): How to start a task when you have ADHD: seven practical task initiation techniques, from smallest starts to if-then plans, citing NIMH, CDC and CHADD.
 - [Vehicle Maintenance Log & MPG](https://jackwallner.com/ios/vehicle-maintenance-log/index.html.md): A shared maintenance log for every vehicle in the family, from cars to boats, that knows what is due by miles, hours or months, works out mpg from your fill-ups, and builds a service record worth handing to the next owner. (App Store)
+  - [Best Car Maintenance Tracker App for iPhone: 5 Compared](https://jackwallner.com/ios/vehicle-maintenance-log/best-car-maintenance-app.html.md): Five iPhone car maintenance tracker apps compared: service reminders, mpg, recalls and sharing a garage with family. Ratings as of October 2026.
 
 ## Play
 
 - [Deep Cuts: Music Trivia](https://jackwallner.com/ios/deepcuts/index.html.md): Music trivia in crates from Classic Rock to Hip-Hop: a daily ten, Name That Tune with real previews, cover songs and music stories. (Pre-release)
+  - [Best Music Trivia App for iPhone: 5 Compared](https://jackwallner.com/ios/deepcuts/best-music-trivia-app.html.md): Five iPhone music trivia apps compared: song-clip guessing, multiplayer, and genre questions with the story behind each answer. Ratings as of October 2026.
 - [DreamCart: Dopamine Shopping](https://jackwallner.com/ios/dreamcart/index.html.md): A virtual fashion shopping game with daily coins, cart checkout, and a dream closet. (App Store)
 - [Electrician Exam Practice 2026](https://jackwallner.com/ios/electrician/index.html.md): 2023 NEC drills and calculators for the journeyman and master electrician exams, with generated practice rather than a fixed question bank. (App Store)
   - [Best Journeyman Electrician Test Prep App (2026)](https://jackwallner.com/ios/electrician/best-journeyman-electrician-test-prep-app.html.md): Five journeyman electrician test prep apps for iPhone and iPad compared: question banks, NEC edition, mock exams, calculators and what each one leaves out.
