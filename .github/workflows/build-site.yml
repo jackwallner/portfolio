@@ -32,23 +32,26 @@ jobs:
           # Full history so sitemap.xml lastmod dates come from real commits.
           fetch-depth: 0
 
-      - name: Generate index pages
-        run: python3 scripts/build_site.py
-
-      - name: Commit changes
+      - name: Generate and commit index pages
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/projects.json docs/index.html docs/ios/index.html docs/guides/index.html docs/assets/github-contributions.svg \
-            docs/sitemap.xml docs/robots.txt docs/llms.txt
-          if git diff --cached --quiet; then
-            echo "Index pages already up to date."
-            exit 0
-          fi
-          git commit -m "chore: rebuild index pages from projects.json"
-          # App mirror pushes land concurrently; rebase onto them and retry.
+          # Rebuild from the latest main after a push race instead of rebasing
+          # stale generated pages over newer source pages.
           for i in 1 2 3 4 5; do
-            git push && exit 0
-            git pull --rebase origin main
+            git fetch origin main
+            git reset --hard origin/main
+            python3 scripts/build_site.py
+            git add docs/projects.json docs/index.html docs/ios/index.html docs/guides/index.html docs/assets/github-contributions.svg \
+              docs/sitemap.xml docs/robots.txt docs/llms.txt
+            if git diff --cached --quiet; then
+              echo "Index pages already up to date."
+              exit 0
+            fi
+            git commit -m "chore: rebuild index pages from projects.json"
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push raced with another update; rebuilding from latest main (attempt $i)."
           done
           exit 1
