@@ -5,7 +5,8 @@ Bing's index feeds ChatGPT search and Copilot, so this is the fastest way to get
 a changed page in front of AI answer engines. Google ignores IndexNow; use
 Search Console for it. The key file docs/<key>.txt must already be live.
 
-Run after a deploy: `python3 scripts/indexnow.py [url ...]` (default: whole sitemap).
+Run after a deploy: `python3 scripts/indexnow.py [--dry-run] [url ...]` (default: whole
+sitemap). --dry-run checks the live key file and prints what would be sent.
 """
 
 import json
@@ -27,8 +28,17 @@ def key() -> str:
 
 
 def main() -> int:
-    urls = sys.argv[1:] or re.findall(r"<loc>(.*?)</loc>", (DOCS / "sitemap.xml").read_text())
+    args = sys.argv[1:]
+    dry_run = "--dry-run" in args
+    urls = [a for a in args if a != "--dry-run"]
+    urls = urls or re.findall(r"<loc>(.*?)</loc>", (DOCS / "sitemap.xml").read_text())
     k = key()
+    if dry_run:
+        with urlopen(f"https://{HOST}/{k}.txt", timeout=20) as r:
+            live = r.read().decode().strip()
+        print(f"key file {'live and matching' if live == k else 'MISMATCH: ' + live}")
+        print(f"would submit {len(urls)} urls, first: {urls[:3]}")
+        return 0 if live == k else 1
     body = json.dumps({"host": HOST, "key": k, "keyLocation": f"https://{HOST}/{k}.txt",
                        "urlList": urls}).encode()
     req = Request("https://api.indexnow.org/indexnow", data=body,
