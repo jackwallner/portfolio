@@ -22,7 +22,7 @@ import sys
 import urllib.request
 from pathlib import Path
 
-CANON_RE = re.compile(r'^([ \t]*)<link rel="canonical" href="(https://jackwallner\.com/[^"]*)">[^\n]*\n', re.M)
+CANON_RE = re.compile(r'^([ \t]*)<link rel="canonical" href="(https://jackwallner\.com/[^"]*)"\s*/?>[^\n]*\n', re.M)
 REFRESH_RE = re.compile(r'<meta http-equiv="refresh"')
 SKIP_PARTS = {"build", "node_modules", "archive", ".build", "DerivedData"}
 
@@ -46,9 +46,10 @@ def add_refresh(path: Path, dry_run: bool) -> str:
     indent, url = m.group(1), m.group(2)
     if not is_live(url):
         return f"canonical not live: {url}"
-    if not dry_run:
-        line = f'{indent}<meta http-equiv="refresh" content="0; url={url}">\n'
-        path.write_text(text[: m.end()] + line + text[m.end():], encoding="utf-8")
+    if dry_run:
+        return "would add"
+    line = f'{indent}<meta http-equiv="refresh" content="0; url={url}">\n'
+    path.write_text(text[: m.end()] + line + text[m.end():], encoding="utf-8")
     return "added"
 
 
@@ -65,7 +66,7 @@ def main() -> int:
             if SKIP_PARTS & set(path.relative_to(folder).parts):
                 continue
             result = add_refresh(path, dry_run)
-            added += result == "added"
+            added += result in ("added", "would add")
             print(f"{result:30} {path}")
     print(f"{'would add' if dry_run else 'added'}: {added}")
     return 0
