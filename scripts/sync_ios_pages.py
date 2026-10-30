@@ -9,7 +9,9 @@ plus the transitive closure of the relative assets it references -- never the
 whole repo, since some of these are full Xcode projects.
 
 The pages already declare https://jackwallner.com/ios/<slug>/ as their canonical
-URL, so nothing is rewritten here; the copy is byte-identical to the source.
+URL, so the copy is byte-identical to the source with one exception: the
+github.io-only meta refresh (see scripts/github_io_redirects.py) is stripped,
+since on jackwallner.com it would point the page at itself.
 
 Run locally with `python3 scripts/sync_ios_pages.py`; CI runs the same file.
 """
@@ -83,6 +85,10 @@ SRCSET_RE = re.compile(r'srcset="([^"]+)"')
 SKIP_SCHEMES = ("http://", "https://", "//", "mailto:", "tel:", "data:", "#")
 # `content="..."` is mostly meta-tag prose, so only values that look like a file
 # with one of these extensions are treated as an asset to copy.
+# The redirect github_io_redirects.py adds to github.io pages. It sends crawlers
+# to the canonical copy, so the mirror must drop it or the page reloads forever.
+REFRESH_RE = re.compile(
+    r'[ \t]*<meta http-equiv="refresh" content="0; url=https://jackwallner\.com/[^"]*">\n?')
 ASSET_EXT = (".html", ".css", ".js", ".png", ".jpg", ".jpeg", ".gif", ".svg",
              ".webp", ".ico", ".webmanifest", ".json", ".mp4", ".xml", ".txt")
 
@@ -142,6 +148,8 @@ def copy_closure(src: Path, dest: Path, extra: list[str]) -> int:
         copied += 1
         if rel.endswith(".html"):
             text = source.read_text(encoding="utf-8", errors="replace")
+            if REFRESH_RE.search(text):
+                target.write_text(REFRESH_RE.sub("", text), encoding="utf-8")
             pending.extend(referenced(text, posixpath.dirname(rel)))
             if (src / f"{rel}.md").is_file():
                 pending.append(f"{rel}.md")
