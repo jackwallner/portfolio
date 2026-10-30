@@ -320,10 +320,9 @@ def head(title, desc, prefix="", canonical=None, jsonld=None):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{e(title)}</title>
     <meta name="description" content="{e(desc)}">{canon}{social}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{prefix}home.css?v=9">
+    <link rel="preload" href="/assets/fonts/ibm-plex-mono-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/ibm-plex-mono-600.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="{prefix}home.css?v=10">
     <link rel="icon" type="image/x-icon" href="{prefix}favicon.ico">{ld}
 </head>
 <body>"""
