@@ -46,5 +46,24 @@ jobs:
           # The push itself triggers pages-build-deployment, even from
           # GITHUB_TOKEN. Requesting a build explicitly on top of that just
           # races the automatic one and leaves a spurious failed build.
-          git push
-          echo "changed=true" >> "$GITHUB_OUTPUT"
+          # App repos push their own mirrors here all the time. If one lands
+          # first, start over from it: re-mirroring is cheaper than resolving
+          # a rebase conflict in a file both sides rewrote.
+          for attempt in 1 2 3 4 5; do
+            if git push; then
+              echo "changed=true" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            echo "Push rejected, re-mirroring on top of origin (attempt $attempt)."
+            git fetch --quiet origin main
+            git reset --quiet --hard origin/main
+            python3 scripts/sync_ios_pages.py
+            git add docs/ios
+            if git diff --cached --quiet; then
+              echo "changed=false" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            git commit -m "chore: sync iOS landing pages"
+          done
+          echo "Could not push after 5 attempts." >&2
+          exit 1
