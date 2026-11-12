@@ -11,8 +11,9 @@ whole repo, since some of these are full Xcode projects.
 The pages already declare https://jackwallner.com/ios/<slug>/ as their canonical
 URL, so the copy is byte-identical to the source with two exceptions: the
 github.io-only meta refresh (see scripts/github_io_redirects.py) is stripped,
-since on jackwallner.com it would point the page at itself, and privacy, terms,
-support and other legal pages get a noindex robots tag (see LEGAL_RE).
+since on jackwallner.com it would point the page at itself, href="index.html"
+becomes href="./", and privacy, terms, support and other legal pages get a
+noindex robots tag (see LEGAL_RE).
 
 Run locally with `python3 scripts/sync_ios_pages.py`; CI runs the same file.
 """
@@ -97,6 +98,7 @@ LEGAL_RE = re.compile(
     r"(^|/)(privacy|terms|support|community|consumer-health|join|delete-account)[^/]*\.html$")
 ROBOTS_RE = re.compile(r'<meta\s+name="robots"[^>]*>')
 NOINDEX = '<meta name="robots" content="noindex, follow">'
+INDEX_LINK_RE = re.compile(r'href="(?:\./)?index\.html"')
 ASSET_EXT = (".html", ".css", ".js", ".png", ".jpg", ".jpeg", ".gif", ".svg",
              ".webp", ".ico", ".webmanifest", ".json", ".mp4", ".xml", ".txt")
 
@@ -131,8 +133,12 @@ def referenced(html: str, base: str = "") -> set[str]:
 
 
 def mirror_html(rel: str, text: str) -> str:
-    """The mirrored copy of a page: no github.io refresh, legal pages noindexed."""
+    """The mirrored copy of a page: no github.io refresh, links to the app page
+    as ./ rather than index.html, legal pages noindexed."""
     text = REFRESH_RE.sub("", text)
+    # "index.html" links made Google crawl /ios/<app>/index.html as a duplicate
+    # of /ios/<app>/ (27 "Alternate page with proper canonical tag", 2026-11-12).
+    text = INDEX_LINK_RE.sub('href="./"', text)
     if not LEGAL_RE.search(rel):
         return text
     robots = ROBOTS_RE.search(text)
