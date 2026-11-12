@@ -139,7 +139,7 @@
 - [Next Cue: ADHD Routine Planner](https://jackwallner.com/ios/adhd/index.html.md): Daily routines shown one step at a time, with a saved place to pick up again after an interruption. (Pre-release)
   - [How to Start a Task When You Have ADHD: 7 Techniques](https://jackwallner.com/ios/adhd/how-to-start-a-task-with-adhd.html.md): How to start a task when you have ADHD: seven practical task initiation techniques, from smallest starts to if-then plans, citing NIMH, CDC and CHADD.
 - [Vehicle Maintenance Log & MPG](https://jackwallner.com/ios/vehicle-maintenance-log/index.html.md): A shared maintenance log for every vehicle in the family, from cars to boats, that knows what is due by miles, hours or months, works out mpg from your fill-ups, and builds a service record worth handing to the next owner. (App Store)
-  - [Best Car Maintenance Tracker App for iPhone: 5 Compared](https://jackwallner.com/ios/vehicle-maintenance-log/best-car-maintenance-app.html.md): Five iPhone car maintenance tracker apps compared: service reminders, mpg, recalls and sharing a garage with family. Ratings as of October 2026.
+  - [Best Car Maintenance Tracker App for iPhone: 5 Compared](https://jackwallner.com/ios/vehicle-maintenance-log/best-car-maintenance-app.html.md): Five iPhone car maintenance tracker apps compared: service reminders, mpg, recalls and sharing a garage with family. Ratings as of November 2026.
 
 ## Play
 
