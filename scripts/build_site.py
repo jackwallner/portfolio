@@ -688,7 +688,7 @@ def last_modified(path):
     return out.strip() or date.today().isoformat()
 
 
-LEGAL_PAGE = re.compile(r"(privacy|terms|support|community|consumer-health|join)[^/]*\.html$")
+LEGAL_PAGE = re.compile(r"(privacy|terms|support|community|consumer-health|join|delete-account)[^/]*\.html$")
 
 
 def indexable(path):
