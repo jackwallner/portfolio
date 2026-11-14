@@ -42,6 +42,7 @@ APPS = {
     "posture": ("posture", "docs"),
     "bridge": ("bridge", "docs"),
     "mahj": ("mahj", "docs"),
+    "ravel": ("knit", "docs"),
     "cribbage": ("cribbage", "docs"),
     "sheepshead": ("sheepshead", "docs"),
     "skat": ("skat", "docs"),

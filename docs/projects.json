@@ -303,6 +303,25 @@
     "appStore": "https://apps.apple.com/us/app/hockey-edge-puck-statscout/id6820644691?uo=4"
   },
   {
+    "slug": "ravel",
+    "repo": "knit",
+    "name": "Ravel: Knitting Patterns",
+    "icon": "ravel-icon.png",
+    "group": "ios",
+    "type": "iOS App",
+    "status": "Pre-release",
+    "cls": "soon",
+    "page": "ios/ravel/",
+    "appStore": null,
+    "appStoreId": "6834244566",
+    "github": "https://github.com/jackwallner/knit",
+    "tech": "Swift 6 · SwiftUI · SwiftData · PDFKit · RevenueCat",
+    "desc": "A knitting row counter drawn as growing fabric, your own PDF patterns with your place marked, a yarn stash, and patterns written to your size.",
+    "start": "2026-11-12",
+    "updated": "2026-11-14",
+    "category": "Play"
+  },
+  {
     "slug": "deepcuts",
     "repo": "deepcuts",
     "name": "Deep Cuts: Music Trivia",
