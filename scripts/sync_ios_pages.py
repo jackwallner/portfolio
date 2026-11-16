@@ -26,6 +26,8 @@ import sys
 import tempfile
 from pathlib import Path
 
+import store_clicks
+
 # slug -> (repo, path inside the repo holding index.html[, folder under docs/])
 # The slug is the public URL segment: https://jackwallner.com/ios/<slug>/, or
 # https://jackwallner.com/<folder>/ when a folder is given (non-iOS projects).
@@ -140,6 +142,7 @@ def mirror_html(rel: str, text: str) -> str:
     # "index.html" links made Google crawl /ios/<app>/index.html as a duplicate
     # of /ios/<app>/ (27 "Alternate page with proper canonical tag", 2026-11-12).
     text = INDEX_LINK_RE.sub('href="./"', text)
+    text = store_clicks.tag(text)
     if not LEGAL_RE.search(rel):
         return text
     robots = ROBOTS_RE.search(text)

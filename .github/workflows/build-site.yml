@@ -44,6 +44,8 @@ jobs:
             python3 scripts/build_site.py
             git add docs/projects.json docs/index.html docs/ios/index.html docs/guides/index.html docs/assets/github-contributions.svg \
               docs/sitemap.xml docs/robots.txt docs/llms.txt
+            # Pages that just got the App Store tap counter (scripts/store_clicks.py).
+            git add -u docs
             if git diff --cached --quiet; then
               echo "Index pages already up to date."
               exit 0

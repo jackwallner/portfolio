@@ -25,6 +25,8 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.request import Request, urlopen
 
+from store_clicks import tag_tree
+
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
 DATA = DOCS / "projects.json"
@@ -838,6 +840,9 @@ def main():
     (DOCS / "sitemap.xml").write_text(build_sitemap(projects))
     (DOCS / "robots.txt").write_text(build_robots())
     (DOCS / "llms.txt").write_text(build_llms(projects))
+    tagged = tag_tree(DOCS)
+    if tagged:
+        print(f"added the App Store tap counter to {tagged} pages")
     shipped = sum(1 for project in projects if project.get("appStore"))
     print(f"built index pages from {len(projects)} projects, {shipped} on the App Store "
           f"({date.today().isoformat()})")
