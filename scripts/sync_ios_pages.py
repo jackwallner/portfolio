@@ -15,6 +15,10 @@ since on jackwallner.com it would point the page at itself, href="index.html"
 becomes href="./", and privacy, terms, support and other legal pages get a
 noindex robots tag (see LEGAL_RE).
 
+After each mirror, build_changelogs.render() rewrites the app's changelog.html
+from data/changelogs.json and adds its footer link, since the mirror replaces
+the whole folder and the app repos do not carry the changelog.
+
 Run locally with `python3 scripts/sync_ios_pages.py`; CI runs the same file.
 """
 
@@ -26,6 +30,7 @@ import sys
 import tempfile
 from pathlib import Path
 
+import build_changelogs
 import store_clicks
 
 # slug -> (repo, path inside the repo holding index.html[, folder under docs/])
@@ -211,6 +216,8 @@ def main() -> int:
                 shutil.rmtree(dest)
             dest.mkdir(parents=True)
             n = copy_closure(src, dest, EXTRA_ENTRIES.get(slug, []))
+            if not folder and build_changelogs.render(slug):
+                n += 2
             print(f"{slug:16} <- {repo}/{sub}  ({n} files)")
     return 0
 

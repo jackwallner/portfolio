@@ -25,6 +25,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.request import Request, urlopen
 
+import build_changelogs
 from store_clicks import tag_tree
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -744,9 +745,17 @@ def build_sitemap(projects):
                 prio = 0.3 if LEGAL_PAGE.search(rel) else 0.7
             pages.append((path, prio))
     file = lambda path: DOCS / (path + 'index.html' if path.endswith('/') or not path else path)
+    releases = build_changelogs.load()
+
+    def lastmod(path):
+        # A changelog changes when the app ships, so its newest release dates it.
+        m = re.fullmatch(rf"ios/([^/]+)/{re.escape(build_changelogs.PAGE)}", path)
+        released = m and build_changelogs.latest_date(m.group(1), releases)
+        return released or last_modified(file(path))
+
     rows = "\n".join(
         f"  <url><loc>{SITE}{path}</loc>"
-        f"<lastmod>{last_modified(file(path))}</lastmod>"
+        f"<lastmod>{lastmod(path)}</lastmod>"
         f"<priority>{prio}</priority>{alternates(file(path))}</url>"
         for path, prio in pages
     )
@@ -770,8 +779,8 @@ def guides(p):
     out = []
     for f in sorted(root.rglob("*.html")):
         rel = f.relative_to(DOCS).as_posix()
-        if (f.parent == root and f.name == "index.html" or LEGAL_PAGE.search(rel) or not indexable(f)
-                or not original(f)):
+        if (f.parent == root and f.name in ("index.html", build_changelogs.PAGE)
+                or LEGAL_PAGE.search(rel) or not indexable(f) or not original(f)):
             continue
         h = f.read_text(encoding="utf-8", errors="replace")
         t = re.search(r"<title[^>]*>(.*?)</title>", h, re.S)
@@ -837,6 +846,8 @@ def main():
     (DOCS / "ios" / "index.html").write_text(build_ios(projects))
     (DOCS / "guides").mkdir(exist_ok=True)
     (DOCS / "guides" / "index.html").write_text(build_guides(projects))
+    pages = build_changelogs.refresh(projects)
+    print(f"wrote {pages} changelog pages")
     (DOCS / "sitemap.xml").write_text(build_sitemap(projects))
     (DOCS / "robots.txt").write_text(build_robots())
     (DOCS / "llms.txt").write_text(build_llms(projects))

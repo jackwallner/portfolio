@@ -47,3 +47,13 @@ pushed without the generated pages.
 
 `docs/ios/<slug>/` is mirrored from each app's own repo by
 `scripts/sync_ios_pages.py`, not edited here. See the header of that file.
+
+## Changelog pages
+
+`docs/ios/<slug>/changelog.html` lists every live version of each App Store app
+with its release date and What's New text. `scripts/build_changelogs.py` writes
+them from `data/changelogs.json`, using the app page's own head, nav and footer,
+and adds a Changelog link to that page's footer. The daily `build-site` run picks
+up new releases from Apple's public lookup API and App Store listing (no
+credentials), and the mirror sync re-renders an app's changelog whenever its page
+is refreshed. The sitemap dates each changelog by its newest release.

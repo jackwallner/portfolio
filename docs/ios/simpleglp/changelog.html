@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="256x256" href="icon_256.png">
+    <link rel="apple-touch-icon" href="icon_256.png">
+    <meta name="apple-itunes-app" content="app-id=6770137909">
+    <title>Simple GLP Changelog: Every Update and Release Date</title>
+    <meta name="description" content="Every Simple GLP update, newest first. Version 1.2.6 was released November 13, 2026.">
+    <link rel="canonical" href="https://jackwallner.com/ios/simpleglp/changelog.html">
+    <script>if(location.hostname==="jackwallner.github.io"){var c=document.querySelector('link[rel="canonical"]');if(c&&c.href.indexOf("https://jackwallner.com/")===0)location.replace(c.href)}</script>
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="keywords" content="GLP-1 tracker, dose tracker, shot tracker, pill tracker, semaglutide, tirzepatide, Ozempic, Wegovy, Mounjaro, Zepbound, iPhone, Apple Watch, HealthKit">
+    <meta property="og:title" content="Simple GLP Changelog: Every Update and Release Date">
+    <meta property="og:description" content="Every Simple GLP update, newest first. Version 1.2.6 was released November 13, 2026.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jackwallner.com/ios/simpleglp/changelog.html">
+    <meta property="og:image" content="https://jackwallner.github.io/simpleglp/og-preview.png">
+    <meta property="og:site_name" content="Jack Wallner">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Simple GLP Changelog: Every Update and Release Date">
+    <meta name="twitter:description" content="Every Simple GLP update, newest first. Version 1.2.6 was released November 13, 2026.">
+    <meta name="twitter:image" content="https://jackwallner.github.io/simpleglp/screenshot-1-onetap.png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+            color: #1a1a1a;
+            background: #faf8f4;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .container { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+        nav {
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            background: rgba(250,248,244,0.86);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        nav .container { display: flex; align-items: center; justify-content: space-between; }
+        .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #1a1a1a; }
+        .nav-brand img { width: 32px; height: 32px; border-radius: 7px; }
+        .nav-brand span { font-size: 15px; font-weight: 600; }
+        .nav-link {
+            font-size: 14px;
+            text-decoration: none;
+            background: #1a1a1a;
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 980px;
+            font-weight: 500;
+        }
+        .hero { text-align: center; padding: 100px 24px 72px; }
+        .hero img { width: 96px; height: 96px; border-radius: 22px; margin-bottom: 28px; box-shadow: 0 16px 42px rgba(21, 122, 73, 0.18); }
+        .hero h1 { font-size: 54px; font-weight: 730; letter-spacing: -1.7px; line-height: 1.06; margin-bottom: 16px; }
+        .hero h1 span {
+            color: #29a060;
+        }
+        .hero .tagline { font-size: 19px; color: #666; line-height: 1.5; max-width: 520px; margin: 0 auto 12px; }
+        .hero .platforms { font-size: 13px; color: #757069; letter-spacing: 0.3px; margin-bottom: 34px; }
+        .download-btn {
+            display: inline-block;
+            background: #1a1a1a;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 14px 34px;
+            border-radius: 980px;
+            text-decoration: none;
+        }
+        .showcase { padding: 0 0 80px; }
+        .showcase-scroll {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding: 0 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+            scrollbar-width: none;
+        }
+        .showcase-scroll::-webkit-scrollbar { display: none; }
+        .showcase-card {
+            flex-shrink: 0;
+            scroll-snap-align: center;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(21,122,73,0.08), 0 16px 48px rgba(21,122,73,0.12);
+        }
+        .showcase-card img { width: auto; height: 540px; display: block; }
+        .features {
+            padding: 80px 0;
+            background: #fff;
+            border-top: 1px solid rgba(0,0,0,0.06);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        .features-header { text-align: center; margin-bottom: 56px; }
+        .features-header h2 { font-size: 36px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
+        .features-header p { font-size: 17px; color: #6e6e73; }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: rgba(0,0,0,0.06);
+            border-top: 1px solid rgba(0,0,0,0.06);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        .feature-card { background: #fff; padding: 36px 32px; }
+        .feature-card h3 { font-size: 20px; font-weight: 600; letter-spacing: -0.2px; margin-bottom: 8px; }
+        .feature-card p { font-size: 14px; color: #6e6e73; line-height: 1.55; }
+        .privacy { padding: 80px 0; }
+        .privacy .container { max-width: 650px; text-align: center; }
+        .privacy .lockup {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(47,184,111,0.11);
+            margin-bottom: 20px;
+        }
+        .privacy .lockup svg { width: 22px; height: 22px; fill: none; stroke: #157a49; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+        .privacy h2, .more-info-header h2, .cta h2 { font-size: 32px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 12px; }
+        .privacy p { font-size: 17px; color: #6e6e73; line-height: 1.6; margin-bottom: 20px; }
+        .privacy a, footer a { display: inline-block; padding: 6px 0; color: #157a49; text-decoration: none; font-weight: 500; }
+        .more-info { padding: 64px 24px; background: #fff; border-top: 1px solid rgba(0,0,0,0.06); }
+        .more-info-header { text-align: center; margin-bottom: 48px; }
+        .more-info-header p { font-size: 17px; color: #6e6e73; }
+        .more-info-content { max-width: 720px; margin: 0 auto; }
+        .more-info-section { margin-bottom: 40px; }
+        .more-info-section h3 { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: #757069; margin-bottom: 12px; }
+        .more-info-section p { font-size: 15px; line-height: 1.6; color: #1a1a1a; margin-bottom: 12px; }
+        .more-info-section p:last-child { margin-bottom: 0; }
+        .more-info-section strong { font-weight: 600; }
+        .specs-table { width: 100%; font-size: 14px; border-collapse: collapse; margin-top: 16px; }
+        .specs-table td { padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+        .specs-table td:first-child { color: #757069; width: 140px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .cta { text-align: center; padding: 64px 24px 80px; background: #fff; border-top: 1px solid rgba(0,0,0,0.06); }
+        .cta p { font-size: 15px; color: #6e6e73; margin-bottom: 28px; }
+        footer { text-align: center; padding: 20px 24px; font-size: 12px; color: #757069; }
+        footer a { margin: 0 10px; color: #757069; }
+        @media (max-width: 768px) {
+            .hero { padding: 72px 20px 48px; }
+            .hero h1 { font-size: 36px; letter-spacing: -1px; }
+            .hero .tagline { font-size: 17px; }
+            .showcase-card img { height: 400px; }
+            .features-grid { grid-template-columns: 1fr; }
+            .features-header h2, .privacy h2, .more-info-header h2, .cta h2 { font-size: 28px; }
+        }
+        @media (max-width: 480px) {
+            .showcase-card img { height: 360px; }
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 64px 24px;
+            background: #fafafa;
+            border-top: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .faq-content {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-top: 1px solid rgba(0,0,0,0.08);
+            padding: 18px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .faq-item summary {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.4;
+            cursor: pointer;
+            color: #1d1d1f;
+        }
+
+        .faq-item p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #6e6e73;
+            margin-top: 10px;
+        }
+        .feature-card .tier {
+            margin-top: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a864d;
+        }
+            summary > h2.faq-q { display: inline; margin: 0; font: inherit; letter-spacing: inherit; color: inherit; }
+</style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Simple GLP Changelog: Every Update and Release Date",
+  "url": "https://jackwallner.com/ios/simpleglp/changelog.html",
+  "dateModified": "2026-11-13",
+  "about": {
+    "@type": "MobileApplication",
+    "name": "Simple GLP: GLP-1 Dose Tracker",
+    "url": "https://jackwallner.com/ios/simpleglp/",
+    "operatingSystem": "iOS",
+    "softwareVersion": "1.2.6",
+    "installUrl": "https://apps.apple.com/us/app/simple-glp-glp-1-dose-tracker/id6770137909?uo=4"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Simple GLP",
+        "item": "https://jackwallner.com/ios/simpleglp/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Changelog",
+        "item": "https://jackwallner.com/ios/simpleglp/changelog.html"
+      }
+    ]
+  }
+}
+    </script>
+    <style>
+      .changelog { max-width: 720px; margin: 0 auto; padding: 48px 24px 24px; text-align: left; }
+      .changelog h1 { margin: 0 0 32px; }
+      .changelog .release { padding: 24px 0; border-top: 1px solid rgba(127, 127, 127, 0.25); }
+      .changelog .release h2 { margin: 0; font-size: 1.15em; }
+      .changelog .release time { display: block; margin: 4px 0 12px; opacity: 0.7; font-size: 0.9em; }
+      .changelog .release p, .changelog .release ul { margin: 0 0 10px; line-height: 1.55; }
+      .changelog .release ul { padding-left: 20px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a class="nav-brand" href="./" aria-label="Simple GLP">
+                <img src="icon_64.webp" alt="" width="32" height="32">
+                <span>Simple GLP</span>
+            </a>
+            <a class="nav-link" href="https://apps.apple.com/us/app/simple-glp-glp-1-dose-tracker/id6770137909?pt=128748779&amp;ct=jw-simpleglp-home&amp;mt=8">Download</a>
+        </div>
+    </nav>
+
+    <main class="changelog">
+      <h1>Simple GLP changelog</h1>
+      <article class="release" id="v1.2.6">
+        <h2>Version 1.2.6</h2>
+        <time datetime="2026-11-13">November 13, 2026</time>
+        <p>Now on iPad, with a layout designed for the larger screen.</p>
+      </article>
+      <article class="release" id="v1.2.5">
+        <h2>Version 1.2.5</h2>
+        <time datetime="2026-11-09">November 9, 2026</time>
+        <p>You can now change the app&#x27;s language from Settings. This update also includes fixes and improvements.</p>
+      </article>
+      <article class="release" id="v1.2.4">
+        <h2>Version 1.2.4</h2>
+        <time datetime="2026-11-01">November 1, 2026</time>
+        <p>A first dose dated before setup no longer shows as overdue. Late weekly shots, dose steps and refill heads-ups are more accurate, streaks hold across daylight saving, and translated prices and units read correctly.</p>
+      </article>
+      <article class="release" id="v1.2.3">
+        <h2>Version 1.2.3</h2>
+        <time datetime="2026-10-26">October 26, 2026</time>
+        <p>Behind-the-scenes improvements and fixes to keep Simple GLP running smoothly. Thank you for being here.</p>
+      </article>
+      <article class="release" id="v1.2.2">
+        <h2>Version 1.2.2</h2>
+        <time datetime="2026-10-19">October 19, 2026</time>
+        <p>Behind-the-scenes improvements and fixes to keep Simple GLP running smoothly. Thank you for being here.</p>
+      </article>
+      <article class="release" id="v1.2.1">
+        <h2>Version 1.2.1</h2>
+        <time datetime="2026-10-01">October 1, 2026</time>
+        <ul>
+          <li>Log without opening the app: tap “Took it” on a reminder, or tell Siri “Log my dose in Simple GLP”.</li>
+          <li>Took it earlier? Log the real time and your pill wait counts from then. Tap a day in the week strip or the new History calendar to fill in a missed log.</li>
+          <li>New Lock Screen widget: your next shot, today’s pill, or when your wait ends.</li>
+          <li>Fixes for edited dose times, shots taken early, and the details sheet.</li>
+        </ul>
+      </article>
+      <article class="release" id="v1.2.0">
+        <h2>Version 1.2.0</h2>
+        <time datetime="2026-09-26">September 26, 2026</time>
+        <p>New: daily GLP-1 pills. Pick Wegovy pill, Rybelsus, Foundayo, or your own, and one tap logs today&#x27;s pill and starts your wait timer on Home, the widget, and Apple Watch.</p>
+        <ul>
+          <li>Daily reminders skip days you&#x27;ve already logged, plus a streak and week view.</li>
+          <li>Pro adds a Lock Screen and Dynamic Island countdown and supply tracking with refill reminders.</li>
+          <li>Editing your plan now keeps your saved dose and wait time.</li>
+        </ul>
+      </article>
+      <article class="release" id="v1.1.1">
+        <h2>Version 1.1.1</h2>
+        <time datetime="2026-09-21">September 21, 2026</time>
+        <ul>
+          <li>History now lists months in date order.</li>
+          <li>You&#x27;ll see a message if a shot can&#x27;t be deleted, instead of it quietly coming back.</li>
+          <li>Your shot history is kept safe if the app&#x27;s data file is ever damaged.</li>
+        </ul>
+      </article>
+      <article class="release" id="v1.1.0">
+        <h2>Version 1.1.0</h2>
+        <time datetime="2026-08-17">August 17, 2026</time>
+        <p>This update refreshes the App Store listing with clearer subscription and pricing details. The app itself works exactly as before: one private tap to log your weekly shot, free, with no account required.</p>
+      </article>
+      <article class="release" id="v1.0.7">
+        <h2>Version 1.0.7</h2>
+        <time datetime="2026-08-03">August 3, 2026</time>
+        <p>This update refreshes the App Store listing with clearer subscription and pricing details. The app itself works exactly as before: one private tap to log your weekly shot, free, with no account required.</p>
+      </article>
+      <article class="release" id="v1.0.6">
+        <h2>Version 1.0.6</h2>
+        <time datetime="2026-07-31">July 31, 2026</time>
+        <p>This update refreshes the App Store listing with clearer subscription and pricing details. The app itself works exactly as before: one private tap to log your weekly shot, free, with no account required.</p>
+      </article>
+      <article class="release" id="v1.0.5">
+        <h2>Version 1.0.5</h2>
+        <time datetime="2026-07-11">July 11, 2026</time>
+        <p>Bug fixes and performance improvements.</p>
+      </article>
+      <article class="release" id="v1.0.4">
+        <h2>Version 1.0.4</h2>
+        <time datetime="2026-07-04">July 4, 2026</time>
+        <p>This update makes logging faster and leaner, and sharpens the app around what matters most: one private tap to record your weekly shot. Core logging is free, with no account required.</p>
+      </article>
+      <article class="release" id="v1.0.3">
+        <h2>Version 1.0.3</h2>
+        <time datetime="2026-06-30">June 30, 2026</time>
+        <p>Bug fixes and performance improvements to keep your shot log reliable.</p>
+      </article>
+      <article class="release" id="v1.0.1">
+        <h2>Version 1.0.1</h2>
+        <time datetime="2026-06-24">June 24, 2026</time>
+        <p>Initial release. Log your weekly GLP-1 shot in one tap, from your iPhone, Apple Watch, or Home Screen widget. Private and on-device.</p>
+      </article>
+      <article class="release" id="v1.0.0">
+        <h2>Version 1.0.0</h2>
+        <time datetime="2026-06-13">June 13, 2026</time>
+        <p>First release on the App Store.</p>
+      </article>
+    </main>
+
+    <footer>
+        <div>&copy; 2026 Jack Wallner · Last updated <time datetime="2026-11-13" data-updated>November 13, 2026</time></div>
+        <div>
+            <a href="glp-1-injection-site-rotation.html">Injection site rotation guide</a>
+            <a href="best-glp-1-tracker-app.html">Best GLP-1 tracker app</a>
+            <a href="free-glp-1-tracker-no-account.html">Free GLP-1 tracker with no account</a>
+            <a href="weekly-glp-1-shot-reminder-app.html">Weekly shot reminder</a>
+            <a href="zepbound-mounjaro-dose-tracker-app.html">Zepbound and Mounjaro</a>
+            <a href="ozempic-wegovy-shot-tracker-app.html">Ozempic and Wegovy</a>
+            <a href="wegovy-pill-rybelsus-dose-log-app.html">Wegovy pill and Rybelsus</a>
+            <a href="glp-1-pill-wait-timer-app.html">Pill wait timer</a>
+            <a href="log-glp-1-dose-apple-watch-widget.html">Log from Apple Watch or a widget</a>
+            <a href="support.html">Support</a>
+            <a href="changelog.html">Changelog</a>
+            <a href="privacy-policy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="https://jackwallner.com/ios/">More apps by Jack Wallner</a>
+        </div>
+        <div class="related-apps">Also by Jack: <a href="https://jackwallner.com/ios/vitals/">Total Calories</a> <a href="https://jackwallner.com/ios/headaches/">Migraine Headache Tracker Log</a></div>
+    </footer>
+<script src="/clicks.js" defer></script>
+</body>
+</html>

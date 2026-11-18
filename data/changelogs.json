@@ -1,0 +1,1642 @@
+{
+  "baby": [
+    {
+      "date": "2026-11-16",
+      "notes": "New: a Pump button, and buttons you name yourself. Add them in Settings.",
+      "version": "1.4.5"
+    },
+    {
+      "date": "2026-11-14",
+      "notes": "Now on iPad. Fixes a crash that could stop the app from opening.",
+      "version": "1.4.4"
+    },
+    {
+      "date": "2026-11-09",
+      "notes": "Easier-to-tap buttons, clearer text, and fixes for VoiceOver and translated screens.",
+      "version": "1.4.3"
+    },
+    {
+      "date": "2026-11-06",
+      "notes": "Baby Tracker is now available in German, Spanish, Italian and Portuguese.",
+      "version": "1.4.2"
+    },
+    {
+      "date": "2026-11-04",
+      "notes": "Fixes a crash on Apple Watch, a crash when joining a shared log from an invite link, and a crash when tapping a reminder.",
+      "version": "1.4.1"
+    },
+    {
+      "date": "2026-10-23",
+      "notes": "New: the All button logs a feed, a pee and a poop in one tap, and Settings > Feed types lets you choose breast, bottle or both. Feed reminders: pick a gap from 2 to 4 hours and get a nudge with the side to start on. History now shows Today and Yesterday at the top, one tap from that day's log, and Baby+ adds a chart you can drag through to see any day. Widget taps now reach your partner's phone right away. Plus a short optional setup question, and a note the evening before a checkup that your doctor summary is ready.",
+      "version": "1.4"
+    },
+    {
+      "date": "2026-10-11",
+      "notes": "New Apple Watch app with complications: log a feed, diaper or sleep from your watch face in one tap, with Undo on the wrist. A compact bottom bar for Log, History, Reports and Settings. Preview the pediatrician report before you share it, and reports now leave out partial days.",
+      "version": "1.3"
+    },
+    {
+      "date": "2026-10-01",
+      "notes": "More reliable widget logging, clearer tap confirmations, and improved Undo.",
+      "version": "1.2"
+    },
+    {
+      "date": "2026-09-29",
+      "notes": "New: Feed is one tap, and the side is optional. Logging late? Wind the time back above the buttons, or add older entries from the bottom of the main screen. New Feed, Pee and Poop widgets log with one tap from the Home Screen or Lock Screen, with Undo right on the widget. Totals can start at the hour your day does, or cover the last 24 hours.",
+      "version": "1.1"
+    },
+    {
+      "date": "2026-09-25",
+      "notes": "",
+      "version": "1.0"
+    }
+  ],
+  "babydocs": [
+    {
+      "date": "2026-11-17",
+      "notes": "Now on iPad, with a layout designed for the larger screen.",
+      "version": "1.1.4"
+    },
+    {
+      "date": "2026-11-02",
+      "notes": "Small fixes and refinements.",
+      "version": "1.1.3"
+    },
+    {
+      "date": "2026-10-26",
+      "notes": "Behind-the-scenes improvements and fixes to keep Baby Docs running smoothly. Thank you for being here.",
+      "version": "1.1.2"
+    },
+    {
+      "date": "2026-10-13",
+      "notes": "Small reliability improvements behind the scenes.",
+      "version": "1.1.1"
+    },
+    {
+      "date": "2026-08-23",
+      "notes": "",
+      "version": "1.0"
+    }
+  ],
+  "baseball": [
+    {
+      "date": "2026-11-17",
+      "notes": "Now on iPad, with a layout designed for the larger screen.",
+      "version": "1.5.7"
+    },
+    {
+      "date": "2026-11-08",
+      "notes": "You can now change the app's language from Settings. This update also includes fixes and improvements.",
+      "version": "1.5.6"
+    },
+    {
+      "date": "2026-10-31",
+      "notes": "If your first launch has no connection, the app now opens to the bundled past seasons instead of stopping, and Restore Purchases stays within reach.",
+      "version": "1.5.5"
+    },
+    {
+      "date": "2026-10-29",
+      "notes": "Now in Spanish, French, Italian, Japanese, Portuguese and Traditional Chinese.\n\nJoining Pro takes you straight back to the player or season you were looking at.",
+      "version": "1.5.4"
+    },
+    {
+      "date": "2026-10-22",
+      "notes": "Share any player's percentile board as an image, right from their profile.\nLeaderboards, search and season switching are much faster, especially for past seasons.\nPostseason leaderboards now show October games correctly.",
+      "version": "1.5.3"
+    },
+    {
+      "date": "2026-10-09",
+      "notes": "Behind-the-scenes improvements and fixes to keep StatScout running smoothly. Thank you for being here.",
+      "version": "1.5.2"
+    },
+    {
+      "date": "2026-09-21",
+      "notes": "Bug fixes and performance improvements.",
+      "version": "1.5.1"
+    },
+    {
+      "date": "2026-09-19",
+      "notes": "StatScout now follows the season into the playoffs.\n\nEvery board can be switched between Regular Season and Postseason from the season menu, on the Stats screen and on any team page. Postseason boards carry playoff standard lines and playoff game logs: who is producing in October, not who did it in June.\n\nThe postseason option sits in the season menu and becomes selectable as soon as the first playoff game is played, so there is nothing to turn on.\n\nNote that Statcast percentile rankings remain regular-season figures, matching Baseball Savant, which does not publish postseason percentiles.",
+      "version": "1.5.0"
+    },
+    {
+      "date": "2026-08-14",
+      "notes": "Clearer upgrade screen: every plan now shows what it comes to per month, and the yearly plan states how much it saves.\n\nFixed the Rate StatScout link, which opened the wrong App Store page.",
+      "version": "1.4.3"
+    },
+    {
+      "date": "2026-08-02",
+      "notes": "New in StatScout:\n• Trends ranks who’s heating up or cooling off over 7, 15, and 30 days.\n• Compare any two players or seasons side by side.\n• Sort advanced and traditional stats across every club.\n• More accurate rankings, two-way player lines, and fielding qualifiers.",
+      "version": "1.4.2"
+    },
+    {
+      "date": "2026-07-30",
+      "notes": "New in StatScout:\n• Trends ranks who’s heating up or cooling off over 7, 15, and 30 days.\n• Compare any two players or seasons side by side.\n• Sort advanced and traditional stats across every club.\n• More accurate rankings, two-way player lines, and fielding qualifiers.",
+      "version": "1.4.1"
+    },
+    {
+      "date": "2026-07-29",
+      "notes": "New in StatScout:\n• Trends ranks who’s heating up or cooling off over 7, 15, and 30 days.\n• Compare any two players or seasons side by side.\n• Sort advanced and traditional stats across every club.\n• More accurate rankings, two-way player lines, and fielding qualifiers.",
+      "version": "1.4.0"
+    },
+    {
+      "date": "2026-07-23",
+      "notes": "Bug fixes and performance improvements across stats, compare, and team views.",
+      "version": "1.3.0"
+    },
+    {
+      "date": "2026-06-24",
+      "notes": "Performance and reliability improvements to keep your scouting fast and smooth. Thanks for using StatScout.",
+      "version": "1.2.2"
+    },
+    {
+      "date": "2026-06-09",
+      "notes": "Now includes year-over-year metric tracking: tap the year toggle on any player profile to see how their percentiles shifted season to season. Also includes player comparison mode and historical season loading for Pro subscribers.",
+      "version": "1.2.0"
+    },
+    {
+      "date": "2026-05-26",
+      "notes": "This update makes it easier to read percentiles and compare players at a glance.\n\n- Refined layout and formatting so stat bars and numbers are clearer on every screen.\n- Added comparison views so you can line up players and see how their percentile ranks stack up.",
+      "version": "1.1.0"
+    },
+    {
+      "date": "2026-05-15",
+      "notes": "",
+      "version": "1.0"
+    }
+  ],
+  "bond": [
+    {
+      "date": "2026-11-17",
+      "notes": "Now on iPad, with a layout designed for the larger screen.",
+      "version": "1.0.12"
+    },
+    {
+      "date": "2026-11-07",
+      "notes": "Little Gestures is now available in French, Portuguese, Spanish, Arabic, German, Vietnamese and Russian. Also includes fixes and improvements.",
+      "version": "1.0.10"
+    },
+    {
+      "date": "2026-11-02",
+      "notes": "Behind-the-scenes improvements and fixes to keep Little Gestures running smoothly. Thank you for being here.",
+      "version": "1.0.9"
+    },
+    {
+      "date": "2026-10-27",
+      "notes": "Behind-the-scenes improvements and bug fixes for a smoother experience. Thank you for being here.",
+      "version": "1.0.8"
+    },
+    {
+      "date": "2026-10-01",
+      "notes": "Updated App Store information and subscription diagnostics.",
+      "version": "1.0.7"
+    },
+    {
+      "date": "2026-09-08",
+      "notes": "Updated App Store information and subscription diagnostics.",
+      "version": "1.0.6"
+    },
+    {
+      "date": "2026-08-01",
+      "notes": "Stability improvements and clearer subscription details.",
+      "version": "1.0.5"
+    },
+    {
+      "date": "2026-07-28",
+      "notes": "A faster path from intention to action: start your Bond+ trial during setup, get personalized reminder ideas, and begin showing up for your partner right away.",
+      "version": "1.0.4"
+    },
+    {
+      "date": "2026-07-12",
+      "notes": "Bug fixes and stability improvements to keep Bond running smoothly.",
+      "version": "1.0.3"
+    },
+    {
+      "date": "2026-06-27",
+      "notes": "Stability improvements and polish across reminders, pairing, and settings.",
+      "version": "1.0.2"
+    },
+    {
+      "date": "2026-06-23",
+      "notes": "",
+      "version": "1.0"
+    }
+  ],
+  "bridge": [
+    {
+      "date": "2026-11-09",
+      "notes": "You can now change the app's language from Settings. This update also includes fixes and improvements.",
+      "version": "1.2.8"
+    },
+    {
+      "date": "2026-10-31",
+      "notes": "The Get Started card on Home no longer slides under the toolbar after you skip the intro.",
+      "version": "1.2.7"
+    },
+    {
+      "date": "2026-10-29",
+      "notes": "Now in 10 languages: German, French, Italian, Japanese, Dutch, Danish, Greek, Thai, Turkish and Traditional Chinese.\n\nBidding advice now follows the SAYC booklet more closely, and joining Pro takes you straight back to what you were doing.",
+      "version": "1.2.6"
+    },
+    {
+      "date": "2026-10-22",
+      "notes": "See your progress at a glance.\n\nEvery room on Home now shows a mastery ring. Your Progress names what is holding you back and what to work on next, and Home counts the questions you locked in this week.\n\nAlso new: Send Feedback in Settings, Reduce Motion support, tidier iPad layouts and clearer membership terms.",
+      "version": "1.2.5"
+    },
+    {
+      "date": "2026-10-09",
+      "notes": "Behind-the-scenes improvements and fixes to keep Bridge Trainer running smoothly. Thank you for being here.",
+      "version": "1.2.4"
+    },
+    {
+      "date": "2026-10-07",
+      "notes": "Behind-the-scenes improvements and fixes to keep Bridge Trainer running smoothly. Thank you for being here.",
+      "version": "1.2.3"
+    },
+    {
+      "date": "2026-08-20",
+      "notes": "A smarter rhythm for the table.\n\nBridge Minute is a new daily challenge. Every member gets the same five questions on the same day: two opening calls, one declarer decision, and two defensive judgments. Share your score, and keep a forgiving five-day weekly rhythm with a 30-day archive to catch up from.\n\nGame Night Prep lets you set your usual bridge night. A reminder arrives beforehand and opens straight into a five-minute session built from your due mistakes, your weakest room, and material you have not seen yet.\n\nBridge Trainer now runs natively on iPad, in portrait or landscape.\n\nBridge Minute and Game Night Prep are part of Bridge+.",
+      "version": "1.2.2"
+    },
+    {
+      "date": "2026-08-19",
+      "notes": "A smarter rhythm for the table.\n\nBridge Minute is a new daily challenge. Every member gets the same five questions on the same day: two opening calls, one declarer decision, and two defensive judgments. Share your score, and keep a forgiving five-day weekly rhythm with a 30-day archive to catch up from.\n\nGame Night Prep lets you set your usual bridge night. A reminder arrives beforehand and opens straight into a five-minute session built from your due mistakes, your weakest room, and material you have not seen yet.\n\nBridge Trainer now runs natively on iPad, in portrait or landscape.\n\nBridge Minute and Game Night Prep are part of Bridge+.",
+      "version": "1.2.1"
+    },
+    {
+      "date": "2026-08-14",
+      "notes": "A smarter rhythm for the table.\n\nBridge Minute is a new daily challenge. Every member gets the same five questions on the same day: two opening calls, one declarer decision, and two defensive judgments. Share your score, and keep a forgiving five-day weekly rhythm with a 30-day archive to catch up from.\n\nGame Night Prep lets you set your usual bridge night. A reminder arrives beforehand and opens straight into a five-minute session built from your due mistakes, your weakest room, and material you have not seen yet.\n\nBridge Trainer now runs natively on iPad, in portrait or landscape.\n\nBridge Minute and Game Night Prep are part of Bridge+.",
+      "version": "1.2.0"
+    },
+    {
+      "date": "2026-08-09",
+      "notes": "Practice that never runs out.\n\nEndless Practice deals a fresh hand every time, so you can drill opening bids and point counting for as long as you like, with a full explanation after every answer.\n\nFix My Mistakes now remembers what you got wrong and brings it back on a schedule, so weak spots actually close.\n\nTimed Challenge gives you ninety seconds and a personal best to chase.\n\nAlso new: an accuracy breakdown for every room, and more hand-written questions across the auction, declarer play, defense, and the Master Tables.",
+      "version": "1.1"
+    },
+    {
+      "date": "2026-07-24",
+      "notes": "",
+      "version": "1.0"
+    }
+  ],
+  "cribbage": [
+    {
+      "date": "2026-11-04",
+      "notes": "Behind-the-scenes improvements and fixes to keep Cribbage Trainer running smoothly. Thank you for being here.",
+      "version": "1.3.2"
+    },
+    {
+      "date": "2026-11-01",
+      "notes": "Behind-the-scenes improvements and fixes to keep Cribbage Trainer running smoothly. Thank you for being here.",
+      "version": "1.3.1"
+    },
+    {
+      "date": "2026-10-22",
+      "notes": "Count it, peg it, fix it.\n\nCount the Hand deals endless hands with a starter. Add up fifteens, pairs, runs, flushes and nobs, then see where every point came from.\n\nPegging Points has you play a card onto the pile and score it: fifteen, thirty-one, pairs and runs.\n\nYour Progress now names the skills you miss, and Home counts the questions you locked in this week. Also new: Send Feedback in Settings, Reduce Motion support and clearer membership terms.",
+      "version": "1.3.0"
+    },
+    {
+      "date": "2026-10-09",
+      "notes": "Behind-the-scenes improvements and fixes to keep Cribbage Trainer running smoothly. Thank you for being here.",
+      "version": "1.2.2"
+    },
+    {
+      "date": "2026-08-20",
+      "notes": "A smarter rhythm for cribbage night.\n\nCribbage Minute is a new daily challenge. Every member gets the same five questions on the same day: two hand reads, one discard decision, and two pegging calls. Share your score, and keep a forgiving five-day weekly rhythm with a 30-day archive to catch up from.\n\nGame Night Prep lets you set your usual cribbage night. A reminder arrives beforehand and opens straight into a five-minute session built from your due mistakes, your weakest room, and material you have not seen yet.\n\nCribbage Trainer now runs natively on iPad, in portrait or landscape.\n\nCribbage Minute and Game Night Prep are part of Cribbage+.",
+      "version": "1.2.1"
+    },
+    {
+      "date": "2026-08-14",
+      "notes": "A smarter rhythm for cribbage night.\n\nCribbage Minute is a new daily challenge. Every member gets the same five questions on the same day: two hand reads, one discard decision, and two pegging calls. Share your score, and keep a forgiving five-day weekly rhythm with a 30-day archive to catch up from.\n\nGame Night Prep lets you set your usual cribbage night. A reminder arrives beforehand and opens straight into a five-minute session built from your due mistakes, your weakest room, and material you have not seen yet.\n\nCribbage Trainer now runs natively on iPad, in portrait or landscape.\n\nCribbage Minute and Game Night Prep are part of Cribbage+.",
+      "version": "1.2.0"
+    },
+    {
+      "date": "2026-08-07",
+      "notes": "",
+      "version": "1.0"
+    }
+  ],
+  "dreamcart": [
+    {
+      "date": "2026-10-27",
+      "notes": "Behind-the-scenes improvements and bug fixes for a smoother experience. Thank you for being here.",
+      "version": "1.0.3"
+    },
+    {
+      "date": "2026-09-14",
+      "notes": "DreamCart+ is now available: double your daily coin drop, spin the wheel as often as you like, and start with a 3-day free trial.\n\nEverything else in DreamCart stays free.",
+      "version": "1.0.2"
+    },
+    {
+      "date": "2026-08-24",
+      "notes": "Introducing DreamCart+: double your daily coin drop, and spin the wheel as often as you like. Try it free for 3 days.\n\nEverything else in DreamCart stays free.",
+      "version": "1.0.1"
+    },
+    {
+      "date": "2026-07-23",
+      "notes": "",
+      "version": "1.0"
+    }
+  ],
+  "elderhub": [
+    {
+      "date": "2026-11-09",
+      "notes": "Back Up in Settings now saves your care record to your account, so it's safe if your phone is lost or replaced. Screens also read more clearly at large text sizes.",
+      "version": "1.0.6"
+    },
+    {
+      "date": "2026-11-02",
+      "notes": "Behind-the-scenes improvements and fixes to keep Elderhub running smoothly. Thank you for being here.",
+      "version": "1.0.5"
+    },
+    {
+      "date": "2026-10-27",
+      "notes": "Behind-the-scenes improvements and bug fixes for a smoother experience. Thank you for being here.",
+      "version": "1.0.4"
+    },
+    {
+      "date": "2026-09-21",
+      "notes": "• If a change can't be saved, for example because your iPhone's storage is full, the app now tells you right away instead of losing it quietly.\n• Your records are kept safe if the app's data file is ever damaged.",
+      "version": "1.0.3"
+    },
+    {
+      "date": "2026-09-05",
+      "notes": "The emergency card now says who to call first. The primary contact is badged on the card and marked in the copy you share or print, so whoever is holding it does not have to work it out from the order of the list.\n\nThe card is also complete. Every critical section is drawn even when it is empty, so a section that is blank reads as \"not recorded\" rather than as one that is missing. It prints the date of birth, the same medication detail as the shared one-pager, and when the record was last updated.\n\nCheck-in on the Everyone screen. A check-in that has not been pressed keeps that person on the day's list instead of filing them under \"Nothing due today\", and every person's emergency card is one tap from the screen a two-person phone opens on.\n\nReminders now say when iOS has turned them off. A switch that used to slide back on its own with no explanation tells you the answer is in iOS Settings, and takes you there.\n\nBigger controls, and a way back. The dose button and the check-in button are larger, named for VoiceOver, and follow your text size. Doses, tasks and bills can all be undone from Today.\n\nWhen two phones disagree about a row, the conflicts screen shows both versions before asking which one to keep.\n\nSigning out now clears the shared record from the phone, and a change to who can see whom applies on the next launch rather than waiting for someone to open Sharing.\n\nFixed: something one family member logged no longer reads as \"Logged by You\" on everybody else's screen.\n\nFixed: phone numbers group as you type, and correcting a digit in the middle of one no longer sends the cursor to the end.\n\nFixed: leaving setup with \"Finish later\" keeps the answer you were part-way through typing.",
+      "version": "1.0.2"
+    },
+    {
+      "date": "2026-08-28",
+      "notes": "Everyone's day on one screen. With more than one person in your circle, Today now opens on all of them, so a missed morning dose is visible without switching records.\n\nBills. Track what is owed and what has been paid, with recurring bills and autopay kept out of the overdue list.\n\nAppointments. A visit dated in the future is an appointment, listed on Today for the week ahead with a reminder the evening before.\n\nMedications you can pause. Stop a medication without deleting it, and keep every dose you logged. Weekly and other day-specific schedules are now shown everywhere the medication is.\n\nChoose who sees whom. Limit a family member to particular people in the circle, rather than all of them.\n\nTap a reminder and it opens the person it names.\n\nFixed: reminders are now grouped per person and time, so a long medication list no longer pushes the evening's reminders off the device. The app tells you if any do not fit.\n\nFixed: joining a family circle now downloads the whole record. A birthday saved without a time of day could stop a newly joined phone from receiving anything at all, and a record now arrives in order rather than in pieces. If your phone already downloaded half a record, this update goes back for the rest of it. Deleting a person no longer stops the rest of the family's visits and tasks from arriving.",
+      "version": "1.0.1"
+    },
+    {
+      "date": "2026-08-23",
+      "notes": "",
+      "version": "1.0"
+    }
+  ],
+  "electrician": [
+    {
+      "date": "2026-11-07",
+      "notes": "Electrician is now available in Russian, German, Chinese, Spanish, Vietnamese and Ukrainian. Also includes fixes and improvements.",
+      "version": "1.0.5"
+    },
+    {
+      "date": "2026-11-04",
+      "notes": "Behind-the-scenes improvements and fixes to keep Electrician Exam Practice running smoothly. Thank you for being here.",
+      "version": "1.0.4"
+    },
+    {
+      "date": "2026-10-29",
+      "notes": "Behind-the-scenes improvements and bug fixes for a smoother experience. Thank you for being here.",
+      "version": "1.0.3"
+    },
+    {
+      "date": "2026-09-26",
+      "notes": "• Bug fixes and improvements.",
+      "version": "1.0.2"
+    },
+    {
+      "date": "2026-09-21",
+      "notes": "• Rate Electrician right from Settings.\n• Bug fixes and improvements.",
+      "version": "1.0.1"
+    },
+    {
+      "date": "2026-08-31",
+      "notes": "",
+      "version": "1.0"
+    }
+  ],
+  "fitness-streaks": [
+    {
+      "date": "2026-11-17",
+      "notes": "iPad install compatibility is fixed.",
+      "version": "1.3.4"
+    },
+    {
+      "date": "2026-11-15",
+      "notes": "Now on iPad, with a layout designed for the larger screen.",
+      "version": "1.3.3"
+    },
+    {
+      "date": "2026-11-07",
+      "notes": "Fitness Habit is now available in German, Russian, Dutch, Chinese, Spanish and Vietnamese. Also includes fixes and improvements.",
+      "version": "1.3.2"
+    },
+    {
+      "date": "2026-10-29",
+      "notes": "Behind-the-scenes improvements and bug fixes for a smoother experience. Thank you for being here.",
+      "version": "1.3.1"
+    },
+    {
+      "date": "2026-10-06",
+      "notes": "Updated App Store information and subscription diagnostics.",
+      "version": "1.3.0"
+    },
+    {
+      "date": "2026-09-08",
+      "notes": "Updated App Store information and subscription diagnostics.",
+      "version": "1.2.9"
+    },
+    {
+      "date": "2026-07-30",
+      "notes": "New first-run trial flow makes it clearer which discovered streaks stay free and which Streaks+ protects. Updated App Store icon and conversion-focused onboarding.",
+      "version": "1.2.8"
+    },
+    {
+      "date": "2026-07-12",
+      "notes": "Bug fixes and performance improvements across the app, widgets, and Apple Watch.",
+      "version": "1.2.7"
+    },
+    {
+      "date": "2026-07-05",
+      "notes": "Behind-the-scenes improvements to keep your streaks fast and accurate across the app, widgets, and Apple Watch.",
+      "version": "1.2.5"
+    },
+    {
+      "date": "2026-07-04",
+      "notes": "Behind-the-scenes improvements to keep your streaks fast and accurate across the app, widgets, and Apple Watch.",
+      "version": "1.2.4"
+    },
+    {
+      "date": "2026-06-27",
+      "notes": "Bug fixes and performance improvements across the app, widgets, and Apple Watch.",
+      "version": "1.2.3"
+    },
+    {
+      "date": "2026-06-23",
+      "notes": "We're now Fitness Streak Tracker! Same app that surfaces the streaks hiding in your Apple Health history — now with a clearer name and a sharper focus on keeping your momentum alive.\n\n• Save your most important streak so your momentum is always protected\n• Refreshed branding across the app, widgets, and Apple Watch\n• Stability and performance improvements",
+      "version": "1.2.1"
+    },
+    {
+      "date": "2026-06-11",
+      "notes": "We're now Fitness Streak Tracker! Same app that surfaces the streaks hiding in your Apple Health history - now with a clearer name and a sharper focus on keeping your momentum alive.\n\n• Save your most important streak so your momentum is always protected\n• Refreshed branding across the app, widgets, and Apple Watch\n• Stability and performance improvements",
+      "version": "1.2.0"
+    },
+    {
+      "date": "2026-05-26",
+      "notes": "Save your streaks: You can now save a streak so you can keep up your important momentum.",
+      "version": "1.1.1"
+    },
+    {
+      "date": "2026-05-18",
+      "notes": "Save your streaks: You can now save a streak so you can keep up your important momentum.",
+      "version": "1.1.0"
+    },
+    {
+      "date": "2026-05-04",
+      "notes": "",
+      "version": "1.0.0"
+    }
+  ],
+  "football": [
+    {
+      "date": "2026-11-08",
+      "notes": "You can now change the app's language from Settings. This update also includes fixes and improvements.",
+      "version": "1.2.9"
+    },
+    {
+      "date": "2026-10-31",
+      "notes": "Player search on the leaderboards now finds players at every position, not only the tab you have open. Purchase errors are clearer, and Terms and Privacy links sit next to every unlock.",
+      "version": "1.2.8"
+    },
+    {
+      "date": "2026-10-22",
+      "notes": "Share any player's percentile board as an image, right from their profile.\nLeaderboards, search and season switching are much faster, especially for past seasons.\nClearer pricing on the upgrade screen.",
+      "version": "1.2.7"
+    },
+    {
+      "date": "2026-10-14",
+      "notes": "Bug fixes and improvements.",
+      "version": "1.2.6"
+    },
+    {
+      "date": "2026-10-13",
+      "notes": "Game previews before kickoff: the projected line, win chance, a tale of the tape and each team's season leaders.\nTeam pages rank every club against the other 31, with totals per game.\nRecent form and Trends compare per game, so byes and Thursday games no longer decide who is hot.\nDefenders show pass-rush and coverage percentiles, plus many fixes across the app.",
+      "version": "1.2.5"
+    },
+    {
+      "date": "2026-10-09",
+      "notes": "Behind-the-scenes improvements and fixes to keep Football Next running smoothly. Thank you for being here.",
+      "version": "1.2.4"
+    },
+    {
+      "date": "2026-09-29",
+      "notes": "Position boards now open on each position’s default stat. Only a stat you choose carries over when you switch positions.",
+      "version": "1.2.3"
+    },
+    {
+      "date": "2026-09-28",
+      "notes": "• Rankings show the playing-time minimum, volume, and when zero-count stats are unranked.\n• Player pages add bio details, injury status, contract value, and a game log.\n• Games and Teams show records, standings, power ratings, and projected margins.\n• Trends starts with a three-week view and explains when movement begins.",
+      "version": "1.2.2"
+    },
+    {
+      "date": "2026-09-15",
+      "notes": "Fixes for game day.\n• Coming back after a few days now shows your latest saved stats.\n• Game pages show a Try Again button when the advanced breakdown doesn't load.\n• Stat rows on player pages opened from Compare now open their leaderboards.",
+      "version": "1.2.1"
+    },
+    {
+      "date": "2026-09-14",
+      "notes": "Built for game day.\n• New Games tab: scores, schedules and box scores for every game, with advanced EPA breakdowns.\n• Stats opens on familiar leaders like passing yards, with advanced rankings one tap away.\n• New Following view keeps your team and favorite players in one place, free.\n• Search the whole leaderboard without losing a player's league rank.\n• Fresh stats soon after games are published, and every screen shows the week and games included.",
+      "version": "1.2"
+    },
+    {
+      "date": "2026-09-11",
+      "notes": "The 2026 season is live: every player who has played is ranked from week one and updated nightly. Choose View > Qualified to see only players with enough playing time.",
+      "version": "1.1.2"
+    },
+    {
+      "date": "2026-09-07",
+      "notes": "Updated App Store information and subscription diagnostics.",
+      "version": "1.1.1"
+    },
+    {
+      "date": "2026-08-19",
+      "notes": "Playoffs on every team page. The season type switch now follows you into a club's page, so a roster's postseason numbers read the same way its regular season does.\n\nRecent form fixed. Last 3 / 5 / 8 game windows work on a finished season instead of coming back empty, and they no longer mix regular season and playoff games into one window.\n\nA stat glossary you can find. Every player and team page now links to definitions for every stat in the app, and the glossary's own search works.\n\nAlso: the Compare page's season pickers no longer cut off the year, and the intro screens no longer truncate.",
+      "version": "1.1.0"
+    },
+    {
+      "date": "2026-08-16",
+      "notes": "",
+      "version": "1.0"
+    }
+  ],
+  "headaches": [
+    {
+      "date": "2026-11-17",
+      "notes": "Now on iPad, with a layout designed for the larger screen.",
+      "version": "1.5.6"
+    },
+    {
+      "date": "2026-11-01",
+      "notes": "Behind-the-scenes improvements and fixes to keep Migraine Headache Tracker running smoothly. Thank you for being here.",
+      "version": "1.5.5"
+    },
+    {
+      "date": "2026-10-26",
+      "notes": "Behind-the-scenes improvements and bug fixes for a smoother experience. Thank you for being here.",
+      "version": "1.5.4"
+    },
+    {
+      "date": "2026-10-17",
+      "notes": "Behind-the-scenes improvements and fixes to keep Migraine Headache Tracker running smoothly. Thank you for being here.",
+      "version": "1.5.3"
+    },
+    {
+      "date": "2026-10-09",
+      "notes": "If the log on this device ever becomes unreadable, the app now sets it aside and keeps working instead of failing to open. A delete that does not go through is shown rather than silently ignored.\n\nBehind-the-scenes improvements and fixes to keep Migraine Headache Tracker running smoothly. Thank you for being here.",
+      "version": "1.5.2"
+    },
+    {
+      "date": "2026-09-23",
+      "notes": "Fixes a rare case where a corrupted local store could hide your history, and the app now tells you when a delete fails instead of failing quietly.",
+      "version": "1.5.1"
+    },
+    {
+      "date": "2026-08-18",
+      "notes": "Bug fixes and performance improvements.",
+      "version": "1.5.0"
+    },
+    {
+      "date": "2026-07-29",
+      "notes": "Bug fixes and performance improvements.",
+      "version": "1.4.9"
+    },
+    {
+      "date": "2026-07-13",
+      "notes": "Bug fixes and performance improvements.",
+      "version": "1.4.8"
+    },
+    {
+      "date": "2026-07-05",
+      "notes": "Bug fixes and performance improvements for faster, more reliable headache logging.",
+      "version": "1.4.6"
+    },
+    {
+      "date": "2026-06-26",
+      "notes": "This update makes Headache Pro’s insight engine smarter and more reliable so you can trust the patterns you see.\n\n- 15 new pattern detectors, including combined-trigger detection that can highlight co-occurrences like pressure drops plus poor sleep\n- Tighter thresholds for surfacing insights to reduce false positives and focus on patterns that actually hold up in your data\n- A more polished history view and smoother onboarding to make it easier to review past headaches and get set up\n- General performance and stability improvements to keep logging and analysis fast and dependable",
+      "version": "1.4.4"
+    },
+    {
+      "date": "2026-06-24",
+      "notes": "This update makes Headache Pro’s insight engine smarter and more reliable so you can trust the patterns you see.\n\n- 15 new pattern detectors, including combined-trigger detection that can highlight co-occurrences like pressure drops plus poor sleep\n- Tighter thresholds for surfacing insights to reduce false positives and focus on patterns that actually hold up in your data\n- A more polished history view and smoother onboarding to make it easier to review past headaches and get set up\n- General performance and stability improvements to keep logging and analysis fast and dependable",
+      "version": "1.4.3"
+    },
+    {
+      "date": "2026-06-09",
+      "notes": "This update makes Headache Pro’s insight engine smarter and more reliable so you can trust the patterns you see.\n\n- 15 new pattern detectors, including combined-trigger detection that can highlight co-occurrences like pressure drops plus poor sleep\n- Tighter thresholds for surfacing insights to reduce false positives and focus on patterns that actually hold up in your data\n- A more polished history view and smoother onboarding to make it easier to review past headaches and get set up\n- General performance and stability improvements to keep logging and analysis fast and dependable",
+      "version": "1.4.1"
+    },
+    {
+      "date": "2026-05-26",
+      "notes": "This update makes Headache Pro’s insight engine smarter and more reliable so you can trust the patterns you see.\n\n- 15 new pattern detectors, including combined-trigger detection that can highlight co-occurrences like pressure drops plus poor sleep\n- Tighter thresholds for surfacing insights to reduce false positives and focus on patterns that actually hold up in your data\n- A more polished history view and smoother onboarding to make it easier to review past headaches and get set up\n- General performance and stability improvements to keep logging and analysis fast and dependable",
+      "version": "1.4.0"
+    },
+    {
+      "date": "2026-05-15",
+      "notes": "This update makes Headache Pro’s insight engine smarter and more reliable so you can trust the patterns you see.\n\n- 15 new pattern detectors, including combined-trigger detection that can highlight co-occurrences like pressure drops plus poor sleep\n- Tighter thresholds for surfacing insights to reduce false positives and focus on patterns that actually hold up in your data\n- A more polished history view and smoother onboarding to make it easier to review past headaches and get set up\n- General performance and stability improvements to keep logging and analysis fast and dependable",
+      "version": "1.3.0"
+    },
+    {
+      "date": "2026-04-30",
+      "notes": "- New optional severity and notes prompt after each log\n- Rebranded as One Tap Headache Tracker\n- Fixed home screen header display\n- Improved HealthKit reliability",
+      "version": "1.2.0"
+    },
+    {
+      "date": "2026-04-24",
+      "notes": "- Headache events no longer show a red \"Failed\" badge when Health permissions are already granted\n- More reliable step count, sleep, heart rate, and workout context capture\n- Smoother onboarding — one less permission prompt mid-log",
+      "version": "1.1.0"
+    },
+    {
+      "date": "2026-04-21",
+      "notes": "- Apple Watch logging is faster and no longer gets stuck on \"Sending…\" — added a send timeout, fixed a cold-start race, and \"Connecting to iPhone…\" now clears once paired.\n- Barometric-pressure trend captures correctly around midnight and uses sea-level pressure for consistent comparisons.\n- \"Last night's sleep\" uses a fixed overnight window, so afternoon events no longer include daytime naps.\n- Home screen no longer duplicates the newest event in \"Recent Logs\".\n- Widget \"Logged\" confirmation is more reliable.\n- CSV export: new weekday_index column, RFC 4180 line endings, stable weekday names across locales.\n- Plenty of stability fixes around location, networking, and sharing.",
+      "version": "1.1"
+    },
+    {
+      "date": "2026-04-14",
+      "notes": "",
+      "version": "1.0"
+    }
+  ],
+  "hockey": [
+    {
+      "date": "2026-11-09",
+      "notes": "Game pages opened before puck drop now show the live score once the game starts. Trends keeps its loading spinner while recent form loads, and moves off a locked season if Pro ends mid-session.",
+      "version": "1.0.3"
+    },
+    {
+      "date": "2026-11-03",
+      "notes": "Player search on the leaderboards now finds skaters and goalies at every position, not only the tab you have open.",
+      "version": "1.0.2"
+    },
+    {
+      "date": "2026-10-22",
+      "notes": "Share any player's percentile board as an image, right from their profile.\nLeaderboards, search and season switching are much faster, especially for past seasons.\nClearer pricing on the upgrade screen.",
+      "version": "1.0.1"
+    },
+    {
+      "date": "2026-10-14",
+      "notes": "",
+      "version": "1.0"
+    }
+  ],
+  "ironman": [
+    {
+      "date": "2026-11-09",
+      "notes": "Open full clips from Ask Pattie right after installing the app. Audio controls reset after a call or other interruption.",
+      "version": "1.1.5"
+    },
+    {
+      "date": "2026-11-02",
+      "notes": "Behind-the-scenes improvements and bug fixes for a smoother experience. Thank you for being here.",
+      "version": "1.1.4"
+    },
+    {
+      "date": "2026-10-26",
+      "notes": "Behind-the-scenes improvements and bug fixes for a smoother experience. Thank you for being here.",
+      "version": "1.1.3"
+    },
+    {
+      "date": "2026-10-08",
+      "notes": "The Change athlete button and other top-bar buttons are now easy to read on every iPhone. Career stats no longer cut off, and dark mode is clearer.",
+      "version": "1.1.2"
+    },
+    {
+      "date": "2026-09-30",
+      "notes": "Fixes large race fields and busy name searches that failed to load.",
+      "version": "1.1.1"
+    },
+    {
+      "date": "2026-09-29",
+      "notes": "Split rankings return in Locker. Search, race details and Race Book are clearer, with safer exports and stronger accessibility.",
+      "version": "1.1.0"
+    },
+    {
+      "date": "2026-09-09",
+      "notes": "",
+      "version": "1.0.1"
+    }
+  ],
+  "mahj": [
+    {
+      "date": "2026-11-16",
+      "notes": "The Monthly Challenge now shows on Home from your first visit.\n\nThe Training tiles are cleaner and easier to read.",
+      "version": "1.4.4"
+    },
+    {
+      "date": "2026-10-28",
+      "notes": "A drill you leave now waits for you, on the same question.\n\nOn the unfolded iPhone Duo, Home and your drill sit side by side.\n\nEvery answer fits on smaller iPhones, and the largest text sizes read cleanly.\n\nThe Mahj Minute rolls over at midnight and on the first of the month without losing a point.\n\nTwo answers were corrected: the junk pass in the Charleston and the dead quint with jokers.\n\nReduce Motion is respected everywhere.",
+      "version": "1.4.2"
+    },
+    {
+      "date": "2026-10-27",
+      "notes": "Every practice and challenge question has been rechecked, the explanations are clearer, and the monthly challenge has fresh questions lined up through next September.\n\nMahj Minute is now for everyone, and it counts.\n\nFive new questions a day, the same for every player. Each day adds to the month's challenge: your best 20 days make your score, and a strong month shows where you rank. It appears on Home after your first practice.\n\nHome and Your Progress now show how many questions you locked in this week, so you can see the practice working instead of guessing.\n\nMembers can set their game night straight from Home, and a prep reminder brings you back before you play.\n\nSend Feedback is a text box and one button now. No mail app, no account.\n\nThank you for the notes and the ratings. They are how a one-person app gets found.",
+      "version": "1.4.1"
+    },
+    {
+      "date": "2026-10-13",
+      "notes": "Small fixes and behind-the-scenes improvements.",
+      "version": "1.3.2"
+    },
+    {
+      "date": "2026-10-06",
+      "notes": "Play a hand, one tile at a time.\n\nPlay a Hand deals you thirteen tiles off a real wall. Commit to a section, then draw and discard for twelve turns while a coach grades every throw and shows the arithmetic behind it. No opponents and no bots. Everyone gets one free hand a day.\n\nReference is a new searchable glossary plus a page for every section of the card, free for everyone, one tap from the home screen.\n\nRoom progress now counts what you have actually learned: a question sticks once you answer it right twice in a row.\n\nGet one wrong and the app now tells you why your answer was wrong, not just what the right one was.\n\nNew in the Table Room: scoring and table rules. Who pays what, when a call is too late, and what happens after a wrong mah jongg.\n\nNew in the Card Room: how to read a line on the card, from matching and opposite dragons to NEWS and zeros.\n\nWe also re-checked every question against the rules and corrected a handful of answers, including a joker question and a defense question players flagged. Thank you for the notes.",
+      "version": "1.3.1"
+    },
+    {
+      "date": "2026-08-27",
+      "notes": "A smarter rhythm for game night.\n\nMahj Minute is a new daily challenge. Every member gets the same five questions on the same day: two rack reads, one Charleston call, and two table judgments. Share your score, and keep a forgiving five-day weekly rhythm with a 30-day archive to catch up from.\n\nGame Night Prep lets you set your usual game night. A reminder arrives beforehand and opens straight into a five-minute session built from your due mistakes, your weakest room, and material you have not seen yet.\n\nMahj Trainer now runs natively on iPad, in portrait or landscape.\n\nMahj Minute and Game Night Prep are part of Mahj+.",
+      "version": "1.2.1"
+    },
+    {
+      "date": "2026-08-13",
+      "notes": "A smarter rhythm for game night.\n\nMahj Minute is a new daily challenge. Every member gets the same five questions on the same day: two rack reads, one Charleston call, and two table judgments. Share your score, and keep a forgiving five-day weekly rhythm with a 30-day archive to catch up from.\n\nGame Night Prep lets you set your usual game night. A reminder arrives beforehand and opens straight into a five-minute session built from your due mistakes, your weakest room, and material you have not seen yet.\n\nMahj Trainer now runs natively on iPad, in portrait or landscape.\n\nMahj Minute and Game Night Prep are part of Mahj+.",
+      "version": "1.2.0"
+    },
+    {
+      "date": "2026-08-07",
+      "notes": "Practice that never runs out.\n\nEndless Practice deals a fresh rack every time, so you can drill section reading and tile counting for as long as you like, with a full explanation after every answer.\n\nFix My Mistakes now remembers what you got wrong and brings it back on a schedule, so weak spots actually close.\n\nTimed Challenge gives you ninety seconds and a personal best to chase.\n\nAlso new: an accuracy breakdown for every room, and more hand-written questions across the tiles, the card, the Charleston, the table, and the Master Tables.",
+      "version": "1.1"
+    },
+    {
+      "date": "2026-07-14",
+      "notes": "",
+      "version": "1.0"
+    }
+  ],
+  "pickleball": [
+    {
+      "date": "2026-11-05",
+      "notes": "",
+      "version": "1.1.0"
+    }
+  ],
+  "posture": [
+    {
+      "date": "2026-11-03",
+      "notes": "Slouch nudges now reach you when your phone is locked or the app is in the background, and show up on your Apple Watch. Plus fixes for Pro watch monitoring.",
+      "version": "1.0.8"
+    },
+    {
+      "date": "2026-10-27",
+      "notes": "Behind-the-scenes improvements and fixes to keep Desk Reset running smoothly. Thank you for being here.",
+      "version": "1.0.7"
+    },
+    {
+      "date": "2026-10-19",
+      "notes": "Behind-the-scenes improvements and fixes to keep Desk Reset running smoothly. Thank you for being here.",
+      "version": "1.0.6"
+    },
+    {
+      "date": "2026-09-09",
+      "notes": "Updated App Store information and subscription diagnostics.",
+      "version": "1.0.5"
+    },
+    {
+      "date": "2026-08-17",
+      "notes": "The trial now appears after your first completed practice, so you can feel the core coaching before deciding. We also clarified Posture+ benefits and improved the upgrade flow.",
+      "version": "1.0.4"
+    },
+    {
+      "date": "2026-07-28",
+      "notes": "The trial now appears after your first completed practice, so you can feel the core coaching before deciding. We also clarified Posture+ benefits and improved the upgrade flow.",
+      "version": "1.0.2"
+    },
+    {
+      "date": "2026-07-14",
+      "notes": "Bug fixes and improvements.",
+      "version": "1.0.1"
+    },
+    {
+      "date": "2026-07-12",
+      "notes": "",
+      "version": "1.0"
+    }
+  ],
+  "queasy": [
+    {
+      "date": "2026-11-16",
+      "notes": "Now on iPad, with a layout designed for the larger screen.",
+      "version": "1.1.7"
+    },
+    {
+      "date": "2026-11-02",
+      "notes": "Behind-the-scenes improvements and fixes to keep Queasy running smoothly. Thank you for being here.",
+      "version": "1.1.6"
+    },
+    {
+      "date": "2026-10-29",
+      "notes": "Fixes and improvements.",
+      "version": "1.1.5"
+    },
+    {
+      "date": "2026-10-27",
+      "notes": "Behind-the-scenes improvements and bug fixes for a smoother experience. Thank you for being here.",
+      "version": "1.1.4"
+    },
+    {
+      "date": "2026-09-30",
+      "notes": "Press shows the P6 spot again, step by step, and Learn brings back the studies behind each mode plus the morning sickness guide. History's summary tile is labeled correctly again.",
+      "version": "1.1.3"
+    },
+    {
+      "date": "2026-09-26",
+      "notes": "Episodes now tell you if a save fails instead of failing silently, and a corrupted local store is quarantined rather than wiping your history.",
+      "version": "1.1.2"
+    },
+    {
+      "date": "2026-09-08",
+      "notes": "Updated App Store information and subscription diagnostics.",
+      "version": "1.1.1"
+    },
+    {
+      "date": "2026-08-19",
+      "notes": "Queasy is rebuilt around four things instead of one.\n\n- Pulse is still here: a steady tap on the inside of your wrist.\n- Breathe paces a slow breath on your wrist, long in and longer out, so you can follow it with your eyes shut.\n- Tone plays the 100 Hz minute from the 2025 Nagoya University study.\n- Press shows you the spot an acupressure band sits on and times a three-minute hold.\n\nEvery mode is now free and unlimited, with no account and no gate on the way in. Free Pulse and Breathe sessions run two minutes; Tone and Press run their full length. Each mode shows what it leans on, in the source's own words, with a link.\n\nMorning sickness is back as an occasion, with its own gentler settings, its own guidance, and a plain note about when to call your midwife or doctor instead.",
+      "version": "1.1.0"
+    },
+    {
+      "date": "2026-08-05",
+      "notes": "Fixes an issue that prevented subscription options from loading.",
+      "version": "1.0.1"
+    },
+    {
+      "date": "2026-07-30",
+      "notes": "",
+      "version": "1.0"
+    }
+  ],
+  "quitzyn": [
+    {
+      "date": "2026-11-15",
+      "notes": "Now on iPad, with a layout designed for the larger screen.",
+      "version": "1.3.3"
+    },
+    {
+      "date": "2026-11-09",
+      "notes": "You can now change the app's language from Settings. This update also includes fixes and improvements.",
+      "version": "1.3.2"
+    },
+    {
+      "date": "2026-11-01",
+      "notes": "Behind-the-scenes improvements and fixes to keep Quit Zyn running smoothly. Thank you for being here.",
+      "version": "1.3.1"
+    },
+    {
+      "date": "2026-10-27",
+      "notes": "Behind-the-scenes improvements and fixes to keep Quit Zyn running smoothly. Thank you for being here.",
+      "version": "1.3.0"
+    },
+    {
+      "date": "2026-10-26",
+      "notes": "Behind-the-scenes improvements and bug fixes for a smoother experience. Thank you for being here.",
+      "version": "1.2.9"
+    },
+    {
+      "date": "2026-10-17",
+      "notes": "Behind-the-scenes improvements and fixes to keep Quit Zyn running smoothly. Thank you for being here.",
+      "version": "1.2.8"
+    },
+    {
+      "date": "2026-10-07",
+      "notes": "Behind-the-scenes improvements and fixes to keep Quit Zyn running smoothly. Thank you for being here.",
+      "version": "1.2.7"
+    },
+    {
+      "date": "2026-10-01",
+      "notes": "Behind-the-scenes improvements and fixes to keep Quit Zyn running smoothly. Thank you for being here.",
+      "version": "1.2.6"
+    },
+    {
+      "date": "2026-09-21",
+      "notes": "• Adding a past slip no longer changes your current streak or your tree.\n• Undo a mistaken slip right from the slip screen or Home.\n• Ask to Buy purchases unlock once approved, and Restore tells you if nothing was found.\n• Opening craving mode by accident no longer logs a craving.\n• The app now tells you if something couldn't be saved.",
+      "version": "1.2.5"
+    },
+    {
+      "date": "2026-09-14",
+      "notes": "New: craving mode. When an urge hits, start a short guided breathing session and ride it out. It's free.\nA slip no longer wipes out your garden. Your counter restarts, your tree keeps half its growth, and a mistaken slip can be undone.\nBloom+ now shows your craving patterns.\nWidgets and Apple Watch now match your tree, plus other fixes.",
+      "version": "1.2.4"
+    },
+    {
+      "date": "2026-08-12",
+      "notes": "Behind-the-scenes improvements and fixes to keep Quit Zyn running smoothly. Thank you for being here.",
+      "version": "1.2.3"
+    },
+    {
+      "date": "2026-07-31",
+      "notes": "Your garden now grows in one clean piece. We fixed a bug that could leave a branch and its leaves floating away from the trunk, and the black pine's canopy is no longer cut off on the home screen.",
+      "version": "1.2.2"
+    },
+    {
+      "date": "2026-07-22",
+      "notes": "Behind-the-scenes improvements and fixes to keep Quit Zyn running smoothly. Thank you for being here.",
+      "version": "1.2.1"
+    },
+    {
+      "date": "2026-07-18",
+      "notes": "First release. Track your nicotine-free days, grow your garden, and watch your health recover one milestone at a time. Thank you for being here.",
+      "version": "1.2"
+    },
+    {
+      "date": "2026-07-13",
+      "notes": "Bug fixes and performance improvements.",
+      "version": "1.1"
+    },
+    {
+      "date": "2026-07-01",
+      "notes": "",
+      "version": "1.0"
+    }
+  ],
+  "recovery": [
+    {
+      "date": "2026-11-16",
+      "notes": "Now on iPad, with a layout designed for the larger screen.",
+      "version": "1.1.4"
+    },
+    {
+      "date": "2026-11-06",
+      "notes": "Recharge is now available in French, Czech, Thai, German, Spanish, Italian and Chinese. Also includes fixes and improvements.",
+      "version": "1.1.3"
+    },
+    {
+      "date": "2026-11-02",
+      "notes": "Behind-the-scenes improvements and fixes to keep Recharge running smoothly. Thank you for being here.",
+      "version": "1.1.2"
+    },
+    {
+      "date": "2026-10-27",
+      "notes": "Behind-the-scenes improvements and bug fixes for a smoother experience. Thank you for being here.",
+      "version": "1.1.1"
+    },
+    {
+      "date": "2026-10-15",
+      "notes": "A new recovery model: every session is scored on what it actually cost.\n\n• The free countdown scores each session at your training level, instead of repeating your usual gap between sessions. That gap is still shown beside it.\n• Countdowns now reach four days, so a half marathon or marathon reads longer than a long run.\n• Intervals cost more than a steady run at the same average heart rate, and a long easy ride no longer outweighs a hard hour.\n• Train again before a countdown ends and the two combine: the longer one in full, plus half of the shorter.\n• Recharge+ adjusts a running countdown after each night's sleep, HRV, and resting heart rate.\n• Complications keep updating through a four-day countdown and show the day it ends.\n• Fixed: Ready now stays on screen after a long countdown, a workout that syncs just after you open the app is picked up straight away, and the Watch effort prompt opens properly.",
+      "version": "1.1.0"
+    },
+    {
+      "date": "2026-10-08",
+      "notes": "",
+      "version": "1.0.0"
+    }
+  ],
+  "sheepshead": [
+    {
+      "date": "2026-11-09",
+      "notes": "Undo on flashcards now also removes the grade for that answer, so an undone tap no longer counts as a miss or counts twice as correct. The game night reminder now stops after your membership lapses and is kept when it renews.",
+      "version": "1.3.3"
+    },
+    {
+      "date": "2026-11-05",
+      "notes": "Behind-the-scenes improvements and fixes to keep Sheepshead Trainer running smoothly. Thank you for being here.",
+      "version": "1.3.2"
+    },
+    {
+      "date": "2026-11-03",
+      "notes": "Behind-the-scenes improvements and fixes to keep Sheepshead Trainer running smoothly. Thank you for being here.",
+      "version": "1.3.1"
+    },
+    {
+      "date": "2026-10-23",
+      "notes": "Sharper practice, a clearer week.\n\nWho Takes the Trick? deals five-card tricks in Endless Practice and asks which card wins, with the rule behind every answer. A second new skill drills counting the points.\n\nEach room shows how much you have truly locked in, and Home counts the questions you locked in this week.\n\nAlso new: Send Feedback in Settings, Reduce Motion support and clearer membership terms.",
+      "version": "1.3.0"
+    },
+    {
+      "date": "2026-10-09",
+      "notes": "Behind-the-scenes improvements and fixes to keep Sheepshead Trainer running smoothly. Thank you for being here.",
+      "version": "1.2.3"
+    },
+    {
+      "date": "2026-08-24",
+      "notes": "A smarter rhythm for card night.\n\nSheepshead Minute is a new daily challenge. Every member gets the same five questions on the same day: two hand reads, one bury decision, and two trick calls. Share your score, and keep a forgiving five-day weekly rhythm with a 30-day archive to catch up from.\n\nGame Night Prep lets you set your usual card night. A reminder arrives beforehand and opens straight into a five-minute session built from your due mistakes, your weakest room, and material you have not seen yet.\n\nSheepshead Trainer now runs natively on iPad, in portrait or landscape.\n\nSheepshead Minute and Game Night Prep are part of Sheepshead+.",
+      "version": "1.2.2"
+    },
+    {
+      "date": "2026-08-19",
+      "notes": "A smarter rhythm for card night.\n\nSheepshead Minute is a new daily challenge. Every member gets the same five questions on the same day: two hand reads, one bury decision, and two trick calls. Share your score, and keep a forgiving five-day weekly rhythm with a 30-day archive to catch up from.\n\nGame Night Prep lets you set your usual card night. A reminder arrives beforehand and opens straight into a five-minute session built from your due mistakes, your weakest room, and material you have not seen yet.\n\nSheepshead Trainer now runs natively on iPad, in portrait or landscape.\n\nSheepshead Minute and Game Night Prep are part of Sheepshead+.",
+      "version": "1.2.1"
+    },
+    {
+      "date": "2026-08-14",
+      "notes": "A smarter rhythm for card night.\n\nSheepshead Minute is a new daily challenge. Every member gets the same five questions on the same day: two hand reads, one bury decision, and two trick calls. Share your score, and keep a forgiving five-day weekly rhythm with a 30-day archive to catch up from.\n\nGame Night Prep lets you set your usual card night. A reminder arrives beforehand and opens straight into a five-minute session built from your due mistakes, your weakest room, and material you have not seen yet.\n\nSheepshead Trainer now runs natively on iPad, in portrait or landscape.\n\nSheepshead Minute and Game Night Prep are part of Sheepshead+.",
+      "version": "1.2.0"
+    },
+    {
+      "date": "2026-08-07",
+      "notes": "",
+      "version": "1.0"
+    }
+  ],
+  "simpleglp": [
+    {
+      "date": "2026-11-13",
+      "notes": "Now on iPad, with a layout designed for the larger screen.",
+      "version": "1.2.6"
+    },
+    {
+      "date": "2026-11-09",
+      "notes": "You can now change the app's language from Settings. This update also includes fixes and improvements.",
+      "version": "1.2.5"
+    },
+    {
+      "date": "2026-11-01",
+      "notes": "A first dose dated before setup no longer shows as overdue. Late weekly shots, dose steps and refill heads-ups are more accurate, streaks hold across daylight saving, and translated prices and units read correctly.",
+      "version": "1.2.4"
+    },
+    {
+      "date": "2026-10-26",
+      "notes": "Behind-the-scenes improvements and fixes to keep Simple GLP running smoothly. Thank you for being here.",
+      "version": "1.2.3"
+    },
+    {
+      "date": "2026-10-19",
+      "notes": "Behind-the-scenes improvements and fixes to keep Simple GLP running smoothly. Thank you for being here.",
+      "version": "1.2.2"
+    },
+    {
+      "date": "2026-10-01",
+      "notes": "• Log without opening the app: tap “Took it” on a reminder, or tell Siri “Log my dose in Simple GLP”.\n• Took it earlier? Log the real time and your pill wait counts from then. Tap a day in the week strip or the new History calendar to fill in a missed log.\n• New Lock Screen widget: your next shot, today’s pill, or when your wait ends.\n• Fixes for edited dose times, shots taken early, and the details sheet.",
+      "version": "1.2.1"
+    },
+    {
+      "date": "2026-09-26",
+      "notes": "New: daily GLP-1 pills. Pick Wegovy pill, Rybelsus, Foundayo, or your own, and one tap logs today's pill and starts your wait timer on Home, the widget, and Apple Watch.\n• Daily reminders skip days you've already logged, plus a streak and week view.\n• Pro adds a Lock Screen and Dynamic Island countdown and supply tracking with refill reminders.\n• Editing your plan now keeps your saved dose and wait time.",
+      "version": "1.2.0"
+    },
+    {
+      "date": "2026-09-21",
+      "notes": "• History now lists months in date order.\n• You'll see a message if a shot can't be deleted, instead of it quietly coming back.\n• Your shot history is kept safe if the app's data file is ever damaged.",
+      "version": "1.1.1"
+    },
+    {
+      "date": "2026-08-17",
+      "notes": "This update refreshes the App Store listing with clearer subscription and pricing details. The app itself works exactly as before: one private tap to log your weekly shot, free, with no account required.",
+      "version": "1.1.0"
+    },
+    {
+      "date": "2026-08-03",
+      "notes": "This update refreshes the App Store listing with clearer subscription and pricing details. The app itself works exactly as before: one private tap to log your weekly shot, free, with no account required.",
+      "version": "1.0.7"
+    },
+    {
+      "date": "2026-07-31",
+      "notes": "This update refreshes the App Store listing with clearer subscription and pricing details. The app itself works exactly as before: one private tap to log your weekly shot, free, with no account required.",
+      "version": "1.0.6"
+    },
+    {
+      "date": "2026-07-11",
+      "notes": "Bug fixes and performance improvements.",
+      "version": "1.0.5"
+    },
+    {
+      "date": "2026-07-04",
+      "notes": "This update makes logging faster and leaner, and sharpens the app around what matters most: one private tap to record your weekly shot. Core logging is free, with no account required.",
+      "version": "1.0.4"
+    },
+    {
+      "date": "2026-06-30",
+      "notes": "Bug fixes and performance improvements to keep your shot log reliable.",
+      "version": "1.0.3"
+    },
+    {
+      "date": "2026-06-24",
+      "notes": "Initial release. Log your weekly GLP-1 shot in one tap — from your iPhone, Apple Watch, or Home Screen widget. Private and on-device.",
+      "version": "1.0.1"
+    },
+    {
+      "date": "2026-06-13",
+      "notes": "",
+      "version": "1.0.0"
+    }
+  ],
+  "skat": [
+    {
+      "date": "2026-11-08",
+      "notes": "Undo in the deck now takes back your answer, so accuracy and review schedules stay right. Reminder times and your streak stay put when you change time zones. Weekly gain no longer recounts Skat+ items after a lapse.",
+      "version": "1.3.2"
+    },
+    {
+      "date": "2026-10-31",
+      "notes": "More accurate trainer advice, shuffled answers in the Bedienpflicht drills, a fixed mistake review queue, German purchase messages, and better VoiceOver and small-screen layouts.",
+      "version": "1.3.1"
+    },
+    {
+      "date": "2026-10-22",
+      "notes": "Practice until it sticks.\n\nThree new Endless Practice skills: counting card points, winning tricks in suit, Grand and Null games, and matadors (Spitzen). Every hand is freshly dealt.\n\nAfter a wrong answer, a note explains exactly why your choice does not fit. Each room shows how much you have truly mastered, and Home counts the questions you locked in this week.\n\nAlso new: Send Feedback in Settings and clearer membership terms. Exercises are in German.",
+      "version": "1.3.0"
+    },
+    {
+      "date": "2026-09-30",
+      "notes": "More depth at the card table.\n\n222 authored learning items in total. The Master Table is rebuilt with 100 concrete exercises covering game values, overbidding, defense, Null and endgames instead of basic recall questions.\n\n24 new free cases cover bidding and trick rules. Every discard exercise now states a clear learning objective, with explanations that distinguish teaching goals from universally optimal play.\n\nDaily generated hands are now consistent for the same date. Exercise content is in German.",
+      "version": "1.2.3"
+    },
+    {
+      "date": "2026-08-20",
+      "notes": "A better rhythm for Skat night.\n\nThe Skat Minute is the new daily round. Every member gets the same five questions on the same day: two hand reads, one discard decision, and two trick-play questions. Share your score, and keep a forgiving five-day weekly rhythm with a 30-day archive to catch up from.\n\nGame Night Prep lets you set your usual Skat night. A reminder arrives beforehand and opens straight into a five-minute session built from your due mistakes, your weakest room, and material you have not seen yet.\n\nSkat Trainer now runs natively on iPad, in portrait or landscape.\n\nThe Skat Minute and Game Night Prep are part of Skat+.",
+      "version": "1.2.2"
+    },
+    {
+      "date": "2026-08-19",
+      "notes": "A better rhythm for Skat night.\n\nThe Skat Minute is the new daily round. Every member gets the same five questions on the same day: two hand reads, one discard decision, and two trick-play questions. Share your score, and keep a forgiving five-day weekly rhythm with a 30-day archive to catch up from.\n\nGame Night Prep lets you set your usual Skat night. A reminder arrives beforehand and opens straight into a five-minute session built from your due mistakes, your weakest room, and material you have not seen yet.\n\nSkat Trainer now runs natively on iPad, in portrait or landscape.\n\nThe Skat Minute and Game Night Prep are part of Skat+.",
+      "version": "1.2.1"
+    },
+    {
+      "date": "2026-08-15",
+      "notes": "A better rhythm for Skat night.\n\nThe Skat Minute is the new daily round. Every member gets the same five questions on the same day: two hand reads, one discard decision, and two trick-play questions. Share your score, and keep a forgiving five-day weekly rhythm with a 30-day archive to catch up from.\n\nGame Night Prep lets you set your usual Skat night. A reminder arrives beforehand and opens straight into a five-minute session built from your due mistakes, your weakest room, and material you have not seen yet.\n\nSkat Trainer now runs natively on iPad, in portrait or landscape.\n\nThe Skat Minute and Game Night Prep are part of Skat+.",
+      "version": "1.2.0"
+    },
+    {
+      "date": "2026-08-10",
+      "notes": "",
+      "version": "1.0"
+    }
+  ],
+  "sober": [
+    {
+      "date": "2026-11-15",
+      "notes": "Now on iPad, with a layout designed for the larger screen.",
+      "version": "1.3.9"
+    },
+    {
+      "date": "2026-11-09",
+      "notes": "You can now change the app's language from Settings. This update also includes fixes and improvements.",
+      "version": "1.3.8"
+    },
+    {
+      "date": "2026-11-01",
+      "notes": "Logged days stay put across daylight saving and time zones, and spending ranges use your local currency. Setup picks up where you left off with your start date intact, and your best streak only counts real runs.",
+      "version": "1.3.7"
+    },
+    {
+      "date": "2026-10-30",
+      "notes": "Behind-the-scenes improvements and fixes to keep Sober running smoothly. Thank you for being here.",
+      "version": "1.3.6"
+    },
+    {
+      "date": "2026-10-27",
+      "notes": "Behind-the-scenes improvements and bug fixes for a smoother experience. Thank you for being here.",
+      "version": "1.3.5"
+    },
+    {
+      "date": "2026-10-17",
+      "notes": "Behind-the-scenes improvements and fixes to keep Sober running smoothly. Thank you for being here.",
+      "version": "1.3.4"
+    },
+    {
+      "date": "2026-10-13",
+      "notes": "Pick a goal date when you start and see what you'll have gained by then. New urge plans give you a few concrete steps for the moment a craving hits. Home now shows the dates of your next milestones.\n\nPlus smoother scrolling and small fixes. Thank you for being here.",
+      "version": "1.3.3"
+    },
+    {
+      "date": "2026-09-30",
+      "notes": "Behind-the-scenes improvements and fixes to keep Sober running smoothly. Thank you for being here.",
+      "version": "1.3.2"
+    },
+    {
+      "date": "2026-09-06",
+      "notes": "• Craving mode: ride out an urge with a few minutes of guided breathing. Free, no paywall.\n• A slip no longer erases your garden. Your tree keeps its growth, your longest streak stands, and every sober day you've counted still counts.\n• Logged a slip by mistake? You can take it back now — your counter, streak and tree all go back.\n• Your patterns (Bloom+): when urges hit, what sets them off, and how long yours actually last.\n• Money and calories kept so far are now free for everyone.\n• Fixes: back-dated slips no longer change your longest streak, and the widget and Apple Watch now show the same tree as the app.",
+      "version": "1.3.1"
+    },
+    {
+      "date": "2026-08-26",
+      "notes": "Behind-the-scenes improvements and fixes to keep Sober running smoothly. Thank you for being here.",
+      "version": "1.3.0"
+    },
+    {
+      "date": "2026-08-20",
+      "notes": "Behind-the-scenes improvements and fixes to keep Sober running smoothly. Thank you for being here.",
+      "version": "1.2.8"
+    },
+    {
+      "date": "2026-08-17",
+      "notes": "Behind-the-scenes improvements and fixes to keep Sober running smoothly. Thank you for being here.",
+      "version": "1.2.7"
+    },
+    {
+      "date": "2026-08-12",
+      "notes": "Behind-the-scenes improvements and fixes to keep Sober running smoothly. Thank you for being here.",
+      "version": "1.2.6"
+    },
+    {
+      "date": "2026-08-08",
+      "notes": "Behind-the-scenes improvements and fixes to keep Sober running smoothly. Thank you for being here.",
+      "version": "1.2.5"
+    },
+    {
+      "date": "2026-07-31",
+      "notes": "Your garden now grows in one clean piece. We fixed a bug that could leave a branch and its leaves floating away from the trunk, and the black pine's canopy is no longer cut off on the home screen.",
+      "version": "1.2.4"
+    },
+    {
+      "date": "2026-07-27",
+      "notes": "A faster first start and a clearer Bloom+ trial make it easier to begin your sober counter, understand every plan, and keep going.",
+      "version": "1.2.3"
+    },
+    {
+      "date": "2026-07-22",
+      "notes": "Behind-the-scenes improvements and fixes to keep Sober running smoothly. Thank you for being here.",
+      "version": "1.2.1"
+    },
+    {
+      "date": "2026-07-21",
+      "notes": "Improvements to your trial and daily check-in experience, plus bug fixes. Thank you for being here.",
+      "version": "1.2.0"
+    },
+    {
+      "date": "2026-07-18",
+      "notes": "Improvements to your trial and daily check-in experience, plus bug fixes. Thank you for being here.",
+      "version": "1.1.5"
+    },
+    {
+      "date": "2026-07-11",
+      "notes": "Bug fixes and performance improvements.",
+      "version": "1.1.4"
+    },
+    {
+      "date": "2026-06-30",
+      "notes": "Improvements to your trial and daily check-in experience, plus bug fixes. Thank you for being here.",
+      "version": "1.1.3"
+    },
+    {
+      "date": "2026-06-25",
+      "notes": "Behind-the-scenes improvements and fixes to keep Sober running smoothly. Thank you for being here.",
+      "version": "1.1.1"
+    },
+    {
+      "date": "2026-06-14",
+      "notes": "",
+      "version": "1.0"
+    }
+  ],
+  "sports": [
+    {
+      "date": "2026-11-09",
+      "notes": "Briefings stay fresh and honest. If a refresh can't reach the server, you now see the saved briefing with its age instead of an offline error, and free users keep their daily refresh. Pro shows the real time of your next refresh. Smoother motion with Reduce Motion on, bigger tap targets, clearer contrast, and better layouts at large text sizes.",
+      "version": "1.1.6"
+    },
+    {
+      "date": "2026-11-03",
+      "notes": "Briefings refresh when you come back to the app, show how fresh they are, and load reliably on iOS 17 and 18. Text is easier to read and buttons are easier to tap throughout.",
+      "version": "1.1.5"
+    },
+    {
+      "date": "2026-10-30",
+      "notes": "Behind-the-scenes improvements and bug fixes for a smoother experience. Thank you for being here.",
+      "version": "1.1.4"
+    },
+    {
+      "date": "2026-09-08",
+      "notes": "Updated App Store information and subscription diagnostics.",
+      "version": "1.1.3"
+    },
+    {
+      "date": "2026-07-28",
+      "notes": "Gist now lets you read your first free briefing before showing Pro. We also simplified onboarding, clarified the subscription choices, and refreshed the App Store presentation around what the app actually gives you: what happened, why it matters, and one thing to say.",
+      "version": "1.1.2"
+    },
+    {
+      "date": "2026-07-21",
+      "notes": "Meet Sports Small Talk: a clearer name, a new icon, and the same five-minute briefings that turn today’s sports news into useful conversation starters.",
+      "version": "1.1.0"
+    },
+    {
+      "date": "2026-07-11",
+      "notes": "Smoother first launch: onboarding opens cleanly instead of sliding up over the briefing. Catch up in five minutes on the sports everyone is talking about — fresh talking points, each backed by a real source.",
+      "version": "1.0.8"
+    },
+    {
+      "date": "2026-07-04",
+      "notes": "Gist is simpler and faster now. Catch up in five minutes on the sports everyone is talking about, including the big summer soccer tournament. Fresh talking points, each backed by a real source.",
+      "version": "1.0.7"
+    },
+    {
+      "date": "2026-06-30",
+      "notes": "Bug fixes and performance improvements to your daily sports briefing.",
+      "version": "1.0.6"
+    },
+    {
+      "date": "2026-06-22",
+      "notes": "Small polish: story card backstories and tie-ins now always fit your screen, so nothing gets cut off no matter your text size.",
+      "version": "1.0.4"
+    },
+    {
+      "date": "2026-06-21",
+      "notes": "Small polish: story card backstories and tie-ins now always fit your screen, so nothing gets cut off no matter your text size.",
+      "version": "1.0.3"
+    },
+    {
+      "date": "2026-06-19",
+      "notes": "Polished the subscription screen so the price is front and center, and tidied up a few visual details. Thanks for using Gist!",
+      "version": "1.0.1"
+    },
+    {
+      "date": "2026-06-18",
+      "notes": "",
+      "version": "1.0"
+    }
+  ],
+  "sunset": [
+    {
+      "date": "2026-11-17",
+      "notes": "Now on iPad, with a layout designed for the larger screen.",
+      "version": "1.0.5"
+    },
+    {
+      "date": "2026-11-08",
+      "notes": "Sunset alerts now stay out of your quiet hours, even far north. Alerts follow your iOS notification setting and the newest location. The paywall closes once Sun+ is restored, and onboarding no longer double-advances on quick taps.",
+      "version": "1.0.4"
+    },
+    {
+      "date": "2026-11-04",
+      "notes": "More alerts for colorful sunsets and sunrises: the score now spots more skies with good color. Fixes and improvements.",
+      "version": "1.0.3"
+    },
+    {
+      "date": "2026-11-01",
+      "notes": "Forecasts now stay correct across daylight saving time changes, so scores and alert times are right after the clocks change, and the days before spring forward have a forecast again. Low cloud toward the sun is now read for the right hour.",
+      "version": "1.0.2"
+    },
+    {
+      "date": "2026-10-27",
+      "notes": "Behind-the-scenes improvements and bug fixes for a smoother experience. Thank you for being here.",
+      "version": "1.0.1"
+    },
+    {
+      "date": "2026-10-14",
+      "notes": "",
+      "version": "1.0"
+    }
+  ],
+  "time": [
+    {
+      "date": "2026-11-01",
+      "notes": "Your plan learns only from real timings: a quick try-out or a run left open no longer moves tomorrow's start. Done always marks the step on screen, the trial reminder stays set, and buttons are easier to tap.",
+      "version": "1.0.2"
+    },
+    {
+      "date": "2026-10-26",
+      "notes": "Behind-the-scenes improvements and bug fixes for a smoother experience. Thank you for being here.",
+      "version": "1.0.1"
+    },
+    {
+      "date": "2026-10-12",
+      "notes": "",
+      "version": "1.0"
+    }
+  ],
+  "vehicle-maintenance-log": [
+    {
+      "date": "2026-11-09",
+      "notes": "Widget jobs now show Overdue once the due date passes. Fixing or deleting a service or fill-up now updates your odometer. Switching miles and km no longer adds a reading, and Settings shows reminders as on after you allow them.",
+      "version": "1.1.3"
+    },
+    {
+      "date": "2026-11-05",
+      "notes": "Behind-the-scenes improvements and fixes to keep Vehicle Maintenance Log running smoothly. Thank you for being here.",
+      "version": "1.1.2"
+    },
+    {
+      "date": "2026-11-03",
+      "notes": "Behind-the-scenes improvements and fixes to keep Vehicle Maintenance Log running smoothly. Thank you for being here.",
+      "version": "1.1.1"
+    },
+    {
+      "date": "2026-10-30",
+      "notes": "Roadside: keep your insurance and roadside assistance numbers with each vehicle, one tap to call.\nHow-to: guides for common DIY jobs on your exact vehicle.\nBikes get a schedule grouped by brakes, chain, tires and battery.\nPlus fixes for receipt scanning and notifications.",
+      "version": "1.1"
+    },
+    {
+      "date": "2026-10-23",
+      "notes": "",
+      "version": "1.0"
+    }
+  ],
+  "vitals": [
+    {
+      "date": "2026-11-17",
+      "notes": "iPad install compatibility is fixed.",
+      "version": "1.9.5"
+    },
+    {
+      "date": "2026-11-15",
+      "notes": "Now on iPad, with a layout designed for the larger screen.",
+      "version": "1.9.4"
+    },
+    {
+      "date": "2026-11-08",
+      "notes": "Step through past days with the new arrows beside the date on Today.\n\nChange the app's language right from Settings.\n\nPlus Weekly Recap and other fixes.",
+      "version": "1.9.3"
+    },
+    {
+      "date": "2026-11-01",
+      "notes": "Total Calories now speaks 31 languages. Tapping a widget opens the app to Today. Streaks keep counting past 89 days, reports compare equal time windows, and pacing follows your own day, even after travel. Ask to Buy purchases now show as pending.",
+      "version": "1.9.2"
+    },
+    {
+      "date": "2026-10-29",
+      "notes": "Total Calories now speaks 36 languages.\n\nPlus smoother screens and fixes.",
+      "version": "1.9.1"
+    },
+    {
+      "date": "2026-10-22",
+      "notes": "New Large Home Screen widget with your week of calories at a glance.\n\nAsk Siri for the calories you've burned today, or your steps.\n\nOptional Goal Reached notification when you hit your daily goal.\n\nIf your calorie goal has been out of reach, Today suggests one that fits your typical day.\n\nEvening Reminder for Vitals+ members.\n\nOn iPhone Duo, unfold to see Today and History side by side.\n\nFixes a crash when opening a notification.",
+      "version": "1.9.0"
+    },
+    {
+      "date": "2026-10-09",
+      "notes": "History loads faster on a cold start. A failed food read now says so instead of showing \"No food logged\". The Excluded Days screen and the Pause Averages switch describe a paused state accurately, and the paused banner leaves room for larger text sizes.\n\nBehind-the-scenes improvements and fixes to keep Total Calories running smoothly. Thank you for being here.",
+      "version": "1.8.8"
+    },
+    {
+      "date": "2026-09-15",
+      "notes": "Fixes: History stays fast while averages are paused, and the Excluded Days screen now shows the correct dates on Buddhist, Japanese, Islamic, and other non-Gregorian calendars.",
+      "version": "1.8.7"
+    },
+    {
+      "date": "2026-09-14",
+      "notes": "New in Vitals+: Excluded Days. Leave a sick day, a flight, or a day your watch stayed on the charger out of your averages, totals, and streaks, or pause averages until you're back. Nothing is deleted: excluded days stay in your charts, dimmed.",
+      "version": "1.8.6"
+    },
+    {
+      "date": "2026-09-07",
+      "notes": "Setup is shorter. The question about whether you log food is gone, and the Vitals+ screen you see during setup is back to a plain list of what the subscription adds, instead of a worked example.",
+      "version": "1.8.5"
+    },
+    {
+      "date": "2026-09-06",
+      "notes": "The Vitals+ screen you see during setup now shows a worked example of the numbers it builds, instead of a list of feature names.\n\nWhere Apple Health already holds enough history, that screen works from your own data rather than a stand-in figure. Where it doesn't, it says so instead of inventing one.",
+      "version": "1.8.4"
+    },
+    {
+      "date": "2026-08-26",
+      "notes": "Onboarding now asks whether you log food anywhere. If you don't, it stops pitching the two Vitals+ features that would only ever show you an empty screen.\n\nThe Upgrade tab shows all three plans at once. Lifetime used to sit just below the fold on most iPhones.\n\nA purchase Apple hasn't finished approving no longer looks like it went through, and a slow connection can no longer leave the trial button spinning with no way past it.\n\nNet Deficit now disappears from Home Screen widgets as soon as a subscription lapses, instead of lingering until you next open the app.",
+      "version": "1.8.3"
+    },
+    {
+      "date": "2026-08-22",
+      "notes": "Macros are here. Protein, carbs, and fat sit beside your calories, read from whatever app already logs your food to Apple Health. Nothing to enter twice.\n\nTrack all three or just the one you count, set a gram goal on one macro or all three, and follow macro averages, trends, and peak days in History, CSV export, and your PDF reports. Macros are part of Vitals+.\n\nSettings is now grouped into Calorie Burn and Calorie Intake, with a plain-English explainer on every switch.",
+      "version": "1.8.2"
+    },
+    {
+      "date": "2026-08-20",
+      "notes": "Your BMI, free, from the height and weight already in Apple Health — or enter them by hand. Body fat and your TDEE/BMR reference figures are in Vitals+.\n\nClearer upgrade screen: every plan shows what it comes to per month, and the yearly plan states how much it saves.\n\nPlus small fixes throughout.",
+      "version": "1.8.1"
+    },
+    {
+      "date": "2026-08-19",
+      "notes": "Your BMI, free, from the height and weight already in Apple Health — or enter them by hand. Body fat and your TDEE/BMR reference figures are in Vitals+.\n\nClearer upgrade screen: every plan shows what it comes to per month, and the yearly plan states how much it saves.\n\nPlus small fixes throughout.",
+      "version": "1.8.0"
+    },
+    {
+      "date": "2026-07-24",
+      "notes": "Accurate daily totals\n\n• Fixed today's calorie total reading far too high on some devices. Resting energy that is still in progress now counts only the part of the day that has actually happened.\n• The Maintenance widget now matches the figure inside the app. Completed days are finalized at midnight, so your widgets stay in step even if you don't open the app.\n• Today, History, and the widgets now always report the same numbers.",
+      "version": "1.7.7"
+    },
+    {
+      "date": "2026-07-23",
+      "notes": "Accurate daily totals\n\n• Fixed today's calorie total reading far too high on some devices. Resting energy that is still in progress now counts only the part of the day that has actually happened.\n• The Maintenance widget now matches the figure inside the app. Completed days are finalized at midnight, so your widgets stay in step even if you don't open the app.\n• Today, History, and the widgets now always report the same numbers.",
+      "version": "1.7.6"
+    },
+    {
+      "date": "2026-07-17",
+      "notes": "A smoother Vitals+ experience\n\n• Clearer pricing and trial details on every upgrade screen. Purchase error messages no longer overlap the fine print.\n• Net Deficit: the Apple Health permission request now appears reliably when you turn on food-calorie tracking, and a new shortcut opens Health permissions if food calories can't be read.\n• Bug fixes and polish across the app, widgets, and Apple Watch.",
+      "version": "1.7.5"
+    },
+    {
+      "date": "2026-07-11",
+      "notes": "A smoother Vitals+ experience\n\n• Clearer pricing and trial details on every upgrade screen. Purchase error messages no longer overlap the fine print.\n• Net Deficit: the Apple Health permission request now appears reliably when you turn on food-calorie tracking, and a new shortcut opens Health permissions if food calories can't be read.\n• Bug fixes and polish across the app, widgets, and Apple Watch.",
+      "version": "1.7.4"
+    },
+    {
+      "date": "2026-07-01",
+      "notes": "Net Deficit, clearer than ever\n\n• The Net Deficit chart now centers on zero with a clear baseline, so deficit days (up) and surplus days (down) are easy to tell apart at a glance.\n\n• History details now show Average, Best Day, and a period Total together, with a consistent layout across Calories, Steps, and Net Deficit.\n\nPlus the usual under-the-hood fixes to keep your calories and steps accurate across the app, widgets, and Apple Watch.",
+      "version": "1.7.3"
+    },
+    {
+      "date": "2026-06-27",
+      "notes": "New in Vitals+\n\n• TDEE & BMR - see your maintenance calories (TDEE) and resting burn (BMR) as a steady 30-day average from Apple Health, right under the ring. The number you'd plan a deficit around, from your own data.\n\nIt's an opt-in toggle in Settings, off by default, so the free Today view stays exactly as it was.\n\nPlus the usual under-the-hood fixes to keep your calories and steps accurate across the app, widgets, and Apple Watch.",
+      "version": "1.7.2"
+    },
+    {
+      "date": "2026-06-24",
+      "notes": "New in Vitals+\n\n• TDEE & BMR - see your maintenance calories (TDEE) and resting burn (BMR) as a steady 30-day average from Apple Health, right under the ring. The number you'd plan a deficit around, from your own data.\n\nIt's an opt-in toggle in Settings, off by default, so the free Today view stays exactly as it was.\n\nPlus the usual under-the-hood fixes to keep your calories and steps accurate across the app, widgets, and Apple Watch.",
+      "version": "1.7.1"
+    },
+    {
+      "date": "2026-06-10",
+      "notes": "New in Vitals+\n\n• End-of-day projection - see where today's total calories are headed, based on your own recent pace.\n• Goal streaks - a chip on the Today screen counting the days in a row you've hit your goal.\n• Weekly recap - an optional Sunday-evening summary of your last 7 days versus the week before.\n\nAll three are opt-in toggles in Settings and off by default, so the free Today view stays exactly as it was.\n\nPlus the usual under-the-hood fixes to keep your calories and steps accurate across the app, widgets, and Apple Watch.",
+      "version": "1.7.0"
+    },
+    {
+      "date": "2026-05-29",
+      "notes": "We tuned refresh rates so your totals and step counts update faster throughout the day, keeping today’s numbers more up to date on your watch, widgets, and in the app.",
+      "version": "1.6.0"
+    },
+    {
+      "date": "2026-05-26",
+      "notes": "New\n\n• In-app review prompt after you hit a daily calorie or step goal — rate on the App Store or send private feedback if something’s off.\n• Settings → Rate or Send Feedback any time.\n\nPolish\n\n• App Store listing copy updates (subtitle, keywords, description).",
+      "version": "1.5.3"
+    },
+    {
+      "date": "2026-05-18",
+      "notes": "This update makes it easier to understand your data.\n\n- Updated the loading screen so it is clearer when the app is processing more information, reducing confusion while things are updating.\n- Improved the Vitals+ Monthly PDF with a cleaner layout and deeper trend previews, so your reports are easier to read and more insightful.\n- Added clearer in-app guidance for new users so it is easier to discover and understand the app’s key features.",
+      "version": "1.5.2"
+    },
+    {
+      "date": "2026-05-15",
+      "notes": "This update includes small behind-the-scenes fixes to keep your calories and step counts accurate and up to date across your widgets, complications, and dashboard.",
+      "version": "1.5.1"
+    },
+    {
+      "date": "2026-05-12",
+      "notes": "Introducing Vitals+\n\nThe dashboard, Home Screen widgets, Lock Screen widgets, and Apple Watch complications stay free forever. Vitals+ adds a few power-user tools on top:\n\n• Active vs. resting calorie breakdown on Today.\n• Net Deficit: total calories burned minus food energy from Apple Health (works with MyFitnessPal, Lose It, and other food trackers via Health).\n• Monthly Summary PDFs — print-ready reports of your trends and highlights.\n• Custom-range PDF reports for any window you pick.\n• Deep Trends: period-over-period comparison cards.\n\nA free trial is available for new subscribers, so you can try it before committing. Monthly, yearly, and lifetime options.\n\nPolish\n\n• Cleaner Today layout — the active vs. resting split now lives in Settings (Vitals+).\n• A few small reliability and copy fixes throughout History and Settings.",
+      "version": "1.5.0"
+    },
+    {
+      "date": "2026-04-30",
+      "notes": "- Net deficit history: track calories burned minus consumed over any date range.\n- Apple Watch 7-day trends for calories and steps.\n- Faster dashboard loads and smoother history with cache-first painting.\n- Summary cards reorganized by metric with more accurate averages.",
+      "version": "1.4.0"
+    },
+    {
+      "date": "2026-04-28",
+      "notes": "- Added 7 day tracking for steps on the Apple Watch to match the total calorie tracking",
+      "version": "1.3.2"
+    },
+    {
+      "date": "2026-04-27",
+      "notes": "- 7-day calorie trend on Apple Watch\n- Health banner moved to top, clearer refresh indicator.\n- Better HealthKit cache syncing between phone and watch.",
+      "version": "1.3.1"
+    },
+    {
+      "date": "2026-04-21",
+      "notes": "- \"Open Settings\" recovery banner actually appears when Apple Health access is off.\n- Honest Net Calories: clear footer when Health isn’t sharing food, placeholder instead of fake deficit. Watch complication now shows a minus sign on surplus days.\n- Watch respects your iPhone toggles (Calories / Steps / Net Calories); background refresh delivers reliably.\n- \"Updated\" timestamp only advances on a real fetch; widgets fall back to \"Yesterday\" gracefully and dim when stale.\n- Snappier history refresh; CSV export uses ASCII dates on every language.",
+      "version": "1.3.0"
+    },
+    {
+      "date": "2026-04-15",
+      "notes": "NEW FEATURES\n• Net Deficit Tracking: See your net calories (total burned minus food eaten) right on the dashboard. Connects to dietary energy from Apple Health — just sync a food-tracking app like MyFitnessPal and enable it in Settings.\n• Improved Pacing: Simpler pacing settings with clearer comparisons. Choose between same-weekday or every-day averages, and pick your lookback window.\n• Polished Settings: Toggles and display preferences now apply instantly — no save button needed. Goal edits still save when you tap Done.\n\nBUG FIXES & IMPROVEMENTS\n• Fixed HealthKit authorization issues that could block data loading.\n• Fixed watch complication layouts.\n• Improved loading states and error messages.\n• Better background refresh reliability.",
+      "version": "1.2.0"
+    },
+    {
+      "date": "2026-04-13",
+      "notes": "• Fixes background-refresh stability and Health loading edge cases.\n• Today’s totals now match History; pull to refresh on Today.\n• History remembers your chart period; better errors with retry.\n• Widgets & Watch complications respect your toggles and goals; goals sync phone ↔ watch.\n• Clearer Health permission and status messages.",
+      "version": "1.1.0"
+    },
+    {
+      "date": "2026-04-10",
+      "notes": "",
+      "version": "1.0"
+    }
+  ],
+  "vo2max": [
+    {
+      "date": "2026-11-17",
+      "notes": "iPad install compatibility is fixed.",
+      "version": "1.1.8"
+    },
+    {
+      "date": "2026-11-14",
+      "notes": "Now on iPad, with a layout designed for the larger screen.",
+      "version": "1.1.7"
+    },
+    {
+      "date": "2026-11-09",
+      "notes": "You can now change the app's language from Settings. This update also includes fixes and improvements.",
+      "version": "1.1.6"
+    },
+    {
+      "date": "2026-11-02",
+      "notes": "VO2 Max now speaks 18 languages. Apple Watch readings arrive in the background more reliably, the reminder when your data goes stale fires on schedule, and Restore Purchases tells you what it found. The Trends tab fills the screen on first open.",
+      "version": "1.1.5"
+    },
+    {
+      "date": "2026-10-27",
+      "notes": "Behind-the-scenes improvements and bug fixes for a smoother experience. Thank you for being here.",
+      "version": "1.1.4"
+    },
+    {
+      "date": "2026-10-17",
+      "notes": "Behind-the-scenes improvements and fixes to keep VO2 Max running smoothly. Thank you for being here.",
+      "version": "1.1.3"
+    },
+    {
+      "date": "2026-10-09",
+      "notes": "New Apple Health readings now reach the app and its widgets in the background. Before, a reading that arrived while the app was closed waited until the next time you opened it.\n\nBehind-the-scenes improvements and fixes to keep VO2 Max running smoothly. Thank you for being here.",
+      "version": "1.1.2"
+    },
+    {
+      "date": "2026-08-14",
+      "notes": "Clearer plan details: the yearly plan now shows what it comes to per month next to the monthly price, so the two are easy to compare.\n\nThe free trial offered during setup now starts on the monthly plan.",
+      "version": "1.1.1"
+    },
+    {
+      "date": "2026-08-04",
+      "notes": "VO2+ is rebuilt around your own numbers: what moved your Apple Health estimate, your resting heart rate and heart rate recovery, your cardio workout load, and whether an estimate is overdue against your own cadence. Pick any range, including a custom one, and every card follows it.\n\nAlso in this update:\n\n• Your signals and your estimate now show their current figures right on the VO2+ tab\n• Real dates on every range, and a clearer range picker\n• A much better VoiceOver experience across Today, Trends, and VO2+\n• Clearer onboarding and plan details\n• Fixes throughout",
+      "version": "1.1.0"
+    },
+    {
+      "date": "2026-07-27",
+      "notes": "",
+      "version": "1.0.0"
+    }
+  ]
+}

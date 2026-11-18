@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="256x256" href="icon_256.png">
+    <link rel="apple-touch-icon" href="icon_256.png">
+    <title>Total Calories Changelog: Every Update and Release Date</title>
+    <meta name="description" content="Every Total Calories update, newest first. Version 1.9.5 was released November 17, 2026.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://jackwallner.com/ios/vitals/changelog.html">
+    <script>if(location.hostname==="jackwallner.github.io"){var c=document.querySelector('link[rel="canonical"]');if(c&&c.href.indexOf("https://jackwallner.com/")===0)location.replace(c.href)}</script>
+    <meta name="apple-itunes-app" content="app-id=6761743504">
+    <meta name="keywords" content="calorie tracker, step counter, Apple Health, calorie counter, TDEE tracker, calories burned, fitness tracker, iPhone, Apple Watch, free, no ads, private">
+    <meta property="og:title" content="Total Calories Changelog: Every Update and Release Date">
+    <meta property="og:description" content="Every Total Calories update, newest first. Version 1.9.5 was released November 17, 2026.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jackwallner.com/ios/vitals/changelog.html">
+    <meta property="og:image" content="https://jackwallner.github.io/vitals/og-preview.png">
+    <meta property="og:site_name" content="Jack Wallner">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Total Calories Changelog: Every Update and Release Date">
+    <meta name="twitter:description" content="Every Total Calories update, newest first. Version 1.9.5 was released November 17, 2026.">
+    <meta name="twitter:image" content="https://jackwallner.github.io/vitals/appstore-screenshot-01.png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+            color: #1d1d1f;
+            background: #fafafa;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Nav */
+        nav {
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            background: rgba(250,250,250,0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #1d1d1f;
+        }
+
+        .nav-brand img {
+            width: 32px;
+            height: 32px;
+            border-radius: 7px;
+        }
+
+        .nav-brand span {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .nav-link {
+            font-size: 14px;
+            text-decoration: none;
+            background: #1d1d1f;
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 980px;
+            font-weight: 500;
+            transition: opacity 0.15s;
+        }
+
+        .nav-link:hover { opacity: 0.85; }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 100px 24px 64px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            line-height: 1.08;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 span {
+            color: #db340e;
+        }
+
+        .hero .tagline {
+            font-size: 19px;
+            color: #6e6e73;
+            line-height: 1.5;
+            max-width: 440px;
+            margin: 0 auto 12px;
+        }
+
+        .hero .platforms {
+            font-size: 13px;
+            color: #6e6e73;
+            letter-spacing: 0.3px;
+            margin-bottom: 36px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: #1d1d1f;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 14px 36px;
+            border-radius: 980px;
+            text-decoration: none;
+            transition: opacity 0.15s;
+        }
+
+        .download-btn:hover { opacity: 0.85; }
+
+        /* Screenshot showcase */
+        .showcase {
+            padding: 0 0 80px;
+        }
+
+        .showcase-scroll {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding: 0 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+            scrollbar-width: none;
+        }
+
+        .showcase-scroll::-webkit-scrollbar { display: none; }
+
+        .showcase-card {
+            flex-shrink: 0;
+            scroll-snap-align: center;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 16px 48px rgba(0,0,0,0.08);
+        }
+
+        .showcase-card img {
+            width: auto;
+            height: 540px;
+            display: block;
+        }
+
+        /* Features */
+        .features {
+            padding: 80px 0;
+            background: #fff;
+            border-top: 1px solid rgba(0,0,0,0.06);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .features-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .features-header h2 {
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .features-header p {
+            font-size: 17px;
+            color: #6e6e73;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: rgba(0,0,0,0.06);
+            border-top: 1px solid rgba(0,0,0,0.06);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 36px 32px;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: #6e6e73;
+            line-height: 1.55;
+        }
+
+        /* Privacy */
+        .privacy {
+            padding: 80px 0;
+        }
+
+        .privacy .container {
+            max-width: 640px;
+            text-align: center;
+        }
+
+        .privacy .lockup {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: #f5f5f7;
+            margin-bottom: 20px;
+        }
+
+        .privacy .lockup svg {
+            width: 22px;
+            height: 22px;
+            fill: none;
+            stroke: #1d1d1f;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .privacy h2 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+        }
+
+        .privacy p {
+            font-size: 17px;
+            color: #6e6e73;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .privacy a {
+            font-size: 15px;
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .privacy a:hover { text-decoration: underline; }
+
+        /* More Info */
+        .more-info {
+            padding: 64px 24px;
+            background: #fff;
+            border-top: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .more-info-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .more-info-header h2 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .more-info-header p {
+            font-size: 17px;
+            color: #6e6e73;
+        }
+
+        .more-info-content {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .more-info-section {
+            margin-bottom: 40px;
+        }
+
+        .more-info-section h3 {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #6e6e73;
+            margin-bottom: 12px;
+        }
+
+        .more-info-section p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #1d1d1f;
+            margin-bottom: 12px;
+        }
+
+        .more-info-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .more-info-section strong {
+            font-weight: 600;
+        }
+
+        .specs-table {
+            width: 100%;
+            font-size: 14px;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+
+        .specs-table td {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .specs-table td:first-child {
+            color: #6e6e73;
+            width: 140px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* FAQ */
+        .faq-list { margin-top: 4px; }
+        .faq-list details { border-bottom: 1px solid rgba(0,0,0,0.06); padding: 14px 0; }
+        .faq-list summary { font-size: 15px; font-weight: 600; color: #1d1d1f; cursor: pointer; list-style: none; line-height: 1.4; }
+        .faq-list summary::-webkit-details-marker { display: none; }
+        .faq-list summary::after { content: "+"; float: right; color: #6e6e73; font-weight: 400; margin-left: 12px; }
+        .faq-list details[open] summary::after { content: "\2212"; }
+        .faq-list details p { font-size: 15px; line-height: 1.6; color: #6e6e73; margin: 10px 0 0; }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 64px 24px 80px;
+            background: #fff;
+            border-top: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .cta h2 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+        }
+
+        .cta p {
+            font-size: 15px;
+            color: #6e6e73;
+            margin-bottom: 28px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px 24px;
+            font-size: 12px;
+            color: #6e6e73;
+        }
+
+        footer a { display: inline-block; padding: 6px 0;
+            color: #6e6e73;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover { color: #1d1d1f; }
+
+        footer .divider { margin: 4px 0; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero { padding: 72px 20px 48px; }
+            .hero h1 { font-size: 36px; letter-spacing: -1px; }
+            .hero .tagline { font-size: 17px; }
+
+            .showcase-card img { height: 400px; }
+
+            .features-grid { grid-template-columns: 1fr; }
+
+            .features-header h2 { font-size: 28px; }
+            .privacy h2, .cta h2 { font-size: 26px; }
+        }
+
+        @media (max-width: 480px) {
+            .showcase-card img { height: 360px; }
+        }
+        .feature-card .tier {
+            margin-top: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #db340e;
+        }
+    
+.nav-actions { display: flex; align-items: center; gap: 8px; }
+.nav-actions .nav-link, .nav-brand span { white-space: nowrap; }
+@media (max-width: 480px) { .nav-actions { gap: 6px; } .nav-actions .nav-link { padding: 7px 12px; font-size: 13px; } }
+.nav-link-play { background: transparent; color: #1d1d1f; box-shadow: inset 0 0 0 1px #1d1d1f; }
+.store-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; }
+.play-badge { display: inline-block; line-height: 0; margin: -11px -12px; }
+.play-badge img { height: 69px; width: auto; display: block; }
+.cta-box .play-badge { margin: -10px -11px; }
+.cta-box .play-badge img { height: 64px; }
+        summary > h2.faq-q { display: inline; margin: 0; font: inherit; letter-spacing: inherit; color: inherit; }
+</style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Total Calories Changelog: Every Update and Release Date",
+  "url": "https://jackwallner.com/ios/vitals/changelog.html",
+  "dateModified": "2026-11-17",
+  "about": {
+    "@type": "MobileApplication",
+    "name": "Total Calories - Daily Tracker",
+    "url": "https://jackwallner.com/ios/vitals/",
+    "operatingSystem": "iOS",
+    "softwareVersion": "1.9.5",
+    "installUrl": "https://apps.apple.com/us/app/total-calories-daily-tracker/id6761743504?uo=4"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Total Calories",
+        "item": "https://jackwallner.com/ios/vitals/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Changelog",
+        "item": "https://jackwallner.com/ios/vitals/changelog.html"
+      }
+    ]
+  }
+}
+    </script>
+    <style>
+      .changelog { max-width: 720px; margin: 0 auto; padding: 48px 24px 24px; text-align: left; }
+      .changelog h1 { margin: 0 0 32px; }
+      .changelog .release { padding: 24px 0; border-top: 1px solid rgba(127, 127, 127, 0.25); }
+      .changelog .release h2 { margin: 0; font-size: 1.15em; }
+      .changelog .release time { display: block; margin: 4px 0 12px; opacity: 0.7; font-size: 0.9em; }
+      .changelog .release p, .changelog .release ul { margin: 0 0 10px; line-height: 1.55; }
+      .changelog .release ul { padding-left: 20px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <a class="nav-brand" href="./" aria-label="Total Calories">
+                <img src="icon_64.webp" alt="" width="32" height="32">
+                <span>Total Calories</span>
+            </a>
+            <span class="nav-actions"><a class="nav-link" href="https://apps.apple.com/us/app/total-calories-daily-tracker/id6761743504?pt=128748779&amp;ct=jw-vitals-home&amp;mt=8">Download</a><a class="nav-link nav-link-play" href="https://play.google.com/store/apps/details?id=com.jackwallner.vitals" rel="noopener">Google Play</a></span>
+        </div>
+    </nav>
+
+    <main class="changelog">
+      <h1>Total Calories changelog</h1>
+      <article class="release" id="v1.9.5">
+        <h2>Version 1.9.5</h2>
+        <time datetime="2026-11-17">November 17, 2026</time>
+        <p>iPad install compatibility is fixed.</p>
+      </article>
+      <article class="release" id="v1.9.4">
+        <h2>Version 1.9.4</h2>
+        <time datetime="2026-11-15">November 15, 2026</time>
+        <p>Now on iPad, with a layout designed for the larger screen.</p>
+      </article>
+      <article class="release" id="v1.9.3">
+        <h2>Version 1.9.3</h2>
+        <time datetime="2026-11-08">November 8, 2026</time>
+        <p>Step through past days with the new arrows beside the date on Today.</p>
+        <p>Change the app&#x27;s language right from Settings.</p>
+        <p>Plus Weekly Recap and other fixes.</p>
+      </article>
+      <article class="release" id="v1.9.2">
+        <h2>Version 1.9.2</h2>
+        <time datetime="2026-11-01">November 1, 2026</time>
+        <p>Total Calories now speaks 31 languages. Tapping a widget opens the app to Today. Streaks keep counting past 89 days, reports compare equal time windows, and pacing follows your own day, even after travel. Ask to Buy purchases now show as pending.</p>
+      </article>
+      <article class="release" id="v1.9.1">
+        <h2>Version 1.9.1</h2>
+        <time datetime="2026-10-29">October 29, 2026</time>
+        <p>Total Calories now speaks 36 languages.</p>
+        <p>Plus smoother screens and fixes.</p>
+      </article>
+      <article class="release" id="v1.9.0">
+        <h2>Version 1.9.0</h2>
+        <time datetime="2026-10-22">October 22, 2026</time>
+        <p>New Large Home Screen widget with your week of calories at a glance.</p>
+        <p>Ask Siri for the calories you&#x27;ve burned today, or your steps.</p>
+        <p>Optional Goal Reached notification when you hit your daily goal.</p>
+        <p>If your calorie goal has been out of reach, Today suggests one that fits your typical day.</p>
+        <p>Evening Reminder for Vitals+ members.</p>
+        <p>On iPhone Duo, unfold to see Today and History side by side.</p>
+        <p>Fixes a crash when opening a notification.</p>
+      </article>
+      <article class="release" id="v1.8.8">
+        <h2>Version 1.8.8</h2>
+        <time datetime="2026-10-09">October 9, 2026</time>
+        <p>History loads faster on a cold start. A failed food read now says so instead of showing &quot;No food logged&quot;. The Excluded Days screen and the Pause Averages switch describe a paused state accurately, and the paused banner leaves room for larger text sizes.</p>
+        <p>Behind-the-scenes improvements and fixes to keep Total Calories running smoothly. Thank you for being here.</p>
+      </article>
+      <article class="release" id="v1.8.7">
+        <h2>Version 1.8.7</h2>
+        <time datetime="2026-09-15">September 15, 2026</time>
+        <p>Fixes: History stays fast while averages are paused, and the Excluded Days screen now shows the correct dates on Buddhist, Japanese, Islamic, and other non-Gregorian calendars.</p>
+      </article>
+      <article class="release" id="v1.8.6">
+        <h2>Version 1.8.6</h2>
+        <time datetime="2026-09-14">September 14, 2026</time>
+        <p>New in Vitals+: Excluded Days. Leave a sick day, a flight, or a day your watch stayed on the charger out of your averages, totals, and streaks, or pause averages until you&#x27;re back. Nothing is deleted: excluded days stay in your charts, dimmed.</p>
+      </article>
+      <article class="release" id="v1.8.5">
+        <h2>Version 1.8.5</h2>
+        <time datetime="2026-09-07">September 7, 2026</time>
+        <p>Setup is shorter. The question about whether you log food is gone, and the Vitals+ screen you see during setup is back to a plain list of what the subscription adds, instead of a worked example.</p>
+      </article>
+      <article class="release" id="v1.8.4">
+        <h2>Version 1.8.4</h2>
+        <time datetime="2026-09-06">September 6, 2026</time>
+        <p>The Vitals+ screen you see during setup now shows a worked example of the numbers it builds, instead of a list of feature names.</p>
+        <p>Where Apple Health already holds enough history, that screen works from your own data rather than a stand-in figure. Where it doesn&#x27;t, it says so instead of inventing one.</p>
+      </article>
+      <article class="release" id="v1.8.3">
+        <h2>Version 1.8.3</h2>
+        <time datetime="2026-08-26">August 26, 2026</time>
+        <p>Onboarding now asks whether you log food anywhere. If you don&#x27;t, it stops pitching the two Vitals+ features that would only ever show you an empty screen.</p>
+        <p>The Upgrade tab shows all three plans at once. Lifetime used to sit just below the fold on most iPhones.</p>
+        <p>A purchase Apple hasn&#x27;t finished approving no longer looks like it went through, and a slow connection can no longer leave the trial button spinning with no way past it.</p>
+        <p>Net Deficit now disappears from Home Screen widgets as soon as a subscription lapses, instead of lingering until you next open the app.</p>
+      </article>
+      <article class="release" id="v1.8.2">
+        <h2>Version 1.8.2</h2>
+        <time datetime="2026-08-22">August 22, 2026</time>
+        <p>Macros are here. Protein, carbs, and fat sit beside your calories, read from whatever app already logs your food to Apple Health. Nothing to enter twice.</p>
+        <p>Track all three or just the one you count, set a gram goal on one macro or all three, and follow macro averages, trends, and peak days in History, CSV export, and your PDF reports. Macros are part of Vitals+.</p>
+        <p>Settings is now grouped into Calorie Burn and Calorie Intake, with a plain-English explainer on every switch.</p>
+      </article>
+      <article class="release" id="v1.8.1">
+        <h2>Version 1.8.1</h2>
+        <time datetime="2026-08-20">August 20, 2026</time>
+        <p>Your BMI, free, from the height and weight already in Apple Health, or enter them by hand. Body fat and your TDEE/BMR reference figures are in Vitals+.</p>
+        <p>Clearer upgrade screen: every plan shows what it comes to per month, and the yearly plan states how much it saves.</p>
+        <p>Plus small fixes throughout.</p>
+      </article>
+      <article class="release" id="v1.8.0">
+        <h2>Version 1.8.0</h2>
+        <time datetime="2026-08-19">August 19, 2026</time>
+        <p>Your BMI, free, from the height and weight already in Apple Health, or enter them by hand. Body fat and your TDEE/BMR reference figures are in Vitals+.</p>
+        <p>Clearer upgrade screen: every plan shows what it comes to per month, and the yearly plan states how much it saves.</p>
+        <p>Plus small fixes throughout.</p>
+      </article>
+      <article class="release" id="v1.7.7">
+        <h2>Version 1.7.7</h2>
+        <time datetime="2026-07-24">July 24, 2026</time>
+        <p>Accurate daily totals</p>
+        <ul>
+          <li>Fixed today&#x27;s calorie total reading far too high on some devices. Resting energy that is still in progress now counts only the part of the day that has actually happened.</li>
+          <li>The Maintenance widget now matches the figure inside the app. Completed days are finalized at midnight, so your widgets stay in step even if you don&#x27;t open the app.</li>
+          <li>Today, History, and the widgets now always report the same numbers.</li>
+        </ul>
+      </article>
+      <article class="release" id="v1.7.6">
+        <h2>Version 1.7.6</h2>
+        <time datetime="2026-07-23">July 23, 2026</time>
+        <p>Accurate daily totals</p>
+        <ul>
+          <li>Fixed today&#x27;s calorie total reading far too high on some devices. Resting energy that is still in progress now counts only the part of the day that has actually happened.</li>
+          <li>The Maintenance widget now matches the figure inside the app. Completed days are finalized at midnight, so your widgets stay in step even if you don&#x27;t open the app.</li>
+          <li>Today, History, and the widgets now always report the same numbers.</li>
+        </ul>
+      </article>
+      <article class="release" id="v1.7.5">
+        <h2>Version 1.7.5</h2>
+        <time datetime="2026-07-17">July 17, 2026</time>
+        <p>A smoother Vitals+ experience</p>
+        <ul>
+          <li>Clearer pricing and trial details on every upgrade screen. Purchase error messages no longer overlap the fine print.</li>
+          <li>Net Deficit: the Apple Health permission request now appears reliably when you turn on food-calorie tracking, and a new shortcut opens Health permissions if food calories can&#x27;t be read.</li>
+          <li>Bug fixes and polish across the app, widgets, and Apple Watch.</li>
+        </ul>
+      </article>
+      <article class="release" id="v1.7.4">
+        <h2>Version 1.7.4</h2>
+        <time datetime="2026-07-11">July 11, 2026</time>
+        <p>A smoother Vitals+ experience</p>
+        <ul>
+          <li>Clearer pricing and trial details on every upgrade screen. Purchase error messages no longer overlap the fine print.</li>
+          <li>Net Deficit: the Apple Health permission request now appears reliably when you turn on food-calorie tracking, and a new shortcut opens Health permissions if food calories can&#x27;t be read.</li>
+          <li>Bug fixes and polish across the app, widgets, and Apple Watch.</li>
+        </ul>
+      </article>
+      <article class="release" id="v1.7.3">
+        <h2>Version 1.7.3</h2>
+        <time datetime="2026-07-01">July 1, 2026</time>
+        <p>Net Deficit, clearer than ever</p>
+        <ul>
+          <li>The Net Deficit chart now centers on zero with a clear baseline, so deficit days (up) and surplus days (down) are easy to tell apart at a glance.</li>
+        </ul>
+        <ul>
+          <li>History details now show Average, Best Day, and a period Total together, with a consistent layout across Calories, Steps, and Net Deficit.</li>
+        </ul>
+        <p>Plus the usual under-the-hood fixes to keep your calories and steps accurate across the app, widgets, and Apple Watch.</p>
+      </article>
+      <article class="release" id="v1.7.2">
+        <h2>Version 1.7.2</h2>
+        <time datetime="2026-06-27">June 27, 2026</time>
+        <p>New in Vitals+</p>
+        <ul>
+          <li>TDEE &amp; BMR - see your maintenance calories (TDEE) and resting burn (BMR) as a steady 30-day average from Apple Health, right under the ring. The number you&#x27;d plan a deficit around, from your own data.</li>
+        </ul>
+        <p>It&#x27;s an opt-in toggle in Settings, off by default, so the free Today view stays exactly as it was.</p>
+        <p>Plus the usual under-the-hood fixes to keep your calories and steps accurate across the app, widgets, and Apple Watch.</p>
+      </article>
+      <article class="release" id="v1.7.1">
+        <h2>Version 1.7.1</h2>
+        <time datetime="2026-06-24">June 24, 2026</time>
+        <p>New in Vitals+</p>
+        <ul>
+          <li>TDEE &amp; BMR - see your maintenance calories (TDEE) and resting burn (BMR) as a steady 30-day average from Apple Health, right under the ring. The number you&#x27;d plan a deficit around, from your own data.</li>
+        </ul>
+        <p>It&#x27;s an opt-in toggle in Settings, off by default, so the free Today view stays exactly as it was.</p>
+        <p>Plus the usual under-the-hood fixes to keep your calories and steps accurate across the app, widgets, and Apple Watch.</p>
+      </article>
+      <article class="release" id="v1.7.0">
+        <h2>Version 1.7.0</h2>
+        <time datetime="2026-06-10">June 10, 2026</time>
+        <p>New in Vitals+</p>
+        <ul>
+          <li>End-of-day projection - see where today&#x27;s total calories are headed, based on your own recent pace.</li>
+          <li>Goal streaks - a chip on the Today screen counting the days in a row you&#x27;ve hit your goal.</li>
+          <li>Weekly recap - an optional Sunday-evening summary of your last 7 days versus the week before.</li>
+        </ul>
+        <p>All three are opt-in toggles in Settings and off by default, so the free Today view stays exactly as it was.</p>
+        <p>Plus the usual under-the-hood fixes to keep your calories and steps accurate across the app, widgets, and Apple Watch.</p>
+      </article>
+      <article class="release" id="v1.6.0">
+        <h2>Version 1.6.0</h2>
+        <time datetime="2026-05-29">May 29, 2026</time>
+        <p>We tuned refresh rates so your totals and step counts update faster throughout the day, keeping today’s numbers more up to date on your watch, widgets, and in the app.</p>
+      </article>
+      <article class="release" id="v1.5.3">
+        <h2>Version 1.5.3</h2>
+        <time datetime="2026-05-26">May 26, 2026</time>
+        <p>New</p>
+        <ul>
+          <li>In-app review prompt after you hit a daily calorie or step goal, rate on the App Store or send private feedback if something’s off.</li>
+          <li>Settings → Rate or Send Feedback any time.</li>
+        </ul>
+        <p>Polish</p>
+        <ul>
+          <li>App Store listing copy updates (subtitle, keywords, description).</li>
+        </ul>
+      </article>
+      <article class="release" id="v1.5.2">
+        <h2>Version 1.5.2</h2>
+        <time datetime="2026-05-18">May 18, 2026</time>
+        <p>This update makes it easier to understand your data.</p>
+        <ul>
+          <li>Updated the loading screen so it is clearer when the app is processing more information, reducing confusion while things are updating.</li>
+          <li>Improved the Vitals+ Monthly PDF with a cleaner layout and deeper trend previews, so your reports are easier to read and more insightful.</li>
+          <li>Added clearer in-app guidance for new users so it is easier to discover and understand the app’s key features.</li>
+        </ul>
+      </article>
+      <article class="release" id="v1.5.1">
+        <h2>Version 1.5.1</h2>
+        <time datetime="2026-05-15">May 15, 2026</time>
+        <p>This update includes small behind-the-scenes fixes to keep your calories and step counts accurate and up to date across your widgets, complications, and dashboard.</p>
+      </article>
+      <article class="release" id="v1.5.0">
+        <h2>Version 1.5.0</h2>
+        <time datetime="2026-05-12">May 12, 2026</time>
+        <p>Introducing Vitals+</p>
+        <p>The dashboard, Home Screen widgets, Lock Screen widgets, and Apple Watch complications stay free forever. Vitals+ adds a few power-user tools on top:</p>
+        <ul>
+          <li>Active vs. resting calorie breakdown on Today.</li>
+          <li>Net Deficit: total calories burned minus food energy from Apple Health (works with MyFitnessPal, Lose It, and other food trackers via Health).</li>
+          <li>Monthly Summary PDFs, print-ready reports of your trends and highlights.</li>
+          <li>Custom-range PDF reports for any window you pick.</li>
+          <li>Deep Trends: period-over-period comparison cards.</li>
+        </ul>
+        <p>A free trial is available for new subscribers, so you can try it before committing. Monthly, yearly, and lifetime options.</p>
+        <p>Polish</p>
+        <ul>
+          <li>Cleaner Today layout, the active vs. resting split now lives in Settings (Vitals+).</li>
+          <li>A few small reliability and copy fixes throughout History and Settings.</li>
+        </ul>
+      </article>
+      <article class="release" id="v1.4.0">
+        <h2>Version 1.4.0</h2>
+        <time datetime="2026-04-30">April 30, 2026</time>
+        <ul>
+          <li>Net deficit history: track calories burned minus consumed over any date range.</li>
+          <li>Apple Watch 7-day trends for calories and steps.</li>
+          <li>Faster dashboard loads and smoother history with cache-first painting.</li>
+          <li>Summary cards reorganized by metric with more accurate averages.</li>
+        </ul>
+      </article>
+      <article class="release" id="v1.3.2">
+        <h2>Version 1.3.2</h2>
+        <time datetime="2026-04-28">April 28, 2026</time>
+        <ul>
+          <li>Added 7 day tracking for steps on the Apple Watch to match the total calorie tracking</li>
+        </ul>
+      </article>
+      <article class="release" id="v1.3.1">
+        <h2>Version 1.3.1</h2>
+        <time datetime="2026-04-27">April 27, 2026</time>
+        <ul>
+          <li>7-day calorie trend on Apple Watch</li>
+          <li>Health banner moved to top, clearer refresh indicator.</li>
+          <li>Better HealthKit cache syncing between phone and watch.</li>
+        </ul>
+      </article>
+      <article class="release" id="v1.3.0">
+        <h2>Version 1.3.0</h2>
+        <time datetime="2026-04-21">April 21, 2026</time>
+        <ul>
+          <li>&quot;Open Settings&quot; recovery banner actually appears when Apple Health access is off.</li>
+          <li>Honest Net Calories: clear footer when Health isn’t sharing food, placeholder instead of fake deficit. Watch complication now shows a minus sign on surplus days.</li>
+          <li>Watch respects your iPhone toggles (Calories / Steps / Net Calories); background refresh delivers reliably.</li>
+          <li>&quot;Updated&quot; timestamp only advances on a real fetch; widgets fall back to &quot;Yesterday&quot; gracefully and dim when stale.</li>
+          <li>Snappier history refresh; CSV export uses ASCII dates on every language.</li>
+        </ul>
+      </article>
+      <article class="release" id="v1.2.0">
+        <h2>Version 1.2.0</h2>
+        <time datetime="2026-04-15">April 15, 2026</time>
+        <p>NEW FEATURES</p>
+        <ul>
+          <li>Net Deficit Tracking: See your net calories (total burned minus food eaten) right on the dashboard. Connects to dietary energy from Apple Health, just sync a food-tracking app like MyFitnessPal and enable it in Settings.</li>
+          <li>Improved Pacing: Simpler pacing settings with clearer comparisons. Choose between same-weekday or every-day averages, and pick your lookback window.</li>
+          <li>Polished Settings: Toggles and display preferences now apply instantly, no save button needed. Goal edits still save when you tap Done.</li>
+        </ul>
+        <p>BUG FIXES &amp; IMPROVEMENTS</p>
+        <ul>
+          <li>Fixed HealthKit authorization issues that could block data loading.</li>
+          <li>Fixed watch complication layouts.</li>
+          <li>Improved loading states and error messages.</li>
+          <li>Better background refresh reliability.</li>
+        </ul>
+      </article>
+      <article class="release" id="v1.1.0">
+        <h2>Version 1.1.0</h2>
+        <time datetime="2026-04-13">April 13, 2026</time>
+        <ul>
+          <li>Fixes background-refresh stability and Health loading edge cases.</li>
+          <li>Today’s totals now match History; pull to refresh on Today.</li>
+          <li>History remembers your chart period; better errors with retry.</li>
+          <li>Widgets &amp; Watch complications respect your toggles and goals; goals sync phone ↔ watch.</li>
+          <li>Clearer Health permission and status messages.</li>
+        </ul>
+      </article>
+      <article class="release" id="v1.0">
+        <h2>Version 1.0</h2>
+        <time datetime="2026-04-10">April 10, 2026</time>
+        <p>First release on the App Store.</p>
+      </article>
+    </main>
+
+    <footer>
+        <div class="divider">&copy; 2026 Jack Wallner · Last updated <time datetime="2026-11-17" data-updated>November 17, 2026</time></div>
+        <div>
+            <a href="guides.html">Guides</a>
+            <a href="support.html">Support</a>
+            <a href="changelog.html">Changelog</a>
+            <a href="privacy-policy.html">Privacy</a>
+            <a href="https://jackwallner.com/ios/">More apps by Jack Wallner</a>
+        </div>
+        <div class="related-apps">Also by Jack: <a href="https://jackwallner.com/ios/vo2max/">VO2 Max & Cardio Fitness</a> <a href="https://jackwallner.com/ios/fitness-streaks/">Fitness Habit Tracker</a></div>
+        <div class="lang-switch"><span lang="en">English</span> <a href="de/" hreflang="de" lang="de">Deutsch</a> <a href="ja/" hreflang="ja" lang="ja">日本語</a> <a href="fr/" hreflang="fr" lang="fr">Français</a> <a href="zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a> <a href="es/" hreflang="es" lang="es">Español</a> <a href="pl/" hreflang="pl" lang="pl">Polski</a> <a href="ru/" hreflang="ru" lang="ru">Русский</a> <a href="it/" hreflang="it" lang="it">Italiano</a> <a href="pt-BR/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a> <a href="ar/" hreflang="ar" lang="ar">العربية</a></div>
+    </footer>
+
+<script src="/clicks.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="256x256" href="icon_256.png" />
+    <link rel="apple-touch-icon" href="icon_256.png" />
+    <title>Sports Cheat Sheet Changelog: Every Update and Release Date</title>
+    <meta name="description" content="Every Sports Cheat Sheet update, newest first. Version 1.1.6 was released November 9, 2026." />
+    <link rel="canonical" href="https://jackwallner.com/ios/sports/changelog.html" />
+    <script>if(location.hostname==="jackwallner.github.io"){var c=document.querySelector('link[rel="canonical"]');if(c&&c.href.indexOf("https://jackwallner.com/")===0)location.replace(c.href)}</script>
+    <meta name="apple-itunes-app" content="app-id=6770138156" />
+    <meta
+      name="keywords"
+      content="sports made simple, sports news, sports summary, NFL, NBA, MLB, NHL, sports briefing, casual sports fan"
+    />
+    <meta property="og:title" content="Sports Cheat Sheet Changelog: Every Update and Release Date" />
+    <meta property="og:description" content="Every Sports Cheat Sheet update, newest first. Version 1.1.6 was released November 9, 2026." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jackwallner.com/ios/sports/changelog.html" />
+    <meta property="og:image" content="https://jackwallner.github.io/sports/og-preview.png" />
+    <meta property="og:site_name" content="Jack Wallner" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sports Cheat Sheet Changelog: Every Update and Release Date" />
+    <meta name="twitter:description" content="Every Sports Cheat Sheet update, newest first. Version 1.1.6 was released November 9, 2026." />
+    <meta name="twitter:image" content="https://jackwallner.github.io/sports/screenshots/store-1-deck-lead.png" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+          "Helvetica Neue", sans-serif;
+        color: #18221d;
+        background: #fbfaf7;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .container {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      nav {
+        padding: 16px 0;
+        border-bottom: 1px solid rgba(31, 92, 69, 0.1);
+        background: rgba(251, 250, 247, 0.86);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+
+      nav .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .nav-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: #18221d;
+      }
+
+      .nav-brand img {
+        width: 32px;
+        height: 32px;
+        border-radius: 7px;
+      }
+
+      .nav-brand span {
+        font-size: 15px;
+        font-weight: 650;
+      }
+
+      .nav-link {
+        font-size: 14px;
+        text-decoration: none;
+        background: #1f5c45;
+        color: #fff;
+        padding: 8px 18px;
+        border-radius: 980px;
+        font-weight: 600;
+        transition: opacity 0.15s;
+      }
+
+      .nav-link:hover {
+        opacity: 0.85;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 100px 24px 64px;
+      }
+
+      .hero h1 {
+        font-size: 52px;
+        font-weight: 760;
+        letter-spacing: -1.5px;
+        line-height: 1.08;
+        margin-bottom: 16px;
+      }
+
+      .hero h1 span {
+        color: #1f5c45;
+      }
+
+      .hero .tagline {
+        font-size: 19px;
+        color: #607067;
+        line-height: 1.5;
+        max-width: 500px;
+        margin: 0 auto 12px;
+      }
+
+      .hero .platforms {
+        font-size: 13px;
+        color: #6a756e;
+        letter-spacing: 0.3px;
+        margin-bottom: 36px;
+      }
+
+      .download-btn {
+        display: inline-block;
+        background: #1f5c45;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 600;
+        padding: 14px 36px;
+        border-radius: 980px;
+        text-decoration: none;
+        transition: opacity 0.15s;
+      }
+
+      .download-btn:hover {
+        opacity: 0.85;
+      }
+
+      .showcase {
+        padding: 0 0 80px;
+      }
+
+      .showcase-scroll {
+        display: flex;
+        gap: 24px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding: 12px 24px 24px;
+        max-width: 1200px;
+        margin: 0 auto;
+        scrollbar-width: none;
+      }
+
+      .showcase-scroll::-webkit-scrollbar {
+        display: none;
+      }
+
+      .shot {
+        flex: 0 0 264px;
+        scroll-snap-align: center;
+        border-radius: 30px;
+        overflow: hidden;
+        background: #fff;
+        box-shadow:
+          0 2px 8px rgba(31, 92, 69, 0.06),
+          0 18px 52px rgba(31, 92, 69, 0.14);
+      }
+
+      .shot img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .features {
+        padding: 80px 0;
+        background: #fff;
+        border-top: 1px solid rgba(31, 92, 69, 0.1);
+        border-bottom: 1px solid rgba(31, 92, 69, 0.1);
+      }
+
+      .features-header {
+        text-align: center;
+        margin-bottom: 56px;
+      }
+
+      .features-header h2 {
+        font-size: 36px;
+        font-weight: 740;
+        letter-spacing: -0.5px;
+        margin-bottom: 8px;
+      }
+
+      .features-header p {
+        font-size: 17px;
+        color: #607067;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: rgba(31, 92, 69, 0.1);
+        border-top: 1px solid rgba(31, 92, 69, 0.1);
+        border-bottom: 1px solid rgba(31, 92, 69, 0.1);
+      }
+
+      .feature-card {
+        background: #fff;
+        padding: 36px 32px;
+      }
+
+      .feature-card h3 {
+        font-size: 20px;
+        font-weight: 650;
+        letter-spacing: -0.2px;
+        margin-bottom: 8px;
+      }
+
+      .feature-card p {
+        font-size: 14px;
+        color: #607067;
+        line-height: 1.55;
+      }
+
+      .privacy {
+        padding: 80px 0;
+      }
+
+      .privacy .container {
+        max-width: 640px;
+        text-align: center;
+      }
+
+      .privacy .lockup {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background: #f4f1e8;
+        margin-bottom: 20px;
+      }
+
+      .privacy .lockup svg {
+        width: 22px;
+        height: 22px;
+        fill: none;
+        stroke: #1f5c45;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .privacy h2 {
+        font-size: 32px;
+        font-weight: 740;
+        letter-spacing: -0.5px;
+        margin-bottom: 12px;
+      }
+
+      .privacy p {
+        font-size: 17px;
+        color: #607067;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .privacy a {
+        font-size: 15px;
+        color: #1f5c45;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .privacy a:hover {
+        text-decoration: underline;
+      }
+
+      .more-info {
+        padding: 64px 24px;
+        background: #fff;
+        border-top: 1px solid rgba(31, 92, 69, 0.1);
+      }
+
+      .more-info-header {
+        text-align: center;
+        margin-bottom: 48px;
+      }
+
+      .more-info-header h2 {
+        font-size: 32px;
+        font-weight: 740;
+        letter-spacing: -0.5px;
+        margin-bottom: 8px;
+      }
+
+      .more-info-header p {
+        font-size: 17px;
+        color: #607067;
+      }
+
+      .more-info-content {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+
+      .more-info-section {
+        margin-bottom: 40px;
+      }
+
+      .more-info-section h3 {
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        color: #6a756e;
+        margin-bottom: 12px;
+      }
+
+      .more-info-section p {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #18221d;
+        margin-bottom: 12px;
+      }
+
+      .more-info-section p:last-child {
+        margin-bottom: 0;
+      }
+
+      .more-info-section strong {
+        font-weight: 650;
+      }
+
+      .specs-table {
+        width: 100%;
+        font-size: 14px;
+        border-collapse: collapse;
+        margin-top: 16px;
+      }
+
+      .specs-table td {
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(31, 92, 69, 0.1);
+      }
+
+      .specs-table td:first-child {
+        color: #6a756e;
+        width: 140px;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .cta {
+        text-align: center;
+        padding: 64px 24px 80px;
+        background: #fff;
+        border-top: 1px solid rgba(31, 92, 69, 0.1);
+      }
+
+      .cta h2 {
+        font-size: 32px;
+        font-weight: 740;
+        letter-spacing: -0.5px;
+        margin-bottom: 6px;
+      }
+
+      .cta p {
+        font-size: 15px;
+        color: #6a756e;
+        margin-bottom: 28px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px 24px;
+        font-size: 12px;
+        color: #6a756e;
+      }
+
+      footer a { display: inline-block; padding: 6px 0;
+        color: #6a756e;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+
+      footer a:hover {
+        color: #18221d;
+      }
+
+      footer .divider {
+        margin: 4px 0;
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          padding: 72px 20px 48px;
+        }
+        .hero h1 {
+          font-size: 36px;
+          letter-spacing: -1px;
+        }
+        .hero .tagline {
+          font-size: 17px;
+        }
+        .shot {
+          flex-basis: 232px;
+        }
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
+        .features-header h2 {
+          font-size: 28px;
+        }
+        .privacy h2,
+        .cta h2 {
+          font-size: 26px;
+        }
+      }
+
+        /* FAQ */
+        .faq details {
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            padding: 16px 0;
+        }
+
+        .faq summary {
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+            position: relative;
+            padding-right: 28px;
+        }
+
+        .faq summary::-webkit-details-marker { display: none; }
+
+        .faq summary::after {
+            content: "+";
+            position: absolute;
+            right: 4px;
+            font-weight: 400;
+            color: #86868b;
+        }
+
+        .faq details[open] summary::after { content: "\2212"; }
+
+        .faq details p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #6e6e73;
+            margin-top: 10px;
+        }
+        .feature-card .tier {
+            margin-top: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #9e6b00;
+        }
+            summary > h2.faq-q { display: inline; margin: 0; font: inherit; letter-spacing: inherit; color: inherit; }
+</style>
+      <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Sports Cheat Sheet Changelog: Every Update and Release Date",
+  "url": "https://jackwallner.com/ios/sports/changelog.html",
+  "dateModified": "2026-11-09",
+  "about": {
+    "@type": "MobileApplication",
+    "name": "Sports Cheat Sheet: Daily News",
+    "url": "https://jackwallner.com/ios/sports/",
+    "operatingSystem": "iOS",
+    "softwareVersion": "1.1.6",
+    "installUrl": "https://apps.apple.com/us/app/sports-cheat-sheet-daily-news/id6770138156?uo=4"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Sports Cheat Sheet",
+        "item": "https://jackwallner.com/ios/sports/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Changelog",
+        "item": "https://jackwallner.com/ios/sports/changelog.html"
+      }
+    ]
+  }
+}
+    </script>
+    <style>
+      .changelog { max-width: 720px; margin: 0 auto; padding: 48px 24px 24px; text-align: left; }
+      .changelog h1 { margin: 0 0 32px; }
+      .changelog .release { padding: 24px 0; border-top: 1px solid rgba(127, 127, 127, 0.25); }
+      .changelog .release h2 { margin: 0; font-size: 1.15em; }
+      .changelog .release time { display: block; margin: 4px 0 12px; opacity: 0.7; font-size: 0.9em; }
+      .changelog .release p, .changelog .release ul { margin: 0 0 10px; line-height: 1.55; }
+      .changelog .release ul { padding-left: 20px; }
+    </style>
+</head>
+<body>
+    <nav>
+      <div class="container">
+        <a class="nav-brand" href="./" aria-label="Sports Cheat Sheet">
+          <img src="icon_64.webp" alt="" width="32" height="32">
+          <span>Sports Cheat Sheet</span>
+        </a>
+        <a
+          class="nav-link"
+          href="https://apps.apple.com/us/app/sports-cheat-sheet-daily-news/id6770138156?pt=128748779&amp;ct=jw-sports-home&amp;mt=8"
+          >Download</a
+        >
+      </div>
+    </nav>
+
+    <main class="changelog">
+      <h1>Sports Cheat Sheet changelog</h1>
+      <article class="release" id="v1.1.6">
+        <h2>Version 1.1.6</h2>
+        <time datetime="2026-11-09">November 9, 2026</time>
+        <p>Briefings stay fresh and honest. If a refresh can&#x27;t reach the server, you now see the saved briefing with its age instead of an offline error, and free users keep their daily refresh. Pro shows the real time of your next refresh. Smoother motion with Reduce Motion on, bigger tap targets, clearer contrast, and better layouts at large text sizes.</p>
+      </article>
+      <article class="release" id="v1.1.5">
+        <h2>Version 1.1.5</h2>
+        <time datetime="2026-11-03">November 3, 2026</time>
+        <p>Briefings refresh when you come back to the app, show how fresh they are, and load reliably on iOS 17 and 18. Text is easier to read and buttons are easier to tap throughout.</p>
+      </article>
+      <article class="release" id="v1.1.4">
+        <h2>Version 1.1.4</h2>
+        <time datetime="2026-10-30">October 30, 2026</time>
+        <p>Behind-the-scenes improvements and bug fixes for a smoother experience. Thank you for being here.</p>
+      </article>
+      <article class="release" id="v1.1.3">
+        <h2>Version 1.1.3</h2>
+        <time datetime="2026-09-08">September 8, 2026</time>
+        <p>Updated App Store information and subscription diagnostics.</p>
+      </article>
+      <article class="release" id="v1.1.2">
+        <h2>Version 1.1.2</h2>
+        <time datetime="2026-07-28">July 28, 2026</time>
+        <p>Gist now lets you read your first free briefing before showing Pro. We also simplified onboarding, clarified the subscription choices, and refreshed the App Store presentation around what the app actually gives you: what happened, why it matters, and one thing to say.</p>
+      </article>
+      <article class="release" id="v1.1.0">
+        <h2>Version 1.1.0</h2>
+        <time datetime="2026-07-21">July 21, 2026</time>
+        <p>Meet Sports Small Talk: a clearer name, a new icon, and the same five-minute briefings that turn today’s sports news into useful conversation starters.</p>
+      </article>
+      <article class="release" id="v1.0.8">
+        <h2>Version 1.0.8</h2>
+        <time datetime="2026-07-11">July 11, 2026</time>
+        <p>Smoother first launch: onboarding opens cleanly instead of sliding up over the briefing. Catch up in five minutes on the sports everyone is talking about, fresh talking points, each backed by a real source.</p>
+      </article>
+      <article class="release" id="v1.0.7">
+        <h2>Version 1.0.7</h2>
+        <time datetime="2026-07-04">July 4, 2026</time>
+        <p>Gist is simpler and faster now. Catch up in five minutes on the sports everyone is talking about, including the big summer soccer tournament. Fresh talking points, each backed by a real source.</p>
+      </article>
+      <article class="release" id="v1.0.6">
+        <h2>Version 1.0.6</h2>
+        <time datetime="2026-06-30">June 30, 2026</time>
+        <p>Bug fixes and performance improvements to your daily sports briefing.</p>
+      </article>
+      <article class="release" id="v1.0.4">
+        <h2>Version 1.0.4</h2>
+        <time datetime="2026-06-22">June 22, 2026</time>
+        <p>Small polish: story card backstories and tie-ins now always fit your screen, so nothing gets cut off no matter your text size.</p>
+      </article>
+      <article class="release" id="v1.0.3">
+        <h2>Version 1.0.3</h2>
+        <time datetime="2026-06-21">June 21, 2026</time>
+        <p>Small polish: story card backstories and tie-ins now always fit your screen, so nothing gets cut off no matter your text size.</p>
+      </article>
+      <article class="release" id="v1.0.1">
+        <h2>Version 1.0.1</h2>
+        <time datetime="2026-06-19">June 19, 2026</time>
+        <p>Polished the subscription screen so the price is front and center, and tidied up a few visual details. Thanks for using Gist!</p>
+      </article>
+      <article class="release" id="v1.0">
+        <h2>Version 1.0</h2>
+        <time datetime="2026-06-18">June 18, 2026</time>
+        <p>First release on the App Store.</p>
+      </article>
+    </main>
+
+    <footer>
+      <div class="divider">&copy; 2026 Jack Wallner · Last updated <time datetime="2026-11-09" data-updated>November 9, 2026</time></div>
+      <div>
+        <a href="https://jackwallner.com/ios/">More apps by Jack Wallner</a>
+        <a href="how-to-talk-about-sports.html">How to talk about sports</a>
+        <a href="support.html">Support</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+        <div class="related-apps">Also by Jack: <a href="https://jackwallner.com/ios/baseball/">Baseball Savvy StatScout</a> <a href="https://jackwallner.com/ios/football/">Football Next</a> <a href="https://jackwallner.com/ios/basketball/">Basketball</a></div>
+    </footer>
+  <script src="/clicks.js" defer></script>
+</body>
+</html>

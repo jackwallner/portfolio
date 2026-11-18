@@ -14,6 +14,8 @@ on:
       - docs/projects.json
       - docs/ios/**
       - scripts/build_site.py
+      - scripts/build_changelogs.py
+      - data/changelogs.json
   workflow_dispatch:
 
 permissions:
@@ -44,7 +46,10 @@ jobs:
             python3 scripts/build_site.py
             git add docs/projects.json docs/index.html docs/ios/index.html docs/guides/index.html docs/assets/github-contributions.svg \
               docs/sitemap.xml docs/robots.txt docs/llms.txt
-            # Pages that just got the App Store tap counter (scripts/store_clicks.py).
+            # Changelog pages and their data (scripts/build_changelogs.py).
+            git add data/changelogs.json docs/ios/*/changelog.html docs/ios/*/changelog.html.md
+            # Pages that just got the App Store tap counter (scripts/store_clicks.py)
+            # or their Changelog footer link.
             git add -u docs
             if git diff --cached --quiet; then
               echo "Index pages already up to date."

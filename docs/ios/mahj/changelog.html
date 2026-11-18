@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="256x256" href="icon_256.png">
+    <link rel="apple-touch-icon" href="icon_256.png">
+    <title>Mahj Trainer Changelog: Every Update and Release Date</title>
+    <meta name="description" content="Every Mahj Trainer update, newest first. Version 1.4.4 was released November 16, 2026.">
+    <link rel="canonical" href="https://jackwallner.com/ios/mahj/changelog.html">
+    <script>if(location.hostname==="jackwallner.github.io"){var c=document.querySelector('link[rel="canonical"]');if(c&&c.href.indexOf("https://jackwallner.com/")===0)location.replace(c.href)}</script>
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="apple-itunes-app" content="app-id=6790052126">
+    <meta name="keywords" content="american mah jongg, mahjong practice, NMJL card, Charleston, tile drills, jokers, keep or throw, beginner mahjong, flashcards, iPhone">
+    <meta property="og:title" content="Mahj Trainer Changelog: Every Update and Release Date">
+    <meta property="og:description" content="Every Mahj Trainer update, newest first. Version 1.4.4 was released November 16, 2026.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jackwallner.com/ios/mahj/changelog.html">
+    <meta property="og:image" content="https://jackwallner.github.io/mahj/og-preview.png">
+    <meta property="og:site_name" content="Jack Wallner">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mahj Trainer Changelog: Every Update and Release Date">
+    <meta name="twitter:description" content="Every Mahj Trainer update, newest first. Version 1.4.4 was released November 16, 2026.">
+    <meta name="twitter:image" content="https://jackwallner.github.io/mahj/appstore-screenshot-01.png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+            color: #1d1d1f;
+            background: #fafafa;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Nav */
+        nav {
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            background: rgba(250,250,250,0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #1d1d1f;
+        }
+
+        .nav-brand img {
+            width: 32px;
+            height: 32px;
+            border-radius: 7px;
+        }
+
+        .nav-brand span {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .nav-link {
+            font-size: 14px;
+            text-decoration: none;
+            background: #1d1d1f;
+            color: #fff;
+            padding: 0 18px;
+            display: inline-flex;
+            align-items: center;
+            height: 34px;
+            border-radius: 980px;
+            font-weight: 500;
+            transition: opacity 0.15s;
+        }
+
+        .nav-link:hover { opacity: 0.85; }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 100px 24px 64px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            line-height: 1.08;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 span {
+            color: #21594a;
+        }
+
+        .hero .tagline {
+            font-size: 19px;
+            color: #6e6e73;
+            line-height: 1.5;
+            max-width: 440px;
+            margin: 0 auto 12px;
+        }
+
+        .hero .platforms {
+            font-size: 13px;
+            color: #6e6e73;
+            letter-spacing: 0.3px;
+            margin-bottom: 36px;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            height: 48px;
+            background: #1d1d1f;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 0 36px;
+            border-radius: 980px;
+            text-decoration: none;
+            transition: opacity 0.15s;
+        }
+
+        .download-btn:hover { opacity: 0.85; }
+
+        .play-badge {
+            display: inline-flex;
+            --h: 48px;
+            vertical-align: middle;
+        }
+
+        /* The PNG carries 41px of transparent padding on every side (visible badge
+           564x168 in a 646x250 file). Scale so the visible badge is --h tall and
+           pull the padding back with negative margins. */
+        .play-badge img {
+            display: block;
+            height: calc(var(--h) * 1.488);
+            width: auto;
+            margin: calc(var(--h) * -0.244);
+        }
+
+        .play-badge.nav-badge { --h: 34px; }
+
+        .download-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media (max-width: 640px) {
+            .play-badge.nav-badge { display: none; }
+        }
+
+        /* Screenshot showcase */
+        .showcase {
+            padding: 0 0 80px;
+        }
+
+        .showcase-scroll {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding: 0 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+            scrollbar-width: none;
+        }
+
+        .showcase-scroll::-webkit-scrollbar { display: none; }
+
+        .showcase-card {
+            flex-shrink: 0;
+            scroll-snap-align: center;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 16px 48px rgba(0,0,0,0.08);
+        }
+
+        .showcase-card img {
+            width: auto;
+            height: 540px;
+            display: block;
+        }
+
+        /* Features */
+        .features {
+            padding: 80px 0;
+            background: #fff;
+            border-top: 1px solid rgba(0,0,0,0.06);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .features-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .features-header h2 {
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .features-header p {
+            font-size: 17px;
+            color: #6e6e73;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: rgba(0,0,0,0.06);
+            border-top: 1px solid rgba(0,0,0,0.06);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 36px 32px;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: #6e6e73;
+            line-height: 1.55;
+        }
+
+        /* Privacy */
+        .privacy {
+            padding: 80px 0;
+        }
+
+        .privacy .container {
+            max-width: 640px;
+            text-align: center;
+        }
+
+        .privacy .lockup {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: #f5f5f7;
+            margin-bottom: 20px;
+        }
+
+        .privacy .lockup svg {
+            width: 22px;
+            height: 22px;
+            fill: none;
+            stroke: #1d1d1f;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .privacy h2 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+        }
+
+        .privacy p {
+            font-size: 17px;
+            color: #6e6e73;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .privacy a {
+            font-size: 15px;
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .privacy a:hover { text-decoration: underline; }
+
+        /* More Info */
+        .more-info {
+            padding: 64px 24px;
+            background: #fff;
+            border-top: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .more-info-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .more-info-header h2 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .more-info-header p {
+            font-size: 17px;
+            color: #6e6e73;
+        }
+
+        .more-info-content {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .more-info-section {
+            margin-bottom: 40px;
+        }
+
+        .more-info-section h3 {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #6e6e73;
+            margin-bottom: 12px;
+        }
+
+        .more-info-section p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #1d1d1f;
+            margin-bottom: 12px;
+        }
+
+        .more-info-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .more-info-section strong {
+            font-weight: 600;
+        }
+
+        .specs-table {
+            width: 100%;
+            font-size: 14px;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+
+        .specs-table td {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .specs-table td:first-child {
+            color: #6e6e73;
+            width: 140px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Disclaimer */
+        .disclaimer {
+            padding: 40px 24px 0;
+        }
+
+        .disclaimer .container {
+            max-width: 720px;
+        }
+
+        .disclaimer p {
+            font-size: 12px;
+            line-height: 1.6;
+            color: #6e6e73;
+            text-align: center;
+        }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 64px 24px 80px;
+            background: #fff;
+            border-top: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .cta h2 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+        }
+
+        .cta p {
+            font-size: 15px;
+            color: #6e6e73;
+            margin-bottom: 28px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px 24px;
+            font-size: 12px;
+            color: #6e6e73;
+        }
+
+        footer a { display: inline-block; padding: 6px 0;
+            color: #6e6e73;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover { color: #1d1d1f; }
+
+        footer .divider { margin: 4px 0; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero { padding: 72px 20px 48px; }
+            .hero h1 { font-size: 36px; letter-spacing: -1px; }
+            .hero .tagline { font-size: 17px; }
+
+            .showcase-card img { height: 400px; }
+
+            .features-grid { grid-template-columns: 1fr; }
+
+            .features-header h2 { font-size: 28px; }
+            .privacy h2, .cta h2 { font-size: 26px; }
+        }
+
+        @media (max-width: 480px) {
+            .showcase-card img { height: 360px; }
+        }
+        .feature-card .tier {
+            margin-top: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #21594a;
+        }
+            #faq .more-info-section h2.faq-q { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: #6e6e73; margin-bottom: 12px; }
+</style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Mahj Trainer Changelog: Every Update and Release Date",
+  "url": "https://jackwallner.com/ios/mahj/changelog.html",
+  "dateModified": "2026-11-16",
+  "about": {
+    "@type": "MobileApplication",
+    "name": "Mahj Trainer: Mahjong Practice",
+    "url": "https://jackwallner.com/ios/mahj/",
+    "operatingSystem": "iOS",
+    "softwareVersion": "1.4.4",
+    "installUrl": "https://apps.apple.com/us/app/mahj-trainer-mahjong-practice/id6790052126?uo=4"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Mahj Trainer",
+        "item": "https://jackwallner.com/ios/mahj/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Changelog",
+        "item": "https://jackwallner.com/ios/mahj/changelog.html"
+      }
+    ]
+  }
+}
+    </script>
+    <style>
+      .changelog { max-width: 720px; margin: 0 auto; padding: 48px 24px 24px; text-align: left; }
+      .changelog h1 { margin: 0 0 32px; }
+      .changelog .release { padding: 24px 0; border-top: 1px solid rgba(127, 127, 127, 0.25); }
+      .changelog .release h2 { margin: 0; font-size: 1.15em; }
+      .changelog .release time { display: block; margin: 4px 0 12px; opacity: 0.7; font-size: 0.9em; }
+      .changelog .release p, .changelog .release ul { margin: 0 0 10px; line-height: 1.55; }
+      .changelog .release ul { padding-left: 20px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <a class="nav-brand" href="./" aria-label="Mahj Trainer">
+                <img src="icon_64.webp" alt="" width="32" height="32">
+                <span>Mahj Trainer</span>
+            </a>
+            <div style="display:flex;align-items:center;gap:18px">
+                <a href="learn/" style="font-size:14px;color:#1d1d1f;text-decoration:none">Learn</a>
+                <a class="nav-link" href="https://apps.apple.com/us/app/mahj-trainer-mahjong-practice/id6790052126?pt=128748779&amp;ct=jw-mahj-home&amp;mt=8">Download</a>
+                <a class="play-badge nav-badge" href="https://play.google.com/store/apps/details?id=com.jackwallner.mahj" style="--h: 34px"><img src="google-play-badge.png" alt="Get it on Google Play" width="646" height="250"></a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="changelog">
+      <h1>Mahj Trainer changelog</h1>
+      <article class="release" id="v1.4.4">
+        <h2>Version 1.4.4</h2>
+        <time datetime="2026-11-16">November 16, 2026</time>
+        <p>The Monthly Challenge now shows on Home from your first visit.</p>
+        <p>The Training tiles are cleaner and easier to read.</p>
+      </article>
+      <article class="release" id="v1.4.2">
+        <h2>Version 1.4.2</h2>
+        <time datetime="2026-10-28">October 28, 2026</time>
+        <p>A drill you leave now waits for you, on the same question.</p>
+        <p>On the unfolded iPhone Duo, Home and your drill sit side by side.</p>
+        <p>Every answer fits on smaller iPhones, and the largest text sizes read cleanly.</p>
+        <p>The Mahj Minute rolls over at midnight and on the first of the month without losing a point.</p>
+        <p>Two answers were corrected: the junk pass in the Charleston and the dead quint with jokers.</p>
+        <p>Reduce Motion is respected everywhere.</p>
+      </article>
+      <article class="release" id="v1.4.1">
+        <h2>Version 1.4.1</h2>
+        <time datetime="2026-10-27">October 27, 2026</time>
+        <p>Every practice and challenge question has been rechecked, the explanations are clearer, and the monthly challenge has fresh questions lined up through next September.</p>
+        <p>Mahj Minute is now for everyone, and it counts.</p>
+        <p>Five new questions a day, the same for every player. Each day adds to the month&#x27;s challenge: your best 20 days make your score, and a strong month shows where you rank. It appears on Home after your first practice.</p>
+        <p>Home and Your Progress now show how many questions you locked in this week, so you can see the practice working instead of guessing.</p>
+        <p>Members can set their game night straight from Home, and a prep reminder brings you back before you play.</p>
+        <p>Send Feedback is a text box and one button now. No mail app, no account.</p>
+        <p>Thank you for the notes and the ratings. They are how a one-person app gets found.</p>
+      </article>
+      <article class="release" id="v1.3.2">
+        <h2>Version 1.3.2</h2>
+        <time datetime="2026-10-13">October 13, 2026</time>
+        <p>Small fixes and behind-the-scenes improvements.</p>
+      </article>
+      <article class="release" id="v1.3.1">
+        <h2>Version 1.3.1</h2>
+        <time datetime="2026-10-06">October 6, 2026</time>
+        <p>Play a hand, one tile at a time.</p>
+        <p>Play a Hand deals you thirteen tiles off a real wall. Commit to a section, then draw and discard for twelve turns while a coach grades every throw and shows the arithmetic behind it. No opponents and no bots. Everyone gets one free hand a day.</p>
+        <p>Reference is a new searchable glossary plus a page for every section of the card, free for everyone, one tap from the home screen.</p>
+        <p>Room progress now counts what you have actually learned: a question sticks once you answer it right twice in a row.</p>
+        <p>Get one wrong and the app now tells you why your answer was wrong, not just what the right one was.</p>
+        <p>New in the Table Room: scoring and table rules. Who pays what, when a call is too late, and what happens after a wrong mah jongg.</p>
+        <p>New in the Card Room: how to read a line on the card, from matching and opposite dragons to NEWS and zeros.</p>
+        <p>We also re-checked every question against the rules and corrected a handful of answers, including a joker question and a defense question players flagged. Thank you for the notes.</p>
+      </article>
+      <article class="release" id="v1.2.1">
+        <h2>Version 1.2.1</h2>
+        <time datetime="2026-08-27">August 27, 2026</time>
+        <p>A smarter rhythm for game night.</p>
+        <p>Mahj Minute is a new daily challenge. Every member gets the same five questions on the same day: two rack reads, one Charleston call, and two table judgments. Share your score, and keep a forgiving five-day weekly rhythm with a 30-day archive to catch up from.</p>
+        <p>Game Night Prep lets you set your usual game night. A reminder arrives beforehand and opens straight into a five-minute session built from your due mistakes, your weakest room, and material you have not seen yet.</p>
+        <p>Mahj Trainer now runs natively on iPad, in portrait or landscape.</p>
+        <p>Mahj Minute and Game Night Prep are part of Mahj+.</p>
+      </article>
+      <article class="release" id="v1.2.0">
+        <h2>Version 1.2.0</h2>
+        <time datetime="2026-08-13">August 13, 2026</time>
+        <p>A smarter rhythm for game night.</p>
+        <p>Mahj Minute is a new daily challenge. Every member gets the same five questions on the same day: two rack reads, one Charleston call, and two table judgments. Share your score, and keep a forgiving five-day weekly rhythm with a 30-day archive to catch up from.</p>
+        <p>Game Night Prep lets you set your usual game night. A reminder arrives beforehand and opens straight into a five-minute session built from your due mistakes, your weakest room, and material you have not seen yet.</p>
+        <p>Mahj Trainer now runs natively on iPad, in portrait or landscape.</p>
+        <p>Mahj Minute and Game Night Prep are part of Mahj+.</p>
+      </article>
+      <article class="release" id="v1.1">
+        <h2>Version 1.1</h2>
+        <time datetime="2026-08-07">August 7, 2026</time>
+        <p>Practice that never runs out.</p>
+        <p>Endless Practice deals a fresh rack every time, so you can drill section reading and tile counting for as long as you like, with a full explanation after every answer.</p>
+        <p>Fix My Mistakes now remembers what you got wrong and brings it back on a schedule, so weak spots actually close.</p>
+        <p>Timed Challenge gives you ninety seconds and a personal best to chase.</p>
+        <p>Also new: an accuracy breakdown for every room, and more hand-written questions across the tiles, the card, the Charleston, the table, and the Master Tables.</p>
+      </article>
+      <article class="release" id="v1.0">
+        <h2>Version 1.0</h2>
+        <time datetime="2026-07-14">July 14, 2026</time>
+        <p>First release on the App Store.</p>
+      </article>
+    </main>
+
+    <footer>
+        <div class="divider">&copy; 2026 Jack Wallner · Last updated <time datetime="2026-11-16" data-updated>November 16, 2026</time></div>
+        <div>
+            <a href="learn/">Learn</a>
+            <a href="best-american-mahjong-app.html">Best American mahjong app</a>
+            <a href="mahjong-charleston-practice-app.html">Charleston practice</a>
+            <a href="practice-american-mahjong-alone.html">Practice alone</a>
+            <a href="american-mahjong-practice-app-android.html">Android app</a>
+            <a href="mahjong-practice-app-ipad.html">iPad app</a>
+            <a href="free-american-mahjong-app.html">Free mahjong app</a>
+            <a href="mahjong-quiz-app.html">Mahjong quiz app</a>
+            <a href="support.html">Support</a>
+            <a href="changelog.html">Changelog</a>
+            <a href="privacy-policy.html">Privacy</a>
+            <a href="https://jackwallner.com/ios/">More apps by Jack Wallner</a>
+        </div>
+        <div class="related-apps">Also by Jack: <a href="https://jackwallner.com/ios/bridge/">Bridge Trainer</a> <a href="https://jackwallner.com/ios/cribbage/">Cribbage Trainer</a> <a href="https://jackwallner.com/ios/sheepshead/">Sheepshead Trainer</a></div>
+    </footer>
+
+<script src="/clicks.js" defer></script>
+</body>
+</html>
