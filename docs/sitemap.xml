@@ -50,7 +50,7 @@
   <url><loc>https://jackwallner.com/ios/baseball/changelog.html</loc><lastmod>2026-11-17</lastmod><priority>0.7</priority></url>
   <url><loc>https://jackwallner.com/ios/baseball/</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://jackwallner.com/ios/baseball/statcast-metrics-explained.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority></url>
-  <url><loc>https://jackwallner.com/ios/sports/changelog.html</loc><lastmod>2026-11-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://jackwallner.com/ios/sports/changelog.html</loc><lastmod>2026-11-18</lastmod><priority>0.7</priority></url>
   <url><loc>https://jackwallner.com/ios/sports/how-to-talk-about-sports.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority></url>
   <url><loc>https://jackwallner.com/ios/sports/</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://jackwallner.com/ios/headaches/barometric-pressure-headaches.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority></url>
@@ -143,7 +143,7 @@
   <url><loc>https://jackwallner.com/ios/football/changelog.html</loc><lastmod>2026-11-08</lastmod><priority>0.7</priority></url>
   <url><loc>https://jackwallner.com/ios/football/</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://jackwallner.com/ios/football/what-is-epa-per-play.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority></url>
-  <url><loc>https://jackwallner.com/ios/hockey/changelog.html</loc><lastmod>2026-11-09</lastmod><priority>0.7</priority></url>
+  <url><loc>https://jackwallner.com/ios/hockey/changelog.html</loc><lastmod>2026-11-18</lastmod><priority>0.7</priority></url>
   <url><loc>https://jackwallner.com/ios/hockey/</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://jackwallner.com/ios/hockey/what-is-xg-in-hockey.html</loc><lastmod>2026-11-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://jackwallner.com/ios/ravel/</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
@@ -199,6 +199,7 @@
   <url><loc>https://jackwallner.com/ios/skat/</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>
   <url><loc>https://jackwallner.com/ios/skat/skat-regeln-einfach-erklaert.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority></url>
   <url><loc>https://jackwallner.com/ios/mahj/american-mahjong-practice-app-android.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority></url>
+  <url><loc>https://jackwallner.com/ios/mahj/american-mahjong-practice-online.html</loc><lastmod>2026-11-18</lastmod><priority>0.7</priority></url>
   <url><loc>https://jackwallner.com/ios/mahj/best-american-mahjong-app.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority></url>
   <url><loc>https://jackwallner.com/ios/mahj/changelog.html</loc><lastmod>2026-11-16</lastmod><priority>0.7</priority></url>
   <url><loc>https://jackwallner.com/ios/mahj/chatgpt/</loc><lastmod>2026-11-11</lastmod><priority>0.7</priority></url>
@@ -221,10 +222,11 @@
   <url><loc>https://jackwallner.com/ios/mahj/learn/quints.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority></url>
   <url><loc>https://jackwallner.com/ios/mahj/learn/scoring-and-table-rules.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority></url>
   <url><loc>https://jackwallner.com/ios/mahj/learn/soap-in-mahjong.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority></url>
-  <url><loc>https://jackwallner.com/ios/mahj/mahjong-charleston-practice-app.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority></url>
+  <url><loc>https://jackwallner.com/ios/mahj/mahjong-charleston-practice-app.html</loc><lastmod>2026-11-18</lastmod><priority>0.7</priority></url>
   <url><loc>https://jackwallner.com/ios/mahj/mahjong-practice-app-ipad.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority></url>
   <url><loc>https://jackwallner.com/ios/mahj/mahjong-quiz-app.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority></url>
-  <url><loc>https://jackwallner.com/ios/mahj/practice-american-mahjong-alone.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority></url>
+  <url><loc>https://jackwallner.com/ios/mahj/practice-american-mahjong-alone.html</loc><lastmod>2026-11-18</lastmod><priority>0.7</priority></url>
+  <url><loc>https://jackwallner.com/ios/mahj/teachers.html</loc><lastmod>2026-11-18</lastmod><priority>0.7</priority></url>
   <url><loc>https://jackwallner.com/ios/elderhub/best-family-medication-tracker-app.html</loc><lastmod>2026-11-15</lastmod><priority>0.7</priority></url>
   <url><loc>https://jackwallner.com/ios/elderhub/changelog.html</loc><lastmod>2026-11-09</lastmod><priority>0.7</priority></url>
   <url><loc>https://jackwallner.com/ios/elderhub/</loc><lastmod>2026-11-18</lastmod><priority>0.8</priority></url>

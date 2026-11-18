@@ -660,6 +660,11 @@
   ],
   "hockey": [
     {
+      "date": "2026-11-18",
+      "notes": "Now on iPad, with a layout designed for the larger screen.",
+      "version": "1.0.4"
+    },
+    {
       "date": "2026-11-09",
       "notes": "Game pages opened before puck drop now show the live score once the game starts. Trends keeps its loading spinner while recent form loads, and moves off a locked season if Pro ends mid-session.",
       "version": "1.0.3"
@@ -1268,6 +1273,11 @@
     }
   ],
   "sports": [
+    {
+      "date": "2026-11-18",
+      "notes": "Now on iPad, with a layout designed for the larger screen.",
+      "version": "1.1.7"
+    },
     {
       "date": "2026-11-09",
       "notes": "Briefings stay fresh and honest. If a refresh can't reach the server, you now see the saved briefing with its age instead of an offline error, and free users keep their daily refresh. Pro shows the real time of your next refresh. Smoother motion with Reduce Motion on, bigger tap targets, clearer contrast, and better layouts at large text sizes.",

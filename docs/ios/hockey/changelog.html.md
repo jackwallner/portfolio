@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/hockey/changelog.html
 
+## Version 1.0.4 (November 18, 2026)
+
+Now on iPad, with a layout designed for the larger screen.
+
 ## Version 1.0.3 (November 9, 2026)
 
 Game pages opened before puck drop now show the live score once the game starts. Trends keeps its loading spinner while recent form loads, and moves off a locked season if Pro ends mid-session.

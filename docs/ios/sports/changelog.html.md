@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/sports/changelog.html
 
+## Version 1.1.7 (November 18, 2026)
+
+Now on iPad, with a layout designed for the larger screen.
+
 ## Version 1.1.6 (November 9, 2026)
 
 Briefings stay fresh and honest. If a refresh can't reach the server, you now see the saved briefing with its age instead of an offline error, and free users keep their daily refresh. Pro shows the real time of your next refresh. Smoother motion with Reduce Motion on, bigger tap targets, clearer contrast, and better layouts at large text sizes.
