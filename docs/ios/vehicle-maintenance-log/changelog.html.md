@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/vehicle-maintenance-log/changelog.html
 
+## Version 1.2.0 (November 18, 2026)
+
+Now on iPad, with a layout designed for the larger screen.
+
 ## Version 1.1.3 (November 9, 2026)
 
 Widget jobs now show Overdue once the due date passes. Fixing or deleting a service or fill-up now updates your odometer. Switching miles and km no longer adds a reading, and Settings shows reminders as on after you allow them.

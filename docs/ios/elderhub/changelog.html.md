@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/elderhub/changelog.html
 
+## Version 1.0.7 (November 18, 2026)
+
+Now on iPad, with a layout designed for the larger screen.
+
 ## Version 1.0.6 (November 9, 2026)
 
 Back Up in Settings now saves your care record to your account, so it's safe if your phone is lost or replaced. Screens also read more clearly at large text sizes.

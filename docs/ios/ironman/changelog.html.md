@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/ironman/changelog.html
 
+## Version 1.2.0 (November 18, 2026)
+
+Now on iPad, with a layout designed for the larger screen.
+
 ## Version 1.1.5 (November 9, 2026)
 
 Open full clips from Ask Pattie right after installing the app. Audio controls reset after a call or other interruption.

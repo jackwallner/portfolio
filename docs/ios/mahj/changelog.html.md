@@ -4,6 +4,14 @@
 
 Web page: https://jackwallner.com/ios/mahj/changelog.html
 
+## Version 1.4.5 (November 18, 2026)
+
+Fixed a Mahj+ question about a dead 5 Bam. It now says which jokers you hold.
+
+In Arabic, cards and How to Play pages now follow your finger.
+
+On iPad, the Done button after a practice is sized like the rest of the screen.
+
 ## Version 1.4.4 (November 16, 2026)
 
 The Monthly Challenge now shows on Home from your first visit.

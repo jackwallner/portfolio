@@ -340,6 +340,11 @@
   ],
   "elderhub": [
     {
+      "date": "2026-11-18",
+      "notes": "Now on iPad, with a layout designed for the larger screen.",
+      "version": "1.0.7"
+    },
+    {
       "date": "2026-11-09",
       "notes": "Back Up in Settings now saves your care record to your account, so it's safe if your phone is lost or replaced. Screens also read more clearly at large text sizes.",
       "version": "1.0.6"
@@ -687,6 +692,11 @@
   ],
   "ironman": [
     {
+      "date": "2026-11-18",
+      "notes": "Now on iPad, with a layout designed for the larger screen.",
+      "version": "1.2.0"
+    },
+    {
       "date": "2026-11-09",
       "notes": "Open full clips from Ask Pattie right after installing the app. Audio controls reset after a call or other interruption.",
       "version": "1.1.5"
@@ -723,6 +733,11 @@
     }
   ],
   "mahj": [
+    {
+      "date": "2026-11-18",
+      "notes": "Fixed a Mahj+ question about a dead 5 Bam. It now says which jokers you hold.\n\nIn Arabic, cards and How to Play pages now follow your finger.\n\nOn iPad, the Done button after a practice is sized like the rest of the screen.",
+      "version": "1.4.5"
+    },
     {
       "date": "2026-11-16",
       "notes": "The Monthly Challenge now shows on Home from your first visit.\n\nThe Training tiles are cleaner and easier to read.",
@@ -1378,6 +1393,11 @@
   ],
   "time": [
     {
+      "date": "2026-11-18",
+      "notes": "Now on iPad, with a layout designed for the larger screen.",
+      "version": "1.0.3"
+    },
+    {
       "date": "2026-11-01",
       "notes": "Your plan learns only from real timings: a quick try-out or a run left open no longer moves tomorrow's start. Done always marks the step on screen, the trial reminder stays set, and buttons are easier to tap.",
       "version": "1.0.2"
@@ -1394,6 +1414,11 @@
     }
   ],
   "vehicle-maintenance-log": [
+    {
+      "date": "2026-11-18",
+      "notes": "Now on iPad, with a layout designed for the larger screen.",
+      "version": "1.2.0"
+    },
     {
       "date": "2026-11-09",
       "notes": "Widget jobs now show Overdue once the due date passes. Fixing or deleting a service or fill-up now updates your odometer. Switching miles and km no longer adds a reading, and Settings shows reminders as on after you allow them.",

@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/time/changelog.html
 
+## Version 1.0.3 (November 18, 2026)
+
+Now on iPad, with a layout designed for the larger screen.
+
 ## Version 1.0.2 (November 1, 2026)
 
 Your plan learns only from real timings: a quick try-out or a run left open no longer moves tomorrow's start. Done always marks the step on screen, the trial reminder stays set, and buttons are easier to tap.
