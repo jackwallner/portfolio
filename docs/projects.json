@@ -347,8 +347,8 @@
     "icon": "basketball-icon.png",
     "group": "ios",
     "type": "iOS App",
-    "status": "Pre-release",
-    "cls": "soon",
+    "status": "App Store",
+    "cls": "live",
     "page": "ios/basketball/",
     "github": "https://github.com/jackwallner/basketball",
     "tech": "Swift 6 · SwiftUI · Supabase · hoopR · NBA Stats · GitHub Actions",
@@ -356,7 +356,8 @@
     "start": "2026-10-08",
     "updated": "2026-10-12",
     "category": "Sports",
-    "appStoreId": "6820647074"
+    "appStoreId": "6820647074",
+    "appStore": "https://apps.apple.com/us/app/basketball-hardwood-statscout/id6820647074?uo=4"
   },
   {
     "slug": "dreamcart",

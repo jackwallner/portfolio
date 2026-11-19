@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/posture/changelog.html
 
+## Version 1.0.10 (November 19, 2026)
+
+Now on iPad, with a layout designed for the larger screen.
+
 ## Version 1.0.8 (November 3, 2026)
 
 Slouch nudges now reach you when your phone is locked or the app is in the background, and show up on your Apple Watch. Plus fixes for Pro watch monitoring.
