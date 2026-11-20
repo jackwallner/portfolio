@@ -111,7 +111,6 @@ h2{font-family:var(--serif);font-size:20px;font-weight:600;margin:4px 0 10px}
 .rate button:active{transform:scale(.88)}
 
 /* share */
-.link{font-size:14px;word-break:break-all;background:var(--paper);border-radius:12px;padding:12px;color:var(--muted);margin:4px 0 14px;max-height:4.6em;overflow:hidden}
 .toast{position:fixed;left:50%;bottom:max(84px,calc(env(safe-area-inset-bottom) + 56px));transform:translate(-50%,20px);background:var(--ink);color:var(--cream);padding:10px 16px;border-radius:999px;font-size:15px;opacity:0;transition:opacity .2s,transform .2s;z-index:20;pointer-events:none}
 .toast.on{opacity:1;transform:translate(-50%,0)}
 .legal{position:relative;z-index:1;display:flex;justify-content:center;gap:18px;padding:0 16px max(24px,env(safe-area-inset-bottom));font-size:13px}
@@ -315,14 +314,14 @@ function showSetup(mode){
 function showShare(g){
   const url=giftLink(g);
   const title=g.to?`For ${esc(g.to)}`:"Your gift";
-  app.innerHTML=`<div class="fade"><h1 class="brand">${title}</h1><div class="sub">24 doors, ready for December</div><div class="card"><div class="link" id="lnk">${esc(url)}</div><button class="cta" id="share">Send it</button><button class="ghost" id="copy">Copy link</button><button class="ghost" id="peek">Preview</button><button class="ghost" id="done">Done</button></div></div>`;
+  app.innerHTML=`<div class="fade"><h1 class="brand">${title}</h1><div class="card"><button class="cta" id="share">Send it</button><button class="ghost" id="copy">Copy link</button><button class="ghost" id="peek">Preview</button><button class="ghost" id="done">Done</button></div></div>`;
   const text=g.to?`${g.to}, I made you an advent calendar. Open one door each day in December.`:"I made you an advent calendar. Open one door each day in December.";
   $("#share").onclick=async()=>{if(navigator.share){try{await navigator.share({title:"Advent Doors",text,url})}catch(e){}}else copy(url)};
   $("#copy").onclick=()=>copy(url);
   $("#peek").onclick=()=>{const raw=url.split("#g=")[1];const sent=store.get("advent.sent",{});sent["g"+hashKey(raw)]=1;store.set("advent.sent",sent);location.href=url};
   $("#done").onclick=()=>{history.replaceState(null,"",location.pathname+location.search);route()};
 }
-async function copy(s){try{await navigator.clipboard.writeText(s);toast("Link copied")}catch(e){const r=document.createRange();r.selectNodeContents($("#lnk"));const w=getSelection();w.removeAllRanges();w.addRange(r);toast("Press copy")}}
+async function copy(s){try{await navigator.clipboard.writeText(s);toast("Link copied")}catch(e){const t=document.createElement("textarea");t.value=s;document.body.appendChild(t);t.select();try{document.execCommand("copy");toast("Link copied")}catch(_){}t.remove()}}
 
 (function snow(){const el=$("#snow");if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;for(let i=0;i<28;i++){const f=document.createElement("i");const s=2+Math.random()*3;f.style.cssText=`left:${Math.random()*100}%;width:${s}px;height:${s}px;opacity:${.2+Math.random()*.45};animation-duration:${9+Math.random()*12}s;animation-delay:${-Math.random()*20}s`;el.appendChild(f)}})();
 route();
