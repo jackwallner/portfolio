@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/bond/changelog.html
 
+## Version 1.0.13 (November 19, 2026)
+
+Fixes and improvements to reminders and Apple Watch sync.
+
 ## Version 1.0.12 (November 17, 2026)
 
 Now on iPad, with a layout designed for the larger screen.
