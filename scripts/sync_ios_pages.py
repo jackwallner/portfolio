@@ -76,6 +76,8 @@ APPS = {
     "deepcuts": ("deepcuts", "docs"),
     "sunset": ("sunset", "docs"),
     "recovery": ("recovery", "docs"),
+    # Web-first seasonal app; the page is the calendar itself (gift links live in the #g= hash).
+    "advent": ("advent", "docs"),
     # Mac and Windows app, so it lives at the site root rather than under /ios/.
     "breathing-autostart": ("nanit-breathing-autostart", "docs", "breathing-autostart"),
 }
