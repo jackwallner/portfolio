@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Advent Doors: Make Your Own Advent Calendar</title>
+<meta name="description" content="Pick what you love and a budget. Each December day opens one door with something to do, read or think about. Make one for yourself or send one as a gift.">
+<link rel="canonical" href="https://jackwallner.com/ios/advent/">
+<script>if(location.hostname==="jackwallner.github.io"){location.replace("https://jackwallner.com/ios/advent/"+location.search+location.hash)}</script>
+<meta name="theme-color" content="#102a22">
+<meta property="og:title" content="Advent Doors">
+<meta property="og:description" content="24 little doors for December. Make one for yourself or send one as a gift.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jackwallner.com/ios/advent/">
+<meta property="og:image" content="https://jackwallner.github.io/advent/og-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="256x256" href="icon_256.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icon_512.png">
+<link rel="apple-touch-icon" href="icon_256.png">
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+:root{
+  --night:#102a22;--night2:#0a1d17;--berry:#a3283a;--berry-d:#7d1c2b;--gold:#d9a441;--gold-l:#ecc77a;
+  --cream:#f7f0e3;--paper:#efe4cf;--ink:#2a1d14;--muted:#7a6a58;--pine:#1f4d3c;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%}
+body{background:radial-gradient(120% 70% at 50% 0%,#1a3f32 0%,var(--night) 45%,var(--night2) 100%) fixed;color:var(--cream);font-family:var(--sans);-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+input,textarea{font:inherit}
+.snow{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.snow i{position:absolute;top:-10px;width:4px;height:4px;border-radius:50%;background:#fff;opacity:.5;animation:fall linear infinite}
+@keyframes fall{to{transform:translate3d(30px,105vh,0)}}
+@media (prefers-reduced-motion:reduce){.snow{display:none}}
+main{position:relative;z-index:1;max-width:460px;margin:0 auto;padding:max(28px,env(safe-area-inset-top)) 16px max(32px,env(safe-area-inset-bottom))}
+.brand{font-family:var(--serif);font-size:34px;font-weight:600;text-align:center;letter-spacing:.2px;color:var(--cream)}
+.brand .star{color:var(--gold);font-size:22px;vertical-align:6px;margin:0 6px}
+.sub{font-family:var(--serif);text-align:center;color:var(--gold-l);font-size:17px;margin-top:6px;font-style:italic}
+.note{font-family:var(--serif);font-style:italic;text-align:center;color:var(--cream);opacity:.88;font-size:17px;line-height:1.45;margin:14px auto 0;max-width:34ch;white-space:pre-wrap}
+.switch{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.switch button{padding:7px 14px;border-radius:999px;border:1px solid rgba(247,240,227,.25);font-size:14px;color:var(--cream);opacity:.75}
+.switch button[aria-pressed=true]{background:var(--cream);color:var(--ink);opacity:1;border-color:var(--cream)}
+
+/* setup */
+.card{background:var(--cream);color:var(--ink);border-radius:22px;padding:22px 18px;margin-top:22px;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.seg{display:grid;grid-template-columns:1fr 1fr;background:var(--paper);border-radius:12px;padding:3px;margin-bottom:20px}
+.seg button{padding:9px 0;border-radius:10px;font-weight:600;font-size:15px;color:var(--muted)}
+.seg button[aria-pressed=true]{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h2{font-family:var(--serif);font-size:20px;font-weight:600;margin:4px 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chips button{padding:10px 14px;border-radius:999px;border:1.5px solid #d8cbb2;font-size:15px;font-weight:500;color:var(--ink);background:#fff;transition:background .15s,border-color .15s,color .15s}
+.chips button[aria-pressed=true]{background:var(--berry);border-color:var(--berry);color:#fff}
+.chips.tiers{display:grid;grid-template-columns:repeat(4,1fr)}
+.chips.tiers button{padding:10px 0;text-align:center}
+.chips.tiers button[aria-pressed=true]{background:var(--pine);border-color:var(--pine)}
+.field{display:block;margin-bottom:12px}
+.field input,.field textarea{width:100%;border:1.5px solid #d8cbb2;border-radius:12px;padding:12px 14px;background:#fff;color:var(--ink);font-size:16px;outline:none}
+.field input:focus,.field textarea:focus{border-color:var(--gold)}
+.field textarea{resize:none;height:84px;line-height:1.4}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cta{display:block;width:100%;margin-top:8px;padding:15px;border-radius:14px;background:var(--berry);color:#fff;font-weight:650;font-size:17px;box-shadow:0 6px 0 var(--berry-d);transition:transform .08s,box-shadow .08s,opacity .2s}
+.cta:active{transform:translateY(3px);box-shadow:0 3px 0 var(--berry-d)}
+.cta:disabled{opacity:.4;cursor:default}
+.ghost{display:block;margin:14px auto 0;color:var(--muted);font-size:15px;font-weight:500}
+
+/* board */
+.board{margin-top:22px;padding:12px;border-radius:20px;background:linear-gradient(160deg,#7d1c2b,#5e1420);box-shadow:inset 0 0 0 2px rgba(236,199,122,.45),0 20px 44px rgba(0,0,0,.45)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:78px;gap:8px}
+.door{position:relative;perspective:700px;border-radius:10px}
+.door.w2{grid-column:span 2}
+.inside{position:absolute;inset:0;border-radius:10px;background:radial-gradient(circle at 50% 40%,#2d5a48,#163a2d);box-shadow:inset 0 2px 8px rgba(0,0,0,.55);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:var(--gold-l)}
+.inside .d{font-family:var(--serif);font-size:15px;opacity:.75}
+.inside .stars{font-size:11px;letter-spacing:1px;color:var(--gold)}
+.inside .tag{font-size:10px;letter-spacing:.8px;text-transform:uppercase;opacity:.8;text-align:center;padding:0 4px}
+.face{position:absolute;inset:0;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:30px;transform-origin:left center;transition:transform .7s cubic-bezier(.3,.1,.2,1),opacity .7s;backface-visibility:hidden;box-shadow:0 2px 0 rgba(0,0,0,.25),inset 0 0 0 1px rgba(255,255,255,.18)}
+.w2 .face::after{content:"";position:absolute;right:9px;top:50%;width:5px;height:5px;margin-top:-2.5px;border-radius:50%;background:currentColor;opacity:.45}
+.c0 .face{background:var(--cream);color:var(--berry)}
+.c1 .face{background:#2a5a47;color:var(--gold-l)}
+.c2 .face{background:repeating-linear-gradient(135deg,#f7f0e3 0 9px,#f1d9d4 9px 18px);color:var(--berry)}
+.c3 .face{background:#e2bf73;color:var(--ink)}
+.door.today .face{box-shadow:0 0 0 2px var(--gold-l),0 0 22px 4px rgba(236,199,122,.65)}
+.door.today .face{animation:glow 2.4s ease-in-out infinite}
+@keyframes glow{50%{box-shadow:0 0 0 2px var(--gold-l),0 0 30px 8px rgba(236,199,122,.85)}}
+@media (prefers-reduced-motion:reduce){.door.today .face{animation:none}}
+.door.locked .face{filter:saturate(.8)}
+.door.opening .face{transform:rotateY(-108deg);opacity:0}
+.door.open .face{display:none}
+.door.shake{animation:shake .4s}
+@keyframes shake{20%,60%{transform:translateX(-4px)}40%,80%{transform:translateX(4px)}}
+.door button{position:absolute;inset:0;border-radius:10px;z-index:2}
+.foot{display:flex;justify-content:center;gap:22px;margin-top:22px;flex-wrap:wrap}
+.foot button,.foot a{color:var(--gold-l);font-size:15px;font-weight:550;text-decoration:none}
+
+/* sheet */
+.scrim{position:fixed;inset:0;background:rgba(5,14,11,.55);opacity:0;pointer-events:none;transition:opacity .25s;z-index:10}
+.scrim.on{opacity:1;pointer-events:auto}
+.sheet{position:fixed;left:50%;bottom:0;width:min(100%,480px);transform:translate(-50%,105%);background:var(--cream);color:var(--ink);border-radius:24px 24px 0 0;padding:26px 22px max(26px,env(safe-area-inset-bottom));z-index:11;transition:transform .35s cubic-bezier(.2,.8,.2,1);box-shadow:0 -10px 40px rgba(0,0,0,.35)}
+.sheet.on{transform:translate(-50%,0)}
+.sheet .x{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;background:var(--paper);font-size:20px;line-height:36px;color:var(--muted)}
+.kicker{font-size:12px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:var(--berry)}
+.sheet h3{font-family:var(--serif);font-size:27px;line-height:1.18;font-weight:600;margin:8px 36px 10px 0}
+.sheet p{font-size:17px;line-height:1.5;color:#3b2e24}
+.reveal{margin-top:14px}
+.reveal button{padding:9px 16px;border-radius:999px;background:var(--paper);font-weight:600;font-size:15px;color:var(--pine)}
+.reveal p{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--pine)}
+.rate{display:flex;gap:6px;margin-top:22px;padding-top:18px;border-top:1px solid #e4d8c1}
+.rate button{font-size:34px;line-height:1;color:#d8cbb2;transition:transform .12s,color .12s}
+.rate button.on{color:var(--gold)}
+.rate button:active{transform:scale(.88)}
+
+/* share */
+.link{font-size:14px;word-break:break-all;background:var(--paper);border-radius:12px;padding:12px;color:var(--muted);margin:4px 0 14px;max-height:4.6em;overflow:hidden}
+.toast{position:fixed;left:50%;bottom:max(84px,calc(env(safe-area-inset-bottom) + 56px));transform:translate(-50%,20px);background:var(--ink);color:var(--cream);padding:10px 16px;border-radius:999px;font-size:15px;opacity:0;transition:opacity .2s,transform .2s;z-index:20;pointer-events:none}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.legal{position:relative;z-index:1;display:flex;justify-content:center;gap:18px;padding:0 16px max(24px,env(safe-area-inset-bottom));font-size:13px}
+.legal a{color:var(--cream);opacity:.4;text-decoration:none}
+.fade{animation:fadein .35s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(6px)}}
+@media (max-width:360px){.grid{grid-auto-rows:68px}.face{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="snow" id="snow" aria-hidden="true"></div>
+<main id="app"></main>
+<div class="scrim" id="scrim"></div>
+<section class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title"></section>
+<div class="toast" id="toast" role="status"></div>
+<footer class="legal"><a href="privacy-policy.html">Privacy</a><a href="support.html">Support</a></footer>
+<script src="content.js"></script>
+<script src="calendar.js"></script>
+<script>
+"use strict";
+const BASE="https://jackwallner.com/ios/advent/";
+function debugDay(){const v=new URLSearchParams(location.search).get("day");return v===null?null:Math.max(0,Math.min(24,parseInt(v,10)||0))}
+function unlocked(year){
+  const d=debugDay();if(d!==null)return d;
+  const n=new Date();
+  if(n.getFullYear()<year)return 0;
+  if(n.getFullYear()>year)return 24;
+  if(n.getMonth()<11)return 0;
+  return Math.min(n.getDate(),24);
+}
+function daysToGo(year){const n=new Date();const start=new Date(year,11,1);return Math.ceil((start-new Date(n.getFullYear(),n.getMonth(),n.getDate()))/86400000)}
+
+// Storage
+const store={
+  get(k,f){try{const v=localStorage.getItem(k);return v?JSON.parse(v):f}catch(e){return f}},
+  set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+};
+function giftLink(g){return BASE+"#g="+b64e(JSON.stringify({y:g.year,t:g.to,f:g.from,m:g.note||"",l:g.seed,d:encodeDays(g.days)}))}
+function parseGift(h){try{const o=JSON.parse(b64d(h));const days=decodeDays(o.d);if(days.length!==24||days.some(id=>!BY_ID[id]))return null;return{kind:"gift",year:o.y,to:o.t||"",from:o.f||"",note:o.m||"",seed:o.l>>>0,days}}catch(e){return null}}
+
+// State
+let view={screen:"loading"};
+let current=null; // {key, cal}
+function mine(){return store.get("advent.mine",null)}
+function gifts(){return store.get("advent.gifts",{})}
+function progress(key){return store.get("advent.p."+key,{opened:{},ratings:{}})}
+function saveProgress(key,p){store.set("advent.p."+key,p)}
+
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+const $=s=>document.querySelector(s);
+const app=$("#app");
+
+function route(){
+  const h=location.hash;
+  if(h.startsWith("#g=")){
+    const raw=h.slice(3);const g=parseGift(raw);
+    if(g){const key="g"+hashKey(raw);const all=gifts();all[key]={raw,to:g.to,from:g.from,at:all[key]?.at||Date.now()};store.set("advent.gifts",all);store.set("advent.last",key);return showCal(key,g)}
+  }
+  if(h==="#new"||h==="#gift")return showSetup(h==="#gift"?"gift":"mine");
+  if(h==="#edit"&&mine())return showSetup("edit");
+  const last=store.get("advent.last",null);
+  if(last&&last!=="mine"){const g=gifts()[last];if(g){const p=parseGift(g.raw);if(p)return showCal(last,p)}}
+  const m=mine();
+  if(m)return showCal("mine",m);
+  return showSetup("mine");
+}
+window.addEventListener("hashchange",route);
+
+function switcher(activeKey){
+  const m=mine();const gs=gifts();const keys=Object.keys(gs);
+  if((m?1:0)+keys.length<2)return"";
+  let html='<div class="switch">';
+  if(m)html+=`<button data-go="mine" aria-pressed="${activeKey==="mine"}">Mine</button>`;
+  keys.sort((a,b)=>gs[a].at-gs[b].at).forEach(k=>{const g=gs[k];const sent=store.get("advent.sent",{})[k];const label=sent&&g.to?`For ${g.to}`:g.from?`From ${g.from}`:(g.to?`For ${g.to}`:"Gift");html+=`<button data-go="${k}" aria-pressed="${activeKey===k}">${esc(label)}</button>`});
+  return html+"</div>";
+}
+
+function showCal(key,cal){
+  current={key,cal};
+  const p=progress(key);
+  const open=unlocked(cal.year);
+  const slots=layout(cal.seed);
+  const isGift=cal.kind==="gift";
+  let head;
+  if(isGift){
+    head=`<h1 class="brand">${cal.to?"For "+esc(cal.to):"Advent Doors"}</h1>${cal.from?`<div class="sub">from ${esc(cal.from)}</div>`:""}${cal.note?`<p class="note">${esc(cal.note)}</p>`:""}`;
+  }else{
+    head=`<h1 class="brand"><span class="star">&#10022;</span>Advent Doors<span class="star">&#10022;</span></h1>`;
+  }
+  const togo=daysToGo(cal.year);
+  const status=open===0&&togo>0?`<div class="sub">${togo===1?"Opens tomorrow":togo+" days to go"}</div>`:"";
+  let grid="";
+  for(const s of slots){
+    const d=s.day;const id=cal.days[d-1];const it=BY_ID[id];
+    const isOpen=!!p.opened[d];const can=d<=open;
+    const cls=["door","c"+s.c,s.w===2?"w2":"",isOpen?"open":"",!can?"locked":"",(d===open&&!isOpen&&can)?"today":""].join(" ");
+    const r=p.ratings[d]||0;
+    const label=isOpen?`Day ${d}, ${it.title}`:(can?`Open day ${d}`:`Day ${d}, locked`);
+    grid+=`<div class="${cls}" data-day="${d}"><div class="inside"><span class="d">${d}</span>${isOpen?(r?`<span class="stars">${"&#9733;".repeat(r)}</span>`:`<span class="tag">${esc(CAT_NAME[it.category])}</span>`):""}</div><div class="face">${d}</div><button aria-label="${esc(label)}"></button></div>`;
+  }
+  const foot=isGift
+    ?`<div class="foot">${mine()?"":`<button data-act="new">Make your own</button>`}<button data-act="gift">Make one for someone</button></div>`
+    :`<div class="foot"><button data-act="edit">Change</button><button data-act="gift">Make one for someone</button></div>`;
+  app.innerHTML=`<div class="fade">${head}${status}${switcher(key)}<div class="board"><div class="grid">${grid}</div></div>${foot}</div>`;
+  app.querySelectorAll(".door button").forEach(b=>b.addEventListener("click",()=>tapDoor(+b.parentElement.dataset.day,b.parentElement)));
+  bindCommon();
+}
+
+function bindCommon(){
+  app.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>{const k=b.dataset.go;store.set("advent.last",k);if(k==="mine"){history.replaceState(null,"",location.pathname+location.search);route()}else{location.hash="g="+gifts()[k].raw}}));
+  app.querySelectorAll("[data-act]").forEach(b=>b.addEventListener("click",()=>{location.hash=b.dataset.act}));
+}
+
+function tapDoor(day,el){
+  const {key,cal}=current;const p=progress(key);
+  const open=unlocked(cal.year);
+  if(day>open){
+    el.classList.remove("shake");void el.offsetWidth;el.classList.add("shake");
+    toast(open===0&&day===1?`Opens December 1`:`Opens December ${day}`);
+    return;
+  }
+  if(p.opened[day])return openSheet(day);
+  p.opened[day]=Date.now();saveProgress(key,p);
+  el.classList.remove("today");el.classList.add("opening");
+  const it=BY_ID[cal.days[day-1]];
+  el.querySelector(".inside").innerHTML=`<span class="d">${day}</span><span class="tag">${esc(CAT_NAME[it.category])}</span>`;
+  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  setTimeout(()=>{el.classList.add("open");openSheet(day)},reduce?0:650);
+}
+
+function openSheet(day){
+  const {key,cal}=current;const p=progress(key);
+  const it=BY_ID[cal.days[day-1]];
+  const r=p.ratings[day]||0;
+  let stars="";for(let i=1;i<=5;i++)stars+=`<button data-r="${i}" class="${i<=r?"on":""}" aria-label="${i} star${i>1?"s":""}">&#9733;</button>`;
+  const reveal=it.reveal?`<div class="reveal"><button id="rv">${it.category==="humor"?"Punchline":"Answer"}</button></div>`:"";
+  const sheet=$("#sheet");
+  sheet.innerHTML=`<button class="x" aria-label="Close">&times;</button><div class="kicker">Day ${day} &middot; ${esc(CAT_NAME[it.category])} &middot; ${KIND_NAME[it.kind]}</div><h3 id="sheet-title">${esc(it.title)}</h3><p>${esc(it.detail)}</p>${reveal}<div class="rate" role="group" aria-label="Rate this day">${stars}</div>`;
+  sheet.querySelector(".x").onclick=closeSheet;
+  const rv=sheet.querySelector("#rv");
+  if(rv)rv.onclick=()=>{rv.parentElement.innerHTML=`<p>${esc(it.reveal)}</p>`};
+  sheet.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>{
+    const v=+b.dataset.r;const q=progress(key);q.ratings[day]=v;saveProgress(key,q);
+    sheet.querySelectorAll("[data-r]").forEach(x=>x.classList.toggle("on",+x.dataset.r<=v));
+    const door=app.querySelector(`.door[data-day="${day}"] .inside`);
+    if(door)door.innerHTML=`<span class="d">${day}</span><span class="stars">${"&#9733;".repeat(v)}</span>`;
+  });
+  $("#scrim").classList.add("on");sheet.classList.add("on");
+  setTimeout(()=>sheet.querySelector(".x").focus({preventScroll:true}),50);
+}
+function closeSheet(){$("#scrim").classList.remove("on");$("#sheet").classList.remove("on")}
+$("#scrim").addEventListener("click",closeSheet);
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeSheet()});
+
+let toastT;
+function toast(msg){const t=$("#toast");t.textContent=msg;t.classList.add("on");clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove("on"),1800)}
+
+function showSetup(mode){
+  closeSheet();
+  const m=mine();
+  const editing=mode==="edit";
+  let gift=mode==="gift";
+  const sel={cats:new Set(editing?m.cats:[]),budget:editing?m.budget:"none"};
+  const draw=()=>{
+    const chips=CATS.map(c=>`<button data-c="${c[0]}" aria-pressed="${sel.cats.has(c[0])}">${c[1]}</button>`).join("");
+    const tiers=TIERS.map(t=>`<button data-t="${t}" aria-pressed="${sel.budget===t}">${TIER_NAME[t]}</button>`).join("");
+    const segment=editing?"":`<div class="seg"><button data-m="mine" aria-pressed="${!gift}">For me</button><button data-m="gift" aria-pressed="${gift}">For someone</button></div>`;
+    const giftFields=gift?`<h2>Who's it for</h2><div class="row2"><label class="field"><input id="to" placeholder="To" maxlength="30" autocomplete="off"></label><label class="field"><input id="from" placeholder="From" maxlength="30" autocomplete="off"></label></div><label class="field"><textarea id="msg" placeholder="Note (optional)" maxlength="240"></textarea></label>`:"";
+    const back=(m||Object.keys(gifts()).length)?`<button class="ghost" id="back">Back</button>`:"";
+    app.innerHTML=`<div class="fade"><h1 class="brand"><span class="star">&#10022;</span>Advent Doors<span class="star">&#10022;</span></h1><div class="card">${segment}<h2>What's inside</h2><div class="chips">${chips}</div><h2>Budget</h2><div class="chips tiers">${tiers}</div>${giftFields}<button class="cta" id="go" ${sel.cats.size?"":"disabled"}>${editing?"Save":gift?"Make the gift":"Make my calendar"}</button>${back}</div></div>`;
+    app.querySelectorAll("[data-c]").forEach(b=>b.onclick=()=>{const c=b.dataset.c;sel.cats.has(c)?sel.cats.delete(c):sel.cats.add(c);b.setAttribute("aria-pressed",sel.cats.has(c));$("#go").disabled=!sel.cats.size});
+    app.querySelectorAll("[data-t]").forEach(b=>b.onclick=()=>{sel.budget=b.dataset.t;app.querySelectorAll("[data-t]").forEach(x=>x.setAttribute("aria-pressed",x===b))});
+    app.querySelectorAll("[data-m]").forEach(b=>b.onclick=()=>{const keep=gift?{to:$("#to").value,from:$("#from").value,msg:$("#msg").value}:null;gift=b.dataset.m==="gift";draw();if(gift&&keep){$("#to").value=keep.to;$("#from").value=keep.from;$("#msg").value=keep.msg}});
+    const bk=$("#back");if(bk)bk.onclick=()=>{history.replaceState(null,"",location.pathname+location.search);route()};
+    $("#go").onclick=()=>{
+      const cats=CATS.map(c=>c[0]).filter(c=>sel.cats.has(c));
+      if(!cats.length)return;
+      const year=new Date().getFullYear();
+      if(editing){
+        const p=progress("mine");const keep=new Set(Object.keys(p.opened).map(d=>m.days[d-1]));
+        const fresh=pick(cats,sel.budget,newSeed(),keep);
+        const days=m.days.map((id,i)=>p.opened[i+1]?id:fresh.shift());
+        store.set("advent.mine",{...m,cats,budget:sel.budget,days});
+        store.set("advent.last","mine");
+        history.replaceState(null,"",location.pathname+location.search);return route();
+      }
+      const seed=newSeed();
+      const days=pick(cats,sel.budget,seed);
+      if(gift){
+        const g={kind:"gift",year,to:$("#to").value.trim(),from:$("#from").value.trim(),note:$("#msg").value.trim(),seed,days};
+        return showShare(g);
+      }
+      store.set("advent.mine",{kind:"mine",year,cats,budget:sel.budget,seed,days});
+      store.set("advent.last","mine");
+      history.replaceState(null,"",location.pathname+location.search);route();
+    };
+  };
+  draw();
+}
+
+function showShare(g){
+  const url=giftLink(g);
+  const title=g.to?`For ${esc(g.to)}`:"Your gift";
+  app.innerHTML=`<div class="fade"><h1 class="brand">${title}</h1><div class="sub">24 doors, ready for December</div><div class="card"><div class="link" id="lnk">${esc(url)}</div><button class="cta" id="share">Send it</button><button class="ghost" id="copy">Copy link</button><button class="ghost" id="peek">Preview</button><button class="ghost" id="done">Done</button></div></div>`;
+  const text=g.to?`${g.to}, I made you an advent calendar. Open one door each day in December.`:"I made you an advent calendar. Open one door each day in December.";
+  $("#share").onclick=async()=>{if(navigator.share){try{await navigator.share({title:"Advent Doors",text,url})}catch(e){}}else copy(url)};
+  $("#copy").onclick=()=>copy(url);
+  $("#peek").onclick=()=>{const raw=url.split("#g=")[1];const sent=store.get("advent.sent",{});sent["g"+hashKey(raw)]=1;store.set("advent.sent",sent);location.href=url};
+  $("#done").onclick=()=>{history.replaceState(null,"",location.pathname+location.search);route()};
+}
+async function copy(s){try{await navigator.clipboard.writeText(s);toast("Link copied")}catch(e){const r=document.createRange();r.selectNodeContents($("#lnk"));const w=getSelection();w.removeAllRanges();w.addRange(r);toast("Press copy")}}
+
+(function snow(){const el=$("#snow");if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;for(let i=0;i<28;i++){const f=document.createElement("i");const s=2+Math.random()*3;f.style.cssText=`left:${Math.random()*100}%;width:${s}px;height:${s}px;opacity:${.2+Math.random()*.45};animation-duration:${9+Math.random()*12}s;animation-delay:${-Math.random()*20}s`;el.appendChild(f)}})();
+route();
+</script>
+</body>
+</html>
