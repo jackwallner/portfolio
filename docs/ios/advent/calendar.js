@@ -53,7 +53,13 @@ function layout(seed){
   slots[eve].day=24;
   const days=shuffle([...Array(23)].map((_,i)=>i+1),r);
   let k=0;for(const s of slots)if(!s.day)s.day=days[k++];
-  slots.forEach((s,i)=>s.c=(s.day*7+i+seed)%4);
+  // Six doors of each color, with no two neighbors in a row the same.
+  const cols=shuffle([...Array(24)].map((_,i)=>i%4),r);
+  for(let i=1;i<cols.length;i++){
+    if(cols[i]!==cols[i-1])continue;
+    for(let j=i+1;j<cols.length;j++){if(cols[j]!==cols[i-1]){[cols[i],cols[j]]=[cols[j],cols[i]];break}}
+  }
+  slots.forEach((s,i)=>s.c=cols[i]);
   return slots;
 }
 
