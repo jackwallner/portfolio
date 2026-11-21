@@ -39,28 +39,31 @@ function arrange(items,r){
   }
   return a;
 }
-// Seven rows of four cells; four rows hold one double-width door. Day 24 always gets a wide one.
+// The house front. Slot 0 is the attic window, 1 to 20 are four windows on each of five floors,
+// 21 and 23 the ground floor windows, 22 the front door. Day 24 is always the front door.
 function layout(seed){
   const r=rng((seed^0x9E3779B9)>>>0);
-  const wide=new Set(shuffle([0,1,2,3,4,5,6],r).slice(0,4));
-  const slots=[];
-  for(let row=0;row<7;row++){
-    if(wide.has(row)){const at=Math.floor(r()*3);for(let k=0;k<3;k++)slots.push({w:k===at?2:1})}
-    else for(let k=0;k<4;k++)slots.push({w:1});
-  }
-  const wides=slots.map((s,i)=>s.w===2?i:-1).filter(i=>i>=0);
-  const eve=wides[Math.floor(r()*wides.length)];
-  slots[eve].day=24;
   const days=shuffle([...Array(23)].map((_,i)=>i+1),r);
-  let k=0;for(const s of slots)if(!s.day)s.day=days[k++];
-  // Six doors of each color, with no two neighbors in a row the same.
-  const cols=shuffle([...Array(24)].map((_,i)=>i%4),r);
-  for(let i=1;i<cols.length;i++){
-    if(cols[i]!==cols[i-1])continue;
-    for(let j=i+1;j<cols.length;j++){if(cols[j]!==cols[i-1]){[cols[i],cols[j]]=[cols[j],cols[i]];break}}
+  days.splice(22,0,24);
+  return days;
+}
+// Ratings steer the doors that cannot be opened yet. A loved day brings one more of its kind,
+// a disliked one swaps the next of its kind away. Returns the new days, or null when nothing changes.
+function steer(cal,opened,day,stars,open){
+  if(stars===3||cal.cats.length<2)return null;
+  const days=cal.days.slice();const rated=BY_ID[days[day-1]];if(!rated)return null;
+  const used=new Set(days);const r=rng((cal.seed^Math.imul(day,2654435761))>>>0);
+  const future=[];for(let d=open+1;d<=24;d++)if(!opened[d])future.push(d);
+  const fresh=(cat,tier)=>shuffle(ITEMS.filter(i=>i.category===cat&&i.budget===tier&&!used.has(i.id)),r)[0]||null;
+  if(stars>=4){
+    const count={};future.forEach(d=>{const c=BY_ID[days[d-1]].category;if(c!==rated.category)count[c]=(count[c]||0)+1});
+    const top=Object.keys(count).sort((x,y)=>count[y]-count[x]||(x<y?-1:1))[0];if(!top)return null;
+    const d=future.find(d=>BY_ID[days[d-1]].category===top);const it=fresh(rated.category,BY_ID[days[d-1]].budget);if(!it)return null;
+    days[d-1]=it.id;return days;
   }
-  slots.forEach((s,i)=>s.c=cols[i]);
-  return slots;
+  const d=future.find(d=>BY_ID[days[d-1]].category===rated.category);if(!d)return null;
+  for(const c of shuffle(cal.cats.filter(c=>c!==rated.category),r)){const it=fresh(c,BY_ID[days[d-1]].budget);if(it){days[d-1]=it.id;return days}}
+  return null;
 }
 
 function b64e(s){const b=new TextEncoder().encode(s);let bin="";b.forEach(x=>bin+=String.fromCharCode(x));return btoa(bin).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"")}
