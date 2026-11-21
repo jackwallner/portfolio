@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/bridge/changelog.html
 
+## Version 1.2.9 (November 20, 2026)
+
+Bug fixes and improvements.
+
 ## Version 1.2.8 (November 9, 2026)
 
 You can now change the app's language from Settings. This update also includes fixes and improvements.

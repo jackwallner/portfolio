@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/skat/changelog.html
 
+## Version 1.3.3 (November 20, 2026)
+
+Small improvements.
+
 ## Version 1.3.2 (November 8, 2026)
 
 Undo in the deck now takes back your answer, so accuracy and review schedules stay right. Reminder times and your streak stay put when you change time zones. Weekly gain no longer recounts Skat+ items after a lapse.

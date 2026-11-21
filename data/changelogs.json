@@ -236,6 +236,11 @@
   ],
   "bridge": [
     {
+      "date": "2026-11-20",
+      "notes": "Bug fixes and improvements.",
+      "version": "1.2.9"
+    },
+    {
       "date": "2026-11-09",
       "notes": "You can now change the app's language from Settings. This update also includes fixes and improvements.",
       "version": "1.2.8"
@@ -1161,6 +1166,11 @@
     }
   ],
   "skat": [
+    {
+      "date": "2026-11-20",
+      "notes": "Small improvements.",
+      "version": "1.3.3"
+    },
     {
       "date": "2026-11-08",
       "notes": "Undo in the deck now takes back your answer, so accuracy and review schedules stay right. Reminder times and your streak stay put when you change time zones. Weekly gain no longer recounts Skat+ items after a lapse.",
