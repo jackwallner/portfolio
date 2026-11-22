@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/ironman/changelog.html
 
+## Version 1.2.1 (November 21, 2026)
+
+Fixes race results showing as DNF. Finish and split times display correctly again.
+
 ## Version 1.2.0 (November 18, 2026)
 
 Now on iPad, with a layout designed for the larger screen.

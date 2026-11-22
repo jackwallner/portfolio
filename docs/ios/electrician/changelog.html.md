@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/electrician/changelog.html
 
+## Version 1.0.6 (November 21, 2026)
+
+Flashcard Undo now takes back the answer, so a corrected swipe no longer counts as a miss. Cancel on Exam Target now discards your edits. Home refreshes when the day changes, and Settings has a new Language row.
+
 ## Version 1.0.5 (November 7, 2026)
 
 Electrician is now available in Russian, German, Chinese, Spanish, Vietnamese and Ukrainian. Also includes fixes and improvements.

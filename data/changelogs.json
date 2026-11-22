@@ -399,6 +399,11 @@
   ],
   "electrician": [
     {
+      "date": "2026-11-21",
+      "notes": "Flashcard Undo now takes back the answer, so a corrected swipe no longer counts as a miss. Cancel on Exam Target now discards your edits. Home refreshes when the day changes, and Settings has a new Language row.",
+      "version": "1.0.6"
+    },
+    {
       "date": "2026-11-07",
       "notes": "Electrician is now available in Russian, German, Chinese, Spanish, Vietnamese and Ukrainian. Also includes fixes and improvements.",
       "version": "1.0.5"
@@ -713,6 +718,11 @@
     }
   ],
   "ironman": [
+    {
+      "date": "2026-11-21",
+      "notes": "Fixes race results showing as DNF. Finish and split times display correctly again.",
+      "version": "1.2.1"
+    },
     {
       "date": "2026-11-18",
       "notes": "Now on iPad, with a layout designed for the larger screen.",
