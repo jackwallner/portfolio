@@ -236,6 +236,11 @@
   ],
   "bridge": [
     {
+      "date": "2026-11-22",
+      "notes": "Bug fixes and improvements.",
+      "version": "1.2.10"
+    },
+    {
       "date": "2026-11-20",
       "notes": "Bug fixes and improvements.",
       "version": "1.2.9"
@@ -691,6 +696,11 @@
     }
   ],
   "hockey": [
+    {
+      "date": "2026-11-23",
+      "notes": "Behind-the-scenes improvements and fixes to keep Hockey Edge running smoothly. Thank you for being here.",
+      "version": "1.0.5"
+    },
     {
       "date": "2026-11-18",
       "notes": "Now on iPad, with a layout designed for the larger screen.",

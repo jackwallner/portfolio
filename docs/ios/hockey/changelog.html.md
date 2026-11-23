@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/hockey/changelog.html
 
+## Version 1.0.5 (November 23, 2026)
+
+Behind-the-scenes improvements and fixes to keep Hockey Edge running smoothly. Thank you for being here.
+
 ## Version 1.0.4 (November 18, 2026)
 
 Now on iPad, with a layout designed for the larger screen.

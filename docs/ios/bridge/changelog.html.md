@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/bridge/changelog.html
 
+## Version 1.2.10 (November 22, 2026)
+
+Bug fixes and improvements.
+
 ## Version 1.2.9 (November 20, 2026)
 
 Bug fixes and improvements.
