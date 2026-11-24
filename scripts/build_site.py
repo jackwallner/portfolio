@@ -35,6 +35,8 @@ DATA = DOCS / "projects.json"
 EMAIL = "jackwallner@gmail.com"
 GITHUB = "https://github.com/jackwallner"
 LINKEDIN = "https://www.linkedin.com/in/wallnerjack/"
+PRODUCT_HUNT = "https://www.producthunt.com/@jack_wallner"
+ALTERNATIVETO = "https://alternativeto.net/user/Jack-Wallner/"
 
 SITE = "https://jackwallner.com/"
 OG_IMAGE = SITE + "assets/profile.png"
@@ -340,7 +342,7 @@ PERSON = {
     "image": OG_IMAGE,
     "jobTitle": "iOS developer",
     "homeLocation": {"@type": "Place", "name": "Vancouver, Washington"},
-    "sameAs": [GITHUB, LINKEDIN,
+    "sameAs": [GITHUB, LINKEDIN, PRODUCT_HUNT, ALTERNATIVETO,
                f"https://apps.apple.com/us/developer/id{APPLE_DEVELOPER_ID}"],
 }
 
