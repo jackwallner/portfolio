@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/vitals/changelog.html
 
+## Version 1.9.6 (November 24, 2026)
+
+iPad install compatibility is fixed.
+
 ## Version 1.9.5 (November 17, 2026)
 
 iPad install compatibility is fixed.

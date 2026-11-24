@@ -4,6 +4,13 @@
 
 Web page: https://jackwallner.com/ios/bridge/changelog.html
 
+## Version 1.3.0 (November 23, 2026)
+
+Bidding past the opening.
+- Respond to Partner and Your Second Bid: two new free drills in the Auction Room. Answer partner's opening, then choose your second bid.
+- Endless bidding practice: freshly dealt hands for responses and rebids (Bridge+).
+- Why not? Miss a call and the app now explains what your pick would have needed.
+
 ## Version 1.2.10 (November 22, 2026)
 
 Bug fixes and improvements.

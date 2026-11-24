@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/skat/changelog.html
 
+## Version 1.3.4 (November 24, 2026)
+
+Bug fixes and improvements.
+
 ## Version 1.3.3 (November 20, 2026)
 
 Small improvements.

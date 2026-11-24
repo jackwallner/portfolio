@@ -4,6 +4,14 @@
 
 Web page: https://jackwallner.com/ios/cribbage/changelog.html
 
+## Version 1.3.3 (November 23, 2026)
+
+New Glossary: 29 cribbage terms, from his nobs to muggins, one tap from Home.
+
+Miss a question in Name the Pattern, a pegging play or Count the Hand and a short "Why not?" note now shows what your pick gets wrong.
+
+Cards now fit on narrow screens, and long answers wrap instead of being cut off.
+
 ## Version 1.3.2 (November 4, 2026)
 
 Behind-the-scenes improvements and fixes to keep Cribbage Trainer running smoothly. Thank you for being here.

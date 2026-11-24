@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/electrician/changelog.html
 
+## Version 1.0.7 (November 24, 2026)
+
+Behind-the-scenes improvements and fixes to keep Electrician running smoothly. Thank you for being here.
+
 ## Version 1.0.6 (November 21, 2026)
 
 Flashcard Undo now takes back the answer, so a corrected swipe no longer counts as a miss. Cancel on Exam Target now discards your edits. Home refreshes when the day changes, and Settings has a new Language row.

@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/babydocs/changelog.html
 
+## Version 1.1.5 (November 24, 2026)
+
+A fresh new app icon, plus small fixes and refinements.
+
 ## Version 1.1.4 (November 17, 2026)
 
 Now on iPad, with a layout designed for the larger screen.

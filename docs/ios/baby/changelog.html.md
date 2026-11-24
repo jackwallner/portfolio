@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/baby/changelog.html
 
+## Version 1.4.6 (November 24, 2026)
+
+Bug fixes and improvements.
+
 ## Version 1.4.5 (November 16, 2026)
 
 New: a Pump button, and buttons you name yourself. Add them in Settings.

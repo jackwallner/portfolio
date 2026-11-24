@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/simpleglp/changelog.html
 
+## Version 1.2.7 (November 24, 2026)
+
+Bug fixes and improvements.
+
 ## Version 1.2.6 (November 13, 2026)
 
 Now on iPad, with a layout designed for the larger screen.

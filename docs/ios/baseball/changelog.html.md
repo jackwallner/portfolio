@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/baseball/changelog.html
 
+## Version 1.5.8 (November 24, 2026)
+
+Bug fixes and improvements.
+
 ## Version 1.5.7 (November 17, 2026)
 
 Now on iPad, with a layout designed for the larger screen.

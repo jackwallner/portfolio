@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/football/changelog.html
 
+## Version 1.2.10 (November 24, 2026)
+
+Behind-the-scenes improvements and fixes to keep Pro Football running smoothly. Thank you for being here.
+
 ## Version 1.2.9 (November 8, 2026)
 
 You can now change the app's language from Settings. This update also includes fixes and improvements.

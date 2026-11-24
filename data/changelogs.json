@@ -1,6 +1,11 @@
 {
   "baby": [
     {
+      "date": "2026-11-24",
+      "notes": "Bug fixes and improvements.",
+      "version": "1.4.6"
+    },
+    {
       "date": "2026-11-16",
       "notes": "New: a Pump button, and buttons you name yourself. Add them in Settings.",
       "version": "1.4.5"
@@ -53,6 +58,11 @@
   ],
   "babydocs": [
     {
+      "date": "2026-11-24",
+      "notes": "A fresh new app icon, plus small fixes and refinements.",
+      "version": "1.1.5"
+    },
+    {
       "date": "2026-11-17",
       "notes": "Now on iPad, with a layout designed for the larger screen.",
       "version": "1.1.4"
@@ -79,6 +89,11 @@
     }
   ],
   "baseball": [
+    {
+      "date": "2026-11-24",
+      "notes": "Bug fixes and improvements.",
+      "version": "1.5.8"
+    },
     {
       "date": "2026-11-17",
       "notes": "Now on iPad, with a layout designed for the larger screen.",
@@ -236,6 +251,11 @@
   ],
   "bridge": [
     {
+      "date": "2026-11-23",
+      "notes": "Bidding past the opening.\n- Respond to Partner and Your Second Bid: two new free drills in the Auction Room. Answer partner's opening, then choose your second bid.\n- Endless bidding practice: freshly dealt hands for responses and rebids (Bridge+).\n- Why not? Miss a call and the app now explains what your pick would have needed.",
+      "version": "1.3.0"
+    },
+    {
       "date": "2026-11-22",
       "notes": "Bug fixes and improvements.",
       "version": "1.2.10"
@@ -303,6 +323,11 @@
   ],
   "cribbage": [
     {
+      "date": "2026-11-23",
+      "notes": "New Glossary: 29 cribbage terms, from his nobs to muggins, one tap from Home.\n\nMiss a question in Name the Pattern, a pegging play or Count the Hand and a short \"Why not?\" note now shows what your pick gets wrong.\n\nCards now fit on narrow screens, and long answers wrap instead of being cut off.",
+      "version": "1.3.3"
+    },
+    {
       "date": "2026-11-04",
       "notes": "Behind-the-scenes improvements and fixes to keep Cribbage Trainer running smoothly. Thank you for being here.",
       "version": "1.3.2"
@@ -336,6 +361,13 @@
       "date": "2026-08-07",
       "notes": "",
       "version": "1.0"
+    }
+  ],
+  "deepcuts": [
+    {
+      "date": "2026-11-24",
+      "notes": "",
+      "version": "1.0.0"
     }
   ],
   "dreamcart": [
@@ -403,6 +435,11 @@
     }
   ],
   "electrician": [
+    {
+      "date": "2026-11-24",
+      "notes": "Behind-the-scenes improvements and fixes to keep Electrician running smoothly. Thank you for being here.",
+      "version": "1.0.7"
+    },
     {
       "date": "2026-11-21",
       "notes": "Flashcard Undo now takes back the answer, so a corrected swipe no longer counts as a miss. Cancel on Exam Target now discards your edits. Home refreshes when the day changes, and Settings has a new Language row.",
@@ -527,6 +564,11 @@
     }
   ],
   "football": [
+    {
+      "date": "2026-11-24",
+      "notes": "Behind-the-scenes improvements and fixes to keep Pro Football running smoothly. Thank you for being here.",
+      "version": "1.2.10"
+    },
     {
       "date": "2026-11-08",
       "notes": "You can now change the app's language from Settings. This update also includes fixes and improvements.",
@@ -934,6 +976,11 @@
   ],
   "quitzyn": [
     {
+      "date": "2026-11-23",
+      "notes": "Behind-the-scenes improvements and fixes to keep Quit Zyn running smoothly. Thank you for being here.",
+      "version": "1.3.6"
+    },
+    {
       "date": "2026-11-20",
       "notes": "New: the Nicotine-Free January challenge. From December 18 it sits at the top of Timeline. Every nicotine-free day of January fills in the month, and all 31 earn the January 2027 badge.\n\nAlso in this update: the day count on Home no longer shows its number twice, plus fixes and improvements.",
       "version": "1.3.5"
@@ -1110,6 +1157,11 @@
   ],
   "simpleglp": [
     {
+      "date": "2026-11-24",
+      "notes": "Bug fixes and improvements.",
+      "version": "1.2.7"
+    },
+    {
       "date": "2026-11-13",
       "notes": "Now on iPad, with a layout designed for the larger screen.",
       "version": "1.2.6"
@@ -1192,6 +1244,11 @@
   ],
   "skat": [
     {
+      "date": "2026-11-24",
+      "notes": "Bug fixes and improvements.",
+      "version": "1.3.4"
+    },
+    {
       "date": "2026-11-20",
       "notes": "Small improvements.",
       "version": "1.3.3"
@@ -1238,6 +1295,11 @@
     }
   ],
   "sober": [
+    {
+      "date": "2026-11-24",
+      "notes": "Bug fixes and improvements.",
+      "version": "1.3.12"
+    },
     {
       "date": "2026-11-20",
       "notes": "New: the Dry January 2027 challenge. From December 18 it sits at the top of Timeline. Every dry day of January fills in the month, and all 31 earn the Dry January 2027 badge.\n\nAlso in this update: smoother panning in the zoomed garden, plus fixes and improvements.",
@@ -1518,6 +1580,11 @@
     }
   ],
   "vitals": [
+    {
+      "date": "2026-11-24",
+      "notes": "iPad install compatibility is fixed.",
+      "version": "1.9.6"
+    },
     {
       "date": "2026-11-17",
       "notes": "iPad install compatibility is fixed.",

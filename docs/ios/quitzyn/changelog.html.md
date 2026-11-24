@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/quitzyn/changelog.html
 
+## Version 1.3.6 (November 23, 2026)
+
+Behind-the-scenes improvements and fixes to keep Quit Zyn running smoothly. Thank you for being here.
+
 ## Version 1.3.5 (November 20, 2026)
 
 New: the Nicotine-Free January challenge. From December 18 it sits at the top of Timeline. Every nicotine-free day of January fills in the month, and all 31 earn the January 2027 badge.

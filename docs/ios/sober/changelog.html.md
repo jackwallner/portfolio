@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/sober/changelog.html
 
+## Version 1.3.12 (November 24, 2026)
+
+Bug fixes and improvements.
+
 ## Version 1.3.11 (November 20, 2026)
 
 New: the Dry January 2027 challenge. From December 18 it sits at the top of Timeline. Every dry day of January fills in the month, and all 31 earn the Dry January 2027 badge.
