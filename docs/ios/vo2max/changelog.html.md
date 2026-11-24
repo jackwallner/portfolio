@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/vo2max/changelog.html
 
+## Version 1.1.9 (November 23, 2026)
+
+Behind-the-scenes improvements and fixes to keep VO2 Max running smoothly. Thank you for being here.
+
 ## Version 1.1.8 (November 17, 2026)
 
 iPad install compatibility is fixed.

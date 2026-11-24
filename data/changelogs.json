@@ -1021,6 +1021,11 @@
   ],
   "recovery": [
     {
+      "date": "2026-11-23",
+      "notes": "Behind-the-scenes improvements and fixes to keep Recharge running smoothly. Thank you for being here.",
+      "version": "1.1.6"
+    },
+    {
       "date": "2026-11-19",
       "notes": "Now on iPad, with a layout designed for the larger screen.",
       "version": "1.1.5"
@@ -1690,6 +1695,11 @@
     }
   ],
   "vo2max": [
+    {
+      "date": "2026-11-23",
+      "notes": "Behind-the-scenes improvements and fixes to keep VO2 Max running smoothly. Thank you for being here.",
+      "version": "1.1.9"
+    },
     {
       "date": "2026-11-17",
       "notes": "iPad install compatibility is fixed.",

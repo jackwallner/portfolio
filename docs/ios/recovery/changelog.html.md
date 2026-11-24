@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/recovery/changelog.html
 
+## Version 1.1.6 (November 23, 2026)
+
+Behind-the-scenes improvements and fixes to keep Recharge running smoothly. Thank you for being here.
+
 ## Version 1.1.5 (November 19, 2026)
 
 Now on iPad, with a layout designed for the larger screen.
