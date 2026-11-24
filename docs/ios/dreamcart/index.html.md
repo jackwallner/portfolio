@@ -8,7 +8,7 @@ Web page: https://jackwallner.com/ios/dreamcart/
 
 DreamCart is a dopamine shopping game: browse original virtual fashion, fill your cart, check out with coins, and keep every piece in your closet. Nothing real is sold or shipped.
 
-iPhone · Free coins daily · No real purchases required
+iPhone · Android · Free coins daily · No real purchases required
 
 [Download for free](https://apps.apple.com/us/app/dreamcart-dopamine-shopping/id6787820106?pt=128748779&ct=jw-dreamcart-home&mt=8)
 
@@ -130,6 +130,6 @@ No. DreamCart is a game and not a treatment or a substitute for professional sup
 
 ## Start your haul
 
-Free on the App Store. Free coins every day. No real shopping involved.
+Free on the App Store and Google Play. Free coins every day. No real shopping involved.
 
 [Download for free](https://apps.apple.com/us/app/dreamcart-dopamine-shopping/id6787820106?pt=128748779&ct=jw-dreamcart-home&mt=8)

@@ -435,6 +435,14 @@
         .faq details[open] summary::after { content: "\2212"; }
         .faq details p { font-size: 15px; line-height: 1.6; color: #6e6e73; margin-top: 10px; }
             summary > h2.faq-q { display: inline; margin: 0; font: inherit; letter-spacing: inherit; color: inherit; }
+.store-badges { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; }
+.store-badges.start { justify-content: flex-start; }
+.play-badge { display: inline-flex; transition: opacity 0.15s; }
+.play-badge:hover { opacity: 0.85; }
+.play-badge img { display: block; height: 46px; width: auto; }
+.nav-actions { display: flex; align-items: center; gap: 10px; }
+.nav-actions .play-badge img { height: 36px; }
+@media (max-width: 480px) { .nav-actions .play-badge { display: none; } }
 </style>
     <script type="application/ld+json">
 {
@@ -488,7 +496,8 @@
                 <img src="icon_64.webp" alt="" width="32" height="32">
                 <span>DreamCart</span>
             </a>
-            <a class="nav-link" href="https://apps.apple.com/us/app/dreamcart-dopamine-shopping/id6787820106?pt=128748779&amp;ct=jw-dreamcart-home&amp;mt=8">Download</a>
+            <div class="nav-actions"><a class="nav-link" href="https://apps.apple.com/us/app/dreamcart-dopamine-shopping/id6787820106?pt=128748779&amp;ct=jw-dreamcart-home&amp;mt=8">Download</a>
+<a class="play-badge" href="https://play.google.com/store/apps/details?id=com.jackwallner.shop" rel="noopener"><img src="google-play-badge.webp" alt="Get it on Google Play" width="121" height="36"></a></div>
         </div>
     </nav>
 
