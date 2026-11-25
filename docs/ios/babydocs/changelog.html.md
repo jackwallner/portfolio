@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/babydocs/changelog.html
 
+## Version 1.1.6 (November 25, 2026)
+
+The plan card now says clearly when your remaining dates are suggestions, plus small fixes.
+
 ## Version 1.1.5 (November 24, 2026)
 
 A fresh new app icon, plus small fixes and refinements.

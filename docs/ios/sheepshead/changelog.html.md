@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/sheepshead/changelog.html
 
+## Version 1.3.4 (November 24, 2026)
+
+Behind-the-scenes improvements and fixes to keep Sheepshead Trainer running smoothly. Thank you for being here.
+
 ## Version 1.3.3 (November 9, 2026)
 
 Undo on flashcards now also removes the grade for that answer, so an undone tap no longer counts as a miss or counts twice as correct. The game night reminder now stops after your membership lapses and is kept when it renews.
