@@ -483,6 +483,11 @@
   ],
   "fitness-streaks": [
     {
+      "date": "2026-11-25",
+      "notes": "Bug fixes and improvements.",
+      "version": "1.3.6"
+    },
+    {
       "date": "2026-11-19",
       "notes": "Now on iPad, with a layout designed for the larger screen.",
       "version": "1.3.5"
@@ -1166,6 +1171,11 @@
     }
   ],
   "simpleglp": [
+    {
+      "date": "2026-11-25",
+      "notes": "Bug fixes and improvements.",
+      "version": "1.2.8"
+    },
     {
       "date": "2026-11-24",
       "notes": "Bug fixes and improvements.",

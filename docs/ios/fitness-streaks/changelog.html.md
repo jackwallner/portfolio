@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/fitness-streaks/changelog.html
 
+## Version 1.3.6 (November 25, 2026)
+
+Bug fixes and improvements.
+
 ## Version 1.3.5 (November 19, 2026)
 
 Now on iPad, with a layout designed for the larger screen.

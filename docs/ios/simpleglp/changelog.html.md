@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/simpleglp/changelog.html
 
+## Version 1.2.8 (November 25, 2026)
+
+Bug fixes and improvements.
+
 ## Version 1.2.7 (November 24, 2026)
 
 Bug fixes and improvements.
