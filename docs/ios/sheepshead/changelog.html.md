@@ -4,6 +4,10 @@
 
 Web page: https://jackwallner.com/ios/sheepshead/changelog.html
 
+## Version 1.3.5 (November 27, 2026)
+
+Behind-the-scenes improvements and fixes to keep Sheepshead Trainer running smoothly. Thank you for being here.
+
 ## Version 1.3.4 (November 24, 2026)
 
 Behind-the-scenes improvements and fixes to keep Sheepshead Trainer running smoothly. Thank you for being here.
